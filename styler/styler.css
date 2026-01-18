@@ -1,0 +1,68 @@
+/*
+ * Styler - A simple, clean CSS framework
+ *
+ * HOW TO USE
+ * ----------
+ *
+ * Basic setup:
+ *   <link rel="stylesheet" href="styler/styler.css">
+ *
+ * Readable text container:
+ *   <div class="readable">
+ *     <h1>Title</h1>
+ *     <p>Your content here...</p>
+ *   </div>
+ *
+ * Dark theme:
+ *   <html class="dark">
+ *
+ * Sans-serif typography:
+ *   <body class="sans">
+ *
+ * Alignment (works great inside .readable):
+ *   <figure class="center">...</figure>
+ *   <figure class="left">...</figure>
+ *   <figure class="right">...</figure>
+ *
+ * Spacing utilities (1-10 rem):
+ *   <div class="mt2 mb1">       margin-top: 2rem, margin-bottom: 1rem
+ *   <div class="px3">           padding-left/right: 3rem
+ *   <div class="m1">            margin: 1rem all sides
+ *
+ * Forms:
+ *   <input type="text">         full-width, styled automatically
+ *   <input class="inline">      inline/auto-width
+ *   <button>Submit</button>     primary button
+ *   <button class="secondary">  secondary button
+ *   <button class="outline">    outline button
+ *
+ * Media:
+ *   <figure>
+ *     <img src="photo.jpg" alt="...">
+ *     <figcaption>Caption here</figcaption>
+ *   </figure>
+ *
+ *   <div class="video-container">
+ *     <iframe src="youtube..."></iframe>
+ *   </div>
+ *
+ * Color variables (customize in your overrides):
+ *   --primary, --secondary, --error, --success, --warning, --info
+ *   --body, --body1, --body2 (text colors)
+ *   --bg, --bg1, --bg2 (background colors)
+ *
+ * Design variables:
+ *   --box-radius, --button-radius
+ *
+ * ADD YOUR CUSTOMIZATIONS BELOW
+ * -----------------------------
+ */
+
+@import "reset.css";
+@import "colors.css";
+@import "general.css";
+@import "typography.css";
+@import "forms.css";
+@import "media.css";
+
+/* Your custom styles go here */

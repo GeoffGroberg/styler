@@ -1,2 +1,68 @@
-# Styler, an simple, clean css styler
+# Styler, a simple, clean css styler
 
+- create styler.css, a file that is included in a webpage to apply reasonable styles to html tags without the need of too many custom classes
+- there will be some utility classes created, but the goals are:
+	- tags are styled without the need of specifying a class
+	- simplicity in html code - allows for simple, clean, lean html
+	- consistency across platforms (including/especially mobile)
+	- elegance in the visual style
+- there will be some supporting files created and used by the master styler.css file
+- all files will be in a /styler dir
+- avoid javascript - we will try to do everything with css
+- everything is done with a mobile first approach, preferring fewer media queries. (But some media queries are ok if necessary.)
+
+## files/organization
+- all measurements of any css element (width, margins, padding, etc) are done in rem units, relative to the base font-size specified in typography. (base font-size can of course be overridden in the base styler,css file)
+- styler: the master styler.css file
+	- imports supporting files (color.css, forms.css, etc)
+	- after importing, it is mostly blank. User will add customizations in this file.
+	- this is the only file that needs to included in the head tag
+	- a comments section at the top of this file with very short "How to use" documentation that focusses on examples rather than explaining
+- reset:
+	- a very simple but thorough reset/normalize.css file to form a consistent baseline
+	- should be based on an existing 3rd party tried and true reset/normalize file
+- general:
+	- a place for general design things
+	- defines css vars that other imported css files can use such as:
+		- --box-radius: how much rounding on box like elements like fieldsets, form inputs, and more
+		- --button-radius: by default is the same as --box-radius, but used specifically for buttons like submit, cancel, ...
+		- other vars that can change the overall style
+	- alignment utility classes:
+		- center, left, right are classes that can be applied to most tags and will yield sensible results. For example, a figure tag with class "center" will display as a block level element in the center. The same tag with class "left" would align left using flexbox/margin techniques.
+		- when things align left or right, they can push out a bit from the .readable max-width using negative margins, but never past the edge of the screen
+	- utility class like:
+		- m1, mx1, my1, mt1, mb1, ml1, mr1:
+			- specify margins
+			- m1 = 1 rem margin on all sides
+			- mx = similar but only for margin left and right
+			- my = similar but only for margin top and bottom
+			- mt1, mb1, ml1, mr1 = margin top, bottom, left, right
+			- numbers can range from 1 to 10
+			- similar utility classes for padding: p1, px1, ...
+- colors:
+	- colors.css offers a consistent pallet of colors using css vars
+	- this file also allows us to create different color themes, like "light" and "dark"
+	- --body: the color of foreground things
+	- --bg: the color of the background
+	- 3 variations for each --body and --bg: --body, --body1, --body2. same for --bg
+	- vars for --primary, --secondary, --error, and more. Kind of similar to bootstrap
+- forms:
+	- anything related specifically to form elements go in forms.css
+	- this file is particulary important due the inconstent nature of rendering form elements across platforms. We want the style defined here to make things consistent, clean, simple, sensible
+	- most form inputs will be block level display elements or similar, that is they will display on a new line
+	- sometimes we may override element with class "inline"
+	- widths of some elements should be appropriate for their purpose, for example Name, Email, Password elements (and probably others) should span the full width of a page or div. They should limit themselves to a reasonable width for their purpose.
+- typography:
+	- sets a base font-size of 20px.
+	- provides an excellent font stack, focussing on fonts that are consistent across platforms and natively available, without needed to download or import additional fonts
+	- provides a class that can be applied to the base html tag, letting us switch between a predominantly serif based design (with sans-serif fonts only used for fine print) vs a predominantly sans-serif based design (with serif fonts maybe being allowed for certain key elements, like poetry)
+	- provides a div.readable class:
+		- max-width: 50rem;
+		- margin: 0 auto; so text stays in the center of the window
+		- padding: 0 10%, so readable text never goes all the way to edge
+		- typically, readable blocks of text (div.readable) are enclosed enclosed in a regular div tag (which will by default span the full width with not margin or padding)
+	- h1, h2, ... basic text typography styles are defined in this file
+- media:
+	- contains styles for images, videos, and other media
+	- the "styler" approach to css assumes that the html is structured so that img tags are wrapped in figure tags with optional support for captions
+	- videos and mp3s and more can be embedded. (see how I style videos on another website I created, lincolnhighwaymusic.com to an example, but you if you have a better idea that's okay too. Remember simplicity is key.)

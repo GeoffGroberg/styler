@@ -1,0 +1,238 @@
+/* forms.css - Form elements styled for consistency across platforms */
+
+/* Form container */
+form {
+	margin-bottom: 1rem;
+}
+
+/* Labels */
+label {
+	display: block;
+	margin-bottom: 0.25rem;
+	font-weight: 500;
+	color: var(--body);
+}
+
+/* Base input styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+textarea,
+select {
+	display: block;
+	width: 100%;
+	max-width: 30rem;
+	padding: 0.5rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--body);
+	background-color: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: var(--box-radius);
+	transition: border-color var(--transition), box-shadow var(--transition);
+	margin-bottom: 1rem;
+}
+
+/* Focus states */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--border-focus);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Textarea */
+textarea {
+	min-height: 8rem;
+	resize: vertical;
+}
+
+/* Select */
+select {
+	cursor: pointer;
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	padding-right: 2.5rem;
+}
+
+/* Checkboxes and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+	width: 1.25rem;
+	height: 1.25rem;
+	margin-right: 0.5rem;
+	vertical-align: middle;
+	cursor: pointer;
+	accent-color: var(--primary);
+}
+
+/* Inline checkbox/radio with label */
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+	display: flex;
+	align-items: center;
+	font-weight: normal;
+	cursor: pointer;
+	margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+	display: inline-block;
+	padding: 0.5rem 1.5rem;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background-color: var(--primary);
+	border: none;
+	border-radius: var(--button-radius);
+	cursor: pointer;
+	transition: background-color var(--transition);
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover {
+	background-color: var(--primary-hover);
+	color: #fff;
+}
+
+/* Secondary button */
+button.secondary,
+input[type="reset"],
+.button.secondary {
+	background-color: var(--secondary);
+}
+
+button.secondary:hover,
+input[type="reset"]:hover,
+.button.secondary:hover {
+	background-color: var(--secondary-hover);
+}
+
+/* Outline button */
+button.outline,
+.button.outline {
+	background-color: transparent;
+	color: var(--primary);
+	border: 1px solid var(--primary);
+}
+
+button.outline:hover,
+.button.outline:hover {
+	background-color: var(--primary);
+	color: #fff;
+}
+
+/* Disabled states */
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* Fieldset */
+fieldset {
+	border: 1px solid var(--border);
+	border-radius: var(--box-radius);
+	padding: 1rem 1.5rem;
+	margin-bottom: 1rem;
+}
+
+legend {
+	font-weight: 600;
+	padding: 0 0.5rem;
+}
+
+/* Inline form elements */
+.inline {
+	display: inline-block;
+	width: auto;
+	margin-right: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+/* Error states */
+input.error,
+textarea.error,
+select.error {
+	border-color: var(--error);
+}
+
+input.error:focus,
+textarea.error:focus,
+select.error:focus {
+	box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.error-message {
+	color: var(--error);
+	font-size: 0.875rem;
+	margin-top: -0.75rem;
+	margin-bottom: 1rem;
+}
+
+/* Success states */
+input.success,
+textarea.success,
+select.success {
+	border-color: var(--success);
+}
+
+/* Range input */
+input[type="range"] {
+	width: 100%;
+	max-width: 20rem;
+	margin-bottom: 1rem;
+	accent-color: var(--primary);
+}
+
+/* File input */
+input[type="file"] {
+	margin-bottom: 1rem;
+}
+
+/* Color input */
+input[type="color"] {
+	width: 3rem;
+	height: 2.5rem;
+	padding: 0.25rem;
+	border: 1px solid var(--border);
+	border-radius: var(--box-radius);
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
