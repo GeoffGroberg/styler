@@ -240,12 +240,14 @@ del {
 	border-radius: 0.1em;
 }
 
-.dark ins {
-	background-color: hsl(142 30% 20%);
+.dark ins,
+.ambleside ins, .patagonia ins, .svalbard ins {
+	background-color: hsl(142 45% 25%);
 }
 
-.dark del {
-	background-color: hsl(0 30% 20%);
+.dark del,
+.ambleside del, .patagonia del, .svalbard del {
+	background-color: hsl(0 45% 28%);
 }
 
 /* Address */

@@ -19,7 +19,7 @@ styler/
   base.css             - Single minified stylesheet
   src/
     reset.css          - CSS reset/normalize baseline
-    colors.css         - Color themes, modifiers, selection styling
+    colors.css         - Color palettes, modifiers, selection styling
     general.css        - Layout, utilities, tables, details, alerts, print
     typography.css     - Fonts and text styling
     forms.css          - Form element styling
@@ -32,14 +32,14 @@ styler/
 <link rel="stylesheet" href="styler/base.css">
 <link rel="stylesheet" href="styles.css">  <!-- your overrides -->
 
-<html class="dark">           <!-- theme -->
+<html class="dark">           <!-- color palette -->
 <html class="serif">          <!-- font -->
 <html class="dark warm serif"> <!-- combine classes -->
 ```
 
-## Color Themes
+## Color Palettes
 
-### Base Themes
+### Base Palettes
 
 **Light** (default)
 - Pure white background (#ffffff)
@@ -51,7 +51,7 @@ styler/
 - Light grays for text
 - Brighter blue primary for contrast
 
-### Place-Inspired Themes
+### Place-Inspired Palettes
 
 **Ambleside** (dark)
 - Inspired by a winter evening in England's Lake District
@@ -123,9 +123,44 @@ styler/
 - Bamboo forest green primary
 - Soft ink wash and morning mist tones
 
+**Cusco** (light)
+- Inspired by colorful Andean textile weaves and highland cliffs of Peru
+- Pure white background
+- Warm earth/stone surfaces
+- Deep magenta/violet primary (from traditional woven patterns)
+- Mountain earth and alpaca wool accents
+
+**Cappadocia** (light)
+- Inspired by rose valleys and fairy chimneys at dawn in Turkey
+- Pure white background
+- Warm sandstone/rose surfaces
+- Coral/rose-gold primary
+- Soft dawn and volcanic stone accents
+
+**Marrakech** (light)
+- Inspired by the red city's medina and spice markets of Morocco
+- Pure white background
+- Warm ochre/sand surfaces
+- Terracotta/burnt sienna primary
+- Spice market and zellige tile accents
+
+**Uluru** (light)
+- Inspired by the red center at sunrise in Australia
+- Pure white background
+- Warm desert earth surfaces
+- Deep red-ochre primary
+- Outback and morning light accents
+
+**Lviv** (light)
+- Inspired by sunflower fields, wheat, and the Ukrainian flag
+- Pure white background
+- Warm cream/light gold surfaces
+- Golden sunflower yellow primary
+- Ukrainian blue secondary, folk art accents
+
 ### Modifiers
 
-Modifiers can be combined with any theme:
+Modifiers can be combined with any palette:
 
 **warm** - Adds warm tints to bg1, bg2, body1, body2, and borders
 **cool** - Adds cool tints to the same properties
@@ -133,14 +168,14 @@ Modifiers can be combined with any theme:
 **desat** - Decreases saturation of backgrounds and semantic colors by 40% (uses relative color syntax)
 
 ```html
-<html class="dark warm">      <!-- dark theme with warm tints -->
-<html class="uinta sat">      <!-- uinta theme with vivid colors -->
-<div class="cool">            <!-- cool section within any theme -->
+<html class="dark warm">      <!-- dark palette with warm tints -->
+<html class="uinta sat">      <!-- uinta palette with vivid colors -->
+<div class="cool">            <!-- cool section within any palette -->
 ```
 
-#### Creating Dark Themes
+#### Creating Dark Palettes
 
-When creating a new dark theme, include these requirements:
+When creating a new dark palette, include these requirements:
 
 **1. Font smoothing for macOS** - Prevents fonts from appearing too thick on dark backgrounds:
 ```css
@@ -203,10 +238,10 @@ All colors use HSL format for consistency and to enable dynamic saturation modif
 
 ### HSL and Base Variables
 
-Backgrounds and semantic colors use a two-tier variable system that enables the `sat` and `desat` modifiers to work with any theme:
+Backgrounds and semantic colors use a two-tier variable system that enables the `sat` and `desat` modifiers to work with any palette:
 
 ```css
-/* Themes define -base variables for backgrounds */
+/* Palettes define -base variables for backgrounds */
 --bg-base: hsl(0 0% 100%);
 --bg: var(--bg-base);
 --bg1-base: hsl(0 0% 96%);
@@ -225,7 +260,7 @@ Backgrounds and semantic colors use a two-tier variable system that enables the 
 }
 ```
 
-This allows `sat` and `desat` to dynamically adjust any theme's colors rather than replacing them with fixed values. For themes with neutral backgrounds (0% saturation), the background won't visibly change. For place-inspired themes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
+This allows `sat` and `desat` to dynamically adjust any palette's colors rather than replacing them with fixed values. For palettes with neutral backgrounds (0% saturation), the background won't visibly change. For place-inspired palettes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
 
 **Browser support:** CSS relative color syntax requires Chrome 119+, Safari 16.4+, or Firefox 128+.
 
@@ -401,7 +436,7 @@ Track insertions and deletions with semantic styling:
 <ins>inserted text</ins>
 ```
 
-Colors adapt for dark themes automatically.
+Colors adapt for dark palettes automatically.
 
 ## Progress & Meter
 
