@@ -18,6 +18,7 @@
 	- this html page that demonstrates various html tags, including form elements
 	- a section at the top has very short "How to use" documentation that focusses on examples rather than explaining
 	- the remaining page is quite comprehensive and shows code examples, especially for more complicated elements like form elements.
+	- set class="serif" on html element
 - styler: the master styler.css file
 	- imports supporting files (color.css, forms.css, etc)
 	- after importing, it is mostly blank. User will add customizations in this file.
@@ -78,7 +79,7 @@
 	- provides an excellent font stack, focussing on fonts that are consistent across platforms and natively available, without needed to download or import additional fonts
 	- provides a class that can be applied to the base html tag, letting us switch between a predominantly serif based design (with sans-serif fonts only used for fine print) vs a predominantly sans-serif based design (with serif fonts maybe being allowed for certain key elements, like poetry)
 		- by default, a sans design is used (if no class is specified)
-		- the serif class should have most text, including headings, use a serif font
+		- the serif class should have most text, including headings, use a serif font. Main body text should also be serif.
 	- provides a div.readable class:
 		- max-width: 50rem;
 			- note this property should have a simple example of how the user can override, and when overridden other things should continue to work. (pay attention the media queries and anything that would be influenced a different max-width for .readable)

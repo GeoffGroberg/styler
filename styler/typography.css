@@ -23,8 +23,17 @@ body {
 	line-height: var(--line-height);
 }
 
-/* Serif-based design - add class="serif" to html or body */
-.serif {
+/* Typography modifiers - can be applied to html, body, or any container */
+.sans {
+	font-family: var(--font-sans);
+}
+
+.sans h1, .sans h2, .sans h3, .sans h4, .sans h5, .sans h6 {
+	font-family: var(--font-sans);
+}
+
+.serif,
+.serif body {
 	font-family: var(--font-serif);
 }
 
