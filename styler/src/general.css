@@ -6,6 +6,11 @@
 	--transition: 150ms ease;
 }
 
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
 /* Alignment utility classes */
 .center {
 	display: block;

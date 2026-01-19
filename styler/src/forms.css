@@ -34,7 +34,7 @@ select {
 	font-size: 1rem;
 	line-height: 1.5;
 	color: var(--body);
-	background-color: var(--bg);
+	background-color: var(--bg1);
 	border: 1px solid var(--border);
 	border-radius: var(--box-radius);
 	transition: border-color var(--transition), box-shadow var(--transition);

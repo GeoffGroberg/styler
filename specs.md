@@ -9,17 +9,16 @@
 - there will be some supporting files created and used by the master styler.css file
 - all files will be in a /styler dir except demo.html
 
-- avoid javascript - we will try to do everything with css
+- avoid javascript - we will try to do everything with css (demo.html has minimal JS for theme switching)
 - everything is done with a mobile first approach, preferring fewer media queries. (But some media queries are ok if necessary.)
 
 ## files/organization
 - all measurements of any css element (width, margins, padding, etc) are done in rem units, relative to the base font-size specified in typography. (base font-size can of course be overridden in the base styler,css file)
 - demo.html:
-	- this html page that demonstrates various html tags, including form elements
+	- single demo page with dropdown selectors to switch between themes (light/dark/warm/cool) and fonts (serif/sans)
 	- nav links at the top to jump to sections: How to Use, Typography, Colors, Media, Forms, Customizing
-	- a section at the top has very short "How to use" documentation that focusses on examples rather than explaining
-	- the remaining page is quite comprehensive and shows code examples, especially for more complicated elements like form elements.
-	- set class="serif" on html element
+	- section navigation bars (styled with bg2 background) at the top of each section
+	- comprehensive examples including form elements, media, and color modifiers
 - styler/base.css: the master stylesheet
 	- a single minified file (~17KB) that combines all source files
 	- user includes this file in their head tag, followed by their own styles.css for overrides
@@ -68,6 +67,7 @@
 	- vars for --primary, --secondary, --error, and more. Kind of similar to bootstrap
 	- links, buttons, and other interactive kinds of things get hover colors based on the their initial color var, but a little brighter
 	- by default, links don't contain underline text-decoration
+	- visited links use the same color as unvisited links for visual consistency
 	- class "warm" and "cool" are modifier classes that can be added in addition to "light" "dark" or other theme classes
 	- modifier classes (warm, cool, dark, light, sat, desat) can be applied to any container (html, body, or divs) for section-specific styling
 	- modifier classes work when nested inside a parent with .dark class (e.g., html.dark with child div.warm)
@@ -103,7 +103,7 @@
 		- padding: 0 10%, so readable text never goes all the way to edge
 		- uses box-sizing: content-box so percentage padding doesn't reduce content width
 		- typically, readable blocks of text (div.readable) are enclosed enclosed in a regular div tag (which will by default span the full width with not margin or padding)
-		- new sections of a page would typically include an outer div (no class, spans entire width) with the inner div.readable. This is so the outer div can have a background that spans the full width. Demonstrate this in demo.html.
+		- new sections of a page would typically include an outer div (no class, spans entire width) with the inner div.readable. This is so the outer div can have a background that spans the full width. Demonstrated in demo.html.
 	- h1, h2, ... basic text typography styles are defined in this file
 - media:
 	- contains styles for images, videos, and other media
