@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Styler Demo</title>
+	<link rel="stylesheet" href="styler/extrafonts.css">
 	<link rel="stylesheet" href="styler/base.css">
 	<style>
 		.section-nav {
@@ -617,17 +618,23 @@
 	<h2 id="how-to-use">How to Use</h2>
 	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
 
-	<pre><code>&lt;link rel="stylesheet" href="styler/base.css"&gt;
-&lt;link rel="stylesheet" href="styles.css"&gt;
+	<pre><code>&lt;!-- Basic (system fonts only) --&gt;
+&lt;link rel="stylesheet" href="styler/base.css"&gt;
+
+&lt;!-- With Google Fonts (extrafonts.css must come first) --&gt;
+&lt;link rel="stylesheet" href="styler/extrafonts.css"&gt;
+&lt;link rel="stylesheet" href="styler/base.css"&gt;
 
 &lt;div class="readable"&gt;
   &lt;h1&gt;Title&lt;/h1&gt;
   &lt;p&gt;Content...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
-	<pre><code>&lt;!-- Fonts --&gt;
+	<pre><code>&lt;!-- System Fonts (no extrafonts.css needed) --&gt;
 &lt;html class="sans"&gt;           system sans-serif (default)
 &lt;html class="serif"&gt;          system serif
+
+&lt;!-- Google Fonts (require extrafonts.css) --&gt;
 &lt;html class="source-sans"&gt;    Source Sans 3
 &lt;html class="pt-serif"&gt;       PT Serif
 &lt;html class="cormorant"&gt;      Cormorant Garamond

@@ -16,7 +16,8 @@ A simple, clean CSS framework that applies reasonable styles to HTML tags withou
 ```
 demo.html              - Interactive demo with theme/font switchers
 styler/
-  base.css             - Single minified stylesheet
+  base.css             - Main stylesheet (imports src files)
+  extrafonts.css       - Optional Google Fonts (~200-400KB)
   src/
     reset.css          - CSS reset/normalize baseline
     colors.css         - Color palettes, modifiers, selection styling
@@ -29,8 +30,15 @@ styler/
 ### Usage
 
 ```html
+<!-- Basic (system fonts only) -->
 <link rel="stylesheet" href="styler/base.css">
-<link rel="stylesheet" href="styles.css">  <!-- your overrides -->
+
+<!-- With Google Fonts (extrafonts.css must come first) -->
+<link rel="stylesheet" href="styler/extrafonts.css">
+<link rel="stylesheet" href="styler/base.css">
+
+<!-- Then your overrides -->
+<link rel="stylesheet" href="styles.css">
 
 <html class="dark">           <!-- color palette -->
 <html class="serif">          <!-- font -->
@@ -276,7 +284,7 @@ This allows `sat` and `desat` to dynamically adjust any palette's colors rather 
 - `sans` - System sans-serif (default)
 - `serif` - System serif (Times New Roman, Georgia)
 
-**Google Fonts** (loaded via @import, ~200-400KB total)
+**Google Fonts** (require extrafonts.css, ~200-400KB total)
 - `source-sans` - Source Sans 3 (weights: 400, 600 + italics)
 - `pt-serif` - PT Serif (weights: 400, 700 + italics)
 - `cormorant` - Cormorant Garamond (weights: 400, 600 + italics)

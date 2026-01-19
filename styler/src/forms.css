@@ -83,9 +83,13 @@ textarea {
 
 /* Focus states */
 :is(input, textarea, select):focus {
-	outline: none;
+	outline: 2px solid var(--border-focus);
+	outline-offset: -1px;
 	border-color: var(--border-focus);
-	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+:is(input, textarea, select):focus:not(:focus-visible) {
+	outline: none;
 }
 
 /* Textarea */
@@ -153,6 +157,23 @@ input[type="button"]:hover,
 .button:hover {
 	background-color: var(--primary-hover);
 	color: #fff;
+}
+
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus,
+.button:focus {
+	outline: 2px solid var(--border-focus);
+	outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+input[type="submit"]:focus:not(:focus-visible),
+input[type="reset"]:focus:not(:focus-visible),
+input[type="button"]:focus:not(:focus-visible),
+.button:focus:not(:focus-visible) {
+	outline: none;
 }
 
 /* Secondary button */
@@ -225,7 +246,8 @@ select.error {
 input.error:focus,
 textarea.error:focus,
 select.error:focus {
-	box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+	outline-color: var(--error);
+	border-color: var(--error);
 }
 
 .error-message {

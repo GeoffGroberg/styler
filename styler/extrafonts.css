@@ -1,0 +1,8 @@
+/* extrafonts.css - Optional Google Fonts (~200-400KB)
+   Include BEFORE base.css if you want these fonts:
+   - Source Sans 3 (class="source-sans")
+   - PT Serif (class="pt-serif")
+   - Cormorant Garamond (class="cormorant")
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
