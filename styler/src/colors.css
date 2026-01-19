@@ -42,8 +42,8 @@
 	--body2: #a3a3a3;
 
 	--bg: #000000;
-	--bg1: #1a1a1a;
-	--bg2: #333333;
+	--bg1: #252525;
+	--bg2: #404040;
 
 	--primary: #3b82f6;
 	--primary-hover: #60a5fa;
@@ -78,12 +78,12 @@
 	--border: #d6d3d1;
 }
 
-.warm.dark, .dark.warm {
+.warm.dark, .dark.warm, .dark .warm {
 	--body1: #d6d3d0;
 	--body2: #a8a29e;
 
-	--bg1: #1c1917;
-	--bg2: #292524;
+	--bg1: #282420;
+	--bg2: #3d3632;
 
 	--border: #57534e;
 }
@@ -99,14 +99,88 @@
 	--border: #cbd5e1;
 }
 
-.cool.dark, .dark.cool {
+.cool.dark, .dark.cool, .dark .cool {
 	--body1: #d1d5db;
 	--body2: #9ca3af;
 
-	--bg1: #111827;
-	--bg2: #1f2937;
+	--bg1: #1a2332;
+	--bg2: #2d3a4d;
 
 	--border: #4b5563;
+}
+
+/* Saturated - more vivid colors */
+.sat {
+	--primary: #0050ff;
+	--primary-hover: #2970ff;
+	--secondary: #4a6896;
+	--secondary-hover: #6585b5;
+
+	--success: #00b040;
+	--success-hover: #00d850;
+	--warning: #e89500;
+	--warning-hover: #ffab00;
+	--error: #e81515;
+	--error-hover: #ff3838;
+	--info: #00a0cc;
+	--info-hover: #00ccff;
+
+	--link-visited: #7020e8;
+}
+
+.sat.dark, .dark.sat, .dark .sat {
+	--primary: #4090ff;
+	--primary-hover: #65a8ff;
+	--secondary: #88a8cc;
+	--secondary-hover: #a8c5e5;
+
+	--success: #25e865;
+	--success-hover: #55ff8a;
+	--warning: #ffbb15;
+	--warning-hover: #ffcc40;
+	--error: #ff4848;
+	--error-hover: #ff7070;
+	--info: #30e5ff;
+	--info-hover: #70f0ff;
+
+	--link-visited: #b070ff;
+}
+
+/* Desaturated - muted colors */
+.desat {
+	--primary: #5878a8;
+	--primary-hover: #7090b8;
+	--secondary: #6a7078;
+	--secondary-hover: #808890;
+
+	--success: #509068;
+	--success-hover: #68a880;
+	--warning: #a89058;
+	--warning-hover: #c0a870;
+	--error: #a85858;
+	--error-hover: #c07070;
+	--info: #508898;
+	--info-hover: #68a0b0;
+
+	--link-visited: #806898;
+}
+
+.desat.dark, .dark.desat, .dark .desat {
+	--primary: #7898b8;
+	--primary-hover: #90a8c8;
+	--secondary: #909498;
+	--secondary-hover: #a8acb0;
+
+	--success: #70a888;
+	--success-hover: #88c0a0;
+	--warning: #c0a878;
+	--warning-hover: #d0b888;
+	--error: #c08080;
+	--error-hover: #d09898;
+	--info: #70a0b0;
+	--info-hover: #88b8c8;
+
+	--link-visited: #a090b8;
 }
 
 /* System preference auto-detection */
@@ -117,8 +191,8 @@
 		--body2: #a3a3a3;
 
 		--bg: #000000;
-		--bg1: #1a1a1a;
-		--bg2: #333333;
+		--bg1: #252525;
+		--bg2: #404040;
 
 		--primary: #3b82f6;
 		--primary-hover: #60a5fa;

@@ -13,9 +13,21 @@
 	<h1>Styler</h1>
 	<p>A simple, clean CSS framework.</p>
 
-	<h2>How to Use</h2>
+	<nav>
+		<a href="#how-to-use">How to Use</a> ·
+		<a href="#typography">Typography</a> ·
+		<a href="#colors">Colors</a> ·
+		<a href="#media">Media</a> ·
+		<a href="#forms">Forms</a> ·
+		<a href="#customizing">Customizing</a>
+	</nav>
+
+	<hr>
+
+	<h2 id="how-to-use">How to Use</h2>
 
 	<pre><code>&lt;link rel="stylesheet" href="styler/styler.css"&gt;
+&lt;link rel="stylesheet" href="css/custom.css"&gt;
 
 &lt;div class="readable"&gt;
   &lt;h1&gt;Title&lt;/h1&gt;
@@ -27,6 +39,8 @@
 &lt;html class="dark"&gt;        dark theme
 &lt;html class="warm"&gt;        warm color temperature
 &lt;html class="cool"&gt;        cool color temperature
+&lt;html class="sat"&gt;         saturated/vivid colors
+&lt;html class="desat"&gt;       desaturated/muted colors
 &lt;html class="dark warm"&gt;   combine modifiers
 
 &lt;div class="serif"&gt;        modifiers work on any container
@@ -54,7 +68,7 @@
 
 	<hr>
 
-	<h2>Typography</h2>
+	<h2 id="typography">Typography</h2>
 
 	<h1>Heading 1</h1>
 	<h2>Heading 2</h2>
@@ -83,91 +97,95 @@
 		<li>Third item</li>
 	</ol>
 
+</div>
+
+<!-- Full-width section with background -->
+<div style="background-color: var(--bg1);" class="py2">
+	<div class="readable">
+		<h2>Full-Width Section</h2>
+		<pre><code>&lt;div style="background: var(--bg1);"&gt;
+  &lt;div class="readable"&gt;
+    Content here...
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		<p>This section demonstrates a full-width background with a <code>.readable</code> container inside. The outer div spans the full viewport width while the inner content stays readable.</p>
+	</div>
+</div>
+
+<div class="readable">
+
 	<hr>
 
-	<h2>Forms</h2>
+	<h2 id="colors">Colors</h2>
 
-	<h3>Text Inputs</h3>
-	<pre><code>&lt;label for="name"&gt;Name&lt;/label&gt;
-&lt;input type="text" id="name"&gt;</code></pre>
+	<p>Text colors: <span style="color: var(--body)">--body</span>, <span style="color: var(--body1)">--body1</span>, <span style="color: var(--body2)">--body2</span></p>
 
-	<form>
-		<label for="name">Name</label>
-		<input type="text" id="name" placeholder="Your name">
+	<p>Semantic colors:
+		<span style="color: var(--primary)">--primary</span>,
+		<span style="color: var(--secondary)">--secondary</span>,
+		<span style="color: var(--success)">--success</span>,
+		<span style="color: var(--warning)">--warning</span>,
+		<span style="color: var(--error)">--error</span>,
+		<span style="color: var(--info)">--info</span>
+	</p>
 
-		<label for="email">Email</label>
-		<input type="email" id="email" placeholder="you@example.com">
-
-		<label for="password">Password</label>
-		<input type="password" id="password" placeholder="Password">
-	</form>
-
-	<h3>Narrow Inputs</h3>
-
-	<form>
-		<label for="phone">Phone</label>
-		<input type="tel" id="phone" placeholder="555-1234">
-
-		<label for="date">Date</label>
-		<input type="date" id="date">
-
-		<label for="time">Time</label>
-		<input type="time" id="time">
-
-		<label for="quantity">Quantity</label>
-		<input type="number" id="quantity" value="1" min="1">
-
-		<label for="country">Country</label>
-		<select id="country">
-			<option>United States</option>
-			<option>Canada</option>
-			<option>United Kingdom</option>
-		</select>
-	</form>
-
-	<h3>Inline Inputs</h3>
-	<pre><code>&lt;input type="tel" class="inline" style="max-width: 5rem;"&gt;
-&lt;input type="tel" class="inline" style="max-width: 8rem;"&gt;</code></pre>
-
-	<form>
-		<label>Phone Number</label>
-		<input type="tel" class="inline" placeholder="Area" style="max-width: 5rem;">
-		<input type="tel" class="inline" placeholder="Number" style="max-width: 8rem;">
-	</form>
-
-	<h3>Textarea</h3>
-	<form>
-		<label for="message">Message</label>
-		<textarea id="message" placeholder="Your message..."></textarea>
-	</form>
-
-	<h3>Checkboxes & Radio Buttons</h3>
-
-	<form>
-		<fieldset>
-			<legend>Options</legend>
-			<label><input type="checkbox" checked> Option one</label>
-			<label><input type="checkbox"> Option two</label>
-		</fieldset>
-
-		<fieldset>
-			<legend>Choice</legend>
-			<label><input type="radio" name="choice" checked> Choice A</label>
-			<label><input type="radio" name="choice"> Choice B</label>
-		</fieldset>
-	</form>
-
-	<h3>Buttons</h3>
-
-	<div class="mt1">
-		<button type="button">Primary</button>
-		<button type="button" class="secondary">Secondary</button>
-		<button type="button" class="outline">Outline</button>
+	<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+		<div style="background: var(--bg); border: 1px solid var(--border); padding: 1rem;">--bg (pure white/black)</div>
+		<div style="background: var(--bg1); padding: 1rem;">--bg1</div>
+		<div style="background: var(--bg2); padding: 1rem;">--bg2</div>
 	</div>
 
+	<h3>Color Temperature</h3>
+	<pre><code>&lt;html class="warm"&gt;        warm tones (affects bg1, bg2, borders)
+&lt;html class="cool"&gt;        cool tones
+&lt;html class="dark warm"&gt;   combine with dark theme</code></pre>
+
+</div>
+
+<!-- Warm color demo -->
+<div class="warm py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Warm Colors</h4>
+		<p>This section uses <code>class="warm"</code>. Notice the warm tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
+	</div>
+</div>
+
+<!-- Cool color demo -->
+<div class="cool py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Cool Colors</h4>
+		<p>This section uses <code>class="cool"</code>. Notice the cool tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
+	</div>
+</div>
+
+<div class="readable">
+	<h3>Saturation</h3>
+	<pre><code>&lt;html class="sat"&gt;         vivid/vibrant colors
+&lt;html class="desat"&gt;       muted/subdued colors
+&lt;html class="warm sat"&gt;    combine modifiers</code></pre>
+</div>
+
+<!-- Saturated demo -->
+<div class="sat py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Saturated</h4>
+		<p>This section uses <code>class="sat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are more vivid: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
+	</div>
+</div>
+
+<!-- Desaturated demo -->
+<div class="desat py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Desaturated</h4>
+		<p>This section uses <code>class="desat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are muted: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
+	</div>
+</div>
+
+<div class="readable">
+
 	<hr>
 
-	<h2>Media</h2>
+	<h2 id="media">Media</h2>
 
 	<h3>Centered Image (Default)</h3>
 
@@ -293,75 +311,102 @@
 	</div>
 </div>
 
-<!-- Full-width section with background -->
-<div style="background-color: var(--bg1);" class="py2">
-	<div class="readable">
-		<h2>Full-Width Section</h2>
-		<pre><code>&lt;div style="background: var(--bg1);"&gt;
-  &lt;div class="readable"&gt;
-    Content here...
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-		<p>This section demonstrates a full-width background with a <code>.readable</code> container inside. The outer div spans the full viewport width while the inner content stays readable.</p>
-	</div>
-</div>
-
 <div class="readable">
 
 	<hr>
 
-	<h2>Colors</h2>
+	<h2 id="forms">Forms</h2>
 
-	<p>Text colors: <span style="color: var(--body)">--body</span>, <span style="color: var(--body1)">--body1</span>, <span style="color: var(--body2)">--body2</span></p>
+	<h3>Text Inputs</h3>
+	<pre><code>&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input type="text" id="name"&gt;</code></pre>
 
-	<p>Semantic colors:
-		<span style="color: var(--primary)">--primary</span>,
-		<span style="color: var(--secondary)">--secondary</span>,
-		<span style="color: var(--success)">--success</span>,
-		<span style="color: var(--warning)">--warning</span>,
-		<span style="color: var(--error)">--error</span>,
-		<span style="color: var(--info)">--info</span>
-	</p>
+	<form>
+		<label for="name">Name</label>
+		<input type="text" id="name" placeholder="Your name">
 
-	<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-		<div style="background: var(--bg); border: 1px solid var(--border); padding: 1rem;">--bg (pure white/black)</div>
-		<div style="background: var(--bg1); padding: 1rem;">--bg1</div>
-		<div style="background: var(--bg2); padding: 1rem;">--bg2</div>
+		<label for="email">Email</label>
+		<input type="email" id="email" placeholder="you@example.com">
+
+		<label for="password">Password</label>
+		<input type="password" id="password" placeholder="Password">
+	</form>
+
+	<h3>Narrow Inputs</h3>
+
+	<form>
+		<label for="phone">Phone</label>
+		<input type="tel" id="phone" placeholder="555-1234">
+
+		<label for="date">Date</label>
+		<input type="date" id="date">
+
+		<label for="time">Time</label>
+		<input type="time" id="time">
+
+		<label for="quantity">Quantity</label>
+		<input type="number" id="quantity" value="1" min="1">
+
+		<label for="country">Country</label>
+		<select id="country">
+			<option>United States</option>
+			<option>Canada</option>
+			<option>United Kingdom</option>
+		</select>
+	</form>
+
+	<h3>Inline Inputs</h3>
+	<pre><code>&lt;input type="tel" class="inline" style="max-width: 5rem;"&gt;
+&lt;input type="tel" class="inline" style="max-width: 8rem;"&gt;</code></pre>
+
+	<form>
+		<label>Phone Number</label>
+		<input type="tel" class="inline" placeholder="Area" style="max-width: 5rem;">
+		<input type="tel" class="inline" placeholder="Number" style="max-width: 8rem;">
+	</form>
+
+	<h3>Textarea</h3>
+	<form>
+		<label for="message">Message</label>
+		<textarea id="message" placeholder="Your message..."></textarea>
+	</form>
+
+	<h3>Checkboxes & Radio Buttons</h3>
+
+	<form>
+		<fieldset>
+			<legend>Options</legend>
+			<label><input type="checkbox" checked> Option one</label>
+			<label><input type="checkbox"> Option two</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Choice</legend>
+			<label><input type="radio" name="choice" checked> Choice A</label>
+			<label><input type="radio" name="choice"> Choice B</label>
+		</fieldset>
+	</form>
+
+	<h3>Buttons</h3>
+
+	<div class="mt1">
+		<button type="button">Primary</button>
+		<button type="button" class="secondary">Secondary</button>
+		<button type="button" class="outline">Outline</button>
 	</div>
-
-	<h3>Color Temperature</h3>
-	<pre><code>&lt;html class="warm"&gt;        warm tones (affects bg1, bg2, borders)
-&lt;html class="cool"&gt;        cool tones
-&lt;html class="dark warm"&gt;   combine with dark theme</code></pre>
-
-</div>
-
-<!-- Warm color demo -->
-<div class="warm py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Warm Colors</h4>
-		<p>This section uses <code>class="warm"</code>. Notice the warm tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-	</div>
-</div>
-
-<!-- Cool color demo -->
-<div class="cool py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Cool Colors</h4>
-		<p>This section uses <code>class="cool"</code>. Notice the cool tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-	</div>
-</div>
-
-<div class="readable">
 
 	<hr>
 
-	<h2>Customizing</h2>
+	<h2 id="customizing">Customizing</h2>
 
-	<p>Override any CSS variable in <code>styler.css</code>:</p>
+	<p>Include your custom stylesheet after styler.css to override variables:</p>
 
-	<pre><code>/* In styler.css after the imports */
-:root {
+	<pre><code>&lt;link rel="stylesheet" href="styler/styler.css"&gt;
+&lt;link rel="stylesheet" href="css/custom.css"&gt;</code></pre>
+
+	<p>In your custom.css:</p>
+
+	<pre><code>:root {
   --readable-width: 40rem;  /* narrower content */
   --base-font-size: 18px;   /* smaller text */
   --box-radius: 0.5rem;     /* rounder corners */

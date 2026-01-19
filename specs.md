@@ -16,13 +16,16 @@
 - all measurements of any css element (width, margins, padding, etc) are done in rem units, relative to the base font-size specified in typography. (base font-size can of course be overridden in the base styler,css file)
 - demo.html:
 	- this html page that demonstrates various html tags, including form elements
+	- nav links at the top to jump to sections: How to Use, Typography, Colors, Media, Forms, Customizing
 	- a section at the top has very short "How to use" documentation that focusses on examples rather than explaining
 	- the remaining page is quite comprehensive and shows code examples, especially for more complicated elements like form elements.
 	- set class="serif" on html element
-- styler: the master styler.css file
-	- imports supporting files (color.css, forms.css, etc)
-	- after importing, it is mostly blank. User will add customizations in this file.
-	- this is the only file that needs to included in the head tag
+- styler/styler.css: the master stylesheet
+	- a single minified file (~17KB) that combines all source files
+	- user includes this file in their head tag, followed by their own custom stylesheet for overrides
+- styler/src/: source files for reference/development
+	- reset.css, colors.css, general.css, typography.css, forms.css, media.css
+	- readable, commented versions of all styles
 - reset:
 	- a very simple but thorough reset/normalize.css file to form a consistent baseline
 	- should be based on an existing 3rd party tried and true reset/normalize file
@@ -39,7 +42,8 @@
 		- images always keep their aspect ratio - that is they don't distort in x or y
 		- class "square" forces a square aspect ratio (probably crops), but doesn't distort
 		- by default images have a slight rounding to their corners
-		- column layouts: div.cols2, div.cols3, div.cols4 use flexbox to display direct block-level children (figures, divs, etc.) in columns. On small screens, collapses directly to single column (no intermediate states).
+		- column layouts: div.cols2, div.cols3, div.cols4 use flexbox to display direct block-level children (figures, divs, etc.) in columns
+		- column layouts collapse to single column at 50rem (same breakpoint as left/right floats) - no intermediate states
 		- column layouts can be placed outside .readable for full-width layouts; use padding utilities (e.g., px1) to prevent content from touching screen edges
 		- figure.inline class allows small figures to flow left to right inline
 	- utility class like:
@@ -65,10 +69,15 @@
 	- links, buttons, and other interactive kinds of things get hover colors based on the their initial color var, but a little brighter
 	- by default, links don't contain underline text-decoration
 	- class "warm" and "cool" are modifier classes that can be added in addition to "light" "dark" or other theme classes
-	- modifier classes (warm, cool, dark, light) can be applied to any container (html, body, or divs) for section-specific styling
+	- modifier classes (warm, cool, dark, light, sat, desat) can be applied to any container (html, body, or divs) for section-specific styling
+	- modifier classes work when nested inside a parent with .dark class (e.g., html.dark with child div.warm)
 	- warm/cool only affect --bg1, --bg2, --body1, --body2, --border - NOT --bg (which stays pure white or black)
 	- without "warm" or "cool" colors are neutral, that is grays have no saturation
-	- users can override any color var in styler.css, e.g.: :root { --bg: #f5f5f0; }
+	- class "sat" and "desat" are modifier classes that adjust saturation of semantic colors (primary, secondary, success, warning, error, info)
+		- sat: more vivid/vibrant colors
+		- desat: muted/subdued colors
+		- can be combined with other modifiers: "dark sat", "warm desat", etc.
+	- users can override any color var in their custom stylesheet, e.g.: :root { --bg: #f5f5f0; }
 - forms:
 	- anything related specifically to form elements go in forms.css
 	- this file is particulary important due the inconstent nature of rendering form elements across platforms. We want the style defined here to make things consistent, clean, simple, sensible
@@ -80,6 +89,8 @@
 - typography:
 	- sets a base font-size of 20px.
 	- provides an excellent font stack, focussing on fonts that are consistent across platforms and natively available, without needed to download or import additional fonts
+	- serif font stack prioritizes 'Times New Roman', Times, then Cambria, Georgia
+	- sans font stack uses system fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, etc.
 	- provides classes for typography: "serif" and "sans"
 		- by default, a sans design is used (if no class is specified)
 		- the serif class should have most text, including headings, use a serif font. Main body text should also be serif.
@@ -92,7 +103,7 @@
 		- padding: 0 10%, so readable text never goes all the way to edge
 		- uses box-sizing: content-box so percentage padding doesn't reduce content width
 		- typically, readable blocks of text (div.readable) are enclosed enclosed in a regular div tag (which will by default span the full width with not margin or padding)
-		- new sections of a page would typically include an outer div (no class, spans entire width) with the inner div.readable. This is so the outer div can have a background that spans the full width. Demonstrate this in the info.html file.
+		- new sections of a page would typically include an outer div (no class, spans entire width) with the inner div.readable. This is so the outer div can have a background that spans the full width. Demonstrate this in demo.html.
 	- h1, h2, ... basic text typography styles are defined in this file
 - media:
 	- contains styles for images, videos, and other media
