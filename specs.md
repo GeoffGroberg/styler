@@ -7,14 +7,14 @@
 	- consistency across platforms (including/especially mobile)
 	- elegance in the visual style
 - there will be some supporting files created and used by the master styler.css file
-- all files will be in a /styler dir except info.html
+- all files will be in a /styler dir except demo.html
 
 - avoid javascript - we will try to do everything with css
 - everything is done with a mobile first approach, preferring fewer media queries. (But some media queries are ok if necessary.)
 
 ## files/organization
 - all measurements of any css element (width, margins, padding, etc) are done in rem units, relative to the base font-size specified in typography. (base font-size can of course be overridden in the base styler,css file)
-- info.html:
+- demo.html:
 	- this html page that demonstrates various html tags, including form elements
 	- a section at the top has very short "How to use" documentation that focusses on examples rather than explaining
 	- the remaining page is quite comprehensive and shows code examples, especially for more complicated elements like form elements.
@@ -39,8 +39,9 @@
 		- images always keep their aspect ratio - that is they don't distort in x or y
 		- class "square" forces a square aspect ratio (probably crops), but doesn't distort
 		- by default images have a slight rounding to their corners
-		- inline figures: wrap figures in a div.inline-group for flexbox layout, or add .inline class to individual figures. Responsive down to full width on small screens.
-		- inline figures can be placed outside .readable for full-width layouts; use padding utilities (e.g., px1) to prevent images from touching screen edges
+		- column layouts: div.cols2, div.cols3, div.cols4 use flexbox to display direct block-level children (figures, divs, etc.) in columns. On small screens, collapses directly to single column (no intermediate states).
+		- column layouts can be placed outside .readable for full-width layouts; use padding utilities (e.g., px1) to prevent content from touching screen edges
+		- figure.inline class allows small figures to flow left to right inline
 	- utility class like:
 		- m1, mx1, my1, mt1, mb1, ml1, mr1:
 			- specify margins

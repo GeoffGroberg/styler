@@ -53,22 +53,46 @@
 	}
 }
 
-/* Inline figures - use flexbox for even distribution */
-.inline-group {
+/* Column layouts - flexbox grid for any block-level children */
+.cols2, .cols3, .cols4 {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	gap: 1rem;
 	margin: 1.5rem 0;
 }
 
-.inline-group figure {
-	flex: 1 1 calc(33% - 1rem);
-	min-width: 150px;
+.cols2 > * {
+	flex: 1 1 calc(50% - 0.5rem);
+	min-width: 0;
+}
+
+.cols3 > * {
+	flex: 1 1 calc(33.333% - 0.667rem);
+	min-width: 0;
+}
+
+.cols4 > * {
+	flex: 1 1 calc(25% - 0.75rem);
+	min-width: 0;
+}
+
+/* Remove default margins from direct children */
+.cols2 > figure,
+.cols3 > figure,
+.cols4 > figure {
 	margin: 0;
 }
 
-/* Inline class on individual figures (alternative to .inline-group wrapper) */
+/* Collapse to single column on small screens */
+@media (max-width: 50rem) {
+	.cols2 > *,
+	.cols3 > *,
+	.cols4 > * {
+		flex: 1 1 100%;
+	}
+}
+
+/* Inline class on individual figures - allows small figures to flow */
 figure.inline {
 	display: inline-block;
 	vertical-align: top;
@@ -81,20 +105,6 @@ figure.inline:last-child {
 }
 
 @media (max-width: 50rem) {
-	.inline-group figure {
-		flex: 1 1 calc(50% - 0.5rem);
-	}
-
-	figure.inline {
-		max-width: calc(50% - 0.5rem);
-	}
-}
-
-@media (max-width: 35rem) {
-	.inline-group figure {
-		flex: 1 1 100%;
-	}
-
 	figure.inline {
 		display: block;
 		max-width: 100%;

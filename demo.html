@@ -36,9 +36,9 @@
 &lt;figure class="right"&gt;     float right, text wraps
 &lt;figure class="square"&gt;    square crop
 
-&lt;div class="inline-group"&gt; flexbox container for inline figures
-  &lt;figure&gt;...&lt;/figure&gt;
-  &lt;figure&gt;...&lt;/figure&gt;
+&lt;div class="cols3"&gt;       3-column flexbox layout
+  &lt;figure&gt;...&lt;/figure&gt;    works with any block children
+  &lt;figure&gt;...&lt;/figure&gt;    collapses to 1 column on mobile
 &lt;/div&gt;
 
 &lt;div class="mt2 mb1"&gt;      margin-top: 2rem, margin-bottom: 1rem
@@ -206,35 +206,42 @@
 
 	<p>The responsive behavior happens automatically without any additional classes or JavaScript. Images shrink gracefully and reflow as the viewport changes.</p>
 
-	<h3>Inline Figures (Flexbox)</h3>
-	<pre><code>&lt;div class="inline-group px1"&gt;
-  &lt;figure&gt;...&lt;/figure&gt;
+	<h3>Column Layouts</h3>
+	<pre><code>&lt;div class="cols3 px1"&gt;   also: cols2, cols4
+  &lt;figure&gt;...&lt;/figure&gt;    works with any block children
   &lt;figure&gt;...&lt;/figure&gt;
   &lt;figure&gt;...&lt;/figure&gt;
 &lt;/div&gt;</code></pre>
 
 </div>
 
-<div class="inline-group px1">
+<div class="cols3 px1">
 	<figure>
-		<img src="https://picsum.photos/300/200?a" alt="Inline 1">
-		<figcaption>First</figcaption>
+		<img src="https://picsum.photos/300/200?a" alt="Column 1">
+		<figcaption>An image</figcaption>
+	</figure>
+	<div style="background: var(--bg1); padding: 1rem; border-radius: var(--box-radius);">
+		<strong>Any block element</strong>
+		<p style="margin: 0.5rem 0 0;">Columns work with divs, figures, or any block-level children.</p>
+	</div>
+	<figure>
+		<img src="https://picsum.photos/300/200?c" alt="Column 3">
+		<figcaption>Another image</figcaption>
+	</figure>
+</div>
+
+<div class="cols4 px1">
+	<figure>
+		<img src="https://picsum.photos/300/200?d" alt="Column 1">
 	</figure>
 	<figure>
-		<img src="https://picsum.photos/300/200?b" alt="Inline 2">
-		<figcaption>Second</figcaption>
+		<img src="https://picsum.photos/300/200?e" alt="Column 2">
 	</figure>
 	<figure>
-		<img src="https://picsum.photos/300/200?c" alt="Inline 3">
-		<figcaption>Third</figcaption>
+		<img src="https://picsum.photos/300/200?f" alt="Column 3">
 	</figure>
 	<figure>
-		<img src="https://picsum.photos/300/200?d" alt="Inline 4">
-		<figcaption>Fourth</figcaption>
-	</figure>
-	<figure>
-		<img src="https://picsum.photos/300/200?e" alt="Inline 5">
-		<figcaption>Fifth</figcaption>
+		<img src="https://picsum.photos/300/200?g" alt="Column 4">
 	</figure>
 </div>
 
@@ -249,16 +256,16 @@
 
 	<h3>Border Radius</h3>
 
-	<div class="inline-group">
-		<figure style="flex: 0 0 100px;">
+	<div class="cols3">
+		<figure style="max-width: 100px;">
 			<img src="https://picsum.photos/100/100" alt="r0" class="r0">
 			<figcaption>r0</figcaption>
 		</figure>
-		<figure style="flex: 0 0 100px;">
+		<figure style="max-width: 100px;">
 			<img src="https://picsum.photos/100/100?2" alt="r2" class="r2">
 			<figcaption>r2</figcaption>
 		</figure>
-		<figure style="flex: 0 0 100px;">
+		<figure style="max-width: 100px;">
 			<img src="https://picsum.photos/100/100?3" alt="r100" class="r100">
 			<figcaption>r100</figcaption>
 		</figure>
