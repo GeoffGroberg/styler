@@ -16,11 +16,11 @@ A simple, clean CSS framework that applies reasonable styles to HTML tags withou
 ```
 demo.html              - Interactive demo with theme/font switchers
 styler/
-  base.css             - Single minified stylesheet (~18KB)
+  base.css             - Single minified stylesheet
   src/
     reset.css          - CSS reset/normalize baseline
-    colors.css         - Color themes and modifiers
-    general.css        - Design variables and utility classes
+    colors.css         - Color themes, modifiers, selection styling
+    general.css        - Layout, utilities, tables, details, alerts, print
     typography.css     - Fonts and text styling
     forms.css          - Form element styling
     media.css          - Images, video, audio styling
@@ -73,6 +73,55 @@ styler/
 - Sea mist blue-gray surfaces
 - Ocean blue primary
 - Coastal and volcanic earth tone accents
+
+**Sahel** (light)
+- Inspired by golden hour on the West African savanna
+- Pure white background
+- Warm sandy/earth-toned surfaces
+- Deep indigo primary (like traditional fabrics)
+- Terracotta and golden grass accents
+
+**Patagonia** (dark)
+- Inspired by twilight over glacial lakes in southern Argentina
+- Deep blue-gray background
+- Cool slate surfaces
+- Glacial teal primary
+- Dusty mountain and warm sunset accents
+
+**Kerala** (light)
+- Inspired by a monsoon morning in India's backwaters
+- Pure white background
+- Lush green-tinted surfaces
+- Deep tropical green primary
+- Spice market and palm frond accents
+
+**Svalbard** (dark)
+- Inspired by polar night with aurora in the High Arctic
+- Deep navy-black background
+- Cool midnight blue surfaces
+- Aurora green primary
+- Icy blue and purple accents
+
+**Yucatan** (light)
+- Inspired by cenotes and Mayan ruins in Mexico
+- Pure white background
+- Warm limestone/sand surfaces
+- Caribbean teal primary
+- Jungle green and golden sun accents
+
+**Aegean** (light)
+- Inspired by whitewashed villages along the Greek coast
+- Pure white background
+- Cool blue-tinted surfaces
+- Mediterranean blue primary
+- Terracotta and olive accents
+
+**Guilin** (light)
+- Inspired by misty karst mountains along China's Li River
+- Pure white background
+- Subtle jade/mist green surfaces
+- Bamboo forest green primary
+- Soft ink wash and morning mist tones
 
 ### Modifiers
 
@@ -284,10 +333,121 @@ Columns collapse to single column at 50rem breakpoint.
 </div>
 ```
 
+## Tables
+
+Tables are styled automatically with:
+- Full width
+- Header row with `--bg2` background
+- Bottom borders using `--border`
+- Add `.striped` class for alternating row colors
+
+```html
+<table class="striped">
+  <thead>
+    <tr><th>Name</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Item 1</td><td>100</td></tr>
+    <tr><td>Item 2</td><td>200</td></tr>
+  </tbody>
+</table>
+```
+
+## Details/Summary
+
+Native HTML accordion elements are styled automatically:
+
+```html
+<details>
+  <summary>Click to expand</summary>
+  <p>Hidden content here...</p>
+</details>
+```
+
+## Alerts
+
+Simple alert boxes using semantic colors:
+
+```html
+<div class="alert success">Success message</div>
+<div class="alert warning">Warning message</div>
+<div class="alert error">Error message</div>
+<div class="alert info">Info message</div>
+```
+
+## Definition Lists
+
+```html
+<dl>
+  <dt>Term</dt>
+  <dd>Definition of the term</dd>
+</dl>
+```
+
+## Keyboard Input
+
+Styled keyboard shortcuts with key-cap appearance:
+
+```html
+Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.
+```
+
+## Text Changes
+
+Track insertions and deletions with semantic styling:
+
+```html
+<del>removed text</del>
+<ins>inserted text</ins>
+```
+
+Colors adapt for dark themes automatically.
+
+## Progress & Meter
+
+Native HTML progress and meter elements:
+
+```html
+<progress value="70" max="100">70%</progress>
+
+<meter value="0.6" min="0" max="1" low="0.25" high="0.75" optimum="0.5">60%</meter>
+```
+
+Meter uses semantic colors: green (optimum), yellow (suboptimum), red (low/high range).
+
+## Dialog
+
+Native HTML dialog element with styled backdrop:
+
+```html
+<dialog id="my-dialog">
+  <h3>Dialog Title</h3>
+  <p>Content...</p>
+  <form method="dialog">
+    <button>Close</button>
+  </form>
+</dialog>
+
+<button onclick="document.getElementById('my-dialog').showModal()">Open</button>
+```
+
+## Other Text Elements
+
+These HTML elements are styled automatically:
+
+- `<abbr title="...">` - Abbreviation with help cursor
+- `<var>` - Variables (italic, bold)
+- `<q>` - Inline quotation (italic)
+- `<cite>` - Citation (italic)
+- `<samp>` - Sample output (monospace)
+- `<address>` - Contact information (italic)
+
 ## General Features
 
 - Smooth scrolling enabled (`scroll-behavior: smooth`)
 - Visited links use the same color as unvisited links
+- Text selection uses `--primary` color
+- Print styles hide navigation, buttons, and alerts; show URLs after links
 - CSS variables for easy customization
 - No external font dependencies
 

@@ -44,8 +44,15 @@
 				<option value="">Light</option>
 				<option value="dark">Dark</option>
 				<option value="ambleside">Ambleside</option>
+				<option value="patagonia">Patagonia</option>
+				<option value="svalbard">Svalbard</option>
 				<option value="uinta">Uinta</option>
 				<option value="hokkaido">Hokkaido</option>
+				<option value="sahel">Sahel</option>
+				<option value="kerala">Kerala</option>
+				<option value="yucatan">Yucatan</option>
+				<option value="aegean">Aegean</option>
+				<option value="guilin">Guilin</option>
 			</select>
 		</label>
 		<label>Variant:
@@ -78,7 +85,10 @@
 		<a href="#typography">Typography</a> ·
 		<a href="#colors">Colors</a> ·
 		<a href="#media">Media</a> ·
-		<a href="#forms">Forms</a>
+		<a href="#forms">Forms</a> ·
+		<a href="#tables">Tables</a> ·
+		<a href="#alerts">Alerts</a> ·
+		<a href="#more-elements">More</a>
 	</nav>
 
 	<hr>
@@ -103,9 +113,16 @@
 
 &lt;!-- Themes --&gt;
 &lt;html class="dark"&gt;           dark theme
-&lt;html class="ambleside"&gt;      Ambleside dark theme
-&lt;html class="uinta"&gt;          Uinta light theme
-&lt;html class="hokkaido"&gt;       Hokkaido light theme
+&lt;html class="ambleside"&gt;      Ambleside (dark, England)
+&lt;html class="patagonia"&gt;      Patagonia (dark, Argentina)
+&lt;html class="svalbard"&gt;       Svalbard (dark, Arctic)
+&lt;html class="uinta"&gt;          Uinta (light, Utah)
+&lt;html class="hokkaido"&gt;       Hokkaido (light, Japan)
+&lt;html class="sahel"&gt;          Sahel (light, West Africa)
+&lt;html class="kerala"&gt;         Kerala (light, India)
+&lt;html class="yucatan"&gt;        Yucatan (light, Mexico)
+&lt;html class="aegean"&gt;         Aegean (light, Greece)
+&lt;html class="guilin"&gt;         Guilin (light, China)
 
 &lt;!-- Modifiers --&gt;
 &lt;html class="warm"&gt;           warm color temperature
@@ -525,6 +542,154 @@
 		<button type="button" class="secondary">Secondary</button>
 		<button type="button" class="outline">Outline</button>
 	</div>
+
+	<hr>
+
+	<h2 id="tables">Tables</h2>
+
+	<p>Tables are styled automatically. Add <code>.striped</code> for alternating row colors.</p>
+
+	<table class="striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>--primary</td>
+				<td>Color</td>
+				<td>Primary action color for buttons and links</td>
+			</tr>
+			<tr>
+				<td>--secondary</td>
+				<td>Color</td>
+				<td>Secondary action color</td>
+			</tr>
+			<tr>
+				<td>--bg1</td>
+				<td>Color</td>
+				<td>Surface background for inputs and cards</td>
+			</tr>
+			<tr>
+				<td>--border</td>
+				<td>Color</td>
+				<td>Border color for dividers and inputs</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<hr>
+
+	<h2 id="details">Details/Summary</h2>
+
+	<p>Native HTML accordion elements, styled automatically.</p>
+
+	<details>
+		<summary>What is Styler?</summary>
+		<p>Styler is a simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes. It's designed for simplicity and elegance.</p>
+	</details>
+
+	<details>
+		<summary>How do I customize colors?</summary>
+		<p>Override CSS variables in your own stylesheet:</p>
+		<pre><code>:root {
+  --primary: hsl(263 90% 66%);
+  --bg1: hsl(0 0% 94%);
+}</code></pre>
+	</details>
+
+	<details>
+		<summary>Does it work on mobile?</summary>
+		<p>Yes! Styler uses a mobile-first approach with responsive layouts that adapt gracefully to any screen size.</p>
+	</details>
+
+	<hr>
+
+	<h2 id="alerts">Alerts</h2>
+
+	<p>Simple alert boxes using semantic colors.</p>
+
+	<div class="alert success">
+		<strong>Success!</strong> Your changes have been saved.
+	</div>
+
+	<div class="alert warning">
+		<strong>Warning:</strong> This action cannot be undone.
+	</div>
+
+	<div class="alert error">
+		<strong>Error:</strong> Something went wrong. Please try again.
+	</div>
+
+	<div class="alert info">
+		<strong>Info:</strong> A new version is available.
+	</div>
+
+	<hr>
+
+	<h2 id="more-elements">More Elements</h2>
+
+	<h3>Definition Lists</h3>
+
+	<dl>
+		<dt>CSS</dt>
+		<dd>Cascading Style Sheets - a style sheet language used for describing the presentation of a document.</dd>
+		<dt>HTML</dt>
+		<dd>HyperText Markup Language - the standard markup language for documents designed to be displayed in a web browser.</dd>
+		<dt>JavaScript</dt>
+		<dd>A programming language that enables interactive web pages and is an essential part of web applications.</dd>
+	</dl>
+
+	<h3>Keyboard Shortcuts</h3>
+
+	<p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save, or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> to open the command palette.</p>
+
+	<h3>Text Changes</h3>
+
+	<p>This feature was <del>removed</del> <ins>updated</ins> in the latest version.</p>
+
+	<h3>Progress & Meter</h3>
+
+	<label for="progress-demo">Download progress:</label>
+	<progress id="progress-demo" value="70" max="100">70%</progress>
+
+	<label for="meter-demo">Disk usage (optimum: 25-75%):</label>
+	<meter id="meter-demo" value="0.6" min="0" max="1" low="0.25" high="0.75" optimum="0.5">60%</meter>
+
+	<h3>Other Text Elements</h3>
+
+	<p><abbr title="HyperText Markup Language">HTML</abbr> is the foundation of the web.</p>
+
+	<p>The variable <var>x</var> represents the user's input.</p>
+
+	<p>She said, <q>This is an inline quotation.</q></p>
+
+	<p>As noted in <cite>The Elements of Style</cite>, clarity is paramount.</p>
+
+	<p>The command returned: <samp>Hello, World!</samp></p>
+
+	<address>
+		Contact us at:<br>
+		123 Main Street<br>
+		Anytown, USA 12345
+	</address>
+
+	<h3>Dialog</h3>
+
+	<p>Native HTML dialog element with styled backdrop.</p>
+
+	<button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+
+	<dialog id="demo-dialog">
+		<h3 style="margin-top: 0;">Dialog Title</h3>
+		<p>This is a native HTML dialog element. It includes a semi-transparent backdrop and is styled consistently with the rest of Styler.</p>
+		<form method="dialog">
+			<button type="submit">Close</button>
+		</form>
+	</dialog>
 
 	<div class="section-nav text-center mt2"><a href="#top">Top</a> · <a href="#how-to-use">How to Use</a> · <a href="#typography">Typography</a> · <a href="#colors">Colors</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
 

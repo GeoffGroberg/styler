@@ -164,3 +164,92 @@ mark {
 	background-color: #854d0e;
 	color: #fef9c3;
 }
+
+/* Definition lists */
+dl {
+	margin-bottom: 1rem;
+}
+
+dt {
+	font-weight: 600;
+	margin-top: 1rem;
+}
+
+dt:first-child {
+	margin-top: 0;
+}
+
+dd {
+	margin-left: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+/* Keyboard input */
+kbd {
+	font-family: var(--font-mono);
+	font-size: 0.85em;
+	background-color: var(--bg2);
+	padding: 0.15em 0.4em;
+	border-radius: var(--box-radius);
+	border: 1px solid var(--border);
+	box-shadow: 0 1px 0 var(--border);
+}
+
+/* Sample output */
+samp {
+	font-family: var(--font-mono);
+	font-size: 0.9em;
+	background-color: var(--bg1);
+	padding: 0.1em 0.3em;
+	border-radius: var(--box-radius);
+}
+
+/* Variable */
+var {
+	font-style: italic;
+	font-weight: 600;
+}
+
+/* Inline quotation */
+q {
+	font-style: italic;
+}
+
+/* Citation */
+cite {
+	font-style: italic;
+}
+
+/* Abbreviation - enhanced tooltip */
+abbr[title] {
+	cursor: help;
+}
+
+/* Inserted/deleted text */
+ins {
+	background-color: hsl(142 40% 90%);
+	text-decoration: none;
+	padding: 0.1em 0.2em;
+	border-radius: 0.1em;
+}
+
+del {
+	background-color: hsl(0 40% 90%);
+	text-decoration: line-through;
+	padding: 0.1em 0.2em;
+	border-radius: 0.1em;
+}
+
+.dark ins {
+	background-color: hsl(142 30% 20%);
+}
+
+.dark del {
+	background-color: hsl(0 30% 20%);
+}
+
+/* Address */
+address {
+	font-style: italic;
+	margin-bottom: 1rem;
+}

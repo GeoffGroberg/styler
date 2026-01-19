@@ -235,6 +235,327 @@
 	--border-focus: var(--primary);
 }
 
+/* Sahel - light theme inspired by golden hour where savanna meets desert in West Africa */
+.sahel {
+	--body: hsl(230 25% 18%);
+	--body1: hsl(225 15% 30%);
+	--body2: hsl(220 10% 45%);
+
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(38 35% 96%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(35 30% 90%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(230 45% 35%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(230 42% 45%);
+
+	--secondary-base: hsl(25 30% 45%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(25 28% 55%);
+
+	--success-base: hsl(85 30% 38%);
+	--success: var(--success-base);
+	--success-hover: hsl(85 28% 48%);
+
+	--warning-base: hsl(42 65% 45%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(42 60% 55%);
+
+	--error-base: hsl(15 45% 45%);
+	--error: var(--error-base);
+	--error-hover: hsl(15 42% 55%);
+
+	--info-base: hsl(200 35% 45%);
+	--info: var(--info-base);
+	--info-hover: hsl(200 32% 55%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(270 25% 40%);
+
+	--border: hsl(35 18% 78%);
+	--border-focus: var(--primary);
+}
+
+/* Patagonia - dark theme inspired by twilight over glacial lakes in southern South America */
+.patagonia {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--body: hsl(200 15% 90%);
+	--body1: hsl(200 10% 75%);
+	--body2: hsl(200 8% 55%);
+
+	--bg-base: hsl(215 30% 10%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(215 25% 18%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(215 20% 25%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(185 45% 50%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(185 50% 62%);
+
+	--secondary-base: hsl(220 15% 55%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(220 18% 68%);
+
+	--success-base: hsl(150 30% 45%);
+	--success: var(--success-base);
+	--success-hover: hsl(150 32% 58%);
+
+	--warning-base: hsl(35 50% 55%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(35 52% 65%);
+
+	--error-base: hsl(0 40% 55%);
+	--error: var(--error-base);
+	--error-hover: hsl(0 42% 65%);
+
+	--info-base: hsl(200 50% 60%);
+	--info: var(--info-base);
+	--info-hover: hsl(200 55% 72%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(270 30% 65%);
+
+	--border: hsl(215 18% 30%);
+	--border-focus: var(--primary);
+}
+
+/* Kerala - light theme inspired by a monsoon morning on the backwaters of South India */
+.kerala {
+	--body: hsl(150 20% 15%);
+	--body1: hsl(150 12% 28%);
+	--body2: hsl(150 8% 42%);
+
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(120 15% 96%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(120 12% 91%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(155 40% 30%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(155 38% 40%);
+
+	--secondary-base: hsl(15 25% 45%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(15 23% 55%);
+
+	--success-base: hsl(140 45% 35%);
+	--success: var(--success-base);
+	--success-hover: hsl(140 42% 45%);
+
+	--warning-base: hsl(45 70% 42%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(45 65% 52%);
+
+	--error-base: hsl(5 50% 45%);
+	--error: var(--error-base);
+	--error-hover: hsl(5 47% 55%);
+
+	--info-base: hsl(195 45% 42%);
+	--info: var(--info-base);
+	--info-hover: hsl(195 42% 52%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(280 20% 40%);
+
+	--border: hsl(130 10% 80%);
+	--border-focus: var(--primary);
+}
+
+/* Svalbard - dark theme inspired by polar night with aurora in the High Arctic */
+.svalbard {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--body: hsl(200 20% 92%);
+	--body1: hsl(200 15% 78%);
+	--body2: hsl(200 10% 58%);
+
+	--bg-base: hsl(220 35% 8%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(220 28% 14%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(218 22% 20%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(145 55% 48%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(145 58% 60%);
+
+	--secondary-base: hsl(200 30% 55%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(200 35% 68%);
+
+	--success-base: hsl(145 50% 45%);
+	--success: var(--success-base);
+	--success-hover: hsl(145 52% 58%);
+
+	--warning-base: hsl(45 50% 55%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(45 52% 65%);
+
+	--error-base: hsl(355 45% 55%);
+	--error: var(--error-base);
+	--error-hover: hsl(355 48% 65%);
+
+	--info-base: hsl(280 40% 60%);
+	--info: var(--info-base);
+	--info-hover: hsl(280 45% 72%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(280 35% 65%);
+
+	--border: hsl(220 20% 25%);
+	--border-focus: var(--primary);
+}
+
+/* Yucatan - light theme inspired by morning light on Mayan ruins and cenotes */
+.yucatan {
+	--body: hsl(180 15% 18%);
+	--body1: hsl(180 10% 30%);
+	--body2: hsl(180 6% 45%);
+
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(45 30% 96%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(42 25% 91%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(182 50% 35%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(182 47% 45%);
+
+	--secondary-base: hsl(200 12% 45%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(200 12% 55%);
+
+	--success-base: hsl(140 40% 35%);
+	--success: var(--success-base);
+	--success-hover: hsl(140 37% 45%);
+
+	--warning-base: hsl(42 70% 45%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(42 65% 55%);
+
+	--error-base: hsl(15 50% 45%);
+	--error: var(--error-base);
+	--error-hover: hsl(15 47% 55%);
+
+	--info-base: hsl(190 50% 42%);
+	--info: var(--info-base);
+	--info-hover: hsl(190 47% 52%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(265 25% 45%);
+
+	--border: hsl(45 15% 80%);
+	--border-focus: var(--primary);
+}
+
+/* Aegean - light theme inspired by whitewashed villages against the Mediterranean */
+.aegean {
+	--body: hsl(215 35% 18%);
+	--body1: hsl(215 20% 30%);
+	--body2: hsl(215 12% 45%);
+
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(210 30% 97%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(210 25% 92%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(212 55% 40%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(212 52% 50%);
+
+	--secondary-base: hsl(25 20% 50%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(25 18% 60%);
+
+	--success-base: hsl(90 30% 38%);
+	--success: var(--success-base);
+	--success-hover: hsl(90 28% 48%);
+
+	--warning-base: hsl(30 60% 50%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(30 55% 60%);
+
+	--error-base: hsl(5 45% 48%);
+	--error: var(--error-base);
+	--error-hover: hsl(5 42% 58%);
+
+	--info-base: hsl(195 50% 45%);
+	--info: var(--info-base);
+	--info-hover: hsl(195 47% 55%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(270 25% 45%);
+
+	--border: hsl(210 18% 82%);
+	--border-focus: var(--primary);
+}
+
+/* Guilin - light theme inspired by misty karst mountains and the Li River in southern China */
+.guilin {
+	--body: hsl(160 15% 15%);
+	--body1: hsl(160 10% 28%);
+	--body2: hsl(160 6% 42%);
+
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(150 12% 96%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(150 10% 90%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(162 35% 38%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(162 32% 48%);
+
+	--secondary-base: hsl(40 15% 48%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(40 13% 58%);
+
+	--success-base: hsl(140 35% 38%);
+	--success: var(--success-base);
+	--success-hover: hsl(140 32% 48%);
+
+	--warning-base: hsl(45 50% 48%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(45 47% 58%);
+
+	--error-base: hsl(5 55% 48%);
+	--error: var(--error-base);
+	--error-hover: hsl(5 52% 58%);
+
+	--info-base: hsl(185 40% 42%);
+	--info: var(--info-base);
+	--info-hover: hsl(185 37% 52%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(275 20% 42%);
+
+	--border: hsl(150 8% 80%);
+	--border-focus: var(--primary);
+}
+
 /* Warm color temperature - does NOT affect --bg */
 .warm {
 	--body1: hsl(30 6% 25%);
@@ -249,7 +570,9 @@
 }
 
 .warm.dark, .dark.warm, .dark .warm,
-.warm.ambleside, .ambleside.warm, .ambleside .warm {
+.warm.ambleside, .ambleside.warm, .ambleside .warm,
+.warm.patagonia, .patagonia.warm, .patagonia .warm,
+.warm.svalbard, .svalbard.warm, .svalbard .warm {
 	--body1: hsl(35 6% 83%);
 	--body2: hsl(30 5% 64%);
 
@@ -275,7 +598,9 @@
 }
 
 .cool.dark, .dark.cool, .dark .cool,
-.cool.ambleside, .ambleside.cool, .ambleside .cool {
+.cool.ambleside, .ambleside.cool, .ambleside .cool,
+.cool.patagonia, .patagonia.cool, .patagonia .cool,
+.cool.svalbard, .svalbard.cool, .svalbard .cool {
 	--body1: hsl(216 12% 84%);
 	--body2: hsl(218 11% 65%);
 
@@ -343,7 +668,7 @@
 
 /* System preference auto-detection */
 @media (prefers-color-scheme: dark) {
-	:root:not(.light):not(.uinta):not(.hokkaido) {
+	:root:not(.light):not(.uinta):not(.hokkaido):not(.sahel):not(.kerala):not(.yucatan):not(.aegean):not(.guilin) {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 
@@ -408,4 +733,10 @@ a:hover {
 
 a:visited {
 	color: var(--link);
+}
+
+/* Text selection */
+::selection {
+	background-color: var(--primary);
+	color: white;
 }

@@ -265,3 +265,62 @@ input[type="color"] {
 	cursor: pointer;
 	margin-bottom: 1rem;
 }
+
+/* Progress bar */
+progress {
+	width: 100%;
+	max-width: 20rem;
+	height: 0.75rem;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: var(--box-radius);
+	background-color: var(--bg2);
+	accent-color: var(--primary);
+}
+
+progress::-webkit-progress-bar {
+	background-color: var(--bg2);
+	border-radius: var(--box-radius);
+}
+
+progress::-webkit-progress-value {
+	background-color: var(--primary);
+	border-radius: var(--box-radius);
+}
+
+progress::-moz-progress-bar {
+	background-color: var(--primary);
+	border-radius: var(--box-radius);
+}
+
+/* Meter */
+meter {
+	width: 100%;
+	max-width: 20rem;
+	height: 0.75rem;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: var(--box-radius);
+	background-color: var(--bg2);
+}
+
+meter::-webkit-meter-bar {
+	background-color: var(--bg2);
+	border-radius: var(--box-radius);
+	border: none;
+}
+
+meter::-webkit-meter-optimum-value {
+	background-color: var(--success);
+	border-radius: var(--box-radius);
+}
+
+meter::-webkit-meter-suboptimum-value {
+	background-color: var(--warning);
+	border-radius: var(--box-radius);
+}
+
+meter::-webkit-meter-even-less-good-value {
+	background-color: var(--error);
+	border-radius: var(--box-radius);
+}

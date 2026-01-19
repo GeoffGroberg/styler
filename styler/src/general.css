@@ -285,3 +285,141 @@ figure.inline:last-child {
 .r3 { border-radius: 1rem; }
 .r4 { border-radius: 2rem; }
 .r100 { border-radius: 100%; }
+
+/* Tables */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 1.5rem;
+}
+
+th, td {
+	padding: 0.75rem;
+	text-align: left;
+	border-bottom: 1px solid var(--border);
+}
+
+th {
+	font-weight: 600;
+	background-color: var(--bg2);
+}
+
+/* Striped tables - opt-in */
+table.striped tr:nth-child(even) {
+	background-color: var(--bg1);
+}
+
+/* Details/Summary (native accordion) */
+details {
+	border: 1px solid var(--border);
+	border-radius: var(--box-radius);
+	margin-bottom: 1rem;
+}
+
+details[open] {
+	padding-bottom: 1rem;
+}
+
+summary {
+	padding: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: var(--bg1);
+	border-radius: var(--box-radius);
+}
+
+details[open] summary {
+	border-bottom: 1px solid var(--border);
+	border-radius: var(--box-radius) var(--box-radius) 0 0;
+	margin-bottom: 1rem;
+}
+
+details > *:not(summary) {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+details > *:last-child {
+	margin-bottom: 0;
+}
+
+/* Alert/Notice boxes */
+.alert {
+	padding: 1rem 1.25rem;
+	border-radius: var(--box-radius);
+	margin-bottom: 1rem;
+	border-left: 4px solid;
+}
+
+.alert.success {
+	background-color: var(--bg1);
+	border-left-color: var(--success);
+	color: var(--success);
+}
+
+.alert.warning {
+	background-color: var(--bg1);
+	border-left-color: var(--warning);
+	color: var(--warning);
+}
+
+.alert.error {
+	background-color: var(--bg1);
+	border-left-color: var(--error);
+	color: var(--error);
+}
+
+.alert.info {
+	background-color: var(--bg1);
+	border-left-color: var(--info);
+	color: var(--info);
+}
+
+/* Dialog (native modal) */
+dialog {
+	border: 1px solid var(--border);
+	border-radius: var(--box-radius);
+	padding: 1.5rem;
+	max-width: min(90vw, 30rem);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Print styles */
+@media print {
+	body {
+		background: white;
+		color: black;
+		font-size: 12pt;
+	}
+
+	.readable {
+		max-width: 100%;
+		padding: 0;
+	}
+
+	a {
+		color: black;
+		text-decoration: underline;
+	}
+
+	a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 0.8em;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		page-break-after: avoid;
+	}
+
+	img, figure, table, pre, blockquote {
+		page-break-inside: avoid;
+	}
+
+	nav, .theme-selector, .section-nav, button, .alert {
+		display: none;
+	}
+}
