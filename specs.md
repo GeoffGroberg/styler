@@ -163,7 +163,7 @@ styler/
 - Inspired by twilight over sunflower fields, Ukrainian flag colors
 - Deep Ukrainian blue background
 - Blue-tinted surfaces
-- Vibrant sunflower yellow primary
+- Sunflower yellow primary
 - Warm gold secondary, wheat-toned text
 
 ### Modifiers
@@ -492,7 +492,7 @@ These HTML elements are styled automatically:
 - Text selection uses `--primary` color
 - Print styles hide navigation, buttons, and alerts; show URLs after links
 - CSS variables for easy customization
-- No external font dependencies
+- No external dependencies by default (Google Fonts optional via extrafonts.css)
 
 ## Customizing
 
