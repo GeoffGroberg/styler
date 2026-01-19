@@ -20,9 +20,9 @@
 	- a section at the top has very short "How to use" documentation that focusses on examples rather than explaining
 	- the remaining page is quite comprehensive and shows code examples, especially for more complicated elements like form elements.
 	- set class="serif" on html element
-- styler/styler.css: the master stylesheet
+- styler/base.css: the master stylesheet
 	- a single minified file (~17KB) that combines all source files
-	- user includes this file in their head tag, followed by their own custom stylesheet for overrides
+	- user includes this file in their head tag, followed by their own styles.css for overrides
 - styler/src/: source files for reference/development
 	- reset.css, colors.css, general.css, typography.css, forms.css, media.css
 	- readable, commented versions of all styles
@@ -77,7 +77,7 @@
 		- sat: more vivid/vibrant colors
 		- desat: muted/subdued colors
 		- can be combined with other modifiers: "dark sat", "warm desat", etc.
-	- users can override any color var in their custom stylesheet, e.g.: :root { --bg: #f5f5f0; }
+	- users can override any color var in their styles.css, e.g.: :root { --bg: #f5f5f0; }
 - forms:
 	- anything related specifically to form elements go in forms.css
 	- this file is particulary important due the inconstent nature of rendering form elements across platforms. We want the style defined here to make things consistent, clean, simple, sensible
