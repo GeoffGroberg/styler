@@ -1,111 +1,307 @@
-# Styler, a simple, clean css styler
+# Styler
 
-- create styler.css, a file that is included in a webpage to apply reasonable styles to html tags without the need of too many custom classes
-- there will be some utility classes created, but the goals are:
-	- tags are styled without the need of specifying a class
-	- simplicity in html code - allows for simple, clean, lean html
-	- consistency across platforms (including/especially mobile)
-	- elegance in the visual style
-- there will be some supporting files created and used by the master styler.css file
-- all files will be in a /styler dir except demo.html
+A simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes.
 
-- avoid javascript - we will try to do everything with css (demo.html has minimal JS for theme switching)
-- everything is done with a mobile first approach, preferring fewer media queries. (But some media queries are ok if necessary.)
+## Goals
 
-## files/organization
-- all measurements of any css element (width, margins, padding, etc) are done in rem units, relative to the base font-size specified in typography. (base font-size can of course be overridden in the base styler,css file)
-- demo.html:
-	- single demo page with dropdown selectors to switch between themes (light/dark/warm/cool) and fonts (serif/sans)
-	- nav links at the top to jump to sections: How to Use, Typography, Colors, Media, Forms, Customizing
-	- section navigation bars (styled with bg2 background) at the top of each section
-	- comprehensive examples including form elements, media, and color modifiers
-- styler/base.css: the master stylesheet
-	- a single minified file (~17KB) that combines all source files
-	- user includes this file in their head tag, followed by their own styles.css for overrides
-- styler/src/: source files for reference/development
-	- reset.css, colors.css, general.css, typography.css, forms.css, media.css
-	- readable, commented versions of all styles
-- reset:
-	- a very simple but thorough reset/normalize.css file to form a consistent baseline
-	- should be based on an existing 3rd party tried and true reset/normalize file
-- general:
-	- a place for general design things
-	- defines css vars that other imported css files can use such as:
-		- --box-radius: how much rounding on box like elements like fieldsets, form inputs, and more
-		- --button-radius: by default is the same as --box-radius, but used specifically for buttons like submit, cancel, ...
-		- other vars that can change the overall style
-	- alignment utility classes:
-		- center, left, right are classes that can be applied to most tags and will yield sensible results. For example, a figure tag with class "center" will display as a block level element in the center.
-		- left and right use float, allowing text to wrap around the element
-		- images that are left or right aligned should take up a maximum of 50% of the readable max-width. But as a window gets smaller, these elements should responsively shift to become full width and centered.
-		- images always keep their aspect ratio - that is they don't distort in x or y
-		- class "square" forces a square aspect ratio (probably crops), but doesn't distort
-		- by default images have a slight rounding to their corners
-		- column layouts: div.cols2, div.cols3, div.cols4 use flexbox to display direct block-level children (figures, divs, etc.) in columns
-		- column layouts collapse to single column at 50rem (same breakpoint as left/right floats) - no intermediate states
-		- column layouts can be placed outside .readable for full-width layouts; use padding utilities (e.g., px1) to prevent content from touching screen edges
-		- figure.inline class allows small figures to flow left to right inline
-	- utility class like:
-		- m1, mx1, my1, mt1, mb1, ml1, mr1:
-			- specify margins
-			- m1 = 1 rem margin on all sides
-			- mx = similar but only for margin left and right
-			- my = similar but only for margin top and bottom
-			- mt1, mb1, ml1, mr1 = margin top, bottom, left, right
-			- numbers can range from 1 to 10
-			- similar utility classes for padding: p1, px1, ...
-			- r0 - r4 specifies corner rounding for box things, like images:
-				- r0 = no rounding
-				- r1 - r4 = progressively more rounding
-				- r100 = 100% rounding/circular
-- colors:
-	- colors.css offers a consistent pallet of colors using css vars
-	- this file also allows us to create different color themes, like "light" and "dark"
-	- --body: the color of foreground things
-	- --bg: the color of the background - pure white (#ffffff) in light mode, pure black (#000000) in dark mode
-	- 3 variations for each --body and --bg: --body, --body1, --body2. same for --bg
-	- vars for --primary, --secondary, --error, and more. Kind of similar to bootstrap
-	- links, buttons, and other interactive kinds of things get hover colors based on the their initial color var, but a little brighter
-	- by default, links don't contain underline text-decoration
-	- visited links use the same color as unvisited links for visual consistency
-	- class "warm" and "cool" are modifier classes that can be added in addition to "light" "dark" or other theme classes
-	- modifier classes (warm, cool, dark, light, sat, desat) can be applied to any container (html, body, or divs) for section-specific styling
-	- modifier classes work when nested inside a parent with .dark class (e.g., html.dark with child div.warm)
-	- warm/cool only affect --bg1, --bg2, --body1, --body2, --border - NOT --bg (which stays pure white or black)
-	- without "warm" or "cool" colors are neutral, that is grays have no saturation
-	- class "sat" and "desat" are modifier classes that adjust saturation of semantic colors (primary, secondary, success, warning, error, info)
-		- sat: more vivid/vibrant colors
-		- desat: muted/subdued colors
-		- can be combined with other modifiers: "dark sat", "warm desat", etc.
-	- users can override any color var in their styles.css, e.g.: :root { --bg: #f5f5f0; }
-- forms:
-	- anything related specifically to form elements go in forms.css
-	- this file is particulary important due the inconstent nature of rendering form elements across platforms. We want the style defined here to make things consistent, clean, simple, sensible
-	- most form inputs will be block level display elements or similar, that is they will display on a new line
-	- sometimes we may override element with class "inline"
-	- widths of some elements should be appropriate for their purpose
-		- password, name, email, country, state, phone, dates, and more... these are the kinds of things that should be limited to a reasonable size, but it depends on the element - 25 chars is much too wide for a phone, country, date, or time input. But those are just examples. Use sensible widths for various field types.
-		- there are other fields, like textareas, that make sense to be full width. Make sensible decisions about form element widths.
-- typography:
-	- sets a base font-size of 20px.
-	- provides an excellent font stack, focussing on fonts that are consistent across platforms and natively available, without needed to download or import additional fonts
-	- serif font stack prioritizes 'Times New Roman', Times, then Cambria, Georgia
-	- sans font stack uses system fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, etc.
-	- provides classes for typography: "serif" and "sans"
-		- by default, a sans design is used (if no class is specified)
-		- the serif class should have most text, including headings, use a serif font. Main body text should also be serif.
-		- the sans class explicitly sets sans-serif (useful for switching back within a serif context)
-		- these classes can be applied to html, body, or any container for section-specific typography
-	- provides a div.readable class:
-		- max-width: 50rem;
-			- note this property should have a simple example of how the user can override, and when overridden other things should continue to work. (pay attention the media queries and anything that would be influenced a different max-width for .readable)
-		- margin: 0 auto; so text stays in the center of the window
-		- padding: 0 10%, so readable text never goes all the way to edge
-		- uses box-sizing: content-box so percentage padding doesn't reduce content width
-		- typically, readable blocks of text (div.readable) are enclosed enclosed in a regular div tag (which will by default span the full width with not margin or padding)
-		- new sections of a page would typically include an outer div (no class, spans entire width) with the inner div.readable. This is so the outer div can have a background that spans the full width. Demonstrated in demo.html.
-	- h1, h2, ... basic text typography styles are defined in this file
-- media:
-	- contains styles for images, videos, and other media
-	- the "styler" approach to css assumes that the html is structured so that img tags are wrapped in figure tags with optional support for captions
-	- videos and mp3s and more can be embedded. (see how I style videos on another website I created, lincolnhighwaymusic.com to an example, but you if you have a better idea that's okay too. Remember simplicity is key.)
+- Tags are styled without needing to specify classes
+- Simplicity in HTML code - allows for simple, clean, lean markup
+- Consistency across platforms (including/especially mobile)
+- Elegance in the visual style
+- Avoid JavaScript - everything is done with CSS (demo.html has minimal JS for theme switching only)
+- Mobile-first approach, preferring fewer media queries
+
+## Files
+
+```
+demo.html              - Interactive demo with theme/font switchers
+styler/
+  base.css             - Single minified stylesheet (~18KB)
+  src/
+    reset.css          - CSS reset/normalize baseline
+    colors.css         - Color themes and modifiers
+    general.css        - Design variables and utility classes
+    typography.css     - Fonts and text styling
+    forms.css          - Form element styling
+    media.css          - Images, video, audio styling
+```
+
+### Usage
+
+```html
+<link rel="stylesheet" href="styler/base.css">
+<link rel="stylesheet" href="styles.css">  <!-- your overrides -->
+
+<html class="dark">           <!-- theme -->
+<html class="serif">          <!-- font -->
+<html class="dark warm serif"> <!-- combine classes -->
+```
+
+## Color Themes
+
+### Base Themes
+
+**Light** (default)
+- Pure white background (#ffffff)
+- Neutral grays for text and surfaces
+- Blue primary color
+
+**Dark**
+- Pure black background (#000000)
+- Light grays for text
+- Brighter blue primary for contrast
+
+### Place-Inspired Themes
+
+**Ambleside** (dark)
+- Inspired by a winter evening in England's Lake District
+- Deep slate blue-gray background (#181c24)
+- Lighter slate surfaces
+- Misty lake blue primary
+- Warm amber warning tones (like cottage lights through windows)
+
+**Uinta** (light)
+- Inspired by a crisp morning in Utah's Uinta mountains
+- Pure white background
+- Cool green-tinted surfaces
+- Pine forest green primary
+- Golden morning light accents
+
+**Hokkaido** (light)
+- Inspired by where the mountain meets the sea in Hokkaido, Japan
+- Pure white background
+- Sea mist blue-gray surfaces
+- Ocean blue primary
+- Coastal and volcanic earth tone accents
+
+### Modifiers
+
+Modifiers can be combined with any theme:
+
+**warm** - Adds warm tints to bg1, bg2, body1, body2, and borders
+**cool** - Adds cool tints to the same properties
+**sat** - Increases saturation of backgrounds and semantic colors by 40% (uses relative color syntax)
+**desat** - Decreases saturation of backgrounds and semantic colors by 40% (uses relative color syntax)
+
+```html
+<html class="dark warm">      <!-- dark theme with warm tints -->
+<html class="uinta sat">      <!-- uinta theme with vivid colors -->
+<div class="cool">            <!-- cool section within any theme -->
+```
+
+#### Creating Dark Themes
+
+When creating a new dark theme, include these requirements:
+
+**1. Font smoothing for macOS** - Prevents fonts from appearing too thick on dark backgrounds:
+```css
+.mytheme {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+**2. Warm/cool modifier support** - Use compound selectors for all class orderings and nesting:
+```css
+.warm.dark, .dark.warm, .dark .warm,
+.warm.mytheme, .mytheme.warm, .mytheme .warm {
+  /* dark warm overrides */
+}
+
+.cool.dark, .dark.cool, .dark .cool,
+.cool.mytheme, .mytheme.cool, .mytheme .cool {
+  /* dark cool overrides */
+}
+```
+
+This ensures modifiers work whether classes are on the same element (`class="dark warm"` or `class="warm dark"`) or nested (`<html class="dark"><div class="warm">`).
+
+#### Creating Modifiers That Override Backgrounds
+
+When creating a modifier that changes background colors (like `warm` or `cool`), you must set both the `-base` variable and the display variable. This ensures `sat` and `desat` work correctly with your modifier:
+
+```css
+/* WRONG - sat/desat will ignore these overrides */
+.mymodifier {
+  --bg1: hsl(40 33% 97%);
+  --bg2: hsl(35 25% 92%);
+}
+
+/* CORRECT - sat/desat will use these values */
+.mymodifier {
+  --bg1-base: hsl(40 33% 97%);
+  --bg1: var(--bg1-base);
+  --bg2-base: hsl(35 25% 92%);
+  --bg2: var(--bg2-base);
+}
+```
+
+Without setting the `-base` variables, `sat` and `desat` will read the original theme's base values instead of your modifier's overrides, causing unexpected color combinations.
+
+## Color Variables
+
+All colors use HSL format for consistency and to enable dynamic saturation modification.
+
+```css
+--body, --body1, --body2      /* Text colors (dark to light) */
+--bg, --bg1, --bg2            /* Background colors (light to dark) */
+--primary, --primary-hover    /* Primary action color */
+--secondary, --secondary-hover
+--success, --warning, --error, --info
+--border, --border-focus
+--link, --link-hover
+```
+
+### HSL and Base Variables
+
+Backgrounds and semantic colors use a two-tier variable system that enables the `sat` and `desat` modifiers to work with any theme:
+
+```css
+/* Themes define -base variables for backgrounds */
+--bg-base: hsl(0 0% 100%);
+--bg: var(--bg-base);
+--bg1-base: hsl(0 0% 96%);
+--bg1: var(--bg1-base);
+
+/* ...and for semantic colors */
+--primary-base: hsl(217 84% 53%);
+--primary: var(--primary-base);
+--primary-hover: hsl(217 91% 60%);
+
+/* sat/desat use CSS relative color syntax to modify the base */
+.sat {
+  --bg: hsl(from var(--bg-base) h calc(s * 1.4) l);
+  --bg1: hsl(from var(--bg1-base) h calc(s * 1.4) l);
+  --primary: hsl(from var(--primary-base) h calc(s * 1.4) l);
+}
+```
+
+This allows `sat` and `desat` to dynamically adjust any theme's colors rather than replacing them with fixed values. For themes with neutral backgrounds (0% saturation), the background won't visibly change. For place-inspired themes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
+
+**Browser support:** CSS relative color syntax requires Chrome 119+, Safari 16.4+, or Firefox 128+.
+
+## Typography
+
+- Base font-size: 20px
+- Sans-serif by default (system fonts)
+- All measurements in rem units
+
+### Font Classes
+
+**System Fonts** (no external dependencies)
+- `sans` - System sans-serif (default)
+- `serif` - System serif (Times New Roman, Georgia)
+
+**Google Fonts** (loaded via @import, ~200-400KB total)
+- `source-sans` - Source Sans 3 (weights: 400, 600 + italics)
+- `pt-serif` - PT Serif (weights: 400, 700 + italics)
+- `cormorant` - Cormorant Garamond (weights: 400, 600 + italics)
+
+```html
+<html class="serif">          <!-- system serif -->
+<html class="source-sans">    <!-- Source Sans 3 -->
+<html class="pt-serif">       <!-- PT Serif -->
+<html class="cormorant">      <!-- Cormorant Garamond -->
+<div class="serif">           <!-- section-specific -->
+```
+
+### Readable Container
+
+```css
+.readable {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+```
+
+For full-width backgrounds with readable content:
+
+```html
+<div style="background: var(--bg1);">
+  <div class="readable">
+    Content here...
+  </div>
+</div>
+```
+
+## Layout
+
+### Alignment
+
+```html
+<figure class="center">       <!-- centered block -->
+<figure class="left">         <!-- float left, text wraps -->
+<figure class="right">        <!-- float right, text wraps -->
+<figure class="square">       <!-- square aspect ratio crop -->
+```
+
+### Columns
+
+```html
+<div class="cols2">           <!-- 2-column layout -->
+<div class="cols3">           <!-- 3-column layout -->
+<div class="cols4">           <!-- 4-column layout -->
+```
+
+Columns collapse to single column at 50rem breakpoint.
+
+### Utility Classes
+
+**Margins** (1-10 rem): `m1`, `mx1`, `my1`, `mt1`, `mb1`, `ml1`, `mr1`
+**Padding** (1-10 rem): `p1`, `px1`, `py1`, `pt1`, `pb1`, `pl1`, `pr1`
+**Border radius**: `r0` (none), `r1`-`r4` (progressive), `r100` (circular)
+**Text alignment**: `text-center`, `text-left`, `text-right`
+
+## Forms
+
+- Form inputs use `--bg1` background for subtle contrast
+- Inputs are block-level by default
+- Sensible max-widths for different input types (phone, date, email, etc.)
+- Use `class="inline"` for inline inputs
+
+```html
+<button>Primary</button>
+<button class="secondary">Secondary</button>
+<button class="outline">Outline</button>
+```
+
+## Media
+
+- Images should be wrapped in `<figure>` tags
+- Figcaptions are styled automatically
+- Images have slight border-radius by default
+- Responsive video container for iframes
+
+```html
+<figure>
+  <img src="photo.jpg" alt="...">
+  <figcaption>Caption text</figcaption>
+</figure>
+
+<div class="video-container">
+  <iframe src="youtube..."></iframe>
+</div>
+```
+
+## General Features
+
+- Smooth scrolling enabled (`scroll-behavior: smooth`)
+- Visited links use the same color as unvisited links
+- CSS variables for easy customization
+- No external font dependencies
+
+## Customizing
+
+Override any CSS variable in your own stylesheet. Use HSL format for colors:
+
+```css
+:root {
+  --readable-width: 40rem;
+  --base-font-size: 18px;
+  --box-radius: 0.5rem;
+  --primary-base: hsl(263 90% 66%);
+  --primary: var(--primary-base);
+  --primary-hover: hsl(263 90% 75%);
+}
+```

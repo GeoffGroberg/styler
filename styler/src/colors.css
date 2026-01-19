@@ -1,218 +1,392 @@
 /* colors.css - Color palette with theme support */
+/* All colors use HSL format. Backgrounds and semantic colors use -base vars for sat/desat modifiers. */
 
 :root {
 	/* Light theme (default) - pure white bg, neutral grays */
-	--body: #1a1a1a;
-	--body1: #333333;
-	--body2: #666666;
+	--body: hsl(0 0% 10%);
+	--body1: hsl(0 0% 20%);
+	--body2: hsl(0 0% 40%);
 
-	--bg: #ffffff;
-	--bg1: #f5f5f5;
-	--bg2: #e8e8e8;
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(0 0% 96%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(0 0% 91%);
+	--bg2: var(--bg2-base);
 
-	/* Semantic colors */
-	--primary: #2563eb;
-	--primary-hover: #3b82f6;
-	--secondary: #64748b;
-	--secondary-hover: #7c8ca0;
+	/* Semantic colors - base values for sat/desat modification */
+	--primary-base: hsl(217 84% 53%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(217 91% 60%);
 
-	--success: #16a34a;
-	--success-hover: #22c55e;
-	--warning: #ca8a04;
-	--warning-hover: #eab308;
-	--error: #dc2626;
-	--error-hover: #ef4444;
-	--info: #0891b2;
-	--info-hover: #22d3ee;
+	--secondary-base: hsl(215 16% 47%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(215 17% 56%);
+
+	--success-base: hsl(142 72% 36%);
+	--success: var(--success-base);
+	--success-hover: hsl(142 71% 45%);
+
+	--warning-base: hsl(45 95% 40%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(48 94% 47%);
+
+	--error-base: hsl(0 84% 50%);
+	--error: var(--error-base);
+	--error-hover: hsl(0 84% 60%);
+
+	--info-base: hsl(189 94% 37%);
+	--info: var(--info-base);
+	--info-hover: hsl(189 86% 53%);
 
 	/* Links */
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: #7c3aed;
+	--link-visited: hsl(263 84% 58%);
 
 	/* Borders */
-	--border: #d1d5db;
+	--border: hsl(216 12% 84%);
 	--border-focus: var(--primary);
 }
 
 /* Dark theme - pure black bg */
 .dark {
-	--body: #f5f5f5;
-	--body1: #d4d4d4;
-	--body2: #a3a3a3;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-	--bg: #000000;
-	--bg1: #252525;
-	--bg2: #404040;
+	--body: hsl(0 0% 96%);
+	--body1: hsl(0 0% 83%);
+	--body2: hsl(0 0% 64%);
 
-	--primary: #3b82f6;
-	--primary-hover: #60a5fa;
-	--secondary: #94a3b8;
-	--secondary-hover: #cbd5e1;
+	--bg-base: hsl(0 0% 0%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(0 0% 15%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(0 0% 25%);
+	--bg2: var(--bg2-base);
 
-	--success: #22c55e;
-	--success-hover: #4ade80;
-	--warning: #eab308;
-	--warning-hover: #facc15;
-	--error: #ef4444;
-	--error-hover: #f87171;
-	--info: #22d3ee;
-	--info-hover: #67e8f9;
+	--primary-base: hsl(217 91% 60%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(213 94% 68%);
+
+	--secondary-base: hsl(215 21% 65%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(214 32% 84%);
+
+	--success-base: hsl(142 71% 45%);
+	--success: var(--success-base);
+	--success-hover: hsl(142 69% 58%);
+
+	--warning-base: hsl(48 94% 47%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(48 96% 53%);
+
+	--error-base: hsl(0 84% 60%);
+	--error: var(--error-base);
+	--error-hover: hsl(0 91% 71%);
+
+	--info-base: hsl(189 86% 53%);
+	--info: var(--info-base);
+	--info-hover: hsl(189 94% 69%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: #a78bfa;
+	--link-visited: hsl(258 90% 76%);
 
-	--border: #444444;
+	--border: hsl(0 0% 27%);
+	--border-focus: var(--primary);
+}
+
+/* Ambleside - dark theme inspired by a winter evening in England's Lake District */
+.ambleside {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--body: hsl(36 14% 89%);
+	--body1: hsl(34 10% 75%);
+	--body2: hsl(36 7% 51%);
+
+	--bg-base: hsl(220 24% 12%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(220 18% 21%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(218 15% 27%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(200 30% 60%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(200 35% 71%);
+
+	--secondary-base: hsl(30 10% 50%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(30 10% 63%);
+
+	--success-base: hsl(130 15% 49%);
+	--success: var(--success-base);
+	--success-hover: hsl(130 17% 60%);
+
+	--warning-base: hsl(42 48% 58%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(42 50% 68%);
+
+	--error-base: hsl(0 27% 56%);
+	--error: var(--error-base);
+	--error-hover: hsl(0 30% 66%);
+
+	--info-base: hsl(197 30% 58%);
+	--info: var(--info-base);
+	--info-hover: hsl(197 35% 68%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(280 15% 61%);
+
+	--border: hsl(218 14% 30%);
+	--border-focus: var(--primary);
+}
+
+/* Uinta - light theme inspired by a crisp morning in Utah's Uinta mountains */
+.uinta {
+	--body: hsl(105 10% 17%);
+	--body1: hsl(105 8% 30%);
+	--body2: hsl(105 5% 41%);
+
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(135 10% 96%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(135 10% 90%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(160 32% 33%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(160 30% 41%);
+
+	--secondary-base: hsl(200 12% 42%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(200 12% 52%);
+
+	--success-base: hsl(140 37% 36%);
+	--success: var(--success-base);
+	--success-hover: hsl(140 34% 47%);
+
+	--warning-base: hsl(42 60% 45%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(42 58% 55%);
+
+	--error-base: hsl(6 37% 45%);
+	--error: var(--error-base);
+	--error-hover: hsl(6 35% 55%);
+
+	--info-base: hsl(200 43% 44%);
+	--info: var(--info-base);
+	--info-hover: hsl(200 40% 53%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(260 12% 46%);
+
+	--border: hsl(140 8% 80%);
+	--border-focus: var(--primary);
+}
+
+/* Hokkaido - light theme inspired by where mountain meets sea in Hokkaido, Japan */
+.hokkaido {
+	--body: hsl(205 25% 15%);
+	--body1: hsl(202 16% 27%);
+	--body2: hsl(202 10% 40%);
+
+	--bg-base: hsl(0 0% 100%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(204 33% 97%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(203 28% 91%);
+	--bg2: var(--bg2-base);
+
+	--primary-base: hsl(212 47% 42%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(210 44% 50%);
+
+	--secondary-base: hsl(200 12% 46%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(200 12% 55%);
+
+	--success-base: hsl(160 33% 38%);
+	--success: var(--success-base);
+	--success-hover: hsl(160 30% 47%);
+
+	--warning-base: hsl(36 40% 47%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(36 38% 56%);
+
+	--error-base: hsl(0 33% 44%);
+	--error: var(--error-base);
+	--error-hover: hsl(0 30% 53%);
+
+	--info-base: hsl(195 47% 47%);
+	--info: var(--info-base);
+	--info-hover: hsl(195 44% 56%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(260 18% 46%);
+
+	--border: hsl(203 18% 81%);
 	--border-focus: var(--primary);
 }
 
 /* Warm color temperature - does NOT affect --bg */
 .warm {
-	--body1: #44403c;
-	--body2: #78716c;
+	--body1: hsl(30 6% 25%);
+	--body2: hsl(25 6% 45%);
 
-	--bg1: #faf8f5;
-	--bg2: #f0ebe4;
+	--bg1-base: hsl(40 33% 97%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(35 25% 92%);
+	--bg2: var(--bg2-base);
 
-	--border: #d6d3d1;
+	--border: hsl(30 8% 82%);
 }
 
-.warm.dark, .dark.warm, .dark .warm {
-	--body1: #d6d3d0;
-	--body2: #a8a29e;
+.warm.dark, .dark.warm, .dark .warm,
+.warm.ambleside, .ambleside.warm, .ambleside .warm {
+	--body1: hsl(35 6% 83%);
+	--body2: hsl(30 5% 64%);
 
-	--bg1: #282420;
-	--bg2: #3d3632;
+	--bg1-base: hsl(25 12% 14%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(22 10% 22%);
+	--bg2: var(--bg2-base);
 
-	--border: #57534e;
+	--border: hsl(25 6% 32%);
 }
 
 /* Cool color temperature - does NOT affect --bg */
 .cool {
-	--body1: #374151;
-	--body2: #6b7280;
+	--body1: hsl(218 17% 27%);
+	--body2: hsl(217 10% 46%);
 
-	--bg1: #f8fafc;
-	--bg2: #e2e8f0;
+	--bg1-base: hsl(210 40% 98%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(214 32% 91%);
+	--bg2: var(--bg2-base);
 
-	--border: #cbd5e1;
+	--border: hsl(214 20% 84%);
 }
 
-.cool.dark, .dark.cool, .dark .cool {
-	--body1: #d1d5db;
-	--body2: #9ca3af;
+.cool.dark, .dark.cool, .dark .cool,
+.cool.ambleside, .ambleside.cool, .ambleside .cool {
+	--body1: hsl(216 12% 84%);
+	--body2: hsl(218 11% 65%);
 
-	--bg1: #1a2332;
-	--bg2: #2d3a4d;
+	--bg1-base: hsl(218 30% 15%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(216 23% 24%);
+	--bg2: var(--bg2-base);
 
-	--border: #4b5563;
+	--border: hsl(217 14% 35%);
 }
 
-/* Saturated - more vivid colors */
+/* Saturated - more vivid colors using relative color syntax */
 .sat {
-	--primary: #0050ff;
-	--primary-hover: #2970ff;
-	--secondary: #4a6896;
-	--secondary-hover: #6585b5;
+	--bg: hsl(from var(--bg-base) h calc(s * 1.4) l);
+	--bg1: hsl(from var(--bg1-base) h calc(s * 1.4) l);
+	--bg2: hsl(from var(--bg2-base) h calc(s * 1.4) l);
 
-	--success: #00b040;
-	--success-hover: #00d850;
-	--warning: #e89500;
-	--warning-hover: #ffab00;
-	--error: #e81515;
-	--error-hover: #ff3838;
-	--info: #00a0cc;
-	--info-hover: #00ccff;
+	--primary: hsl(from var(--primary-base) h calc(s * 1.4) l);
+	--primary-hover: hsl(from var(--primary-base) h calc(s * 1.4) calc(l * 1.15));
 
-	--link-visited: #7020e8;
+	--secondary: hsl(from var(--secondary-base) h calc(s * 1.4) l);
+	--secondary-hover: hsl(from var(--secondary-base) h calc(s * 1.4) calc(l * 1.15));
+
+	--success: hsl(from var(--success-base) h calc(s * 1.4) l);
+	--success-hover: hsl(from var(--success-base) h calc(s * 1.4) calc(l * 1.15));
+
+	--warning: hsl(from var(--warning-base) h calc(s * 1.4) l);
+	--warning-hover: hsl(from var(--warning-base) h calc(s * 1.4) calc(l * 1.15));
+
+	--error: hsl(from var(--error-base) h calc(s * 1.4) l);
+	--error-hover: hsl(from var(--error-base) h calc(s * 1.4) calc(l * 1.15));
+
+	--info: hsl(from var(--info-base) h calc(s * 1.4) l);
+	--info-hover: hsl(from var(--info-base) h calc(s * 1.4) calc(l * 1.15));
+
+	--link-visited: hsl(from var(--link-visited) h calc(s * 1.4) l);
 }
 
-.sat.dark, .dark.sat, .dark .sat {
-	--primary: #4090ff;
-	--primary-hover: #65a8ff;
-	--secondary: #88a8cc;
-	--secondary-hover: #a8c5e5;
-
-	--success: #25e865;
-	--success-hover: #55ff8a;
-	--warning: #ffbb15;
-	--warning-hover: #ffcc40;
-	--error: #ff4848;
-	--error-hover: #ff7070;
-	--info: #30e5ff;
-	--info-hover: #70f0ff;
-
-	--link-visited: #b070ff;
-}
-
-/* Desaturated - muted colors */
+/* Desaturated - muted colors using relative color syntax */
 .desat {
-	--primary: #5878a8;
-	--primary-hover: #7090b8;
-	--secondary: #6a7078;
-	--secondary-hover: #808890;
+	--bg: hsl(from var(--bg-base) h calc(s * 0.6) l);
+	--bg1: hsl(from var(--bg1-base) h calc(s * 0.6) l);
+	--bg2: hsl(from var(--bg2-base) h calc(s * 0.6) l);
 
-	--success: #509068;
-	--success-hover: #68a880;
-	--warning: #a89058;
-	--warning-hover: #c0a870;
-	--error: #a85858;
-	--error-hover: #c07070;
-	--info: #508898;
-	--info-hover: #68a0b0;
+	--primary: hsl(from var(--primary-base) h calc(s * 0.6) l);
+	--primary-hover: hsl(from var(--primary-base) h calc(s * 0.6) calc(l * 1.15));
 
-	--link-visited: #806898;
-}
+	--secondary: hsl(from var(--secondary-base) h calc(s * 0.6) l);
+	--secondary-hover: hsl(from var(--secondary-base) h calc(s * 0.6) calc(l * 1.15));
 
-.desat.dark, .dark.desat, .dark .desat {
-	--primary: #7898b8;
-	--primary-hover: #90a8c8;
-	--secondary: #909498;
-	--secondary-hover: #a8acb0;
+	--success: hsl(from var(--success-base) h calc(s * 0.6) l);
+	--success-hover: hsl(from var(--success-base) h calc(s * 0.6) calc(l * 1.15));
 
-	--success: #70a888;
-	--success-hover: #88c0a0;
-	--warning: #c0a878;
-	--warning-hover: #d0b888;
-	--error: #c08080;
-	--error-hover: #d09898;
-	--info: #70a0b0;
-	--info-hover: #88b8c8;
+	--warning: hsl(from var(--warning-base) h calc(s * 0.6) l);
+	--warning-hover: hsl(from var(--warning-base) h calc(s * 0.6) calc(l * 1.15));
 
-	--link-visited: #a090b8;
+	--error: hsl(from var(--error-base) h calc(s * 0.6) l);
+	--error-hover: hsl(from var(--error-base) h calc(s * 0.6) calc(l * 1.15));
+
+	--info: hsl(from var(--info-base) h calc(s * 0.6) l);
+	--info-hover: hsl(from var(--info-base) h calc(s * 0.6) calc(l * 1.15));
+
+	--link-visited: hsl(from var(--link-visited) h calc(s * 0.6) l);
 }
 
 /* System preference auto-detection */
 @media (prefers-color-scheme: dark) {
-	:root:not(.light) {
-		--body: #f5f5f5;
-		--body1: #d4d4d4;
-		--body2: #a3a3a3;
+	:root:not(.light):not(.uinta):not(.hokkaido) {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 
-		--bg: #000000;
-		--bg1: #252525;
-		--bg2: #404040;
+		--body: hsl(0 0% 96%);
+		--body1: hsl(0 0% 83%);
+		--body2: hsl(0 0% 64%);
 
-		--primary: #3b82f6;
-		--primary-hover: #60a5fa;
-		--secondary: #94a3b8;
-		--secondary-hover: #cbd5e1;
+		--bg-base: hsl(0 0% 0%);
+		--bg: var(--bg-base);
+		--bg1-base: hsl(0 0% 15%);
+		--bg1: var(--bg1-base);
+		--bg2-base: hsl(0 0% 25%);
+		--bg2: var(--bg2-base);
 
-		--success: #22c55e;
-		--success-hover: #4ade80;
-		--warning: #eab308;
-		--warning-hover: #facc15;
-		--error: #ef4444;
-		--error-hover: #f87171;
-		--info: #22d3ee;
-		--info-hover: #67e8f9;
+		--primary-base: hsl(217 91% 60%);
+		--primary: var(--primary-base);
+		--primary-hover: hsl(213 94% 68%);
+
+		--secondary-base: hsl(215 21% 65%);
+		--secondary: var(--secondary-base);
+		--secondary-hover: hsl(214 32% 84%);
+
+		--success-base: hsl(142 71% 45%);
+		--success: var(--success-base);
+		--success-hover: hsl(142 69% 58%);
+
+		--warning-base: hsl(48 94% 47%);
+		--warning: var(--warning-base);
+		--warning-hover: hsl(48 96% 53%);
+
+		--error-base: hsl(0 84% 60%);
+		--error: var(--error-base);
+		--error-hover: hsl(0 91% 71%);
+
+		--info-base: hsl(189 86% 53%);
+		--info: var(--info-base);
+		--info-hover: hsl(189 94% 69%);
 
 		--link: var(--primary);
 		--link-hover: var(--primary-hover);
-		--link-visited: #a78bfa;
+		--link-visited: hsl(258 90% 76%);
 
-		--border: #444444;
+		--border: hsl(0 0% 27%);
 		--border-focus: var(--primary);
 	}
 }

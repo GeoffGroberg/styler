@@ -43,6 +43,9 @@
 			<select id="theme-select">
 				<option value="">Light</option>
 				<option value="dark">Dark</option>
+				<option value="ambleside">Ambleside</option>
+				<option value="uinta">Uinta</option>
+				<option value="hokkaido">Hokkaido</option>
 			</select>
 		</label>
 		<label>Variant:
@@ -52,10 +55,20 @@
 				<option value="cool">Cool</option>
 			</select>
 		</label>
+		<label>Saturation:
+			<select id="saturation-select">
+				<option value="">Normal</option>
+				<option value="sat">Saturated</option>
+				<option value="desat">Desaturated</option>
+			</select>
+		</label>
 		<label>Font:
 			<select id="font-select">
-				<option value="serif">Serif</option>
-				<option value="" selected>Sans-serif</option>
+				<option value="" selected>System Sans</option>
+				<option value="serif">System Serif</option>
+				<option value="source-sans">Source Sans</option>
+				<option value="pt-serif">PT Serif</option>
+				<option value="cormorant">Cormorant Garamond</option>
 			</select>
 		</label>
 	</div>
@@ -81,17 +94,33 @@
   &lt;p&gt;Content...&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
-	<pre><code>&lt;html class="sans"&gt;        sans-serif typography (default)
-&lt;html class="serif"&gt;       serif typography
-&lt;html class="dark"&gt;        dark theme
-&lt;html class="warm"&gt;        warm color temperature
-&lt;html class="cool"&gt;        cool color temperature
-&lt;html class="sat"&gt;         saturated/vivid colors
-&lt;html class="desat"&gt;       desaturated/muted colors
-&lt;html class="dark warm"&gt;   combine modifiers
+	<pre><code>&lt;!-- Fonts --&gt;
+&lt;html class="sans"&gt;           system sans-serif (default)
+&lt;html class="serif"&gt;          system serif
+&lt;html class="source-sans"&gt;    Source Sans 3
+&lt;html class="pt-serif"&gt;       PT Serif
+&lt;html class="cormorant"&gt;      Cormorant Garamond
 
-&lt;div class="serif"&gt;        modifiers work on any container
-&lt;div class="warm"&gt;         for section-specific styling
+&lt;!-- Themes --&gt;
+&lt;html class="dark"&gt;           dark theme
+&lt;html class="ambleside"&gt;      Ambleside dark theme
+&lt;html class="uinta"&gt;          Uinta light theme
+&lt;html class="hokkaido"&gt;       Hokkaido light theme
+
+&lt;!-- Modifiers --&gt;
+&lt;html class="warm"&gt;           warm color temperature
+&lt;html class="cool"&gt;           cool color temperature
+&lt;html class="sat"&gt;            saturated/vivid colors
+&lt;html class="desat"&gt;          desaturated/muted colors
+
+&lt;!-- Combine classes --&gt;
+&lt;html class="dark warm cormorant"&gt;
+&lt;html class="ambleside pt-serif"&gt;
+&lt;html class="uinta source-sans sat"&gt;
+
+&lt;!-- Section-specific styling --&gt;
+&lt;div class="serif"&gt;           serif just for this section
+&lt;div class="warm"&gt;            warm tint just for this section
 
 &lt;figure class="left"&gt;      float left, text wraps
 &lt;figure class="right"&gt;     float right, text wraps
@@ -161,10 +190,45 @@
 		<li>Third item</li>
 	</ol>
 
+	<h3>Poetry</h3>
+	<pre><code>&lt;div class="poetry text-center"&gt;
+  Your verse here...
+&lt;/div&gt;</code></pre>
+
+	<div class="poetry text-center">
+		<p>
+			"Quit! Give up! You're beaten!"<br>
+			They shout at me and plead.<br>
+			"There's just too much against you now.<br>
+			This time you can't succeed."
+		</p>
+		<p>
+			And as I start to hang my head<br>
+			In front of failure's face,<br>
+			My downward fall is broken by<br>
+			The memory of a race.
+		</p>
+		<p style="font-style: normal; font-size: 0.9rem; margin-top: 1rem;">— D.H. Groberg, <a href="https://theracepoem.com">The Race</a></p>
+	</div>
+
+	<h3>Alignment</h3>
+	<pre><code>&lt;p class="text-center"&gt;Centered text&lt;/p&gt;
+&lt;p class="text-right"&gt;Right-aligned text&lt;/p&gt;
+&lt;figure class="center"&gt;...&lt;/figure&gt;   block element
+&lt;figure class="left"&gt;...&lt;/figure&gt;    float left
+&lt;figure class="right"&gt;...&lt;/figure&gt;   float right</code></pre>
+
+	<p class="text-center">This paragraph is centered with <code>.text-center</code></p>
+	<p class="text-right">This paragraph is right-aligned with <code>.text-right</code></p>
+
+	<div class="text-center">
+		<button>Centered button</button>
+	</div>
+
 </div>
 
 <!-- Full-width section with background -->
-<div style="background-color: var(--bg1);" class="py2">
+<div style="background-color: var(--bg1);" class="mt2 py2">
 	<div class="readable">
 		<h2>Full-Width Section</h2>
 		<pre><code>&lt;div style="background: var(--bg1);"&gt;
@@ -471,10 +535,11 @@
 	var html = document.documentElement;
 	var themeSelect = document.getElementById('theme-select');
 	var variantSelect = document.getElementById('variant-select');
+	var saturationSelect = document.getElementById('saturation-select');
 	var fontSelect = document.getElementById('font-select');
 
 	function updateClasses() {
-		var classes = [themeSelect.value, variantSelect.value, fontSelect.value]
+		var classes = [themeSelect.value, variantSelect.value, saturationSelect.value, fontSelect.value]
 			.filter(function(c) { return c; })
 			.join(' ');
 		html.className = classes;
@@ -482,6 +547,7 @@
 
 	themeSelect.addEventListener('change', updateClasses);
 	variantSelect.addEventListener('change', updateClasses);
+	saturationSelect.addEventListener('change', updateClasses);
 	fontSelect.addEventListener('change', updateClasses);
 })();
 </script>

@@ -1,9 +1,18 @@
 /* typography.css - Font stacks, text styles, and readable containers */
 
+/* Google Fonts - minimal set: regular, semi-bold, and italics */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
 :root {
+	/* System font stacks */
 	--font-serif: 'Times New Roman', Times, Cambria, Georgia, serif;
 	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 	--font-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+
+	/* Google font stacks */
+	--font-source-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--font-pt-serif: 'PT Serif', Georgia, 'Times New Roman', serif;
+	--font-cormorant: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
 
 	--base-font-size: 20px;
 	--line-height: 1.6;
@@ -24,28 +33,12 @@ body {
 }
 
 /* Typography modifiers - can be applied to html, body, or any container */
-.sans {
-	font-family: var(--font-sans);
-}
-
-.sans h1, .sans h2, .sans h3, .sans h4, .sans h5, .sans h6 {
-	font-family: var(--font-sans);
-}
-
-.serif,
-.serif body {
-	font-family: var(--font-serif);
-}
-
-.serif h1, .serif h2, .serif h3, .serif h4, .serif h5, .serif h6 {
-	font-family: var(--font-serif);
-}
-
-/* Fine print and small text uses sans in serif mode */
-.serif small,
-.serif .fine-print {
-	font-family: var(--font-sans);
-}
+/* Note: body has font-family set directly, so we must also target body when class is on html */
+.sans, .sans body { font-family: var(--font-sans); }
+.serif, .serif body { font-family: var(--font-serif); }
+.source-sans, .source-sans body { font-family: var(--font-source-sans); }
+.pt-serif, .pt-serif body { font-family: var(--font-pt-serif); }
+.cormorant, .cormorant body { font-family: var(--font-cormorant); }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -145,10 +138,12 @@ pre code {
 	}
 }
 
-/* Poetry and verse - use serif even in sans mode */
+/* Poetry and verse - elegant typography for poetry */
 .poetry, .verse {
-	font-family: var(--font-serif);
+	font-family: var(--font-cormorant);
 	font-style: italic;
+	font-size: 1.25rem;
+	line-height: 1.9;
 }
 
 /* Horizontal rule */
