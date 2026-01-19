@@ -241,12 +241,14 @@ del {
 }
 
 .dark ins,
-.ambleside ins, .patagonia ins, .svalbard ins {
+.ambleside ins, .patagonia ins, .svalbard ins,
+.cusco ins, .lviv ins {
 	background-color: hsl(142 45% 25%);
 }
 
 .dark del,
-.ambleside del, .patagonia del, .svalbard del {
+.ambleside del, .patagonia del, .svalbard del,
+.cusco del, .lviv del {
 	background-color: hsl(0 45% 28%);
 }
 

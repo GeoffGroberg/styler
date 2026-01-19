@@ -110,11 +110,11 @@ styler/
 - Jungle green and golden sun accents
 
 **Aegean** (light)
-- Inspired by whitewashed villages along the Greek coast
+- Inspired by the cerulean waters of the Greek islands
 - Pure white background
-- Cool blue-tinted surfaces
-- Mediterranean blue primary
-- Terracotta and olive accents
+- Cyan-tinted surfaces like sea mist
+- Cerulean blue-green primary
+- Warm terracotta accents
 
 **Guilin** (light)
 - Inspired by misty karst mountains along China's Li River
@@ -123,12 +123,12 @@ styler/
 - Bamboo forest green primary
 - Soft ink wash and morning mist tones
 
-**Cusco** (light)
-- Inspired by colorful Andean textile weaves and highland cliffs of Peru
-- Pure white background
-- Warm earth/stone surfaces
-- Deep magenta/violet primary (from traditional woven patterns)
-- Mountain earth and alpaca wool accents
+**Cusco** (dark)
+- Inspired by Machu Picchu's stone cliffs and misty peaks
+- Cool gray-stone background
+- Subtle blue-gray surfaces like weathered granite
+- Verdant teal-green primary (mountain vegetation)
+- Warm earth secondary
 
 **Cappadocia** (light)
 - Inspired by rose valleys and fairy chimneys at dawn in Turkey
@@ -151,12 +151,12 @@ styler/
 - Deep red-ochre primary
 - Outback and morning light accents
 
-**Lviv** (light)
-- Inspired by sunflower fields, wheat, and the Ukrainian flag
-- Pure white background
-- Warm cream/light gold surfaces
-- Golden sunflower yellow primary
-- Ukrainian blue secondary, folk art accents
+**Lviv** (dark)
+- Inspired by twilight over sunflower fields, Ukrainian flag colors
+- Deep Ukrainian blue background
+- Blue-tinted surfaces
+- Vibrant sunflower yellow primary
+- Warm gold secondary, wheat-toned text
 
 ### Modifiers
 

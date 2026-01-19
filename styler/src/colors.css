@@ -121,21 +121,21 @@
 	--secondary: var(--secondary-base);
 	--secondary-hover: hsl(30 10% 63%);
 
-	--success-base: hsl(130 15% 49%);
+	--success-base: hsl(130 20% 58%);
 	--success: var(--success-base);
-	--success-hover: hsl(130 17% 60%);
+	--success-hover: hsl(130 22% 68%);
 
-	--warning-base: hsl(42 48% 58%);
+	--warning-base: hsl(42 52% 65%);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 50% 68%);
+	--warning-hover: hsl(42 55% 74%);
 
-	--error-base: hsl(0 27% 56%);
+	--error-base: hsl(0 35% 64%);
 	--error: var(--error-base);
-	--error-hover: hsl(0 30% 66%);
+	--error-hover: hsl(0 38% 73%);
 
-	--info-base: hsl(197 30% 58%);
+	--info-base: hsl(197 38% 65%);
 	--info: var(--info-base);
-	--info-hover: hsl(197 35% 68%);
+	--info-hover: hsl(197 42% 74%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
@@ -466,48 +466,48 @@
 	--border-focus: var(--primary);
 }
 
-/* Aegean - light theme inspired by whitewashed villages against the Mediterranean */
+/* Aegean - light theme inspired by the cerulean waters of the Greek islands */
 .aegean {
-	--body: hsl(215 35% 18%);
-	--body1: hsl(215 20% 30%);
-	--body2: hsl(215 12% 45%);
+	--body: hsl(195 30% 18%);
+	--body1: hsl(195 18% 30%);
+	--body2: hsl(195 10% 45%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(210 20% 97%);
+	--bg1-base: hsl(192 25% 97%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(210 15% 91%);
+	--bg2-base: hsl(192 20% 91%);
 	--bg2: var(--bg2-base);
 
-	--primary-base: hsl(212 55% 40%);
+	--primary-base: hsl(193 65% 38%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(212 52% 50%);
+	--primary-hover: hsl(193 60% 48%);
 
 	--secondary-base: hsl(25 20% 50%);
 	--secondary: var(--secondary-base);
 	--secondary-hover: hsl(25 18% 60%);
 
-	--success-base: hsl(90 30% 38%);
+	--success-base: hsl(160 35% 38%);
 	--success: var(--success-base);
-	--success-hover: hsl(90 28% 48%);
+	--success-hover: hsl(160 32% 48%);
 
-	--warning-base: hsl(30 60% 50%);
+	--warning-base: hsl(35 55% 50%);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(30 55% 60%);
+	--warning-hover: hsl(35 50% 60%);
 
 	--error-base: hsl(5 45% 48%);
 	--error: var(--error-base);
 	--error-hover: hsl(5 42% 58%);
 
-	--info-base: hsl(195 50% 45%);
+	--info-base: hsl(200 55% 45%);
 	--info: var(--info-base);
-	--info-hover: hsl(195 47% 55%);
+	--info-hover: hsl(200 50% 55%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
 	--link-visited: hsl(270 25% 45%);
 
-	--border: hsl(210 18% 82%);
+	--border: hsl(192 15% 82%);
 	--border-focus: var(--primary);
 }
 
@@ -556,48 +556,51 @@
 	--border-focus: var(--primary);
 }
 
-/* Cusco - light theme inspired by Andean textiles and highland cliffs of Peru */
+/* Cusco - dark theme inspired by Machu Picchu's stone cliffs and misty peaks */
 .cusco {
-	--body: hsl(330 15% 18%);
-	--body1: hsl(330 10% 30%);
-	--body2: hsl(330 6% 45%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-	--bg-base: hsl(0 0% 100%);
+	--body: hsl(200 12% 88%);
+	--body1: hsl(195 10% 68%);
+	--body2: hsl(190 8% 50%);
+
+	--bg-base: hsl(200 8% 10%);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(30 18% 96%);
+	--bg1-base: hsl(195 6% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(30 15% 91%);
+	--bg2-base: hsl(190 5% 20%);
 	--bg2: var(--bg2-base);
 
-	--primary-base: hsl(328 50% 40%);
+	--primary-base: hsl(185 50% 42%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(328 45% 50%);
+	--primary-hover: hsl(185 45% 52%);
 
-	--secondary-base: hsl(25 25% 45%);
+	--secondary-base: hsl(35 40% 50%);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(25 22% 55%);
+	--secondary-hover: hsl(35 35% 60%);
 
-	--success-base: hsl(145 35% 38%);
+	--success-base: hsl(145 40% 42%);
 	--success: var(--success-base);
-	--success-hover: hsl(145 32% 48%);
+	--success-hover: hsl(145 36% 52%);
 
-	--warning-base: hsl(40 65% 45%);
+	--warning-base: hsl(40 55% 50%);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(40 60% 55%);
+	--warning-hover: hsl(40 50% 60%);
 
-	--error-base: hsl(0 55% 45%);
+	--error-base: hsl(0 50% 52%);
 	--error: var(--error-base);
-	--error-hover: hsl(0 50% 55%);
+	--error-hover: hsl(0 45% 62%);
 
-	--info-base: hsl(200 40% 45%);
+	--info-base: hsl(200 45% 50%);
 	--info: var(--info-base);
-	--info-hover: hsl(200 37% 55%);
+	--info-hover: hsl(200 40% 60%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(280 25% 40%);
+	--link-visited: hsl(195 35% 55%);
 
-	--border: hsl(25 12% 80%);
+	--border: hsl(195 8% 25%);
 	--border-focus: var(--primary);
 }
 
@@ -736,48 +739,51 @@
 	--border-focus: var(--primary);
 }
 
-/* Lviv - light theme inspired by sunflower fields, wheat, and the Ukrainian flag */
+/* Lviv - dark theme inspired by twilight over sunflower fields, Ukrainian flag colors */
 .lviv {
-	--body: hsl(45 15% 18%);
-	--body1: hsl(45 10% 30%);
-	--body2: hsl(45 6% 45%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-	--bg-base: hsl(0 0% 100%);
+	--body: hsl(50 25% 92%);
+	--body1: hsl(50 18% 78%);
+	--body2: hsl(50 12% 58%);
+
+	--bg-base: hsl(216 50% 10%);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(48 25% 97%);
+	--bg1-base: hsl(216 40% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(48 20% 92%);
+	--bg2-base: hsl(216 35% 20%);
 	--bg2: var(--bg2-base);
 
-	--primary-base: hsl(45 85% 38%);
+	--primary-base: hsl(48 80% 52%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(45 80% 45%);
+	--primary-hover: hsl(48 75% 62%);
 
-	--secondary-base: hsl(210 45% 45%);
+	--secondary-base: hsl(42 60% 50%);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(210 42% 55%);
+	--secondary-hover: hsl(42 55% 60%);
 
-	--success-base: hsl(140 35% 38%);
+	--success-base: hsl(145 50% 45%);
 	--success: var(--success-base);
-	--success-hover: hsl(140 32% 48%);
+	--success-hover: hsl(145 45% 55%);
 
-	--warning-base: hsl(30 65% 45%);
+	--warning-base: hsl(38 65% 52%);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(30 60% 55%);
+	--warning-hover: hsl(38 60% 62%);
 
-	--error-base: hsl(355 55% 48%);
+	--error-base: hsl(0 65% 55%);
 	--error: var(--error-base);
-	--error-hover: hsl(355 50% 58%);
+	--error-hover: hsl(0 60% 65%);
 
-	--info-base: hsl(210 50% 45%);
+	--info-base: hsl(200 60% 55%);
 	--info: var(--info-base);
-	--info-hover: hsl(210 47% 55%);
+	--info-hover: hsl(200 55% 65%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(30 40% 38%);
+	--link-visited: hsl(40 50% 60%);
 
-	--border: hsl(45 15% 80%);
+	--border: hsl(216 30% 28%);
 	--border-focus: var(--primary);
 }
 
@@ -797,7 +803,9 @@
 .warm.dark, .dark.warm, .dark .warm,
 .warm.ambleside, .ambleside.warm, .ambleside .warm,
 .warm.patagonia, .patagonia.warm, .patagonia .warm,
-.warm.svalbard, .svalbard.warm, .svalbard .warm {
+.warm.svalbard, .svalbard.warm, .svalbard .warm,
+.warm.cusco, .cusco.warm, .cusco .warm,
+.warm.lviv, .lviv.warm, .lviv .warm {
 	--body1: hsl(35 6% 83%);
 	--body2: hsl(30 5% 64%);
 
@@ -825,7 +833,9 @@
 .cool.dark, .dark.cool, .dark .cool,
 .cool.ambleside, .ambleside.cool, .ambleside .cool,
 .cool.patagonia, .patagonia.cool, .patagonia .cool,
-.cool.svalbard, .svalbard.cool, .svalbard .cool {
+.cool.svalbard, .svalbard.cool, .svalbard .cool,
+.cool.cusco, .cusco.cool, .cusco .cool,
+.cool.lviv, .lviv.cool, .lviv .cool {
 	--body1: hsl(216 12% 84%);
 	--body2: hsl(218 11% 65%);
 
@@ -893,7 +903,7 @@
 
 /* System preference auto-detection */
 @media (prefers-color-scheme: dark) {
-	:root:not(.light):not(.uinta):not(.hokkaido):not(.sahel):not(.kerala):not(.yucatan):not(.aegean):not(.guilin):not(.cusco):not(.cappadocia):not(.marrakech):not(.uluru):not(.lviv) {
+	:root:not(.light):not(.uinta):not(.hokkaido):not(.sahel):not(.kerala):not(.yucatan):not(.aegean):not(.guilin):not(.cappadocia):not(.marrakech):not(.uluru) {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 
@@ -958,6 +968,10 @@ a:hover {
 
 a:visited {
 	color: var(--link);
+}
+
+a:visited:hover {
+	color: var(--link-hover);
 }
 
 /* Text selection */

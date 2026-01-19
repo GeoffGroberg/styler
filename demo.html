@@ -46,6 +46,8 @@
 				<option value="ambleside">Ambleside</option>
 				<option value="patagonia">Patagonia</option>
 				<option value="svalbard">Svalbard</option>
+				<option value="cusco">Cusco</option>
+				<option value="lviv">Lviv</option>
 				<option value="uinta">Uinta</option>
 				<option value="hokkaido">Hokkaido</option>
 				<option value="sahel">Sahel</option>
@@ -53,11 +55,9 @@
 				<option value="yucatan">Yucatan</option>
 				<option value="aegean">Aegean</option>
 				<option value="guilin">Guilin</option>
-				<option value="cusco">Cusco</option>
 				<option value="cappadocia">Cappadocia</option>
 				<option value="marrakech">Marrakech</option>
 				<option value="uluru">Uluru</option>
-				<option value="lviv">Lviv</option>
 			</select>
 		</label>
 		<label>Variant:
@@ -86,109 +86,90 @@
 	</div>
 
 	<nav>
-		<a href="#how-to-use">How to Use</a> ·
-		<a href="#typography">Typography</a> ·
 		<a href="#colors">Colors</a> ·
+		<a href="#typography">Typography</a> ·
 		<a href="#media">Media</a> ·
 		<a href="#forms">Forms</a> ·
 		<a href="#tables">Tables</a> ·
 		<a href="#alerts">Alerts</a> ·
-		<a href="#more-elements">More</a>
+		<a href="#more-elements">More</a> ·
+		<a href="#how-to-use">How to Use</a>
 	</nav>
 
 	<hr>
 
-	<h2 id="how-to-use">How to Use</h2>
-	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#typography">Typography</a> · <a href="#colors">Colors</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
+	<h2 id="colors">Colors</h2>
+	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#how-to-use">How to Use</a></div>
 
-	<pre><code>&lt;link rel="stylesheet" href="styler/base.css"&gt;
-&lt;link rel="stylesheet" href="styles.css"&gt;
+	<p>Text colors: <span style="color: var(--body)">--body</span>, <span style="color: var(--body1)">--body1</span>, <span style="color: var(--body2)">--body2</span></p>
 
-&lt;div class="readable"&gt;
-  &lt;h1&gt;Title&lt;/h1&gt;
-  &lt;p&gt;Content...&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+	<p>Semantic colors:
+		<span style="color: var(--primary)">--primary</span>,
+		<span style="color: var(--secondary)">--secondary</span>,
+		<span style="color: var(--success)">--success</span>,
+		<span style="color: var(--warning)">--warning</span>,
+		<span style="color: var(--error)">--error</span>,
+		<span style="color: var(--info)">--info</span>
+	</p>
 
-	<pre><code>&lt;!-- Fonts --&gt;
-&lt;html class="sans"&gt;           system sans-serif (default)
-&lt;html class="serif"&gt;          system serif
-&lt;html class="source-sans"&gt;    Source Sans 3
-&lt;html class="pt-serif"&gt;       PT Serif
-&lt;html class="cormorant"&gt;      Cormorant Garamond
+	<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+		<div style="background: var(--bg); border: 1px solid var(--border); padding: 1rem;">--bg (pure white/black)</div>
+		<div style="background: var(--bg1); padding: 1rem;">--bg1</div>
+		<div style="background: var(--bg2); padding: 1rem;">--bg2</div>
+	</div>
 
-&lt;!-- Color Palettes --&gt;
-&lt;html class="dark"&gt;           dark palette
-&lt;html class="ambleside"&gt;      Ambleside (dark, England)
-&lt;html class="patagonia"&gt;      Patagonia (dark, Argentina)
-&lt;html class="svalbard"&gt;       Svalbard (dark, Arctic)
-&lt;html class="uinta"&gt;          Uinta (light, Utah)
-&lt;html class="hokkaido"&gt;       Hokkaido (light, Japan)
-&lt;html class="sahel"&gt;          Sahel (light, West Africa)
-&lt;html class="kerala"&gt;         Kerala (light, India)
-&lt;html class="yucatan"&gt;        Yucatan (light, Mexico)
-&lt;html class="aegean"&gt;         Aegean (light, Greece)
-&lt;html class="guilin"&gt;         Guilin (light, China)
-&lt;html class="cusco"&gt;          Cusco (light, Peru)
-&lt;html class="cappadocia"&gt;     Cappadocia (light, Turkey)
-&lt;html class="marrakech"&gt;      Marrakech (light, Morocco)
-&lt;html class="uluru"&gt;          Uluru (light, Australia)
-&lt;html class="lviv"&gt;           Lviv (light, Ukraine)
+	<h3>Color Temperature</h3>
+	<pre><code>&lt;html class="warm"&gt;        warm tones (affects bg1, bg2, borders)
+&lt;html class="cool"&gt;        cool tones
+&lt;html class="dark warm"&gt;   combine with dark palette</code></pre>
 
-&lt;!-- Modifiers --&gt;
-&lt;html class="warm"&gt;           warm color temperature
-&lt;html class="cool"&gt;           cool color temperature
-&lt;html class="sat"&gt;            saturated/vivid colors
-&lt;html class="desat"&gt;          desaturated/muted colors
+</div>
 
-&lt;!-- Combine classes --&gt;
-&lt;html class="dark warm cormorant"&gt;
-&lt;html class="ambleside pt-serif"&gt;
-&lt;html class="uinta source-sans sat"&gt;
+<!-- Warm color demo -->
+<div class="warm py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Warm Colors</h4>
+		<p>This section uses <code>class="warm"</code>. Notice the warm tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
+	</div>
+</div>
 
-&lt;!-- Section-specific styling --&gt;
-&lt;div class="serif"&gt;           serif just for this section
-&lt;div class="warm"&gt;            warm tint just for this section
+<!-- Cool color demo -->
+<div class="cool py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Cool Colors</h4>
+		<p>This section uses <code>class="cool"</code>. Notice the cool tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
+	</div>
+</div>
 
-&lt;figure class="left"&gt;      float left, text wraps
-&lt;figure class="right"&gt;     float right, text wraps
-&lt;figure class="square"&gt;    square crop
+<div class="readable">
+	<h3>Saturation</h3>
+	<pre><code>&lt;html class="sat"&gt;         vivid/vibrant colors
+&lt;html class="desat"&gt;       muted/subdued colors
+&lt;html class="warm sat"&gt;    combine modifiers</code></pre>
+</div>
 
-&lt;div class="cols3"&gt;       3-column flexbox layout
-  &lt;figure&gt;...&lt;/figure&gt;    works with any block children
-  &lt;figure&gt;...&lt;/figure&gt;    collapses to 1 column on mobile
-&lt;/div&gt;
+<!-- Saturated demo -->
+<div class="sat py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Saturated</h4>
+		<p>This section uses <code>class="sat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are more vivid: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
+	</div>
+</div>
 
-&lt;div class="mt2 mb1"&gt;      margin-top: 2rem, margin-bottom: 1rem
-&lt;div class="px3"&gt;          padding left/right: 3rem
+<!-- Desaturated demo -->
+<div class="desat py2" style="background-color: var(--bg1);">
+	<div class="readable">
+		<h4>Desaturated</h4>
+		<p>This section uses <code>class="desat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are muted: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
+	</div>
+</div>
 
-&lt;img class="r0"&gt;           no rounding
-&lt;img class="r2"&gt;           moderate rounding
-&lt;img class="r100"&gt;         circular
-
-&lt;button&gt;                   primary button
-&lt;button class="secondary"&gt; secondary button
-&lt;button class="outline"&gt;   outline button</code></pre>
-
-	<h3>Customizing</h3>
-
-	<p>Include your custom stylesheet after base.css to override variables:</p>
-
-	<pre><code>:root {
-  --readable-width: 40rem;  /* narrower content */
-  --base-font-size: 18px;   /* smaller text */
-  --box-radius: 0.5rem;     /* rounder corners */
-  --primary: #8b5cf6;       /* purple primary */
-  --bg: #fefefe;            /* off-white background */
-}
-
-.dark {
-  --bg: #0a0a0a;            /* near-black for dark mode */
-}</code></pre>
+<div class="readable">
 
 	<hr>
 
 	<h2 id="typography">Typography</h2>
-	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#how-to-use">How to Use</a> · <a href="#colors">Colors</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
+	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#how-to-use">How to Use</a></div>
 
 	<h1>Heading 1</h1>
 	<h2>Heading 2</h2>
@@ -271,78 +252,8 @@
 
 	<hr>
 
-	<h2 id="colors">Colors</h2>
-	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#how-to-use">How to Use</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
-
-	<p>Text colors: <span style="color: var(--body)">--body</span>, <span style="color: var(--body1)">--body1</span>, <span style="color: var(--body2)">--body2</span></p>
-
-	<p>Semantic colors:
-		<span style="color: var(--primary)">--primary</span>,
-		<span style="color: var(--secondary)">--secondary</span>,
-		<span style="color: var(--success)">--success</span>,
-		<span style="color: var(--warning)">--warning</span>,
-		<span style="color: var(--error)">--error</span>,
-		<span style="color: var(--info)">--info</span>
-	</p>
-
-	<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-		<div style="background: var(--bg); border: 1px solid var(--border); padding: 1rem;">--bg (pure white/black)</div>
-		<div style="background: var(--bg1); padding: 1rem;">--bg1</div>
-		<div style="background: var(--bg2); padding: 1rem;">--bg2</div>
-	</div>
-
-	<h3>Color Temperature</h3>
-	<pre><code>&lt;html class="warm"&gt;        warm tones (affects bg1, bg2, borders)
-&lt;html class="cool"&gt;        cool tones
-&lt;html class="dark warm"&gt;   combine with dark palette</code></pre>
-
-</div>
-
-<!-- Warm color demo -->
-<div class="warm py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Warm Colors</h4>
-		<p>This section uses <code>class="warm"</code>. Notice the warm tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-	</div>
-</div>
-
-<!-- Cool color demo -->
-<div class="cool py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Cool Colors</h4>
-		<p>This section uses <code>class="cool"</code>. Notice the cool tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-	</div>
-</div>
-
-<div class="readable">
-	<h3>Saturation</h3>
-	<pre><code>&lt;html class="sat"&gt;         vivid/vibrant colors
-&lt;html class="desat"&gt;       muted/subdued colors
-&lt;html class="warm sat"&gt;    combine modifiers</code></pre>
-</div>
-
-<!-- Saturated demo -->
-<div class="sat py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Saturated</h4>
-		<p>This section uses <code>class="sat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are more vivid: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
-	</div>
-</div>
-
-<!-- Desaturated demo -->
-<div class="desat py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Desaturated</h4>
-		<p>This section uses <code>class="desat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are muted: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
-	</div>
-</div>
-
-<div class="readable">
-
-	<hr>
-
 	<h2 id="media">Media</h2>
-	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#how-to-use">How to Use</a> · <a href="#typography">Typography</a> · <a href="#colors">Colors</a> · <a href="#forms">Forms</a></div>
+	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#forms">Forms</a> · <a href="#how-to-use">How to Use</a></div>
 
 	<h3>Centered Image (Default)</h3>
 
@@ -473,7 +384,7 @@
 	<hr>
 
 	<h2 id="forms">Forms</h2>
-	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#how-to-use">How to Use</a> · <a href="#typography">Typography</a> · <a href="#colors">Colors</a> · <a href="#media">Media</a></div>
+	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#how-to-use">How to Use</a></div>
 
 	<h3>Text Inputs</h3>
 	<pre><code>&lt;label for="name"&gt;Name&lt;/label&gt;
@@ -701,7 +612,96 @@
 		</form>
 	</dialog>
 
-	<div class="section-nav text-center mt2"><a href="#top">Top</a> · <a href="#how-to-use">How to Use</a> · <a href="#typography">Typography</a> · <a href="#colors">Colors</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
+	<hr>
+
+	<h2 id="how-to-use">How to Use</h2>
+	<div class="section-nav text-center"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
+
+	<pre><code>&lt;link rel="stylesheet" href="styler/base.css"&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+&lt;div class="readable"&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;p&gt;Content...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+	<pre><code>&lt;!-- Fonts --&gt;
+&lt;html class="sans"&gt;           system sans-serif (default)
+&lt;html class="serif"&gt;          system serif
+&lt;html class="source-sans"&gt;    Source Sans 3
+&lt;html class="pt-serif"&gt;       PT Serif
+&lt;html class="cormorant"&gt;      Cormorant Garamond
+
+&lt;!-- Color Palettes --&gt;
+&lt;html class="dark"&gt;           dark palette
+&lt;html class="ambleside"&gt;      Ambleside (dark, England)
+&lt;html class="patagonia"&gt;      Patagonia (dark, Argentina)
+&lt;html class="svalbard"&gt;       Svalbard (dark, Arctic)
+&lt;html class="cusco"&gt;          Cusco (dark, Peru)
+&lt;html class="lviv"&gt;           Lviv (dark, Ukraine)
+&lt;html class="uinta"&gt;          Uinta (light, Utah)
+&lt;html class="hokkaido"&gt;       Hokkaido (light, Japan)
+&lt;html class="sahel"&gt;          Sahel (light, West Africa)
+&lt;html class="kerala"&gt;         Kerala (light, India)
+&lt;html class="yucatan"&gt;        Yucatan (light, Mexico)
+&lt;html class="aegean"&gt;         Aegean (light, Greece)
+&lt;html class="guilin"&gt;         Guilin (light, China)
+&lt;html class="cappadocia"&gt;     Cappadocia (light, Turkey)
+&lt;html class="marrakech"&gt;      Marrakech (light, Morocco)
+&lt;html class="uluru"&gt;          Uluru (light, Australia)
+
+&lt;!-- Modifiers --&gt;
+&lt;html class="warm"&gt;           warm color temperature
+&lt;html class="cool"&gt;           cool color temperature
+&lt;html class="sat"&gt;            saturated/vivid colors
+&lt;html class="desat"&gt;          desaturated/muted colors
+
+&lt;!-- Combine classes --&gt;
+&lt;html class="dark warm cormorant"&gt;
+&lt;html class="ambleside pt-serif"&gt;
+&lt;html class="uinta source-sans sat"&gt;
+
+&lt;!-- Section-specific styling --&gt;
+&lt;div class="serif"&gt;           serif just for this section
+&lt;div class="warm"&gt;            warm tint just for this section
+
+&lt;figure class="left"&gt;      float left, text wraps
+&lt;figure class="right"&gt;     float right, text wraps
+&lt;figure class="square"&gt;    square crop
+
+&lt;div class="cols3"&gt;       3-column flexbox layout
+  &lt;figure&gt;...&lt;/figure&gt;    works with any block children
+  &lt;figure&gt;...&lt;/figure&gt;    collapses to 1 column on mobile
+&lt;/div&gt;
+
+&lt;div class="mt2 mb1"&gt;      margin-top: 2rem, margin-bottom: 1rem
+&lt;div class="px3"&gt;          padding left/right: 3rem
+
+&lt;img class="r0"&gt;           no rounding
+&lt;img class="r2"&gt;           moderate rounding
+&lt;img class="r100"&gt;         circular
+
+&lt;button&gt;                   primary button
+&lt;button class="secondary"&gt; secondary button
+&lt;button class="outline"&gt;   outline button</code></pre>
+
+	<h3>Customizing</h3>
+
+	<p>Include your custom stylesheet after base.css to override variables:</p>
+
+	<pre><code>:root {
+  --readable-width: 40rem;  /* narrower content */
+  --base-font-size: 18px;   /* smaller text */
+  --box-radius: 0.5rem;     /* rounder corners */
+  --primary: #8b5cf6;       /* purple primary */
+  --bg: #fefefe;            /* off-white background */
+}
+
+.dark {
+  --bg: #0a0a0a;            /* near-black for dark mode */
+}</code></pre>
+
+	<div class="section-nav text-center mt2"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
 
 </div>
 
