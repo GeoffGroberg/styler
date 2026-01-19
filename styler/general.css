@@ -68,7 +68,7 @@
 	margin: 0;
 }
 
-/* Legacy: inline class on individual figures */
+/* Inline class on individual figures (alternative to .inline-group wrapper) */
 figure.inline {
 	display: inline-block;
 	vertical-align: top;

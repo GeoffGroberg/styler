@@ -40,6 +40,7 @@
 		- class "square" forces a square aspect ratio (probably crops), but doesn't distort
 		- by default images have a slight rounding to their corners
 		- inline figures: wrap figures in a div.inline-group for flexbox layout, or add .inline class to individual figures. Responsive down to full width on small screens.
+		- inline figures can be placed outside .readable for full-width layouts; use padding utilities (e.g., px1) to prevent images from touching screen edges
 	- utility class like:
 		- m1, mx1, my1, mt1, mb1, ml1, mr1:
 			- specify margins
@@ -63,6 +64,7 @@
 	- links, buttons, and other interactive kinds of things get hover colors based on the their initial color var, but a little brighter
 	- by default, links don't contain underline text-decoration
 	- class "warm" and "cool" are modifier classes that can be added in addition to "light" "dark" or other theme classes
+	- modifier classes (warm, cool, dark, light) can be applied to any container (html, body, or divs) for section-specific styling
 	- warm/cool only affect --bg1, --bg2, --body1, --body2, --border - NOT --bg (which stays pure white or black)
 	- without "warm" or "cool" colors are neutral, that is grays have no saturation
 	- users can override any color var in styler.css, e.g.: :root { --bg: #f5f5f0; }
@@ -77,14 +79,17 @@
 - typography:
 	- sets a base font-size of 20px.
 	- provides an excellent font stack, focussing on fonts that are consistent across platforms and natively available, without needed to download or import additional fonts
-	- provides a class that can be applied to the base html tag, letting us switch between a predominantly serif based design (with sans-serif fonts only used for fine print) vs a predominantly sans-serif based design (with serif fonts maybe being allowed for certain key elements, like poetry)
+	- provides classes for typography: "serif" and "sans"
 		- by default, a sans design is used (if no class is specified)
 		- the serif class should have most text, including headings, use a serif font. Main body text should also be serif.
+		- the sans class explicitly sets sans-serif (useful for switching back within a serif context)
+		- these classes can be applied to html, body, or any container for section-specific typography
 	- provides a div.readable class:
 		- max-width: 50rem;
 			- note this property should have a simple example of how the user can override, and when overridden other things should continue to work. (pay attention the media queries and anything that would be influenced a different max-width for .readable)
 		- margin: 0 auto; so text stays in the center of the window
 		- padding: 0 10%, so readable text never goes all the way to edge
+		- uses box-sizing: content-box so percentage padding doesn't reduce content width
 		- typically, readable blocks of text (div.readable) are enclosed enclosed in a regular div tag (which will by default span the full width with not margin or padding)
 		- new sections of a page would typically include an outer div (no class, spans entire width) with the inner div.readable. This is so the outer div can have a background that spans the full width. Demonstrate this in the info.html file.
 	- h1, h2, ... basic text typography styles are defined in this file

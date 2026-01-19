@@ -205,6 +205,9 @@ legend {
 }
 
 /* Inline form elements */
+input.inline,
+select.inline,
+textarea.inline,
 .inline {
 	display: inline-block;
 	width: auto;
