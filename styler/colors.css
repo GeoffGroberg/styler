@@ -1,7 +1,7 @@
 /* colors.css - Color palette with theme support */
 
 :root {
-	/* Light theme (default) */
+	/* Light theme (default) - pure white bg, neutral grays */
 	--body: #1a1a1a;
 	--body1: #333333;
 	--body2: #666666;
@@ -12,14 +12,18 @@
 
 	/* Semantic colors */
 	--primary: #2563eb;
-	--primary-hover: #1d4ed8;
+	--primary-hover: #3b82f6;
 	--secondary: #64748b;
-	--secondary-hover: #475569;
+	--secondary-hover: #7c8ca0;
 
 	--success: #16a34a;
+	--success-hover: #22c55e;
 	--warning: #ca8a04;
+	--warning-hover: #eab308;
 	--error: #dc2626;
+	--error-hover: #ef4444;
 	--info: #0891b2;
+	--info-hover: #22d3ee;
 
 	/* Links */
 	--link: var(--primary);
@@ -31,15 +35,15 @@
 	--border-focus: var(--primary);
 }
 
-/* Dark theme */
+/* Dark theme - pure black bg */
 .dark {
 	--body: #f5f5f5;
 	--body1: #d4d4d4;
 	--body2: #a3a3a3;
 
-	--bg: #171717;
-	--bg1: #262626;
-	--bg2: #404040;
+	--bg: #000000;
+	--bg1: #1a1a1a;
+	--bg2: #333333;
 
 	--primary: #3b82f6;
 	--primary-hover: #60a5fa;
@@ -47,16 +51,62 @@
 	--secondary-hover: #cbd5e1;
 
 	--success: #22c55e;
+	--success-hover: #4ade80;
 	--warning: #eab308;
+	--warning-hover: #facc15;
 	--error: #ef4444;
+	--error-hover: #f87171;
 	--info: #22d3ee;
+	--info-hover: #67e8f9;
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
 	--link-visited: #a78bfa;
 
-	--border: #525252;
+	--border: #444444;
 	--border-focus: var(--primary);
+}
+
+/* Warm color temperature - does NOT affect --bg */
+.warm {
+	--body1: #44403c;
+	--body2: #78716c;
+
+	--bg1: #faf8f5;
+	--bg2: #f0ebe4;
+
+	--border: #d6d3d1;
+}
+
+.warm.dark, .dark.warm {
+	--body1: #d6d3d0;
+	--body2: #a8a29e;
+
+	--bg1: #1c1917;
+	--bg2: #292524;
+
+	--border: #57534e;
+}
+
+/* Cool color temperature - does NOT affect --bg */
+.cool {
+	--body1: #374151;
+	--body2: #6b7280;
+
+	--bg1: #f8fafc;
+	--bg2: #e2e8f0;
+
+	--border: #cbd5e1;
+}
+
+.cool.dark, .dark.cool {
+	--body1: #d1d5db;
+	--body2: #9ca3af;
+
+	--bg1: #111827;
+	--bg2: #1f2937;
+
+	--border: #4b5563;
 }
 
 /* System preference auto-detection */
@@ -66,9 +116,9 @@
 		--body1: #d4d4d4;
 		--body2: #a3a3a3;
 
-		--bg: #171717;
-		--bg1: #262626;
-		--bg2: #404040;
+		--bg: #000000;
+		--bg1: #1a1a1a;
+		--bg2: #333333;
 
 		--primary: #3b82f6;
 		--primary-hover: #60a5fa;
@@ -76,15 +126,19 @@
 		--secondary-hover: #cbd5e1;
 
 		--success: #22c55e;
+		--success-hover: #4ade80;
 		--warning: #eab308;
+		--warning-hover: #facc15;
 		--error: #ef4444;
+		--error-hover: #f87171;
 		--info: #22d3ee;
+		--info-hover: #67e8f9;
 
 		--link: var(--primary);
 		--link-hover: var(--primary-hover);
 		--link-visited: #a78bfa;
 
-		--border: #525252;
+		--border: #444444;
 		--border-focus: var(--primary);
 	}
 }
@@ -97,6 +151,7 @@ body {
 
 a {
 	color: var(--link);
+	text-decoration: none;
 }
 
 a:hover {

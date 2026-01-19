@@ -7,40 +7,34 @@
 
 	--base-font-size: 20px;
 	--line-height: 1.6;
+
+	/* Override in styler.css: :root { --readable-width: 40rem; }
+	   Note: media queries below use this value but must be updated manually */
+	--readable-width: 50rem;
 }
 
 html {
 	font-size: var(--base-font-size);
 }
 
-/* Default: serif-based design */
+/* Default: sans-serif based design */
 body {
-	font-family: var(--font-serif);
+	font-family: var(--font-sans);
 	line-height: var(--line-height);
 }
 
-/* Sans-serif based design - add class="sans" to html or body */
-.sans {
-	font-family: var(--font-sans);
+/* Serif-based design - add class="serif" to html or body */
+.serif {
+	font-family: var(--font-serif);
 }
 
-.sans h1, .sans h2, .sans h3, .sans h4, .sans h5, .sans h6 {
-	font-family: var(--font-sans);
-}
-
-/* Serif-based design headings use sans for contrast */
-body:not(.sans) h1,
-body:not(.sans) h2,
-body:not(.sans) h3,
-body:not(.sans) h4,
-body:not(.sans) h5,
-body:not(.sans) h6 {
-	font-family: var(--font-sans);
+.serif h1, .serif h2, .serif h3, .serif h4, .serif h5, .serif h6 {
+	font-family: var(--font-serif);
 }
 
 /* Fine print and small text uses sans in serif mode */
-body:not(.sans) small,
-body:not(.sans) .fine-print {
+.serif small,
+.serif .fine-print {
 	font-family: var(--font-sans);
 }
 
@@ -73,13 +67,7 @@ p {
 
 /* Links */
 a {
-	text-decoration: underline;
-	text-underline-offset: 0.15em;
 	transition: color var(--transition);
-}
-
-a:hover {
-	text-decoration-thickness: 2px;
 }
 
 /* Lists */
@@ -132,7 +120,8 @@ pre code {
 
 /* Readable container */
 .readable {
-	max-width: 50rem;
+	box-sizing: content-box;
+	max-width: var(--readable-width);
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 10%;

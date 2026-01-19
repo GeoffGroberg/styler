@@ -7,17 +7,21 @@
 	- consistency across platforms (including/especially mobile)
 	- elegance in the visual style
 - there will be some supporting files created and used by the master styler.css file
-- all files will be in a /styler dir
+- all files will be in a /styler dir except info.html
+
 - avoid javascript - we will try to do everything with css
 - everything is done with a mobile first approach, preferring fewer media queries. (But some media queries are ok if necessary.)
 
 ## files/organization
 - all measurements of any css element (width, margins, padding, etc) are done in rem units, relative to the base font-size specified in typography. (base font-size can of course be overridden in the base styler,css file)
+- info.html:
+	- this html page that demonstrates various html tags, including form elements
+	- a section at the top has very short "How to use" documentation that focusses on examples rather than explaining
+	- the remaining page is quite comprehensive and shows code examples, especially for more complicated elements like form elements.
 - styler: the master styler.css file
 	- imports supporting files (color.css, forms.css, etc)
 	- after importing, it is mostly blank. User will add customizations in this file.
 	- this is the only file that needs to included in the head tag
-	- a comments section at the top of this file with very short "How to use" documentation that focusses on examples rather than explaining
 - reset:
 	- a very simple but thorough reset/normalize.css file to form a consistent baseline
 	- should be based on an existing 3rd party tried and true reset/normalize file
@@ -28,8 +32,13 @@
 		- --button-radius: by default is the same as --box-radius, but used specifically for buttons like submit, cancel, ...
 		- other vars that can change the overall style
 	- alignment utility classes:
-		- center, left, right are classes that can be applied to most tags and will yield sensible results. For example, a figure tag with class "center" will display as a block level element in the center. The same tag with class "left" would align left using flexbox/margin techniques.
-		- when things align left or right, they can push out a bit from the .readable max-width using negative margins, but never past the edge of the screen
+		- center, left, right are classes that can be applied to most tags and will yield sensible results. For example, a figure tag with class "center" will display as a block level element in the center.
+		- left and right use float, allowing text to wrap around the element
+		- images that are left or right aligned should take up a maximum of 50% of the readable max-width. But as a window gets smaller, these elements should responsively shift to become full width and centered.
+		- images always keep their aspect ratio - that is they don't distort in x or y
+		- class "square" forces a square aspect ratio (probably crops), but doesn't distort
+		- by default images have a slight rounding to their corners
+		- inline figures: wrap figures in a div.inline-group for flexbox layout, or add .inline class to individual figures. Responsive down to full width on small screens.
 	- utility class like:
 		- m1, mx1, my1, mt1, mb1, ml1, mr1:
 			- specify margins
@@ -39,28 +48,44 @@
 			- mt1, mb1, ml1, mr1 = margin top, bottom, left, right
 			- numbers can range from 1 to 10
 			- similar utility classes for padding: p1, px1, ...
+			- r0 - r4 specifies corner rounding for box things, like images:
+				- r0 = no rounding
+				- r1 - r4 = progressively more rounding
+				- r100 = 100% rounding/circular
 - colors:
 	- colors.css offers a consistent pallet of colors using css vars
 	- this file also allows us to create different color themes, like "light" and "dark"
 	- --body: the color of foreground things
-	- --bg: the color of the background
+	- --bg: the color of the background - pure white (#ffffff) in light mode, pure black (#000000) in dark mode
 	- 3 variations for each --body and --bg: --body, --body1, --body2. same for --bg
 	- vars for --primary, --secondary, --error, and more. Kind of similar to bootstrap
+	- links, buttons, and other interactive kinds of things get hover colors based on the their initial color var, but a little brighter
+	- by default, links don't contain underline text-decoration
+	- class "warm" and "cool" are modifier classes that can be added in addition to "light" "dark" or other theme classes
+	- warm/cool only affect --bg1, --bg2, --body1, --body2, --border - NOT --bg (which stays pure white or black)
+	- without "warm" or "cool" colors are neutral, that is grays have no saturation
+	- users can override any color var in styler.css, e.g.: :root { --bg: #f5f5f0; }
 - forms:
 	- anything related specifically to form elements go in forms.css
 	- this file is particulary important due the inconstent nature of rendering form elements across platforms. We want the style defined here to make things consistent, clean, simple, sensible
 	- most form inputs will be block level display elements or similar, that is they will display on a new line
 	- sometimes we may override element with class "inline"
-	- widths of some elements should be appropriate for their purpose, for example Name, Email, Password elements (and probably others) should span the full width of a page or div. They should limit themselves to a reasonable width for their purpose.
+	- widths of some elements should be appropriate for their purpose
+		- password, name, email, country, state, phone, dates, and more... these are the kinds of things that should be limited to a reasonable size, but it depends on the element - 25 chars is much too wide for a phone, country, date, or time input. But those are just examples. Use sensible widths for various field types.
+		- there are other fields, like textareas, that make sense to be full width. Make sensible decisions about form element widths.
 - typography:
 	- sets a base font-size of 20px.
 	- provides an excellent font stack, focussing on fonts that are consistent across platforms and natively available, without needed to download or import additional fonts
 	- provides a class that can be applied to the base html tag, letting us switch between a predominantly serif based design (with sans-serif fonts only used for fine print) vs a predominantly sans-serif based design (with serif fonts maybe being allowed for certain key elements, like poetry)
+		- by default, a sans design is used (if no class is specified)
+		- the serif class should have most text, including headings, use a serif font
 	- provides a div.readable class:
 		- max-width: 50rem;
+			- note this property should have a simple example of how the user can override, and when overridden other things should continue to work. (pay attention the media queries and anything that would be influenced a different max-width for .readable)
 		- margin: 0 auto; so text stays in the center of the window
 		- padding: 0 10%, so readable text never goes all the way to edge
 		- typically, readable blocks of text (div.readable) are enclosed enclosed in a regular div tag (which will by default span the full width with not margin or padding)
+		- new sections of a page would typically include an outer div (no class, spans entire width) with the inner div.readable. This is so the outer div can have a background that spans the full width. Demonstrate this in the info.html file.
 	- h1, h2, ... basic text typography styles are defined in this file
 - media:
 	- contains styles for images, videos, and other media

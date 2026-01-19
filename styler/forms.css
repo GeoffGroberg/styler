@@ -30,7 +30,6 @@ textarea,
 select {
 	display: block;
 	width: 100%;
-	max-width: 30rem;
 	padding: 0.5rem 0.75rem;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -42,21 +41,48 @@ select {
 	margin-bottom: 1rem;
 }
 
+/* Standard width inputs (~25 characters) */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	max-width: 20rem;
+}
+
+/* Narrow inputs - phone, dates, times */
+input[type="tel"] {
+	max-width: 10rem;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="week"] {
+	max-width: 10rem;
+}
+
+input[type="datetime-local"] {
+	max-width: 14rem;
+}
+
+/* Select dropdowns - country, state, etc */
+select {
+	max-width: 12rem;
+}
+
+/* Number inputs */
+input[type="number"] {
+	max-width: 6rem;
+}
+
+/* Full width inputs */
+input[type="search"],
+input[type="url"],
+textarea {
+	max-width: 100%;
+}
+
 /* Focus states */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="url"]:focus,
-input[type="tel"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus,
-input[type="time"]:focus,
-input[type="datetime-local"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-textarea:focus,
-select:focus {
+:is(input, textarea, select):focus {
 	outline: none;
 	border-color: var(--border-focus);
 	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);

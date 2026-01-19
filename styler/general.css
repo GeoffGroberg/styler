@@ -13,36 +13,92 @@
 	margin-right: auto;
 }
 
+/* Left/right use float for text wrapping */
 .left {
-	display: block;
-	margin-right: auto;
+	float: left;
+	width: fit-content;
 	margin-left: 0;
+	margin-right: 1.5rem;
+	margin-bottom: 1rem;
+	max-width: 50%;
 }
 
 .right {
-	display: block;
-	margin-left: auto;
+	float: right;
+	width: fit-content;
+	margin-left: 1.5rem;
+	margin-right: 0;
+	margin-bottom: 1rem;
+	max-width: 50%;
+}
+
+/* Clear floats */
+.readable::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Responsive: become full width and centered */
+@media (max-width: 50rem) {
+	.left,
+	.right,
+	.readable .left,
+	.readable .right {
+		float: none;
+		display: block;
+		width: auto;
+		max-width: 100%;
+		margin: 1.5rem auto;
+	}
+}
+
+/* Inline figures - use flexbox for even distribution */
+.inline-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+
+.inline-group figure {
+	flex: 1 1 calc(33% - 1rem);
+	min-width: 150px;
+	margin: 0;
+}
+
+/* Legacy: inline class on individual figures */
+figure.inline {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 1rem;
+	max-width: calc(33% - 1rem);
+}
+
+figure.inline:last-child {
 	margin-right: 0;
 }
 
-/* Push-out alignment within .readable - uses negative margins to extend beyond container */
-.readable .left {
-	margin-left: calc(-5% - 2rem);
-	max-width: calc(100% + 5% + 2rem);
-}
-
-.readable .right {
-	margin-right: calc(-5% - 2rem);
-	max-width: calc(100% + 5% + 2rem);
-}
-
-/* Prevent push-out from going past screen edge on small screens */
 @media (max-width: 50rem) {
-	.readable .left,
-	.readable .right {
-		margin-left: 0;
-		margin-right: 0;
+	.inline-group figure {
+		flex: 1 1 calc(50% - 0.5rem);
+	}
+
+	figure.inline {
+		max-width: calc(50% - 0.5rem);
+	}
+}
+
+@media (max-width: 35rem) {
+	.inline-group figure {
+		flex: 1 1 100%;
+	}
+
+	figure.inline {
+		display: block;
 		max-width: 100%;
+		margin-right: 0;
 	}
 }
 
@@ -206,3 +262,11 @@
 .pr8 { padding-right: 8rem; }
 .pr9 { padding-right: 9rem; }
 .pr10 { padding-right: 10rem; }
+
+/* Border radius utilities */
+.r0 { border-radius: 0; }
+.r1 { border-radius: 0.25rem; }
+.r2 { border-radius: 0.5rem; }
+.r3 { border-radius: 1rem; }
+.r4 { border-radius: 2rem; }
+.r100 { border-radius: 100%; }
