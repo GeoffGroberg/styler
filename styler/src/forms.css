@@ -41,11 +41,11 @@ select {
 	margin-bottom: 1rem;
 }
 
-/* Standard width inputs (~25 characters) */
+/* Standard width inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-	max-width: 20rem;
+	max-width: 16rem;
 }
 
 /* Narrow inputs - phone, dates, times */
