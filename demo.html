@@ -7,13 +7,6 @@
 	<link rel="stylesheet" href="styler/extrafonts.css">
 	<link rel="stylesheet" href="styler/base.css">
 	<style>
-		.section {
-			margin: 2rem 0;
-		}
-		.section-nav {
-			margin-bottom: 1.5rem;
-			border-bottom: 1px solid var(--primary);
-		}
 		.theme-selector {
 			display: flex;
 			gap: 1rem;
@@ -31,6 +24,31 @@
 			margin: 0;
 			max-width: none;
 		}
+		section > details {
+			border: none;
+			margin: 0;
+		}
+		section > details > summary {
+			background: none;
+			border: none;
+			border-radius: 0;
+			font-size: 1.5rem;
+			padding: 1rem 10%;
+			max-width: 45rem;
+			margin: 0 auto;
+			border-bottom: 1px solid var(--border);
+		}
+		section > details[open] {
+			padding-bottom: 2rem;
+		}
+		section > details[open] > summary {
+			border-bottom: 1px solid var(--border);
+			margin-bottom: 1.5rem;
+		}
+		section > details > *:not(summary) {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	</style>
 </head>
 <body>
@@ -38,10 +56,10 @@
 <div class="readable">
 
 	<h1 id="top">Styler</h1>
-	<p>A simple, clean CSS framework. See <a href="specs.md">specs.md</a> for full documentation.</p>
+	<p>A simple, clean CSS framework.</p>
 
-	<div class="theme-selector mb1">
-		<label>Palette:
+	<div class="theme-selector mb2">
+		<label>Theme:
 			<select id="theme-select">
 				<option value="">Light</option>
 				<option value="dark">Dark</option>
@@ -62,421 +80,295 @@
 				<option value="uluru">Uluru</option>
 			</select>
 		</label>
-		<label>Variant:
-			<select id="variant-select">
-				<option value="">None</option>
-				<option value="warm">Warm</option>
-				<option value="cool">Cool</option>
-			</select>
-		</label>
-		<label>Saturation:
-			<select id="saturation-select">
-				<option value="">Normal</option>
-				<option value="sat">Saturated</option>
-				<option value="desat">Desaturated</option>
-			</select>
-		</label>
-		<label>Font:
-			<select id="font-select">
-				<option value="" selected>System Sans</option>
+		<select id="variant-select">
+			<option value="">Neutral</option>
+			<option value="warm">Warm</option>
+			<option value="cool">Cool</option>
+		</select>
+		<select id="saturation-select">
+			<option value="">Normal</option>
+			<option value="sat">Saturated</option>
+			<option value="desat">Desaturated</option>
+		</select>
+		<select id="font-select">
+				<option value="" selected>Theme Font</option>
+				<option value="sans">System Sans</option>
 				<option value="serif">System Serif</option>
 				<option value="source-sans">Source Sans</option>
+				<option value="inter">Inter</option>
 				<option value="pt-serif">PT Serif</option>
-				<option value="cormorant">Cormorant Garamond</option>
+				<option value="lora">Lora</option>
+				<option value="crimson">Crimson Pro</option>
+				<option value="cormorant">Cormorant</option>
 			</select>
-		</label>
 	</div>
 
 </div>
 
-<div class="section" id="colors">
-	<div class="readable">
-		<h2>Colors</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+<section id="colors">
+	<details open>
+		<summary>Colors</summary>
 
-		<h3>Text Colors</h3>
-		<p>
-			<span class="primary">.primary</span>,
-			<span class="secondary">.secondary</span>,
-			<span class="success">.success</span>,
-			<span class="warning">.warning</span>,
-			<span class="error">.error</span>,
-			<span class="info">.info</span>
-		</p>
-		<p>Regular text, <span class="muted">.muted text</span>, and <span class="muted2">.muted2 text</span>.</p>
-
-		<h4>On .bg1</h4>
-		<div class="bg1 p1 r1">
-			<p style="margin-bottom: 0.5rem;">Regular text, <span class="muted">muted</span>, <span class="muted2">muted2</span></p>
-			<p style="margin: 0;"><span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="info">info</span></p>
-		</div>
-
-		<h4>On .bg2</h4>
-		<div class="bg2 p1 r1">
-			<p style="margin-bottom: 0.5rem;">Regular text, <span class="muted">muted</span>, <span class="muted2">muted2</span></p>
-			<p style="margin: 0;"><span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="info">info</span></p>
-		</div>
-
-		<h3>Background Colors</h3>
-		<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-			<div class="bg p1" style="border: 1px solid var(--border);">.bg</div>
-			<div class="bg1 p1">.bg1</div>
-			<div class="bg2 p1">.bg2</div>
-		</div>
-	</div>
-
-	<div class="warm bg1 py2 mt2">
 		<div class="readable">
-			<h4>.warm</h4>
-			<p>Warm tint on backgrounds. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-		</div>
-	</div>
-
-	<div class="cool bg1 py2">
-		<div class="readable">
-			<h4>.cool</h4>
-			<p>Cool tint on backgrounds. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-		</div>
-	</div>
-
-	<div class="sat bg1 py2">
-		<div class="readable">
-			<h4>.sat</h4>
-			<p>Saturated colors. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>: <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>.</p>
-		</div>
-	</div>
-
-	<div class="desat bg1 py2">
-		<div class="readable">
-			<h4>.desat</h4>
-			<p>Desaturated colors. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>: <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>.</p>
-		</div>
-	</div>
-</div>
-
-<div class="section" id="typography">
-	<div class="readable">
-		<h2>Typography</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
-
-		<h1>Heading 1</h1>
-		<h2>Heading 2</h2>
-		<h3>Heading 3</h3>
-		<h4>Heading 4</h4>
-		<h5>Heading 5</h5>
-		<h6>Heading 6</h6>
-
-		<p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and a <a href="#">link</a>. Here's some <code>inline code</code> and <mark>highlighted text</mark>.</p>
-
-		<blockquote>
-			<p>This is a blockquote. It can contain multiple paragraphs and other elements.</p>
-		</blockquote>
-
-		<ul>
-			<li>Unordered list item</li>
-			<li>Another item</li>
-			<li>Third item</li>
-		</ul>
-
-		<ol>
-			<li>Ordered list item</li>
-			<li>Another item</li>
-			<li>Third item</li>
-		</ol>
-
-		<h3>.poetry</h3>
-		<div class="poetry text-center">
 			<p>
-				"Quit! Give up! You're beaten!"<br>
-				They shout at me and plead.<br>
-				"There's just too much against you now.<br>
-				This time you can't succeed."
+				<span class="primary">.primary</span>,
+				<span class="secondary">.secondary</span>,
+				<span class="success">.success</span>,
+				<span class="warning">.warning</span>,
+				<span class="error">.error</span>,
+				<span class="info">.info</span>
 			</p>
-			<p style="font-style: normal; font-size: 0.9rem; margin-top: 1rem;">— D.H. Groberg, <a href="https://theracepoem.com">The Race</a></p>
+			<p>Regular text and <span class="muted">.muted text</span>.</p>
+
+			<div class="alert error">.alert .error (also .success, .warning, .info)</div>
+
+			<h3>Backgrounds and Modifiers</h3>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+				<div class="bg1 p1">.bg1 <span class="muted">muted</span> <span class="primary">primary</span></div>
+				<div class="bg2 p1">.bg2 <span class="muted">muted</span> <span class="primary">primary</span></div>
+				<div class="bg3 p1">.bg3 <span class="muted">muted</span> <span class="primary">primary</span></div>
+			</div>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+				<div class="warm bg2 p1"><span class="primary">.warm</span></div>
+				<div class="cool bg2 p1"><span class="primary">.cool</span></div>
+				<div class="sat bg2 p1"><span class="primary">.sat</span></div>
+				<div class="desat bg2 p1"><span class="primary">.desat</span></div>
+			</div>
+
+			<p>Theme classes can be applied to any element, or the entire <code>&lt;html&gt;</code>.</p>
+			<div class="patagonia bg p1 r1 mt1">
+				<p style="margin: 0;"><strong>Patagonia</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="marrakech bg1 p1 r1 mt1">
+				<p style="margin: 0;"><strong>Marrakech</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="svalbard bg p1 r1 mt1">
+				<p style="margin: 0;"><strong>Svalbard</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="yucatan bg2 p1 r1 mt1">
+				<p style="margin: 0;"><strong>Yucatan</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="lviv bg p1 r1 mt1">
+				<p style="margin: 0;"><strong>Lviv</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<p class="text-right"><a href="#top">Top</a></p>
 		</div>
+	</details>
+</section>
 
-		<h3>Alignment</h3>
-		<p class="text-center"><code>.text-center</code> - centered text</p>
-		<p class="text-right"><code>.text-right</code> - right-aligned text</p>
-	</div>
+<section id="typography">
+	<details>
+		<summary>Typography</summary>
 
-	<div class="bg1 mt2 py2">
 		<div class="readable">
-			<h3>Full-Width Sections</h3>
-			<pre><code>&lt;div class="bg1"&gt;
-  &lt;div class="readable"&gt;
-    Content here...
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-			<p>Outer div spans full width, inner <code>.readable</code> constrains content.</p>
+			<p>Headings: <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> styled automatically.</p>
+
+			<p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and a <a href="#">link</a>. Here's some <code>inline code</code> and <mark>highlighted text</mark>.</p>
+
+			<blockquote>
+				<p>This is a blockquote. It can contain multiple paragraphs and other elements.</p>
+			</blockquote>
+
+			<blockquote class="cormorant" style="font-size: 1.3rem;">
+				"This blockquote uses <code>.cormorant</code> for an elegant look."
+			</blockquote>
+
+			<ul>
+				<li>Unordered list item</li>
+				<li>Another item</li>
+				<li>Third item</li>
+			</ul>
+
+			<div class="poetry">
+				<p>"Get up and win the race!"</p>
+				<p style="font-style: normal; font-size: 0.9rem;">.poetry (an excerpt from <a href="https://theracepoem.com">The Race</a>)</p>
+			</div>
+
+			<pre><code>Text alignment: .text-center  .text-right  .text-left</code></pre>
+
+			<p><code>.m0</code>-<code>.m10</code>, <code>.mt0</code>, <code>.mb0</code>, <code>.ml0</code>, <code>.mr0</code>, <code>.mx0</code>, <code>.my0</code> (margins)</p>
+			<p><code>.p0</code>-<code>.p10</code>, <code>.pt0</code>, <code>.pb0</code>, <code>.pl0</code>, <code>.pr0</code>, <code>.px0</code>, <code>.py0</code> (padding)</p>
+
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+				<div class="bg1 p1 r0">.r0</div>
+				<div class="bg1 p1 r1">.r1</div>
+				<div class="bg1 p1 r2">.r2</div>
+				<div class="bg1 p1 r3">.r3</div>
+				<div class="bg1 p1 r4">.r4</div>
+			</div>
+			<p class="text-right"><a href="#top">Top</a></p>
 		</div>
-	</div>
-</div>
+	</details>
+</section>
 
-<div class="section" id="media">
-	<div class="readable">
-		<h2>Media</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+<section id="media">
+	<details>
+		<summary>Media</summary>
 
-		<figure style="max-width: 400px;">
-			<img src="https://picsum.photos/400/300" alt="Sample image">
-			<figcaption>Images in figures are centered by default</figcaption>
-		</figure>
+		<div class="readable">
+			<figure class="left">
+				<img src="https://picsum.photos/800/600" alt="Left-aligned image">
+				<figcaption>.left - floats, text wraps</figcaption>
+			</figure>
 
-		<h3>.left / .right</h3>
+			<p>Images will be center aligned in a new block by default. You should use figure tags for your images, which will give you the option of adding a caption.</p>
+			
+			<p>.left and .right classes can be added to float figures to the right or left. When figures have .left or .right they will pop-out a bit if they are contained within a .readable div. Text wraps around floated images. On smaller screens, floated images become full-width and centered automatically.</p>
 
-		<figure class="left">
-			<img src="https://picsum.photos/800/600" alt="Left-aligned image">
-			<figcaption>Floats left</figcaption>
-		</figure>
-
-		<p>Text wraps around floated images. On smaller screens, floated images become full-width and centered automatically.</p>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-	</div>
-
-	<div class="readable">
-		<h3>.cols2 / .cols3 / .cols4</h3>
-	</div>
-
-	<div class="cols3 px1 mt2">
-		<figure>
-			<img src="https://picsum.photos/300/200?a" alt="Column 1">
-			<figcaption>An image</figcaption>
-		</figure>
-		<div class="bg1 p1 r1">
-			<strong>Any block element</strong>
-			<p style="margin: 0.5rem 0 0;">Columns work with any block-level children.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
-		<figure>
-			<img src="https://picsum.photos/300/200?c" alt="Column 3">
-			<figcaption>Another image</figcaption>
-		</figure>
-	</div>
 
-	<div class="readable">
-		<h3>.square</h3>
-		<figure class="square" style="max-width: 200px;">
-			<img src="https://picsum.photos/300/200?3" alt="Square cropped">
-			<figcaption>Cropped to square</figcaption>
-		</figure>
-
-		<h3>Border Radius on Images</h3>
-		<div class="cols3">
-			<figure style="max-width: 100px;">
-				<img src="https://picsum.photos/100/100" alt="r0" class="r0">
-				<figcaption>.r0</figcaption>
+		<div class="cols3 px1 mt2">
+			<figure>
+				<img src="https://picsum.photos/300/200?a" alt="Column 1">
+				<figcaption>An image</figcaption>
 			</figure>
-			<figure style="max-width: 100px;">
-				<img src="https://picsum.photos/100/100?2" alt="r2" class="r2">
-				<figcaption>.r2</figcaption>
-			</figure>
-			<figure style="max-width: 100px;">
-				<img src="https://picsum.photos/100/100?3" alt="r100" class="r100">
-				<figcaption>.r100</figcaption>
+			<div class="bg1 p1 r1 text-center">
+				<strong>.cols3</strong>
+				<p style="margin: 0.5rem 0 0;">Also .cols2 and .cols4</p>
+			</div>
+			<figure>
+				<img src="https://picsum.photos/300/200?c" alt="Column 3">
+				<figcaption>Another image</figcaption>
 			</figure>
 		</div>
 
-		<h3>Audio</h3>
-		<audio controls>
-			<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-		</audio>
+		<div class="readable">
+			<div class="cols3">
+				<figure class="square" style="max-width: 100px;">
+					<img src="https://picsum.photos/100/100" alt="square">
+					<figcaption>.square</figcaption>
+				</figure>
+				<figure style="max-width: 100px;">
+					<img src="https://picsum.photos/100/100?2" alt="r2" class="r2">
+					<figcaption>.r2</figcaption>
+				</figure>
+				<figure style="max-width: 100px;">
+					<img src="https://picsum.photos/100/100?3" alt="r100" class="r100">
+					<figcaption>.r100</figcaption>
+				</figure>
+			</div>
 
-		<h3>Video</h3>
-		<pre><code>&lt;div class="video-container"&gt;
+			<h3>Audio &amp; Video</h3>
+			<pre><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;div class="video-container"&gt;
   &lt;iframe src="youtube..."&gt;&lt;/iframe&gt;
 &lt;/div&gt;</code></pre>
-	</div>
-
-	<div class="video-container" style="max-width: 900px; margin: 0 auto;">
-		<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-	</div>
-</div>
-
-<div class="section" id="forms">
-	<div class="readable">
-		<h2>Forms</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
-
-		<form>
-			<label for="name">Name</label>
-			<input type="text" id="name" placeholder="Your name">
-
-			<label for="email">Email</label>
-			<input type="email" id="email" placeholder="you@example.com">
-
-			<label for="phone">Phone</label>
-			<input type="tel" id="phone" placeholder="555-1234">
-
-			<label for="date">Date</label>
-			<input type="date" id="date">
-
-			<label for="quantity">Quantity</label>
-			<input type="number" id="quantity" value="1" min="1">
-
-			<label for="country">Country</label>
-			<select id="country">
-				<option>United States</option>
-				<option>Canada</option>
-				<option>United Kingdom</option>
-			</select>
-
-			<label for="message">Message</label>
-			<textarea id="message" placeholder="Your message..."></textarea>
-
-			<fieldset>
-				<legend>Checkboxes</legend>
-				<label><input type="checkbox" checked> Option one</label>
-				<label><input type="checkbox"> Option two</label>
-			</fieldset>
-
-			<fieldset>
-				<legend>Radio buttons</legend>
-				<label><input type="radio" name="choice" checked> Choice A</label>
-				<label><input type="radio" name="choice"> Choice B</label>
-			</fieldset>
-		</form>
-
-		<h3>Buttons</h3>
-		<div class="mt1">
-			<button type="button">Primary</button>
-			<button type="button" class="secondary">.secondary</button>
-			<button type="button" class="outline">.outline</button>
+			<p class="text-right"><a href="#top">Top</a></p>
 		</div>
+	</details>
+</section>
 
-		<h3>Link Buttons</h3>
-		<div class="mt1">
-			<a href="#" class="button">.button</a>
-			<a href="#" class="button secondary">.button.secondary</a>
-			<a href="#" class="button outline">.button.outline</a>
+<section id="forms">
+	<details>
+		<summary>Forms</summary>
+
+		<div class="readable">
+			<form>
+				<label for="name">Name</label>
+				<input type="text" id="name" placeholder="Your name">
+
+				<label for="email">Email</label>
+				<input type="email" id="email" placeholder="you@example.com">
+
+				<label for="country">Country</label>
+				<select id="country">
+					<option>United States</option>
+					<option>Canada</option>
+				</select>
+
+				<label for="message">Message</label>
+				<textarea id="message" placeholder="Your message..."></textarea>
+
+				<label><input type="checkbox" checked> Remember me</label>
+			</form>
+
+			<h3>Buttons</h3>
+			<div class="mt1">
+				<button type="button">Primary</button>
+				<button type="button" class="secondary">.secondary</button>
+				<button type="button" class="outline">.outline</button>
+				<a href="#" class="button">.button</a>
+			</div>
+
+			<h3>Inline</h3>
+			<div class="mt1">
+				<input type="text" class="inline" placeholder="First" style="max-width: 6rem;">
+				<input type="text" class="inline" placeholder="Last" style="max-width: 6rem;">
+				<button type="button">Submit</button>
+			</div>
+			<p class="text-right mt2"><a href="#top">Top</a></p>
 		</div>
+	</details>
+</section>
 
-		<h3>Inline Form Elements</h3>
-		<p>Add <code>.inline</code> to inputs for side-by-side layout.</p>
-		<div class="mt1">
-			<input type="text" class="inline" placeholder="First name" style="max-width: 8rem;">
-			<input type="text" class="inline" placeholder="Last name" style="max-width: 8rem;">
-			<button type="button">Submit</button>
-		</div>
-	</div>
-</div>
+<section id="more-elements">
+	<details>
+		<summary>More Elements</summary>
 
-<div class="section" id="tables">
-	<div class="readable">
-		<h2>Tables</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+		<div class="readable">
+			<h3>Tables</h3>
+			<p>Add <code>.striped</code> for alternating rows.</p>
+			<table class="striped">
+				<thead>
+					<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>--primary</td><td>Color</td><td>Primary action color</td></tr>
+					<tr><td>--bg1</td><td>Color</td><td>Surface background</td></tr>
+					<tr><td>--border</td><td>Color</td><td>Border color</td></tr>
+				</tbody>
+			</table>
 
-		<p>Tables are styled automatically. Add <code>.striped</code> for alternating rows.</p>
+			<h3>Details/Summary</h3>
+			<details>
+				<summary>What is Styler?</summary>
+				<p>Styler is a simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes.</p>
+			</details>
 
-		<table class="striped">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Type</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>--primary</td>
-					<td>Color</td>
-					<td>Primary action color for buttons and links</td>
-				</tr>
-				<tr>
-					<td>--secondary</td>
-					<td>Color</td>
-					<td>Secondary action color</td>
-				</tr>
-				<tr>
-					<td>--bg1</td>
-					<td>Color</td>
-					<td>Surface background for inputs and cards</td>
-				</tr>
-				<tr>
-					<td>--border</td>
-					<td>Color</td>
-					<td>Border color for dividers and inputs</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
+			<details>
+				<summary>How do I customize colors?</summary>
+				<p>Override CSS variables in your own stylesheet.</p>
+			</details>
 
-<div class="section" id="alerts">
-	<div class="readable">
-		<h2>Alerts</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+			<h3>Definition Lists</h3>
+			<dl>
+				<dt>CSS</dt>
+				<dd>Cascading Style Sheets - a style sheet language for describing presentation.</dd>
+				<dt>HTML</dt>
+				<dd>HyperText Markup Language - the standard markup language for web documents.</dd>
+			</dl>
 
-		<div class="alert success">
-			<strong>Success!</strong> Your changes have been saved.
-		</div>
+			<h3>Keyboard Input</h3>
+			<p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save, or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for command palette.</p>
 
-		<div class="alert warning">
-			<strong>Warning:</strong> This action cannot be undone.
-		</div>
+			<h3>Text Changes</h3>
+			<p>This feature was <del>removed</del> <ins>updated</ins> in the latest version.</p>
 
-		<div class="alert error">
-			<strong>Error:</strong> Something went wrong. Please try again.
-		</div>
+			<h3>Progress & Meter</h3>
+			<label for="progress-demo">Download progress:</label>
+			<progress id="progress-demo" value="70" max="100">70%</progress>
 
-		<div class="alert info">
-			<strong>Info:</strong> A new version is available.
-		</div>
-	</div>
-</div>
+			<label for="meter-demo">Disk usage:</label>
+			<meter id="meter-demo" value="0.6" min="0" max="1" low="0.25" high="0.75" optimum="0.5">60%</meter>
 
-<div class="section" id="more-elements">
-	<div class="readable">
-		<h2>More Elements</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+			<h3>Other Elements</h3>
+			<p><abbr title="HyperText Markup Language">HTML</abbr> is the foundation of the web.</p>
+			<p>The variable <var>x</var> represents the user's input.</p>
+			<p>She said, <q>This is an inline quotation.</q></p>
+			<p>As noted in <cite>The Elements of Style</cite>, clarity is paramount.</p>
+			<p>The command returned: <samp>Hello, World!</samp></p>
+			<address>
+				Contact us at:<br>
+				123 Main Street<br>
+				Anytown, USA 12345
+			</address>
 
-		<h3>Details/Summary</h3>
-		<details>
-			<summary>What is Styler?</summary>
-			<p>Styler is a simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes.</p>
-		</details>
-
-		<details>
-			<summary>How do I customize colors?</summary>
-			<p>Override CSS variables in your own stylesheet. See specs.md for all available variables.</p>
-		</details>
-
-		<h3>Definition Lists</h3>
-		<dl>
-			<dt>CSS</dt>
-			<dd>Cascading Style Sheets - a style sheet language for describing presentation.</dd>
-			<dt>HTML</dt>
-			<dd>HyperText Markup Language - the standard markup language for web documents.</dd>
-		</dl>
-
-		<h3>Keyboard Input</h3>
-		<p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save, or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for command palette.</p>
-
-		<h3>Text Changes</h3>
-		<p>This feature was <del>removed</del> <ins>updated</ins> in the latest version.</p>
-
-		<h3>Progress & Meter</h3>
-		<label for="progress-demo">Download progress:</label>
-		<progress id="progress-demo" value="70" max="100">70%</progress>
-
-		<label for="meter-demo">Disk usage:</label>
-		<meter id="meter-demo" value="0.6" min="0" max="1" low="0.25" high="0.75" optimum="0.5">60%</meter>
-
-		<h3>Other Elements</h3>
-		<p><abbr title="HyperText Markup Language">HTML</abbr> is the foundation of the web.</p>
-		<p>The variable <var>x</var> represents the user's input.</p>
-		<p>She said, <q>This is an inline quotation.</q></p>
-		<p>As noted in <cite>The Elements of Style</cite>, clarity is paramount.</p>
-		<p>The command returned: <samp>Hello, World!</samp></p>
-		<address>
-			Contact us at:<br>
-			123 Main Street<br>
-			Anytown, USA 12345
-		</address>
-
-		<h3>Dialog</h3>
-		<pre><code>&lt;dialog id="my-dialog"&gt;
+			<h3>Dialog</h3>
+			<pre><code>&lt;dialog id="my-dialog"&gt;
   &lt;h3&gt;Title&lt;/h3&gt;
   &lt;p&gt;Content...&lt;/p&gt;
   &lt;form method="dialog"&gt;&lt;button&gt;Close&lt;/button&gt;&lt;/form&gt;
@@ -484,69 +376,19 @@
 
 &lt;button onclick="document.getElementById('my-dialog').showModal()"&gt;Open&lt;/button&gt;</code></pre>
 
-		<button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+			<button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
 
-		<dialog id="demo-dialog">
-			<h3 style="margin-top: 0;">Dialog Title</h3>
-			<p>This is a native HTML dialog element with styled backdrop.</p>
-			<form method="dialog">
-				<button type="submit">Close</button>
-			</form>
-		</dialog>
-	</div>
-</div>
-
-<div class="section" id="utilities">
-	<div class="readable">
-		<h2>Utility Classes</h2>
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
-
-		<h3>Spacing</h3>
-		<p><code>.m0</code>-<code>.m10</code>, <code>.mt0</code>, <code>.mb0</code>, <code>.ml0</code>, <code>.mr0</code>, <code>.mx0</code>, <code>.my0</code> (margins)</p>
-		<p><code>.p0</code>-<code>.p10</code>, <code>.pt0</code>, <code>.pb0</code>, <code>.pl0</code>, <code>.pr0</code>, <code>.px0</code>, <code>.py0</code> (padding)</p>
-
-		<h3>Border Radius</h3>
-		<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-			<div class="bg1 p1 r0">.r0</div>
-			<div class="bg1 p1 r1">.r1</div>
-			<div class="bg1 p1 r2">.r2</div>
-			<div class="bg1 p1 r3">.r3</div>
-			<div class="bg1 p1 r4">.r4</div>
+			<dialog id="demo-dialog">
+				<h3 style="margin-top: 0;">Dialog Title</h3>
+				<p>This is a native HTML dialog element with styled backdrop.</p>
+				<form method="dialog">
+					<button type="submit">Close</button>
+				</form>
+			</dialog>
+			<p class="text-right"><a href="#top">Top</a></p>
 		</div>
-
-		<h3>Palettes on Any Element</h3>
-		<pre><code>&lt;section class="patagonia bg py2"&gt;
-  &lt;div class="readable"&gt;Content with Patagonia colors&lt;/div&gt;
-&lt;/section&gt;</code></pre>
-	</div>
-
-	<div class="patagonia bg py2 mt2">
-		<div class="readable">
-			<p><strong>Patagonia palette</strong> on a div. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and text all use the palette colors.</p>
-		</div>
-	</div>
-
-	<div class="marrakech bg1 py2 mt1">
-		<div class="readable">
-			<p><strong>Marrakech palette</strong> with <code>.bg1</code>. Semantic colors: <span class="primary">primary</span>, <span class="success">success</span>, <span class="warning">warning</span>.</p>
-		</div>
-	</div>
-
-	<div class="readable mt3">
-		<h3>Fonts on Any Element</h3>
-		<p>Use <code>.serif</code>, <code>.source-sans</code>, <code>.pt-serif</code>, <code>.cormorant</code> on any element.</p>
-
-		<blockquote class="cormorant" style="font-size: 1.3rem;">
-			"This blockquote uses the Cormorant font class for an elegant look."
-		</blockquote>
-
-		<p class="pt-serif">This paragraph uses PT Serif.</p>
-	</div>
-
-	<div class="readable mt4">
-		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
-	</div>
-</div>
+	</details>
+</section>
 
 <footer class="text-center py2 mt2 bg2 ambleside">
 	Styler was created by <a href="https://www.geoffgroberg.com">Geoff Groberg</a>

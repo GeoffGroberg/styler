@@ -1,8 +1,11 @@
-/* extrafonts.css - Optional Google Fonts (~200-400KB)
+/* extrafonts.css - Optional Google Fonts
    Include BEFORE base.css if you want these fonts:
    - Source Sans 3 (class="source-sans")
+   - Inter (class="inter")
    - PT Serif (class="pt-serif")
-   - Cormorant Garamond (class="cormorant")
+   - Lora (class="lora")
+   - Crimson Pro (class="crimson")
+   - Cormorant Garamond (class="cormorant") - decorative, best for poetry/quotes
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');

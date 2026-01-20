@@ -20,7 +20,7 @@ styler/
   extrafonts.css       - Optional Google Fonts (~200-400KB)
   src/
     reset.css          - CSS reset/normalize baseline
-    colors.css         - Color palettes, modifiers, selection styling
+    colors.css         - Themes, modifiers, selection styling
     general.css        - Layout, utilities, tables, details, alerts, print
     typography.css     - Fonts and text styling
     forms.css          - Form element styling
@@ -40,19 +40,19 @@ styler/
 <!-- Then your overrides -->
 <link rel="stylesheet" href="styles.css">
 
-<html class="dark">           <!-- color palette -->
+<html class="dark">           <!-- theme -->
 <html class="serif">          <!-- font -->
 <html class="dark warm serif"> <!-- combine classes -->
 
-<!-- Palettes and fonts work on any element -->
-<footer class="patagonia bg">Footer with different palette</footer>
+<!-- Themes and fonts work on any element -->
+<footer class="patagonia bg">Footer with different theme</footer>
 <blockquote class="cormorant">Fancy quote font</blockquote>
 <div class="sahel bg1 p2">Themed section</div>
 ```
 
-## Color Palettes
+## Themes
 
-### Base Palettes
+### Base Themes
 
 **Light** (default)
 - Pure white background (#ffffff)
@@ -64,7 +64,7 @@ styler/
 - Light grays for text
 - Brighter blue primary for contrast
 
-### Place-Inspired Palettes
+### Place-Inspired Themes
 
 **Ambleside** (dark)
 - Inspired by a winter evening in England's Lake District
@@ -116,11 +116,11 @@ styler/
 - Icy blue and purple accents
 
 **Yucatan** (light)
-- Inspired by cenotes and Mayan ruins in Mexico
+- Inspired by Cozumel's azul waters and coral reefs
 - Pure white background
-- Warm limestone/sand surfaces
-- Caribbean teal primary
-- Jungle green and golden sun accents
+- Warm sandy surfaces with seafoam accents
+- Bright Caribbean turquoise primary
+- Coral orange, tropical yellow, and reef green accents
 
 **Aegean** (light)
 - Inspired by the cerulean waters of the Greek islands
@@ -173,7 +173,7 @@ styler/
 
 ### Modifiers
 
-Modifiers can be combined with any palette:
+Modifiers can be combined with any theme:
 
 **warm** - Adds warm tints to bg1, bg2, body1, body2, and borders
 **cool** - Adds cool tints to the same properties
@@ -181,14 +181,14 @@ Modifiers can be combined with any palette:
 **desat** - Decreases saturation of backgrounds and semantic colors by 40% (uses relative color syntax)
 
 ```html
-<html class="dark warm">      <!-- dark palette with warm tints -->
-<html class="uinta sat">      <!-- uinta palette with vivid colors -->
-<div class="cool">            <!-- cool section within any palette -->
+<html class="dark warm">      <!-- dark theme with warm tints -->
+<html class="uinta sat">      <!-- uinta theme with vivid colors -->
+<div class="cool">            <!-- cool section within any theme -->
 ```
 
-#### Creating Dark Palettes
+#### Creating Dark Themes
 
-When creating a new dark palette, include these requirements:
+When creating a new dark theme, include these requirements:
 
 **1. Font smoothing for macOS** - Prevents fonts from appearing too thick on dark backgrounds:
 ```css
@@ -241,7 +241,7 @@ All colors use HSL format for consistency and to enable dynamic saturation modif
 
 ```css
 --body, --body1, --body2      /* Text colors (dark to light) */
---bg, --bg1, --bg2            /* Background colors (light to dark) */
+--bg, --bg1, --bg2, --bg3     /* Background colors (bg3 uses complementary hue) */
 --primary, --primary-hover    /* Primary action color */
 --secondary, --secondary-hover
 --success, --warning, --error, --info
@@ -251,10 +251,10 @@ All colors use HSL format for consistency and to enable dynamic saturation modif
 
 ### HSL and Base Variables
 
-Backgrounds and semantic colors use a two-tier variable system that enables the `sat` and `desat` modifiers to work with any palette:
+Backgrounds and semantic colors use a two-tier variable system that enables the `sat` and `desat` modifiers to work with any theme:
 
 ```css
-/* Palettes define -base variables for backgrounds */
+/* Themes define -base variables for backgrounds */
 --bg-base: hsl(0 0% 100%);
 --bg: var(--bg-base);
 --bg1-base: hsl(0 0% 96%);
@@ -273,33 +273,50 @@ Backgrounds and semantic colors use a two-tier variable system that enables the 
 }
 ```
 
-This allows `sat` and `desat` to dynamically adjust any palette's colors rather than replacing them with fixed values. For palettes with neutral backgrounds (0% saturation), the background won't visibly change. For place-inspired palettes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
+This allows `sat` and `desat` to dynamically adjust any theme's colors rather than replacing them with fixed values. For themes with neutral backgrounds (0% saturation), the background won't visibly change. For place-inspired themes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
 
 **Browser support:** CSS relative color syntax requires Chrome 119+, Safari 16.4+, or Firefox 128+.
 
 ## Typography
 
 - Base font-size: 20px
-- Sans-serif by default (system fonts)
 - All measurements in rem units
+- Each theme has a default font (falls back to system fonts if extrafonts.css not loaded)
+
+### Theme Fonts
+
+Themes include a default `--font-family`. Font classes override the theme default:
+
+| Theme | Default Font | Notes |
+|-------|--------------|-------|
+| Light, Dark, Hokkaido, Kerala, Aegean | System Sans | Clean, neutral |
+| Uinta, Patagonia, Uluru | Source Sans | Fresh, modern |
+| Svalbard, Lviv | Inter | Crisp, technical |
+| Sahel, Yucatan, Cappadocia | Lora | Warm, earthy |
+| Guilin, Marrakech | Crimson Pro | Refined, elegant |
+| Ambleside, Cusco | PT Serif | Traditional |
+
+Aegean and Guilin use `--heading-caps: small-caps` for elegant headings.
 
 ### Font Classes
 
 **System Fonts** (no external dependencies)
-- `sans` - System sans-serif (default)
+- `sans` - System sans-serif
 - `serif` - System serif (Times New Roman, Georgia)
 
-**Google Fonts** (require extrafonts.css, ~200-400KB total)
+**Google Fonts** (require extrafonts.css)
 - `source-sans` - Source Sans 3 (weights: 400, 600 + italics)
+- `inter` - Inter (weights: 400, 600)
 - `pt-serif` - PT Serif (weights: 400, 700 + italics)
-- `cormorant` - Cormorant Garamond (weights: 400, 600 + italics)
+- `lora` - Lora (weights: 400, 600 + italics)
+- `crimson` - Crimson Pro (weights: 400, 600 + italics, has small-caps)
+- `cormorant` - Cormorant Garamond (weights: 400, 600 + italics) - decorative, best for poetry/quotes
 
 ```html
-<html class="serif">          <!-- system serif -->
-<html class="source-sans">    <!-- Source Sans 3 -->
-<html class="pt-serif">       <!-- PT Serif -->
-<html class="cormorant">      <!-- Cormorant Garamond -->
-<div class="serif">           <!-- section-specific -->
+<html class="serif">          <!-- override theme font with system serif -->
+<html class="inter">          <!-- override with Inter -->
+<html class="crimson">        <!-- override with Crimson Pro -->
+<div class="lora">            <!-- section-specific override -->
 ```
 
 ### Readable Container
@@ -328,10 +345,12 @@ For full-width backgrounds with readable content:
 
 ```html
 <figure class="center">       <!-- centered block -->
-<figure class="left">         <!-- float left, text wraps -->
-<figure class="right">        <!-- float right, text wraps -->
+<figure class="left">         <!-- float left, pops out, text wraps -->
+<figure class="right">        <!-- float right, pops out, text wraps -->
 <figure class="square">       <!-- square aspect ratio crop -->
 ```
+
+When inside a `.readable` container, `.left` and `.right` use negative margins to pop out, creating visual interest. Responsive breakpoints progressively reduce the pop-out (20% → 10% → 0) before collapsing to full-width centered at 45rem.
 
 ### Columns
 
@@ -348,8 +367,8 @@ Columns collapse to single column at 45rem breakpoint.
 **Margins** (0-10 rem): `m0`, `m1`, `mx0`, `mx1`, `my0`, `my1`, `mt0`, `mt1`, `mb0`, `mb1`, `ml0`, `ml1`, `mr0`, `mr1`
 **Padding** (0-10 rem): `p0`, `p1`, `px0`, `px1`, `py0`, `py1`, `pt0`, `pt1`, `pb0`, `pb1`, `pl0`, `pl1`, `pr0`, `pr1`
 **Border radius**: `r0` (none), `r1`-`r4` (progressive), `r100` (circular)
-**Backgrounds**: `bg`, `bg1`, `bg2`
-**Text colors**: `muted`, `muted2`, `primary`, `secondary`, `success`, `warning`, `error`, `info`
+**Backgrounds**: `bg`, `bg1`, `bg2`, `bg3`
+**Text colors**: `muted`, `primary`, `secondary`, `success`, `warning`, `error`, `info`
 **Text alignment**: `text-center`, `text-left`, `text-right`
 
 ```html
@@ -358,9 +377,9 @@ Columns collapse to single column at 45rem breakpoint.
 <div class="px3 py1">Horizontal padding 3rem, vertical 1rem</div>
 ```
 
-### Palettes on Any Element
+### Themes on Any Element
 
-Palette and font classes work on any element, not just `<html>`:
+Theme and font classes work on any element, not just `<html>`:
 
 ```html
 <!-- Themed section -->
@@ -370,7 +389,7 @@ Palette and font classes work on any element, not just `<html>`:
 
 <!-- Themed footer -->
 <footer class="ambleside bg1 p2">
-  Footer with Ambleside palette
+  Footer with Ambleside theme
 </footer>
 
 <!-- Font on specific element -->
@@ -378,7 +397,7 @@ Palette and font classes work on any element, not just `<html>`:
 <p class="serif">This paragraph is serif</p>
 ```
 
-Add `bg`, `bg1`, or `bg2` to apply a background color from the palette.
+Add `bg`, `bg1`, `bg2`, or `bg3` to apply a background color from the theme. `bg3` uses a complementary hue.
 
 ## Forms
 
@@ -484,7 +503,7 @@ Track insertions and deletions with semantic styling:
 <ins>inserted text</ins>
 ```
 
-Colors adapt for dark palettes automatically.
+Colors adapt for dark themes automatically.
 
 ## Progress & Meter
 

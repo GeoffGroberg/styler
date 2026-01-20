@@ -1,15 +1,8 @@
 /* typography.css - Font stacks, text styles, and readable containers */
 
 :root {
-	/* System font stacks */
-	--font-serif: 'Times New Roman', Times, Cambria, Georgia, serif;
-	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	/* Monospace font stack (other font stacks in colors.css for theme support) */
 	--font-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-
-	/* Google font stacks */
-	--font-source-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-	--font-pt-serif: 'PT Serif', Georgia, 'Times New Roman', serif;
-	--font-cormorant: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
 
 	--base-font-size: 20px;
 	--line-height: 1.6;
@@ -23,9 +16,9 @@ html {
 	font-size: var(--base-font-size);
 }
 
-/* Default: sans-serif based design */
+/* Default: uses theme's --font-family (defaults to system sans) */
 body {
-	font-family: var(--font-sans);
+	font-family: var(--font-family);
 	line-height: var(--line-height);
 }
 
@@ -34,7 +27,10 @@ body {
 .sans, .sans body { font-family: var(--font-sans); }
 .serif, .serif body { font-family: var(--font-serif); }
 .source-sans, .source-sans body { font-family: var(--font-source-sans); }
+.inter, .inter body { font-family: var(--font-inter); }
 .pt-serif, .pt-serif body { font-family: var(--font-pt-serif); }
+.lora, .lora body { font-family: var(--font-lora); }
+.crimson, .crimson body { font-family: var(--font-crimson); }
 .cormorant, .cormorant body { font-family: var(--font-cormorant); }
 
 /* Headings */
@@ -43,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	margin-top: 1.5em;
 	margin-bottom: 0.5em;
+	font-variant-caps: var(--heading-caps);
 }
 
 h1 { font-size: 2.5rem; }

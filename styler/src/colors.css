@@ -2,6 +2,20 @@
 /* All colors use HSL format. Backgrounds and semantic colors use -base vars for sat/desat modifiers. */
 
 :root {
+	/* Font stacks for theme defaults (used by --font-family in themes) */
+	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--font-serif: 'Times New Roman', Times, Cambria, Georgia, serif;
+	--font-source-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--font-pt-serif: 'PT Serif', Georgia, 'Times New Roman', serif;
+	--font-lora: 'Lora', Georgia, 'Times New Roman', serif;
+	--font-crimson: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+	--font-cormorant: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+
+	/* Default font for light theme */
+	--font-family: var(--font-sans);
+	--heading-caps: none;
+
 	/* Light theme (default) - pure white bg, neutral grays */
 	--body: hsl(0 0% 10%);
 	--body1: hsl(0 0% 45%);
@@ -11,8 +25,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(0 0% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(0 0% 91%);
+	--bg2-base: hsl(0 0% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(217 30% 93%);
+	--bg3: var(--bg3-base);
 
 	/* Semantic colors - base values for sat/desat modification */
 	--primary-base: hsl(217 84% 53%);
@@ -64,6 +80,8 @@
 	--bg1: var(--bg1-base);
 	--bg2-base: hsl(0 0% 25%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(217 20% 18%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(217 91% 60%);
 	--primary: var(--primary-base);
@@ -101,6 +119,7 @@
 .ambleside {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--font-family: var(--font-pt-serif);
 
 	--body: hsl(36 14% 89%);
 	--body1: hsl(34 10% 60%);
@@ -108,10 +127,12 @@
 
 	--bg-base: hsl(220 24% 12%);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(218 18% 18%);
+	--bg1-base: hsl(218 18% 17%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(218 14% 24%);
+	--bg2-base: hsl(218 14% 26%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(35 12% 18%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(200 30% 60%);
 	--primary: var(--primary-base);
@@ -147,6 +168,8 @@
 
 /* Uinta - light theme inspired by a crisp morning in Utah's Uinta mountains */
 .uinta {
+	--font-family: var(--font-source-sans);
+
 	--body: hsl(105 10% 17%);
 	--body1: hsl(105 6% 45%);
 	--body2: hsl(105 3% 70%);
@@ -155,12 +178,14 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(150 12% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(150 10% 91%);
+	--bg2-base: hsl(150 10% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(40 25% 92%);
+	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(160 32% 33%);
+	--primary-base: hsl(175 55% 32%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(160 30% 41%);
+	--primary-hover: hsl(175 50% 40%);
 
 	--secondary-base: hsl(200 12% 42%);
 	--secondary: var(--secondary-base);
@@ -192,6 +217,8 @@
 
 /* Hokkaido - light theme inspired by where mountain meets sea in Hokkaido, Japan */
 .hokkaido {
+	--font-family: var(--font-sans);
+
 	--body: hsl(205 25% 15%);
 	--body1: hsl(202 10% 45%);
 	--body2: hsl(202 4% 70%);
@@ -200,12 +227,14 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(200 20% 97%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(200 15% 91%);
+	--bg2-base: hsl(200 15% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(140 20% 91%);
+	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(212 47% 42%);
+	--primary-base: hsl(212 70% 42%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(210 44% 50%);
+	--primary-hover: hsl(210 65% 50%);
 
 	--secondary-base: hsl(200 12% 46%);
 	--secondary: var(--secondary-base);
@@ -237,6 +266,8 @@
 
 /* Sahel - light theme inspired by golden hour where savanna meets desert in West Africa */
 .sahel {
+	--font-family: var(--font-lora);
+
 	--body: hsl(230 25% 18%);
 	--body1: hsl(225 10% 45%);
 	--body2: hsl(220 4% 70%);
@@ -245,8 +276,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(40 25% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(40 20% 91%);
+	--bg2-base: hsl(40 20% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(230 20% 92%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(230 45% 35%);
 	--primary: var(--primary-base);
@@ -284,6 +317,7 @@
 .patagonia {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--font-family: var(--font-source-sans);
 
 	--body: hsl(200 15% 90%);
 	--body1: hsl(200 8% 60%);
@@ -291,10 +325,12 @@
 
 	--bg-base: hsl(215 30% 10%);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(210 20% 16%);
+	--bg1-base: hsl(210 20% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(210 15% 22%);
+	--bg2-base: hsl(210 15% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(30 15% 16%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(185 45% 50%);
 	--primary: var(--primary-base);
@@ -330,6 +366,8 @@
 
 /* Kerala - light theme inspired by a monsoon morning on the backwaters of South India */
 .kerala {
+	--font-family: var(--font-sans);
+
 	--body: hsl(150 20% 15%);
 	--body1: hsl(150 8% 45%);
 	--body2: hsl(150 3% 70%);
@@ -338,8 +376,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(135 15% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(135 12% 91%);
+	--bg2-base: hsl(135 12% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(15 20% 92%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(155 40% 30%);
 	--primary: var(--primary-base);
@@ -377,6 +417,7 @@
 .svalbard {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--font-family: var(--font-inter);
 
 	--body: hsl(200 20% 92%);
 	--body1: hsl(200 10% 60%);
@@ -386,8 +427,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(220 25% 13%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(220 20% 18%);
+	--bg2-base: hsl(220 20% 22%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(280 18% 15%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(145 55% 48%);
 	--primary: var(--primary-base);
@@ -421,53 +464,60 @@
 	--border-focus: var(--primary);
 }
 
-/* Yucatan - light theme inspired by morning light on Mayan ruins and cenotes */
+/* Yucatan - light theme inspired by Cozumel's azul waters, coral reefs, and tropical fish */
 .yucatan {
-	--body: hsl(180 15% 18%);
-	--body1: hsl(180 6% 45%);
-	--body2: hsl(180 3% 70%);
+	--font-family: var(--font-lora);
+
+	--body: hsl(200 25% 18%);
+	--body1: hsl(200 10% 45%);
+	--body2: hsl(200 5% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(45 20% 96%);
+	--bg1-base: hsl(45 35% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(45 18% 91%);
+	--bg2-base: hsl(45 30% 88%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(180 30% 92%);
+	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(182 50% 35%);
+	--primary-base: hsl(190 85% 42%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(182 47% 45%);
+	--primary-hover: hsl(190 80% 50%);
 
-	--secondary-base: hsl(200 12% 45%);
+	--secondary-base: hsl(25 80% 55%);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(200 12% 55%);
+	--secondary-hover: hsl(25 75% 62%);
 
-	--success-base: hsl(140 40% 35%);
+	--success-base: hsl(160 65% 38%);
 	--success: var(--success-base);
-	--success-hover: hsl(140 37% 45%);
+	--success-hover: hsl(160 60% 48%);
 
-	--warning-base: hsl(42 70% 45%);
+	--warning-base: hsl(45 90% 45%);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 65% 55%);
+	--warning-hover: hsl(45 85% 52%);
 
-	--error-base: hsl(15 50% 45%);
+	--error-base: hsl(5 75% 50%);
 	--error: var(--error-base);
-	--error-hover: hsl(15 47% 55%);
+	--error-hover: hsl(5 70% 58%);
 
-	--info-base: hsl(190 50% 42%);
+	--info-base: hsl(200 75% 45%);
 	--info: var(--info-base);
-	--info-hover: hsl(190 47% 52%);
+	--info-hover: hsl(200 70% 55%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(265 25% 45%);
+	--link-visited: hsl(260 40% 50%);
 
-	--border: hsl(45 15% 80%);
+	--border: hsl(45 20% 80%);
 	--border-focus: var(--primary);
 }
 
 /* Aegean - light theme inspired by the cerulean waters of the Greek islands */
 .aegean {
+	--font-family: var(--font-sans);
+	--heading-caps: small-caps;
+
 	--body: hsl(195 30% 18%);
 	--body1: hsl(195 10% 45%);
 	--body2: hsl(195 4% 70%);
@@ -476,12 +526,14 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(192 25% 97%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(192 20% 91%);
+	--bg2-base: hsl(192 20% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(25 22% 91%);
+	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(193 65% 38%);
+	--primary-base: hsl(188 85% 38%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(193 60% 48%);
+	--primary-hover: hsl(188 80% 46%);
 
 	--secondary-base: hsl(25 20% 50%);
 	--secondary: var(--secondary-base);
@@ -513,6 +565,9 @@
 
 /* Guilin - light theme inspired by misty karst mountains and the Li River in southern China */
 .guilin {
+	--font-family: var(--font-crimson);
+	--heading-caps: small-caps;
+
 	--body: hsl(160 15% 15%);
 	--body1: hsl(160 6% 45%);
 	--body2: hsl(160 3% 70%);
@@ -521,8 +576,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(155 12% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(155 10% 90%);
+	--bg2-base: hsl(155 10% 86%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(40 15% 91%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(162 35% 38%);
 	--primary: var(--primary-base);
@@ -560,6 +617,7 @@
 .cusco {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--font-family: var(--font-pt-serif);
 
 	--body: hsl(200 12% 88%);
 	--body1: hsl(195 8% 60%);
@@ -569,8 +627,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(195 6% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(190 5% 20%);
+	--bg2-base: hsl(190 5% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(35 8% 16%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(185 50% 42%);
 	--primary: var(--primary-base);
@@ -606,6 +666,8 @@
 
 /* Cappadocia - light theme inspired by rose valleys and fairy chimneys at dawn in Turkey */
 .cappadocia {
+	--font-family: var(--font-lora);
+
 	--body: hsl(20 20% 18%);
 	--body1: hsl(18 8% 45%);
 	--body2: hsl(18 3% 70%);
@@ -614,8 +676,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(25 22% 97%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(25 18% 91%);
+	--bg2-base: hsl(25 18% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(200 18% 91%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(12 55% 50%);
 	--primary: var(--primary-base);
@@ -651,6 +715,8 @@
 
 /* Marrakech - light theme inspired by spice markets and ochre walls of Morocco */
 .marrakech {
+	--font-family: var(--font-crimson);
+
 	--body: hsl(28 30% 16%);
 	--body1: hsl(25 12% 45%);
 	--body2: hsl(25 5% 70%);
@@ -659,8 +725,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(35 25% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(35 20% 90%);
+	--bg2-base: hsl(35 20% 86%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(200 18% 91%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(25 65% 42%);
 	--primary: var(--primary-base);
@@ -696,6 +764,8 @@
 
 /* Uluru - light theme inspired by the red center at sunrise in Australia */
 .uluru {
+	--font-family: var(--font-source-sans);
+
 	--body: hsl(10 20% 18%);
 	--body1: hsl(10 8% 45%);
 	--body2: hsl(10 3% 70%);
@@ -704,8 +774,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(30 20% 96%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(30 18% 90%);
+	--bg2-base: hsl(30 18% 86%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(200 15% 91%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(12 70% 40%);
 	--primary: var(--primary-base);
@@ -743,6 +815,7 @@
 .lviv {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--font-family: var(--font-inter);
 
 	--body: hsl(50 25% 92%);
 	--body1: hsl(50 12% 60%);
@@ -752,8 +825,10 @@
 	--bg: var(--bg-base);
 	--bg1-base: hsl(216 40% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(216 35% 20%);
+	--bg2-base: hsl(216 35% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(48 20% 18%);
+	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(48 80% 52%);
 	--primary: var(--primary-base);
@@ -794,8 +869,10 @@
 
 	--bg1-base: hsl(40 33% 97%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(35 25% 92%);
+	--bg2-base: hsl(35 25% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(30 25% 91%);
+	--bg3: var(--bg3-base);
 
 	--border: hsl(30 8% 82%);
 }
@@ -805,28 +882,34 @@
 	--body2: hsl(25 2% 40%);
 	--bg1-base: hsl(30 6% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(28 5% 25%);
+	--bg2-base: hsl(28 5% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(30 8% 20%);
+	--bg3: var(--bg3-base);
 	--border: hsl(30 4% 32%);
 }
 
 .warm.ambleside, .ambleside.warm, .ambleside .warm {
 	--body1: hsl(30 12% 60%);
 	--body2: hsl(32 6% 40%);
-	--bg1-base: hsl(200 12% 18%);
+	--bg1-base: hsl(200 12% 17%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(195 10% 24%);
+	--bg2-base: hsl(195 10% 26%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(30 10% 20%);
+	--bg3: var(--bg3-base);
 	--border: hsl(200 8% 32%);
 }
 
 .warm.patagonia, .patagonia.warm, .patagonia .warm {
 	--body1: hsl(190 10% 60%);
 	--body2: hsl(185 5% 40%);
-	--bg1-base: hsl(195 15% 16%);
+	--bg1-base: hsl(195 15% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(190 12% 22%);
+	--bg2-base: hsl(190 12% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(25 12% 18%);
+	--bg3: var(--bg3-base);
 	--border: hsl(195 8% 30%);
 }
 
@@ -835,8 +918,10 @@
 	--body2: hsl(195 5% 40%);
 	--bg1-base: hsl(200 20% 13%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(195 16% 18%);
+	--bg2-base: hsl(195 16% 22%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(30 12% 17%);
+	--bg3: var(--bg3-base);
 	--border: hsl(200 10% 28%);
 }
 
@@ -845,8 +930,10 @@
 	--body2: hsl(175 3% 40%);
 	--bg1-base: hsl(180 5% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(175 4% 20%);
+	--bg2-base: hsl(175 4% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(30 6% 18%);
+	--bg3: var(--bg3-base);
 	--border: hsl(180 4% 28%);
 }
 
@@ -855,8 +942,10 @@
 	--body2: hsl(45 6% 40%);
 	--bg1-base: hsl(210 35% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(205 30% 20%);
+	--bg2-base: hsl(205 30% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(40 15% 20%);
+	--bg3: var(--bg3-base);
 	--border: hsl(210 18% 28%);
 }
 
@@ -867,8 +956,10 @@
 
 	--bg1-base: hsl(210 40% 98%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(214 32% 91%);
+	--bg2-base: hsl(214 32% 87%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(220 25% 91%);
+	--bg3: var(--bg3-base);
 
 	--border: hsl(214 20% 84%);
 }
@@ -878,28 +969,34 @@
 	--body2: hsl(218 4% 40%);
 	--bg1-base: hsl(218 20% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(216 15% 25%);
+	--bg2-base: hsl(216 15% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(220 15% 20%);
+	--bg3: var(--bg3-base);
 	--border: hsl(217 10% 35%);
 }
 
 .cool.ambleside, .ambleside.cool, .ambleside .cool {
 	--body1: hsl(210 12% 60%);
 	--body2: hsl(215 5% 40%);
-	--bg1-base: hsl(225 22% 18%);
+	--bg1-base: hsl(225 22% 17%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(222 18% 24%);
+	--bg2-base: hsl(222 18% 26%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(220 15% 20%);
+	--bg3: var(--bg3-base);
 	--border: hsl(220 12% 32%);
 }
 
 .cool.patagonia, .patagonia.cool, .patagonia .cool {
 	--body1: hsl(210 10% 60%);
 	--body2: hsl(215 4% 40%);
-	--bg1-base: hsl(220 25% 16%);
+	--bg1-base: hsl(220 25% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(218 20% 22%);
+	--bg2-base: hsl(218 20% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(215 18% 18%);
+	--bg3: var(--bg3-base);
 	--border: hsl(218 12% 30%);
 }
 
@@ -908,8 +1005,10 @@
 	--body2: hsl(215 5% 40%);
 	--bg1-base: hsl(225 30% 13%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(222 25% 18%);
+	--bg2-base: hsl(222 25% 22%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(225 20% 17%);
+	--bg3: var(--bg3-base);
 	--border: hsl(220 15% 28%);
 }
 
@@ -918,8 +1017,10 @@
 	--body2: hsl(215 4% 40%);
 	--bg1-base: hsl(210 10% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(208 8% 20%);
+	--bg2-base: hsl(208 8% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(215 8% 18%);
+	--bg3: var(--bg3-base);
 	--border: hsl(210 6% 28%);
 }
 
@@ -928,8 +1029,10 @@
 	--body2: hsl(218 6% 40%);
 	--bg1-base: hsl(220 45% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(218 40% 20%);
+	--bg2-base: hsl(218 40% 24%);
 	--bg2: var(--bg2-base);
+	--bg3-base: hsl(220 30% 20%);
+	--bg3: var(--bg3-base);
 	--border: hsl(218 25% 28%);
 }
 
@@ -938,6 +1041,7 @@
 	--bg: hsl(from var(--bg-base) h calc(s * 1.4) l);
 	--bg1: hsl(from var(--bg1-base) h calc(s * 1.4) l);
 	--bg2: hsl(from var(--bg2-base) h calc(s * 1.4) l);
+	--bg3: hsl(from var(--bg3-base) h calc(s * 1.4) l);
 
 	--primary: hsl(from var(--primary-base) h calc(s * 1.4) l);
 	--primary-hover: hsl(from var(--primary-base) h calc(s * 1.4) calc(l * 1.15));
@@ -965,6 +1069,7 @@
 	--bg: hsl(from var(--bg-base) h calc(s * 0.6) l);
 	--bg1: hsl(from var(--bg1-base) h calc(s * 0.6) l);
 	--bg2: hsl(from var(--bg2-base) h calc(s * 0.6) l);
+	--bg3: hsl(from var(--bg3-base) h calc(s * 0.6) l);
 
 	--primary: hsl(from var(--primary-base) h calc(s * 0.6) l);
 	--primary-hover: hsl(from var(--primary-base) h calc(s * 0.6) calc(l * 1.15));
@@ -1003,6 +1108,8 @@
 		--bg1: var(--bg1-base);
 		--bg2-base: hsl(0 0% 25%);
 		--bg2: var(--bg2-base);
+		--bg3-base: hsl(217 20% 18%);
+		--bg3: var(--bg3-base);
 
 		--primary-base: hsl(217 91% 60%);
 		--primary: var(--primary-base);
