@@ -67,8 +67,6 @@
 
 /* Dark theme - pure black bg */
 .dark {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 
 	--body: hsl(0 0% 96%);
 	--body1: hsl(0 0% 60%);
@@ -117,9 +115,7 @@
 
 /* Ambleside - dark theme inspired by a winter evening in England's Lake District */
 .ambleside {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	--font-family: var(--font-pt-serif);
+	--font-family: var(--font-source-sans);
 
 	--body: hsl(36 14% 89%);
 	--body1: hsl(34 10% 60%);
@@ -131,32 +127,32 @@
 	--bg1: var(--bg1-base);
 	--bg2-base: hsl(218 14% 26%);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(35 12% 18%);
+	--bg3-base: hsl(150 12% 17%);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(200 30% 60%);
+	--primary-base: hsl(215 50% 72%);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(200 35% 71%);
+	--primary-hover: hsl(215 55% 80%);
 
-	--secondary-base: hsl(30 10% 50%);
+	--secondary-base: hsl(30 10% 72%);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(30 10% 63%);
+	--secondary-hover: hsl(30 10% 80%);
 
 	--success-base: hsl(130 20% 58%);
 	--success: var(--success-base);
 	--success-hover: hsl(130 22% 68%);
 
-	--warning-base: hsl(42 52% 65%);
+	--warning-base: hsl(42 52% 72%);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 55% 74%);
+	--warning-hover: hsl(42 55% 80%);
 
-	--error-base: hsl(0 35% 64%);
+	--error-base: hsl(0 55% 68%);
 	--error: var(--error-base);
-	--error-hover: hsl(0 38% 73%);
+	--error-hover: hsl(0 58% 76%);
 
-	--info-base: hsl(197 38% 65%);
+	--info-base: hsl(197 25% 55%);
 	--info: var(--info-base);
-	--info-hover: hsl(197 42% 74%);
+	--info-hover: hsl(197 28% 65%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
@@ -315,8 +311,6 @@
 
 /* Patagonia - dark theme inspired by twilight over glacial lakes in southern South America */
 .patagonia {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	--font-family: var(--font-source-sans);
 
 	--body: hsl(200 15% 90%);
@@ -415,8 +409,6 @@
 
 /* Svalbard - dark theme inspired by polar night with aurora in the High Arctic */
 .svalbard {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	--font-family: var(--font-inter);
 
 	--body: hsl(200 20% 92%);
@@ -615,8 +607,6 @@
 
 /* Cusco - dark theme inspired by Machu Picchu's stone cliffs and misty peaks */
 .cusco {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	--font-family: var(--font-pt-serif);
 
 	--body: hsl(200 12% 88%);
@@ -813,8 +803,6 @@
 
 /* Lviv - dark theme inspired by twilight over sunflower fields, Ukrainian flag colors */
 .lviv {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	--font-family: var(--font-inter);
 
 	--body: hsl(50 25% 92%);
@@ -1095,8 +1083,6 @@
 /* System preference auto-detection */
 @media (prefers-color-scheme: dark) {
 	:root:not(.light):not(.uinta):not(.hokkaido):not(.sahel):not(.kerala):not(.yucatan):not(.aegean):not(.guilin):not(.cappadocia):not(.marrakech):not(.uluru) {
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 
 		--body: hsl(0 0% 96%);
 		--body1: hsl(0 0% 60%);
