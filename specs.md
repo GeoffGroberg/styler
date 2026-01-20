@@ -202,15 +202,7 @@ Modifiers can be combined with any theme:
 
 When creating a new dark theme, include these requirements:
 
-**1. Font smoothing for macOS** - Prevents fonts from appearing too thick on dark backgrounds:
-```css
-.mytheme {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-**2. Warm/cool modifier support** - Use compound selectors for all class orderings and nesting:
+**1. Warm/cool modifier support** - Use compound selectors for all class orderings and nesting:
 ```css
 .warm.dark, .dark.warm, .dark .warm,
 .warm.mytheme, .mytheme.warm, .mytheme .warm {
@@ -225,7 +217,7 @@ When creating a new dark theme, include these requirements:
 
 This ensures modifiers work whether classes are on the same element (`class="dark warm"` or `class="warm dark"`) or nested (`<html class="dark"><div class="warm">`).
 
-**3. Update dark theme selectors** - Three places list dark themes explicitly:
+**2. Update dark theme selectors** - Three places list dark themes explicitly:
 - `forms.css` - Select dropdown arrow color (lines ~112-116)
 - `typography.css` - Inserted/deleted text colors (lines ~231-241)
 - `colors.css` - Media query exclusion list (line ~1274)
