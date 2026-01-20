@@ -34,6 +34,8 @@
 	--primary-base: hsl(217 84% 53%);
 	--primary: var(--primary-base);
 	--primary-hover: hsl(217 91% 60%);
+	--primary-button: var(--primary);
+	--primary-button-hover: var(--primary-hover);
 
 	--secondary-base: hsl(215 16% 47%);
 	--secondary: var(--secondary-base);
@@ -133,6 +135,8 @@
 	--primary-base: hsl(215 50% 72%);
 	--primary: var(--primary-base);
 	--primary-hover: hsl(215 55% 80%);
+	--primary-button: hsl(215 60% 52%);
+	--primary-button-hover: hsl(215 65% 45%);
 
 	--secondary-base: hsl(30 10% 72%);
 	--secondary: var(--secondary-base);
@@ -919,6 +923,8 @@
 	--primary-base: hsl(48 80% 52%);
 	--primary: var(--primary-base);
 	--primary-hover: hsl(48 75% 62%);
+	--primary-button: hsl(216 85% 45%);
+	--primary-button-hover: hsl(216 90% 38%);
 
 	--secondary-base: hsl(42 60% 50%);
 	--secondary: var(--secondary-base);

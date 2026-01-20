@@ -151,7 +151,7 @@ a.button {
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
-	background-color: var(--primary);
+	background-color: var(--primary-button);
 	border: none;
 	border-radius: var(--button-radius);
 	cursor: pointer;
@@ -164,7 +164,7 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 .button:hover,
 a.button:hover {
-	background-color: var(--primary-hover);
+	background-color: var(--primary-button-hover);
 	color: #fff;
 }
 
@@ -207,15 +207,28 @@ button.outline,
 .button.outline,
 a.button.outline {
 	background-color: transparent;
-	color: var(--primary);
-	border: 1px solid var(--primary);
+	color: var(--primary-button);
+	border: 1px solid var(--primary-button);
 }
 
 button.outline:hover,
 .button.outline:hover,
 a.button.outline:hover {
-	background-color: var(--primary);
+	background-color: var(--primary-button);
 	color: #fff;
+}
+
+button.outline.secondary,
+.button.outline.secondary,
+a.button.outline.secondary {
+	color: var(--secondary);
+	border-color: var(--secondary);
+}
+
+button.outline.secondary:hover,
+.button.outline.secondary:hover,
+a.button.outline.secondary:hover {
+	background-color: var(--secondary);
 }
 
 /* Disabled states */
