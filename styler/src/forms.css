@@ -141,7 +141,8 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-.button {
+.button,
+a.button {
 	display: inline-block;
 	padding: 0.5rem 1.5rem;
 	font-size: 1rem;
@@ -161,7 +162,8 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
-.button:hover {
+.button:hover,
+a.button:hover {
 	background-color: var(--primary-hover);
 	color: #fff;
 }
@@ -186,28 +188,32 @@ input[type="button"]:focus:not(:focus-visible),
 /* Secondary button */
 button.secondary,
 input[type="reset"],
-.button.secondary {
+.button.secondary,
+a.button.secondary {
 	background-color: var(--secondary);
 	color: #fff;
 }
 
 button.secondary:hover,
 input[type="reset"]:hover,
-.button.secondary:hover {
+.button.secondary:hover,
+a.button.secondary:hover {
 	background-color: var(--secondary-hover);
 	color: #fff;
 }
 
 /* Outline button */
 button.outline,
-.button.outline {
+.button.outline,
+a.button.outline {
 	background-color: transparent;
 	color: var(--primary);
 	border: 1px solid var(--primary);
 }
 
 button.outline:hover,
-.button.outline:hover {
+.button.outline:hover,
+a.button.outline:hover {
 	background-color: var(--primary);
 	color: #fff;
 }

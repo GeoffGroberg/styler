@@ -391,6 +391,11 @@ Add `bg`, `bg1`, or `bg2` to apply a background color from the palette.
 <button>Primary</button>
 <button class="secondary">Secondary</button>
 <button class="outline">Outline</button>
+
+<!-- Links styled as buttons -->
+<a href="#" class="button">Link Button</a>
+<a href="#" class="button secondary">Secondary Link</a>
+<a href="#" class="button outline">Outline Link</a>
 ```
 
 ## Media
