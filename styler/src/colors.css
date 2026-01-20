@@ -4,8 +4,8 @@
 :root {
 	/* Light theme (default) - pure white bg, neutral grays */
 	--body: hsl(0 0% 10%);
-	--body1: hsl(0 0% 20%);
-	--body2: hsl(0 0% 40%);
+	--body1: hsl(0 0% 45%);
+	--body2: hsl(0 0% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -55,8 +55,8 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--body: hsl(0 0% 96%);
-	--body1: hsl(0 0% 83%);
-	--body2: hsl(0 0% 64%);
+	--body1: hsl(0 0% 60%);
+	--body2: hsl(0 0% 40%);
 
 	--bg-base: hsl(0 0% 0%);
 	--bg: var(--bg-base);
@@ -103,8 +103,8 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--body: hsl(36 14% 89%);
-	--body1: hsl(34 10% 75%);
-	--body2: hsl(36 7% 51%);
+	--body1: hsl(34 10% 60%);
+	--body2: hsl(36 5% 40%);
 
 	--bg-base: hsl(220 24% 12%);
 	--bg: var(--bg-base);
@@ -148,8 +148,8 @@
 /* Uinta - light theme inspired by a crisp morning in Utah's Uinta mountains */
 .uinta {
 	--body: hsl(105 10% 17%);
-	--body1: hsl(105 8% 30%);
-	--body2: hsl(105 5% 41%);
+	--body1: hsl(105 6% 45%);
+	--body2: hsl(105 3% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -193,8 +193,8 @@
 /* Hokkaido - light theme inspired by where mountain meets sea in Hokkaido, Japan */
 .hokkaido {
 	--body: hsl(205 25% 15%);
-	--body1: hsl(202 16% 27%);
-	--body2: hsl(202 10% 40%);
+	--body1: hsl(202 10% 45%);
+	--body2: hsl(202 4% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -238,8 +238,8 @@
 /* Sahel - light theme inspired by golden hour where savanna meets desert in West Africa */
 .sahel {
 	--body: hsl(230 25% 18%);
-	--body1: hsl(225 15% 30%);
-	--body2: hsl(220 10% 45%);
+	--body1: hsl(225 10% 45%);
+	--body2: hsl(220 4% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -286,8 +286,8 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--body: hsl(200 15% 90%);
-	--body1: hsl(200 10% 75%);
-	--body2: hsl(200 8% 55%);
+	--body1: hsl(200 8% 60%);
+	--body2: hsl(200 4% 40%);
 
 	--bg-base: hsl(215 30% 10%);
 	--bg: var(--bg-base);
@@ -331,8 +331,8 @@
 /* Kerala - light theme inspired by a monsoon morning on the backwaters of South India */
 .kerala {
 	--body: hsl(150 20% 15%);
-	--body1: hsl(150 12% 28%);
-	--body2: hsl(150 8% 42%);
+	--body1: hsl(150 8% 45%);
+	--body2: hsl(150 3% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -379,8 +379,8 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--body: hsl(200 20% 92%);
-	--body1: hsl(200 15% 78%);
-	--body2: hsl(200 10% 58%);
+	--body1: hsl(200 10% 60%);
+	--body2: hsl(200 4% 40%);
 
 	--bg-base: hsl(220 35% 8%);
 	--bg: var(--bg-base);
@@ -424,8 +424,8 @@
 /* Yucatan - light theme inspired by morning light on Mayan ruins and cenotes */
 .yucatan {
 	--body: hsl(180 15% 18%);
-	--body1: hsl(180 10% 30%);
-	--body2: hsl(180 6% 45%);
+	--body1: hsl(180 6% 45%);
+	--body2: hsl(180 3% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -469,8 +469,8 @@
 /* Aegean - light theme inspired by the cerulean waters of the Greek islands */
 .aegean {
 	--body: hsl(195 30% 18%);
-	--body1: hsl(195 18% 30%);
-	--body2: hsl(195 10% 45%);
+	--body1: hsl(195 10% 45%);
+	--body2: hsl(195 4% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -514,8 +514,8 @@
 /* Guilin - light theme inspired by misty karst mountains and the Li River in southern China */
 .guilin {
 	--body: hsl(160 15% 15%);
-	--body1: hsl(160 10% 28%);
-	--body2: hsl(160 6% 42%);
+	--body1: hsl(160 6% 45%);
+	--body2: hsl(160 3% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -562,8 +562,8 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--body: hsl(200 12% 88%);
-	--body1: hsl(195 10% 68%);
-	--body2: hsl(190 8% 50%);
+	--body1: hsl(195 8% 60%);
+	--body2: hsl(190 4% 40%);
 
 	--bg-base: hsl(200 8% 10%);
 	--bg: var(--bg-base);
@@ -607,8 +607,8 @@
 /* Cappadocia - light theme inspired by rose valleys and fairy chimneys at dawn in Turkey */
 .cappadocia {
 	--body: hsl(20 20% 18%);
-	--body1: hsl(18 14% 32%);
-	--body2: hsl(18 10% 46%);
+	--body1: hsl(18 8% 45%);
+	--body2: hsl(18 3% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -652,8 +652,8 @@
 /* Marrakech - light theme inspired by spice markets and ochre walls of Morocco */
 .marrakech {
 	--body: hsl(28 30% 16%);
-	--body1: hsl(25 20% 28%);
-	--body2: hsl(25 14% 42%);
+	--body1: hsl(25 12% 45%);
+	--body2: hsl(25 5% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -697,8 +697,8 @@
 /* Uluru - light theme inspired by the red center at sunrise in Australia */
 .uluru {
 	--body: hsl(10 20% 18%);
-	--body1: hsl(10 14% 30%);
-	--body2: hsl(10 10% 45%);
+	--body1: hsl(10 8% 45%);
+	--body2: hsl(10 3% 70%);
 
 	--bg-base: hsl(0 0% 100%);
 	--bg: var(--bg-base);
@@ -745,8 +745,8 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--body: hsl(50 25% 92%);
-	--body1: hsl(50 18% 78%);
-	--body2: hsl(50 12% 58%);
+	--body1: hsl(50 12% 60%);
+	--body2: hsl(50 5% 40%);
 
 	--bg-base: hsl(216 50% 10%);
 	--bg: var(--bg-base);
@@ -789,8 +789,8 @@
 
 /* Warm color temperature - does NOT affect --bg */
 .warm {
-	--body1: hsl(30 6% 25%);
-	--body2: hsl(25 6% 45%);
+	--body1: hsl(30 6% 45%);
+	--body2: hsl(25 4% 70%);
 
 	--bg1-base: hsl(40 33% 97%);
 	--bg1: var(--bg1-base);
@@ -806,8 +806,8 @@
 .warm.svalbard, .svalbard.warm, .svalbard .warm,
 .warm.cusco, .cusco.warm, .cusco .warm,
 .warm.lviv, .lviv.warm, .lviv .warm {
-	--body1: hsl(35 6% 83%);
-	--body2: hsl(30 5% 64%);
+	--body1: hsl(35 6% 60%);
+	--body2: hsl(30 3% 40%);
 
 	--bg1-base: hsl(25 12% 14%);
 	--bg1: var(--bg1-base);
@@ -819,8 +819,8 @@
 
 /* Cool color temperature - does NOT affect --bg */
 .cool {
-	--body1: hsl(218 17% 27%);
-	--body2: hsl(217 10% 46%);
+	--body1: hsl(218 10% 45%);
+	--body2: hsl(217 5% 70%);
 
 	--bg1-base: hsl(210 40% 98%);
 	--bg1: var(--bg1-base);
@@ -836,8 +836,8 @@
 .cool.svalbard, .svalbard.cool, .svalbard .cool,
 .cool.cusco, .cusco.cool, .cusco .cool,
 .cool.lviv, .lviv.cool, .lviv .cool {
-	--body1: hsl(216 12% 84%);
-	--body2: hsl(218 11% 65%);
+	--body1: hsl(216 10% 60%);
+	--body2: hsl(218 4% 40%);
 
 	--bg1-base: hsl(218 30% 15%);
 	--bg1: var(--bg1-base);
@@ -908,8 +908,8 @@
 		-moz-osx-font-smoothing: grayscale;
 
 		--body: hsl(0 0% 96%);
-		--body1: hsl(0 0% 83%);
-		--body2: hsl(0 0% 64%);
+		--body1: hsl(0 0% 60%);
+		--body2: hsl(0 0% 40%);
 
 		--bg-base: hsl(0 0% 0%);
 		--bg: var(--bg-base);
@@ -949,6 +949,13 @@
 		--border: hsl(0 0% 27%);
 		--border-focus: var(--primary);
 	}
+}
+
+/* Apply text color to palette classes (enables use on any element, not just html) */
+.dark, .ambleside, .uinta, .hokkaido, .sahel, .patagonia,
+.kerala, .svalbard, .yucatan, .aegean, .guilin, .cusco,
+.cappadocia, .marrakech, .uluru, .lviv {
+	color: var(--body);
 }
 
 /* Apply colors to base elements */

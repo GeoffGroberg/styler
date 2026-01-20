@@ -7,8 +7,12 @@
 	<link rel="stylesheet" href="styler/extrafonts.css">
 	<link rel="stylesheet" href="styler/base.css">
 	<style>
+		.section {
+			margin: 2rem 0;
+		}
 		.section-nav {
 			margin-bottom: 1.5rem;
+			border-bottom: 1px solid var(--primary);
 		}
 		.theme-selector {
 			display: flex;
@@ -34,7 +38,7 @@
 <div class="readable">
 
 	<h1 id="top">Styler</h1>
-	<p>A simple, clean CSS framework.</p>
+	<p>A simple, clean CSS framework. See <a href="specs.md">specs.md</a> for full documentation.</p>
 
 	<div class="theme-selector mb1">
 		<label>Palette:
@@ -83,631 +87,455 @@
 		</label>
 	</div>
 
-	<nav>
-		<a href="#colors">Colors</a> ·
-		<a href="#typography">Typography</a> ·
-		<a href="#media">Media</a> ·
-		<a href="#forms">Forms</a> ·
-		<a href="#tables">Tables</a> ·
-		<a href="#alerts">Alerts</a> ·
-		<a href="#more-elements">More</a> ·
-		<a href="#how-to-use">How to Use</a>
-	</nav>
-
-	<hr>
-
-	<h2 id="colors">Colors</h2>
-	<div class="section-nav"><a href="#top">Top</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#how-to-use">How to Use</a></div>
-
-	<p>Text colors: <span style="color: var(--body)">--body</span>, <span style="color: var(--body1)">--body1</span>, <span style="color: var(--body2)">--body2</span></p>
-
-	<p>Semantic colors:
-		<span style="color: var(--primary)">--primary</span>,
-		<span style="color: var(--secondary)">--secondary</span>,
-		<span style="color: var(--success)">--success</span>,
-		<span style="color: var(--warning)">--warning</span>,
-		<span style="color: var(--error)">--error</span>,
-		<span style="color: var(--info)">--info</span>
-	</p>
-
-	<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-		<div style="background: var(--bg); border: 1px solid var(--border); padding: 1rem;">--bg (pure white/black)</div>
-		<div style="background: var(--bg1); padding: 1rem;">--bg1</div>
-		<div style="background: var(--bg2); padding: 1rem;">--bg2</div>
-	</div>
-
-	<h3>Color Temperature</h3>
-	<pre><code>&lt;html class="warm"&gt;        warm tones (affects bg1, bg2, borders)
-&lt;html class="cool"&gt;        cool tones
-&lt;html class="dark warm"&gt;   combine with dark palette</code></pre>
-
 </div>
 
-<!-- Warm color demo -->
-<div class="warm py2" style="background-color: var(--bg1);">
+<div class="section" id="colors">
 	<div class="readable">
-		<h4>Warm Colors</h4>
-		<p>This section uses <code>class="warm"</code>. Notice the warm tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-	</div>
-</div>
+		<h2>Colors</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
 
-<!-- Cool color demo -->
-<div class="cool py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Cool Colors</h4>
-		<p>This section uses <code>class="cool"</code>. Notice the cool tint on this background (--bg1). The main --bg stays pure white/black. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
-	</div>
-</div>
-
-<div class="readable">
-	<h3>Saturation</h3>
-	<pre><code>&lt;html class="sat"&gt;         vivid/vibrant colors
-&lt;html class="desat"&gt;       muted/subdued colors
-&lt;html class="warm sat"&gt;    combine modifiers</code></pre>
-</div>
-
-<!-- Saturated demo -->
-<div class="sat py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Saturated</h4>
-		<p>This section uses <code>class="sat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are more vivid: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
-	</div>
-</div>
-
-<!-- Desaturated demo -->
-<div class="desat py2" style="background-color: var(--bg1);">
-	<div class="readable">
-		<h4>Desaturated</h4>
-		<p>This section uses <code>class="desat"</code>. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and semantic colors are muted: <span style="color: var(--success)">success</span>, <span style="color: var(--warning)">warning</span>, <span style="color: var(--error)">error</span>.</p>
-	</div>
-</div>
-
-<div class="readable">
-
-	<hr>
-
-	<h2 id="typography">Typography</h2>
-	<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#how-to-use">How to Use</a></div>
-
-	<h1>Heading 1</h1>
-	<h2>Heading 2</h2>
-	<h3>Heading 3</h3>
-	<h4>Heading 4</h4>
-	<h5>Heading 5</h5>
-	<h6>Heading 6</h6>
-
-	<p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and a <a href="#">link</a>. Here's some <code>inline code</code> and <mark>highlighted text</mark>.</p>
-
-	<blockquote>
-		<p>This is a blockquote. It can contain multiple paragraphs and other elements.</p>
-	</blockquote>
-
-	<h3>Lists</h3>
-
-	<ul>
-		<li>Unordered list item</li>
-		<li>Another item</li>
-		<li>Third item</li>
-	</ul>
-
-	<ol>
-		<li>Ordered list item</li>
-		<li>Another item</li>
-		<li>Third item</li>
-	</ol>
-
-	<h3>Poetry</h3>
-	<pre><code>&lt;div class="poetry text-center"&gt;
-  Your verse here...
-&lt;/div&gt;</code></pre>
-
-	<div class="poetry text-center">
+		<h3>Text Colors</h3>
 		<p>
-			"Quit! Give up! You're beaten!"<br>
-			They shout at me and plead.<br>
-			"There's just too much against you now.<br>
-			This time you can't succeed."
+			<span class="primary">.primary</span>,
+			<span class="secondary">.secondary</span>,
+			<span class="success">.success</span>,
+			<span class="warning">.warning</span>,
+			<span class="error">.error</span>,
+			<span class="info">.info</span>
 		</p>
-		<p>
-			And as I start to hang my head<br>
-			In front of failure's face,<br>
-			My downward fall is broken by<br>
-			The memory of a race.
-		</p>
-		<p style="font-style: normal; font-size: 0.9rem; margin-top: 1rem;">— D.H. Groberg, <a href="https://theracepoem.com">The Race</a></p>
+		<p>Regular text, <span class="muted">.muted text</span>, and <span class="muted2">.muted2 text</span>.</p>
+
+		<h4>On .bg1</h4>
+		<div class="bg1 p1 r1">
+			<p style="margin-bottom: 0.5rem;">Regular text, <span class="muted">muted</span>, <span class="muted2">muted2</span></p>
+			<p style="margin: 0;"><span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="info">info</span></p>
+		</div>
+
+		<h4>On .bg2</h4>
+		<div class="bg2 p1 r1">
+			<p style="margin-bottom: 0.5rem;">Regular text, <span class="muted">muted</span>, <span class="muted2">muted2</span></p>
+			<p style="margin: 0;"><span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="info">info</span></p>
+		</div>
+
+		<h3>Background Colors</h3>
+		<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+			<div class="bg p1" style="border: 1px solid var(--border);">.bg</div>
+			<div class="bg1 p1">.bg1</div>
+			<div class="bg2 p1">.bg2</div>
+		</div>
 	</div>
 
-	<h3>Alignment</h3>
-	<pre><code>&lt;p class="text-center"&gt;Centered text&lt;/p&gt;
-&lt;p class="text-right"&gt;Right-aligned text&lt;/p&gt;
-&lt;figure class="center"&gt;...&lt;/figure&gt;   block element
-&lt;figure class="left"&gt;...&lt;/figure&gt;    float left
-&lt;figure class="right"&gt;...&lt;/figure&gt;   float right</code></pre>
-
-	<p class="text-center">This paragraph is centered with <code>.text-center</code></p>
-	<p class="text-right">This paragraph is right-aligned with <code>.text-right</code></p>
-
-	<div class="text-center">
-		<button>Centered button</button>
+	<div class="warm bg1 py2 mt2">
+		<div class="readable">
+			<h4>.warm</h4>
+			<p>Warm tint on backgrounds. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
+		</div>
 	</div>
 
+	<div class="cool bg1 py2">
+		<div class="readable">
+			<h4>.cool</h4>
+			<p>Cool tint on backgrounds. <a href="#">Links</a> and <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button> keep their colors.</p>
+		</div>
+	</div>
+
+	<div class="sat bg1 py2">
+		<div class="readable">
+			<h4>.sat</h4>
+			<p>Saturated colors. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>: <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>.</p>
+		</div>
+	</div>
+
+	<div class="desat bg1 py2">
+		<div class="readable">
+			<h4>.desat</h4>
+			<p>Desaturated colors. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>: <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>.</p>
+		</div>
+	</div>
 </div>
 
-<!-- Full-width section with background -->
-<div style="background-color: var(--bg1);" class="mt2 py2">
+<div class="section" id="typography">
 	<div class="readable">
-		<h2>Full-Width Section</h2>
-		<pre><code>&lt;div style="background: var(--bg1);"&gt;
+		<h2>Typography</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+
+		<h1>Heading 1</h1>
+		<h2>Heading 2</h2>
+		<h3>Heading 3</h3>
+		<h4>Heading 4</h4>
+		<h5>Heading 5</h5>
+		<h6>Heading 6</h6>
+
+		<p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and a <a href="#">link</a>. Here's some <code>inline code</code> and <mark>highlighted text</mark>.</p>
+
+		<blockquote>
+			<p>This is a blockquote. It can contain multiple paragraphs and other elements.</p>
+		</blockquote>
+
+		<ul>
+			<li>Unordered list item</li>
+			<li>Another item</li>
+			<li>Third item</li>
+		</ul>
+
+		<ol>
+			<li>Ordered list item</li>
+			<li>Another item</li>
+			<li>Third item</li>
+		</ol>
+
+		<h3>.poetry</h3>
+		<div class="poetry text-center">
+			<p>
+				"Quit! Give up! You're beaten!"<br>
+				They shout at me and plead.<br>
+				"There's just too much against you now.<br>
+				This time you can't succeed."
+			</p>
+			<p style="font-style: normal; font-size: 0.9rem; margin-top: 1rem;">— D.H. Groberg, <a href="https://theracepoem.com">The Race</a></p>
+		</div>
+
+		<h3>Alignment</h3>
+		<p class="text-center"><code>.text-center</code> - centered text</p>
+		<p class="text-right"><code>.text-right</code> - right-aligned text</p>
+	</div>
+
+	<div class="bg1 mt2 py2">
+		<div class="readable">
+			<h3>Full-Width Sections</h3>
+			<pre><code>&lt;div class="bg1"&gt;
   &lt;div class="readable"&gt;
     Content here...
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-		<p>This section demonstrates a full-width background with a <code>.readable</code> container inside. The outer div spans the full viewport width while the inner content stays readable.</p>
+			<p>Outer div spans full width, inner <code>.readable</code> constrains content.</p>
+		</div>
 	</div>
 </div>
 
-<div class="readable">
-
-	<hr>
-
-	<h2 id="media">Media</h2>
-	<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#forms">Forms</a> · <a href="#how-to-use">How to Use</a></div>
-
-	<h3>Centered Image (Default)</h3>
-
-	<figure style="max-width: 400px;">
-		<img src="https://picsum.photos/400/300" alt="Sample image">
-		<figcaption>Images in figures are centered by default</figcaption>
-	</figure>
-
-	<h3>Left Aligned with Text Wrap</h3>
-	<pre><code>&lt;figure class="left"&gt;
-  &lt;img src="photo.jpg" alt="..."&gt;
-&lt;/figure&gt;
-&lt;p&gt;Text wraps around...&lt;/p&gt;</code></pre>
-
-	<figure class="left">
-		<img src="https://picsum.photos/800/600" alt="Left-aligned image">
-		<figcaption>Floats left</figcaption>
-	</figure>
-
-	<p>This text wraps around the left-aligned image. When you use the <code>left</code> class on a figure, it floats to the left and allows text to flow around it naturally. This creates a magazine-style layout that works well for articles and blog posts.</p>
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-	<p>On smaller screens (below 50rem), floated images automatically become full-width and centered to ensure readability on mobile devices.</p>
-
-	<h3>Right Aligned with Text Wrap</h3>
-
-	<figure class="right">
-		<img src="https://picsum.photos/800/600?2" alt="Right-aligned image">
-		<figcaption>Floats right</figcaption>
-	</figure>
-
-	<p>Similarly, using the <code>right</code> class floats the image to the right. Text flows around on the left side. This creates a nice visual rhythm when alternating between left and right aligned images throughout your content.</p>
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-	<p>The responsive behavior happens automatically without any additional classes or JavaScript. Images shrink gracefully and reflow as the viewport changes.</p>
-
-	<h3>Column Layouts</h3>
-	<pre><code>&lt;div class="cols3 px1"&gt;   also: cols2, cols4
-  &lt;figure&gt;...&lt;/figure&gt;    works with any block children
-  &lt;figure&gt;...&lt;/figure&gt;
-  &lt;figure&gt;...&lt;/figure&gt;
-&lt;/div&gt;</code></pre>
-
-</div>
-
-<div class="cols3 px1">
-	<figure>
-		<img src="https://picsum.photos/300/200?a" alt="Column 1">
-		<figcaption>An image</figcaption>
-	</figure>
-	<div style="background: var(--bg1); padding: 1rem; border-radius: var(--box-radius);">
-		<strong>Any block element</strong>
-		<p style="margin: 0.5rem 0 0;">Columns work with divs, figures, or any block-level children.</p>
-	</div>
-	<figure>
-		<img src="https://picsum.photos/300/200?c" alt="Column 3">
-		<figcaption>Another image</figcaption>
-	</figure>
-</div>
-
-<div class="cols4 px1">
-	<figure>
-		<img src="https://picsum.photos/300/200?d" alt="Column 1">
-	</figure>
-	<figure>
-		<img src="https://picsum.photos/300/200?e" alt="Column 2">
-	</figure>
-	<figure>
-		<img src="https://picsum.photos/300/200?f" alt="Column 3">
-	</figure>
-	<figure>
-		<img src="https://picsum.photos/300/200?g" alt="Column 4">
-	</figure>
-</div>
-
-<div class="readable">
-
-	<h3>Square Crop</h3>
-
-	<figure class="square" style="max-width: 200px;">
-		<img src="https://picsum.photos/300/200?3" alt="Square cropped">
-		<figcaption>Cropped to square</figcaption>
-	</figure>
-
-	<h3>Border Radius</h3>
-
-	<div class="cols3">
-		<figure style="max-width: 100px;">
-			<img src="https://picsum.photos/100/100" alt="r0" class="r0">
-			<figcaption>r0</figcaption>
-		</figure>
-		<figure style="max-width: 100px;">
-			<img src="https://picsum.photos/100/100?2" alt="r2" class="r2">
-			<figcaption>r2</figcaption>
-		</figure>
-		<figure style="max-width: 100px;">
-			<img src="https://picsum.photos/100/100?3" alt="r100" class="r100">
-			<figcaption>r100</figcaption>
-		</figure>
-	</div>
-
-	<h3>Audio</h3>
-
-	<audio controls>
-		<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-	</audio>
-
-</div>
-
-<!-- Full-width video outside .readable -->
-<div class="py2">
+<div class="section" id="media">
 	<div class="readable">
-		<h3>Full-Width Video</h3>
-		<pre><code>&lt;!-- Place video outside .readable for wider display --&gt;
-&lt;div class="video-container"&gt;
+		<h2>Media</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+
+		<figure style="max-width: 400px;">
+			<img src="https://picsum.photos/400/300" alt="Sample image">
+			<figcaption>Images in figures are centered by default</figcaption>
+		</figure>
+
+		<h3>.left / .right</h3>
+
+		<figure class="left">
+			<img src="https://picsum.photos/800/600" alt="Left-aligned image">
+			<figcaption>Floats left</figcaption>
+		</figure>
+
+		<p>Text wraps around floated images. On smaller screens, floated images become full-width and centered automatically.</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+	</div>
+
+	<div class="readable">
+		<h3>.cols2 / .cols3 / .cols4</h3>
+	</div>
+
+	<div class="cols3 px1 mt2">
+		<figure>
+			<img src="https://picsum.photos/300/200?a" alt="Column 1">
+			<figcaption>An image</figcaption>
+		</figure>
+		<div class="bg1 p1 r1">
+			<strong>Any block element</strong>
+			<p style="margin: 0.5rem 0 0;">Columns work with any block-level children.</p>
+		</div>
+		<figure>
+			<img src="https://picsum.photos/300/200?c" alt="Column 3">
+			<figcaption>Another image</figcaption>
+		</figure>
+	</div>
+
+	<div class="readable">
+		<h3>.square</h3>
+		<figure class="square" style="max-width: 200px;">
+			<img src="https://picsum.photos/300/200?3" alt="Square cropped">
+			<figcaption>Cropped to square</figcaption>
+		</figure>
+
+		<h3>Border Radius on Images</h3>
+		<div class="cols3">
+			<figure style="max-width: 100px;">
+				<img src="https://picsum.photos/100/100" alt="r0" class="r0">
+				<figcaption>.r0</figcaption>
+			</figure>
+			<figure style="max-width: 100px;">
+				<img src="https://picsum.photos/100/100?2" alt="r2" class="r2">
+				<figcaption>.r2</figcaption>
+			</figure>
+			<figure style="max-width: 100px;">
+				<img src="https://picsum.photos/100/100?3" alt="r100" class="r100">
+				<figcaption>.r100</figcaption>
+			</figure>
+		</div>
+
+		<h3>Audio</h3>
+		<audio controls>
+			<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+		</audio>
+
+		<h3>Video</h3>
+		<pre><code>&lt;div class="video-container"&gt;
   &lt;iframe src="youtube..."&gt;&lt;/iframe&gt;
 &lt;/div&gt;</code></pre>
 	</div>
+
 	<div class="video-container" style="max-width: 900px; margin: 0 auto;">
 		<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
 	</div>
 </div>
 
-<div class="readable">
+<div class="section" id="forms">
+	<div class="readable">
+		<h2>Forms</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
 
-	<hr>
+		<form>
+			<label for="name">Name</label>
+			<input type="text" id="name" placeholder="Your name">
 
-	<h2 id="forms">Forms</h2>
-	<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#how-to-use">How to Use</a></div>
+			<label for="email">Email</label>
+			<input type="email" id="email" placeholder="you@example.com">
 
-	<h3>Text Inputs</h3>
-	<pre><code>&lt;label for="name"&gt;Name&lt;/label&gt;
-&lt;input type="text" id="name"&gt;</code></pre>
+			<label for="phone">Phone</label>
+			<input type="tel" id="phone" placeholder="555-1234">
 
-	<form>
-		<label for="name">Name</label>
-		<input type="text" id="name" placeholder="Your name">
+			<label for="date">Date</label>
+			<input type="date" id="date">
 
-		<label for="email">Email</label>
-		<input type="email" id="email" placeholder="you@example.com">
+			<label for="quantity">Quantity</label>
+			<input type="number" id="quantity" value="1" min="1">
 
-		<label for="password">Password</label>
-		<input type="password" id="password" placeholder="Password">
-	</form>
+			<label for="country">Country</label>
+			<select id="country">
+				<option>United States</option>
+				<option>Canada</option>
+				<option>United Kingdom</option>
+			</select>
 
-	<h3>Narrow Inputs</h3>
+			<label for="message">Message</label>
+			<textarea id="message" placeholder="Your message..."></textarea>
 
-	<form>
-		<label for="phone">Phone</label>
-		<input type="tel" id="phone" placeholder="555-1234">
+			<fieldset>
+				<legend>Checkboxes</legend>
+				<label><input type="checkbox" checked> Option one</label>
+				<label><input type="checkbox"> Option two</label>
+			</fieldset>
 
-		<label for="date">Date</label>
-		<input type="date" id="date">
-
-		<label for="time">Time</label>
-		<input type="time" id="time">
-
-		<label for="quantity">Quantity</label>
-		<input type="number" id="quantity" value="1" min="1">
-
-		<label for="country">Country</label>
-		<select id="country">
-			<option>United States</option>
-			<option>Canada</option>
-			<option>United Kingdom</option>
-		</select>
-	</form>
-
-	<h3>Inline Inputs</h3>
-	<pre><code>&lt;input type="tel" class="inline" style="max-width: 5rem;"&gt;
-&lt;input type="tel" class="inline" style="max-width: 8rem;"&gt;</code></pre>
-
-	<form>
-		<label>Phone Number</label>
-		<input type="tel" class="inline" placeholder="Area" style="max-width: 5rem;">
-		<input type="tel" class="inline" placeholder="Number" style="max-width: 8rem;">
-	</form>
-
-	<h3>Textarea</h3>
-	<form>
-		<label for="message">Message</label>
-		<textarea id="message" placeholder="Your message..."></textarea>
-	</form>
-
-	<h3>Checkboxes & Radio Buttons</h3>
-
-	<form>
-		<fieldset>
-			<legend>Options</legend>
-			<label><input type="checkbox" checked> Option one</label>
-			<label><input type="checkbox"> Option two</label>
-		</fieldset>
-
-		<fieldset>
-			<legend>Choice</legend>
-			<label><input type="radio" name="choice" checked> Choice A</label>
-			<label><input type="radio" name="choice"> Choice B</label>
-		</fieldset>
-	</form>
-
-	<h3>Buttons</h3>
-
-	<div class="mt1">
-		<button type="button">Primary</button>
-		<button type="button" class="secondary">Secondary</button>
-		<button type="button" class="outline">Outline</button>
-	</div>
-
-	<hr>
-
-	<h2 id="tables">Tables</h2>
-
-	<p>Tables are styled automatically. Add <code>.striped</code> for alternating row colors.</p>
-
-	<table class="striped">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Description</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>--primary</td>
-				<td>Color</td>
-				<td>Primary action color for buttons and links</td>
-			</tr>
-			<tr>
-				<td>--secondary</td>
-				<td>Color</td>
-				<td>Secondary action color</td>
-			</tr>
-			<tr>
-				<td>--bg1</td>
-				<td>Color</td>
-				<td>Surface background for inputs and cards</td>
-			</tr>
-			<tr>
-				<td>--border</td>
-				<td>Color</td>
-				<td>Border color for dividers and inputs</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<hr>
-
-	<h2 id="details">Details/Summary</h2>
-
-	<p>Native HTML accordion elements, styled automatically.</p>
-
-	<details>
-		<summary>What is Styler?</summary>
-		<p>Styler is a simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes. It's designed for simplicity and elegance.</p>
-	</details>
-
-	<details>
-		<summary>How do I customize colors?</summary>
-		<p>Override CSS variables in your own stylesheet:</p>
-		<pre><code>:root {
-  --primary: hsl(263 90% 66%);
-  --bg1: hsl(0 0% 94%);
-}</code></pre>
-	</details>
-
-	<details>
-		<summary>Does it work on mobile?</summary>
-		<p>Yes! Styler uses a mobile-first approach with responsive layouts that adapt gracefully to any screen size.</p>
-	</details>
-
-	<hr>
-
-	<h2 id="alerts">Alerts</h2>
-
-	<p>Simple alert boxes using semantic colors.</p>
-
-	<div class="alert success">
-		<strong>Success!</strong> Your changes have been saved.
-	</div>
-
-	<div class="alert warning">
-		<strong>Warning:</strong> This action cannot be undone.
-	</div>
-
-	<div class="alert error">
-		<strong>Error:</strong> Something went wrong. Please try again.
-	</div>
-
-	<div class="alert info">
-		<strong>Info:</strong> A new version is available.
-	</div>
-
-	<hr>
-
-	<h2 id="more-elements">More Elements</h2>
-
-	<h3>Definition Lists</h3>
-
-	<dl>
-		<dt>CSS</dt>
-		<dd>Cascading Style Sheets - a style sheet language used for describing the presentation of a document.</dd>
-		<dt>HTML</dt>
-		<dd>HyperText Markup Language - the standard markup language for documents designed to be displayed in a web browser.</dd>
-		<dt>JavaScript</dt>
-		<dd>A programming language that enables interactive web pages and is an essential part of web applications.</dd>
-	</dl>
-
-	<h3>Keyboard Shortcuts</h3>
-
-	<p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save, or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> to open the command palette.</p>
-
-	<h3>Text Changes</h3>
-
-	<p>This feature was <del>removed</del> <ins>updated</ins> in the latest version.</p>
-
-	<h3>Progress & Meter</h3>
-
-	<label for="progress-demo">Download progress:</label>
-	<progress id="progress-demo" value="70" max="100">70%</progress>
-
-	<label for="meter-demo">Disk usage (optimum: 25-75%):</label>
-	<meter id="meter-demo" value="0.6" min="0" max="1" low="0.25" high="0.75" optimum="0.5">60%</meter>
-
-	<h3>Other Text Elements</h3>
-
-	<p><abbr title="HyperText Markup Language">HTML</abbr> is the foundation of the web.</p>
-
-	<p>The variable <var>x</var> represents the user's input.</p>
-
-	<p>She said, <q>This is an inline quotation.</q></p>
-
-	<p>As noted in <cite>The Elements of Style</cite>, clarity is paramount.</p>
-
-	<p>The command returned: <samp>Hello, World!</samp></p>
-
-	<address>
-		Contact us at:<br>
-		123 Main Street<br>
-		Anytown, USA 12345
-	</address>
-
-	<h3>Dialog</h3>
-
-	<p>Native HTML dialog element with styled backdrop.</p>
-
-	<button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
-
-	<dialog id="demo-dialog">
-		<h3 style="margin-top: 0;">Dialog Title</h3>
-		<p>This is a native HTML dialog element. It includes a semi-transparent backdrop and is styled consistently with the rest of Styler.</p>
-		<form method="dialog">
-			<button type="submit">Close</button>
+			<fieldset>
+				<legend>Radio buttons</legend>
+				<label><input type="radio" name="choice" checked> Choice A</label>
+				<label><input type="radio" name="choice"> Choice B</label>
+			</fieldset>
 		</form>
-	</dialog>
 
-	<hr>
-
-	<h2 id="how-to-use">How to Use</h2>
-	<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
-
-	<pre><code>&lt;!-- Basic (system fonts only) --&gt;
-&lt;link rel="stylesheet" href="styler/base.css"&gt;
-
-&lt;!-- With Google Fonts (extrafonts.css must come first) --&gt;
-&lt;link rel="stylesheet" href="styler/extrafonts.css"&gt;
-&lt;link rel="stylesheet" href="styler/base.css"&gt;
-
-&lt;div class="readable"&gt;
-  &lt;h1&gt;Title&lt;/h1&gt;
-  &lt;p&gt;Content...&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-
-	<pre><code>&lt;!-- System Fonts (no extrafonts.css needed) --&gt;
-&lt;html class="sans"&gt;           system sans-serif (default)
-&lt;html class="serif"&gt;          system serif
-
-&lt;!-- Google Fonts (require extrafonts.css) --&gt;
-&lt;html class="source-sans"&gt;    Source Sans 3
-&lt;html class="pt-serif"&gt;       PT Serif
-&lt;html class="cormorant"&gt;      Cormorant Garamond
-
-&lt;!-- Color Palettes --&gt;
-&lt;html class="dark"&gt;           dark palette
-&lt;html class="ambleside"&gt;      Ambleside (dark, England)
-&lt;html class="patagonia"&gt;      Patagonia (dark, Argentina)
-&lt;html class="svalbard"&gt;       Svalbard (dark, Arctic)
-&lt;html class="cusco"&gt;          Cusco (dark, Peru)
-&lt;html class="lviv"&gt;           Lviv (dark, Ukraine)
-&lt;html class="uinta"&gt;          Uinta (light, Utah)
-&lt;html class="hokkaido"&gt;       Hokkaido (light, Japan)
-&lt;html class="sahel"&gt;          Sahel (light, West Africa)
-&lt;html class="kerala"&gt;         Kerala (light, India)
-&lt;html class="yucatan"&gt;        Yucatan (light, Mexico)
-&lt;html class="aegean"&gt;         Aegean (light, Greece)
-&lt;html class="guilin"&gt;         Guilin (light, China)
-&lt;html class="cappadocia"&gt;     Cappadocia (light, Turkey)
-&lt;html class="marrakech"&gt;      Marrakech (light, Morocco)
-&lt;html class="uluru"&gt;          Uluru (light, Australia)
-
-&lt;!-- Modifiers --&gt;
-&lt;html class="warm"&gt;           warm color temperature
-&lt;html class="cool"&gt;           cool color temperature
-&lt;html class="sat"&gt;            saturated/vivid colors
-&lt;html class="desat"&gt;          desaturated/muted colors
-
-&lt;!-- Combine classes --&gt;
-&lt;html class="dark warm cormorant"&gt;
-&lt;html class="ambleside pt-serif"&gt;
-&lt;html class="uinta source-sans sat"&gt;
-
-&lt;!-- Section-specific styling --&gt;
-&lt;div class="serif"&gt;           serif just for this section
-&lt;div class="warm"&gt;            warm tint just for this section
-
-&lt;figure class="left"&gt;      float left, text wraps
-&lt;figure class="right"&gt;     float right, text wraps
-&lt;figure class="square"&gt;    square crop
-
-&lt;div class="cols3"&gt;       3-column flexbox layout
-  &lt;figure&gt;...&lt;/figure&gt;    works with any block children
-  &lt;figure&gt;...&lt;/figure&gt;    collapses to 1 column on mobile
-&lt;/div&gt;
-
-&lt;div class="mt2 mb1"&gt;      margin-top: 2rem, margin-bottom: 1rem
-&lt;div class="px3"&gt;          padding left/right: 3rem
-
-&lt;img class="r0"&gt;           no rounding
-&lt;img class="r2"&gt;           moderate rounding
-&lt;img class="r100"&gt;         circular
-
-&lt;button&gt;                   primary button
-&lt;button class="secondary"&gt; secondary button
-&lt;button class="outline"&gt;   outline button</code></pre>
-
-	<h3>Customizing</h3>
-
-	<p>Include your custom stylesheet after base.css to override variables:</p>
-
-	<pre><code>:root {
-  --readable-width: 40rem;  /* narrower content */
-  --base-font-size: 18px;   /* smaller text */
-  --box-radius: 0.5rem;     /* rounder corners */
-  --primary: #8b5cf6;       /* purple primary */
-  --bg: #fefefe;            /* off-white background */
-}
-
-.dark {
-  --bg: #0a0a0a;            /* near-black for dark mode */
-}</code></pre>
-
-	<div class="section-nav mt2"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a></div>
-
+		<h3>Buttons</h3>
+		<div class="mt1">
+			<button type="button">Primary</button>
+			<button type="button" class="secondary">.secondary</button>
+			<button type="button" class="outline">.outline</button>
+		</div>
+	</div>
 </div>
+
+<div class="section" id="tables">
+	<div class="readable">
+		<h2>Tables</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+
+		<p>Tables are styled automatically. Add <code>.striped</code> for alternating rows.</p>
+
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>--primary</td>
+					<td>Color</td>
+					<td>Primary action color for buttons and links</td>
+				</tr>
+				<tr>
+					<td>--secondary</td>
+					<td>Color</td>
+					<td>Secondary action color</td>
+				</tr>
+				<tr>
+					<td>--bg1</td>
+					<td>Color</td>
+					<td>Surface background for inputs and cards</td>
+				</tr>
+				<tr>
+					<td>--border</td>
+					<td>Color</td>
+					<td>Border color for dividers and inputs</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="section" id="alerts">
+	<div class="readable">
+		<h2>Alerts</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+
+		<div class="alert success">
+			<strong>Success!</strong> Your changes have been saved.
+		</div>
+
+		<div class="alert warning">
+			<strong>Warning:</strong> This action cannot be undone.
+		</div>
+
+		<div class="alert error">
+			<strong>Error:</strong> Something went wrong. Please try again.
+		</div>
+
+		<div class="alert info">
+			<strong>Info:</strong> A new version is available.
+		</div>
+	</div>
+</div>
+
+<div class="section" id="more-elements">
+	<div class="readable">
+		<h2>More Elements</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+
+		<h3>Details/Summary</h3>
+		<details>
+			<summary>What is Styler?</summary>
+			<p>Styler is a simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes.</p>
+		</details>
+
+		<details>
+			<summary>How do I customize colors?</summary>
+			<p>Override CSS variables in your own stylesheet. See specs.md for all available variables.</p>
+		</details>
+
+		<h3>Definition Lists</h3>
+		<dl>
+			<dt>CSS</dt>
+			<dd>Cascading Style Sheets - a style sheet language for describing presentation.</dd>
+			<dt>HTML</dt>
+			<dd>HyperText Markup Language - the standard markup language for web documents.</dd>
+		</dl>
+
+		<h3>Keyboard Input</h3>
+		<p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save, or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for command palette.</p>
+
+		<h3>Text Changes</h3>
+		<p>This feature was <del>removed</del> <ins>updated</ins> in the latest version.</p>
+
+		<h3>Progress & Meter</h3>
+		<label for="progress-demo">Download progress:</label>
+		<progress id="progress-demo" value="70" max="100">70%</progress>
+
+		<label for="meter-demo">Disk usage:</label>
+		<meter id="meter-demo" value="0.6" min="0" max="1" low="0.25" high="0.75" optimum="0.5">60%</meter>
+
+		<h3>Other Elements</h3>
+		<p><abbr title="HyperText Markup Language">HTML</abbr> is the foundation of the web.</p>
+		<p>The variable <var>x</var> represents the user's input.</p>
+		<p>She said, <q>This is an inline quotation.</q></p>
+		<p>As noted in <cite>The Elements of Style</cite>, clarity is paramount.</p>
+		<p>The command returned: <samp>Hello, World!</samp></p>
+		<address>
+			Contact us at:<br>
+			123 Main Street<br>
+			Anytown, USA 12345
+		</address>
+
+		<h3>Dialog</h3>
+		<pre><code>&lt;dialog id="my-dialog"&gt;
+  &lt;h3&gt;Title&lt;/h3&gt;
+  &lt;p&gt;Content...&lt;/p&gt;
+  &lt;form method="dialog"&gt;&lt;button&gt;Close&lt;/button&gt;&lt;/form&gt;
+&lt;/dialog&gt;
+
+&lt;button onclick="document.getElementById('my-dialog').showModal()"&gt;Open&lt;/button&gt;</code></pre>
+
+		<button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+
+		<dialog id="demo-dialog">
+			<h3 style="margin-top: 0;">Dialog Title</h3>
+			<p>This is a native HTML dialog element with styled backdrop.</p>
+			<form method="dialog">
+				<button type="submit">Close</button>
+			</form>
+		</dialog>
+	</div>
+</div>
+
+<div class="section" id="utilities">
+	<div class="readable">
+		<h2>Utility Classes</h2>
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+
+		<h3>Spacing</h3>
+		<p><code>.m0</code>-<code>.m10</code>, <code>.mt0</code>, <code>.mb0</code>, <code>.ml0</code>, <code>.mr0</code>, <code>.mx0</code>, <code>.my0</code> (margins)</p>
+		<p><code>.p0</code>-<code>.p10</code>, <code>.pt0</code>, <code>.pb0</code>, <code>.pl0</code>, <code>.pr0</code>, <code>.px0</code>, <code>.py0</code> (padding)</p>
+
+		<h3>Border Radius</h3>
+		<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+			<div class="bg1 p1 r0">.r0</div>
+			<div class="bg1 p1 r1">.r1</div>
+			<div class="bg1 p1 r2">.r2</div>
+			<div class="bg1 p1 r3">.r3</div>
+			<div class="bg1 p1 r4">.r4</div>
+		</div>
+
+		<h3>Palettes on Any Element</h3>
+		<pre><code>&lt;section class="patagonia bg py2"&gt;
+  &lt;div class="readable"&gt;Content with Patagonia colors&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+	</div>
+
+	<div class="patagonia bg py2 mt2">
+		<div class="readable">
+			<p><strong>Patagonia palette</strong> on a div. <a href="#">Links</a>, <button type="button" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">buttons</button>, and text all use the palette colors.</p>
+		</div>
+	</div>
+
+	<div class="marrakech bg1 py2 mt1">
+		<div class="readable">
+			<p><strong>Marrakech palette</strong> with <code>.bg1</code>. Semantic colors: <span class="primary">primary</span>, <span class="success">success</span>, <span class="warning">warning</span>.</p>
+		</div>
+	</div>
+
+	<div class="readable mt3">
+		<h3>Fonts on Any Element</h3>
+		<p>Use <code>.serif</code>, <code>.source-sans</code>, <code>.pt-serif</code>, <code>.cormorant</code> on any element.</p>
+
+		<blockquote class="cormorant" style="font-size: 1.3rem;">
+			"This blockquote uses the Cormorant font class for an elegant look."
+		</blockquote>
+
+		<p class="pt-serif">This paragraph uses PT Serif.</p>
+	</div>
+
+	<div class="readable mt4">
+		<div class="section-nav"><a href="#top">Top</a> · <a href="#colors">Colors</a> · <a href="#typography">Typography</a> · <a href="#media">Media</a> · <a href="#forms">Forms</a> · <a href="#tables">Tables</a> · <a href="#alerts">Alerts</a> · <a href="#more-elements">More</a> · <a href="#utilities">Utilities</a></div>
+	</div>
+</div>
+
+<footer class="text-center py2 mt2 bg2 ambleside">
+	Styler was created by <a href="https://www.geoffgroberg.com">Geoff Groberg</a>
+</footer>
 
 <script>
 (function() {

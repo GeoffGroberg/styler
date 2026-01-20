@@ -43,6 +43,11 @@ styler/
 <html class="dark">           <!-- color palette -->
 <html class="serif">          <!-- font -->
 <html class="dark warm serif"> <!-- combine classes -->
+
+<!-- Palettes and fonts work on any element -->
+<footer class="patagonia bg">Footer with different palette</footer>
+<blockquote class="cormorant">Fancy quote font</blockquote>
+<div class="sahel bg1 p2">Themed section</div>
 ```
 
 ## Color Palettes
@@ -301,7 +306,7 @@ This allows `sat` and `desat` to dynamically adjust any palette's colors rather 
 
 ```css
 .readable {
-  max-width: 50rem;
+  max-width: 45rem;
   margin: 0 auto;
   padding: 0 10%;
 }
@@ -310,7 +315,7 @@ This allows `sat` and `desat` to dynamically adjust any palette's colors rather 
 For full-width backgrounds with readable content:
 
 ```html
-<div style="background: var(--bg1);">
+<div class="bg1">
   <div class="readable">
     Content here...
   </div>
@@ -336,14 +341,44 @@ For full-width backgrounds with readable content:
 <div class="cols4">           <!-- 4-column layout -->
 ```
 
-Columns collapse to single column at 50rem breakpoint.
+Columns collapse to single column at 45rem breakpoint.
 
 ### Utility Classes
 
-**Margins** (1-10 rem): `m1`, `mx1`, `my1`, `mt1`, `mb1`, `ml1`, `mr1`
-**Padding** (1-10 rem): `p1`, `px1`, `py1`, `pt1`, `pb1`, `pl1`, `pr1`
+**Margins** (0-10 rem): `m0`, `m1`, `mx0`, `mx1`, `my0`, `my1`, `mt0`, `mt1`, `mb0`, `mb1`, `ml0`, `ml1`, `mr0`, `mr1`
+**Padding** (0-10 rem): `p0`, `p1`, `px0`, `px1`, `py0`, `py1`, `pt0`, `pt1`, `pb0`, `pb1`, `pl0`, `pl1`, `pr0`, `pr1`
 **Border radius**: `r0` (none), `r1`-`r4` (progressive), `r100` (circular)
+**Backgrounds**: `bg`, `bg1`, `bg2`
+**Text colors**: `muted`, `muted2`, `primary`, `secondary`, `success`, `warning`, `error`, `info`
 **Text alignment**: `text-center`, `text-left`, `text-right`
+
+```html
+<div class="bg1 p2 r2">Card with background, padding, rounded corners</div>
+<div class="mt2 mb1">Margin top 2rem, bottom 1rem</div>
+<div class="px3 py1">Horizontal padding 3rem, vertical 1rem</div>
+```
+
+### Palettes on Any Element
+
+Palette and font classes work on any element, not just `<html>`:
+
+```html
+<!-- Themed section -->
+<section class="patagonia bg py2">
+  <div class="readable">Content with Patagonia colors</div>
+</section>
+
+<!-- Themed footer -->
+<footer class="ambleside bg1 p2">
+  Footer with Ambleside palette
+</footer>
+
+<!-- Font on specific element -->
+<blockquote class="cormorant">Elegant quote</blockquote>
+<p class="serif">This paragraph is serif</p>
+```
+
+Add `bg`, `bg1`, or `bg2` to apply a background color from the palette.
 
 ## Forms
 

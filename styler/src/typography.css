@@ -16,7 +16,7 @@
 
 	/* Override in styler.css: :root { --readable-width: 40rem; }
 	   Note: media queries below use this value but must be updated manually */
-	--readable-width: 50rem;
+	--readable-width: 45rem;
 }
 
 html {
@@ -51,12 +51,6 @@ h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
 h5 { font-size: 1.1rem; }
 h6 { font-size: 1rem; }
-
-/* First heading shouldn't have top margin */
-h1:first-child, h2:first-child, h3:first-child,
-h4:first-child, h5:first-child, h6:first-child {
-	margin-top: 0;
-}
 
 /* Paragraphs and text blocks */
 p {
@@ -128,7 +122,7 @@ pre code {
 }
 
 /* On smaller screens, reduce padding */
-@media (max-width: 50rem) {
+@media (max-width: 45rem) {
 	.readable {
 		padding-left: 1rem;
 		padding-right: 1rem;
