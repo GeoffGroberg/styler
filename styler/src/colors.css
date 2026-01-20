@@ -800,21 +800,64 @@
 	--border: hsl(30 8% 82%);
 }
 
-.warm.dark, .dark.warm, .dark .warm,
-.warm.ambleside, .ambleside.warm, .ambleside .warm,
-.warm.patagonia, .patagonia.warm, .patagonia .warm,
-.warm.svalbard, .svalbard.warm, .svalbard .warm,
-.warm.cusco, .cusco.warm, .cusco .warm,
-.warm.lviv, .lviv.warm, .lviv .warm {
-	--body1: hsl(35 6% 60%);
-	--body2: hsl(30 3% 40%);
-
-	--bg1-base: hsl(25 12% 14%);
+.warm.dark, .dark.warm, .dark .warm {
+	--body1: hsl(30 4% 60%);
+	--body2: hsl(25 2% 40%);
+	--bg1-base: hsl(30 6% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(22 10% 22%);
+	--bg2-base: hsl(28 5% 25%);
 	--bg2: var(--bg2-base);
+	--border: hsl(30 4% 32%);
+}
 
-	--border: hsl(25 6% 32%);
+.warm.ambleside, .ambleside.warm, .ambleside .warm {
+	--body1: hsl(30 12% 60%);
+	--body2: hsl(32 6% 40%);
+	--bg1-base: hsl(200 12% 18%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(195 10% 24%);
+	--bg2: var(--bg2-base);
+	--border: hsl(200 8% 32%);
+}
+
+.warm.patagonia, .patagonia.warm, .patagonia .warm {
+	--body1: hsl(190 10% 60%);
+	--body2: hsl(185 5% 40%);
+	--bg1-base: hsl(195 15% 16%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(190 12% 22%);
+	--bg2: var(--bg2-base);
+	--border: hsl(195 8% 30%);
+}
+
+.warm.svalbard, .svalbard.warm, .svalbard .warm {
+	--body1: hsl(200 12% 60%);
+	--body2: hsl(195 5% 40%);
+	--bg1-base: hsl(200 20% 13%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(195 16% 18%);
+	--bg2: var(--bg2-base);
+	--border: hsl(200 10% 28%);
+}
+
+.warm.cusco, .cusco.warm, .cusco .warm {
+	--body1: hsl(180 6% 60%);
+	--body2: hsl(175 3% 40%);
+	--bg1-base: hsl(180 5% 15%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(175 4% 20%);
+	--bg2: var(--bg2-base);
+	--border: hsl(180 4% 28%);
+}
+
+.warm.lviv, .lviv.warm, .lviv .warm {
+	--body1: hsl(48 14% 60%);
+	--body2: hsl(45 6% 40%);
+	--bg1-base: hsl(210 35% 15%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(205 30% 20%);
+	--bg2: var(--bg2-base);
+	--border: hsl(210 18% 28%);
 }
 
 /* Cool color temperature - does NOT affect --bg */
@@ -830,21 +873,64 @@
 	--border: hsl(214 20% 84%);
 }
 
-.cool.dark, .dark.cool, .dark .cool,
-.cool.ambleside, .ambleside.cool, .ambleside .cool,
-.cool.patagonia, .patagonia.cool, .patagonia .cool,
-.cool.svalbard, .svalbard.cool, .svalbard .cool,
-.cool.cusco, .cusco.cool, .cusco .cool,
-.cool.lviv, .lviv.cool, .lviv .cool {
+.cool.dark, .dark.cool, .dark .cool {
 	--body1: hsl(216 10% 60%);
 	--body2: hsl(218 4% 40%);
-
-	--bg1-base: hsl(218 30% 15%);
+	--bg1-base: hsl(218 20% 15%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(216 23% 24%);
+	--bg2-base: hsl(216 15% 25%);
 	--bg2: var(--bg2-base);
+	--border: hsl(217 10% 35%);
+}
 
-	--border: hsl(217 14% 35%);
+.cool.ambleside, .ambleside.cool, .ambleside .cool {
+	--body1: hsl(210 12% 60%);
+	--body2: hsl(215 5% 40%);
+	--bg1-base: hsl(225 22% 18%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(222 18% 24%);
+	--bg2: var(--bg2-base);
+	--border: hsl(220 12% 32%);
+}
+
+.cool.patagonia, .patagonia.cool, .patagonia .cool {
+	--body1: hsl(210 10% 60%);
+	--body2: hsl(215 4% 40%);
+	--bg1-base: hsl(220 25% 16%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(218 20% 22%);
+	--bg2: var(--bg2-base);
+	--border: hsl(218 12% 30%);
+}
+
+.cool.svalbard, .svalbard.cool, .svalbard .cool {
+	--body1: hsl(210 12% 60%);
+	--body2: hsl(215 5% 40%);
+	--bg1-base: hsl(225 30% 13%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(222 25% 18%);
+	--bg2: var(--bg2-base);
+	--border: hsl(220 15% 28%);
+}
+
+.cool.cusco, .cusco.cool, .cusco .cool {
+	--body1: hsl(210 10% 60%);
+	--body2: hsl(215 4% 40%);
+	--bg1-base: hsl(210 10% 15%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(208 8% 20%);
+	--bg2: var(--bg2-base);
+	--border: hsl(210 6% 28%);
+}
+
+.cool.lviv, .lviv.cool, .lviv .cool {
+	--body1: hsl(215 15% 60%);
+	--body2: hsl(218 6% 40%);
+	--bg1-base: hsl(220 45% 15%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(218 40% 20%);
+	--bg2: var(--bg2-base);
+	--border: hsl(218 25% 28%);
 }
 
 /* Saturated - more vivid colors using relative color syntax */
