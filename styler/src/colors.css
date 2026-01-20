@@ -127,7 +127,7 @@
 	--bg1: var(--bg1-base);
 	--bg2-base: hsl(218 14% 26%);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(150 12% 17%);
+	--bg3-base: hsl(270 12% 19%);
 	--bg3: var(--bg3-base);
 
 	--primary-base: hsl(215 50% 72%);
@@ -159,6 +159,104 @@
 	--link-visited: hsl(280 15% 61%);
 
 	--border: hsl(218 14% 30%);
+	--border-focus: var(--primary);
+}
+
+/* Windermere - light theme inspired by a misty morning in England's Lake District */
+.windermere {
+	--font-family: var(--font-source-sans);
+
+	--body: hsl(218 20% 22%);
+	--body1: hsl(218 12% 40%);
+	--body2: hsl(218 8% 55%);
+
+	--bg-base: hsl(40 20% 95%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(38 15% 90%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(218 12% 85%);
+	--bg2: var(--bg2-base);
+	--bg3-base: hsl(150 12% 88%);
+	--bg3: var(--bg3-base);
+
+	--primary-base: hsl(215 60% 50%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(215 65% 42%);
+
+	--secondary-base: hsl(30 12% 45%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(30 14% 38%);
+
+	--success-base: hsl(130 30% 38%);
+	--success: var(--success-base);
+	--success-hover: hsl(130 35% 32%);
+
+	--warning-base: hsl(42 55% 42%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(42 60% 35%);
+
+	--error-base: hsl(0 50% 45%);
+	--error: var(--error-base);
+	--error-hover: hsl(0 55% 38%);
+
+	--info-base: hsl(197 30% 42%);
+	--info: var(--info-base);
+	--info-hover: hsl(197 35% 35%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(280 25% 40%);
+
+	--border: hsl(218 10% 78%);
+	--border-focus: var(--primary);
+}
+
+/* Peebles - light theme inspired by a rainy day and a warm bakery in Scotland */
+.peebles {
+	--font-family: var(--font-pt-serif);
+
+	--body: hsl(220 15% 22%);
+	--body1: hsl(218 10% 42%);
+	--body2: hsl(215 8% 58%);
+
+	--bg-base: hsl(35 18% 95%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(38 25% 90%);
+	--bg1: var(--bg1-base);
+	--bg2-base: hsl(220 8% 85%);
+	--bg2: var(--bg2-base);
+	--bg3-base: hsl(280 15% 90%);
+	--bg3: var(--bg3-base);
+
+	--primary-base: hsl(210 45% 45%);
+	--primary: var(--primary-base);
+	--primary-hover: hsl(210 50% 38%);
+
+	--secondary-base: hsl(220 12% 50%);
+	--secondary: var(--secondary-base);
+	--secondary-hover: hsl(220 14% 42%);
+
+	--success-base: hsl(145 35% 38%);
+	--success: var(--success-base);
+	--success-hover: hsl(145 40% 32%);
+
+	--warning-base: hsl(42 70% 48%);
+	--warning: var(--warning-base);
+	--warning-hover: hsl(42 75% 40%);
+
+	--error-base: hsl(355 55% 48%);
+	--error: var(--error-base);
+	--error-hover: hsl(355 60% 40%);
+
+	--info-base: hsl(205 40% 48%);
+	--info: var(--info-base);
+	--info-hover: hsl(205 45% 40%);
+
+	--link: var(--primary);
+	--link-hover: var(--primary-hover);
+	--link-visited: hsl(280 30% 42%);
+
+	--border: hsl(220 10% 78%);
 	--border-focus: var(--primary);
 }
 
@@ -464,11 +562,11 @@
 	--body1: hsl(200 10% 45%);
 	--body2: hsl(200 5% 70%);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: hsl(40 25% 97%);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(45 35% 96%);
+	--bg1-base: hsl(42 35% 91%);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(45 30% 88%);
+	--bg2-base: hsl(140 25% 88%);
 	--bg2: var(--bg2-base);
 	--bg3-base: hsl(180 30% 92%);
 	--bg3: var(--bg3-base);
@@ -1022,6 +1120,46 @@
 	--bg3-base: hsl(220 30% 20%);
 	--bg3: var(--bg3-base);
 	--border: hsl(218 25% 28%);
+}
+
+.warm.yucatan, .yucatan.warm, .yucatan .warm {
+	--bg-base: hsl(38 32% 96%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(40 42% 93%);
+	--bg1: var(--bg1-base);
+	--bg3-base: hsl(45 30% 90%);
+	--bg3: var(--bg3-base);
+	--border: hsl(38 20% 76%);
+}
+
+.cool.yucatan, .yucatan.cool, .yucatan .cool {
+	--bg-base: hsl(190 30% 97%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(185 25% 94%);
+	--bg1: var(--bg1-base);
+	--bg3-base: hsl(180 35% 91%);
+	--bg3: var(--bg3-base);
+	--border: hsl(190 15% 78%);
+}
+
+.warm.windermere, .windermere.warm, .windermere .warm {
+	--bg-base: hsl(38 28% 94%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(35 18% 89%);
+	--bg1: var(--bg1-base);
+	--bg3-base: hsl(45 15% 88%);
+	--bg3: var(--bg3-base);
+	--border: hsl(35 12% 75%);
+}
+
+.cool.windermere, .windermere.cool, .windermere .cool {
+	--bg-base: hsl(210 18% 95%);
+	--bg: var(--bg-base);
+	--bg1-base: hsl(215 14% 90%);
+	--bg1: var(--bg1-base);
+	--bg3-base: hsl(200 12% 88%);
+	--bg3: var(--bg3-base);
+	--border: hsl(215 10% 76%);
 }
 
 /* Saturated - more vivid colors using relative color syntax */
