@@ -1,5 +1,5 @@
 /* colors.css - Color palette with theme support */
-/* All colors use HSL format. Backgrounds and semantic colors use -base vars for sat/desat modifiers. */
+/* All colors use OKLCH format for perceptual uniformity. Base vars enable sat/desat modifiers. */
 
 :root {
 	/* Font stacks for theme defaults (used by --font-family in themes) */
@@ -16,102 +16,109 @@
 	--font-family: var(--font-sans);
 	--heading-caps: none;
 
-	/* Light theme (default) - pure white bg, neutral grays */
-	--body: hsl(0 0% 10%);
-	--body1: hsl(0 0% 45%);
-	--body2: hsl(0 0% 70%);
+	/* Light theme (default) - pure white bg, warm-tinted text */
+	--body: oklch(15% 0.01 60);
+	--body1: oklch(50% 0.04 50);
+	--body2: oklch(73% 0.025 50);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(0 0% 96%);
+	--bg1-base: oklch(94% 0 0);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(0 0% 87%);
+	--bg2-base: oklch(89% 0 0);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(217 30% 93%);
+	--bg3-base: oklch(94% 0.02 260);
 	--bg3: var(--bg3-base);
 
 	/* Semantic colors - base values for sat/desat modification */
-	--primary-base: hsl(217 84% 53%);
+	--primary-base: oklch(55% 0.22 260);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(217 91% 60%);
-	--primary-button: var(--primary);
+	--primary-hover: oklch(62% 0.21 260);
+	--primary-button-base: var(--primary-base);
+	--primary-button: var(--primary-button-base);
 	--primary-button-hover: var(--primary-hover);
 
-	--secondary-base: hsl(215 16% 47%);
+	--secondary-base: oklch(50% 0.04 260);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(215 17% 56%);
+	--secondary-hover: oklch(59% 0.04 260);
+	--secondary-button-base: oklch(72% 0.04 260);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(65% 0.04 260);
 
-	--success-base: hsl(142 72% 36%);
+	--success-base: oklch(52% 0.15 155);
 	--success: var(--success-base);
-	--success-hover: hsl(142 71% 45%);
+	--success-hover: oklch(60% 0.15 155);
 
-	--warning-base: hsl(45 95% 40%);
+	--warning-base: oklch(75% 0.16 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(48 94% 47%);
+	--warning-hover: oklch(68% 0.18 85);
 
-	--error-base: hsl(0 84% 50%);
+	--error-base: oklch(55% 0.22 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 84% 60%);
+	--error-hover: oklch(63% 0.20 25);
 
-	--info-base: hsl(189 94% 37%);
+	--info-base: oklch(55% 0.12 200);
 	--info: var(--info-base);
-	--info-hover: hsl(189 86% 53%);
+	--info-hover: oklch(65% 0.12 200);
 
 	/* Links */
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(263 84% 58%);
+	--link-visited: oklch(52% 0.20 295);
 
 	/* Borders */
-	--border: hsl(216 12% 84%);
+	--border: oklch(86% 0.01 260);
 	--border-focus: var(--primary);
 }
 
-/* Dark theme - pure black bg */
+/* Dark theme - pure black bg, warm-tinted text */
 .dark {
 
-	--body: hsl(0 0% 96%);
-	--body1: hsl(0 0% 60%);
-	--body2: hsl(0 0% 40%);
+	--body: oklch(98% 0.01 60);
+	--body1: oklch(80% 0.04 50);
+	--body2: oklch(62% 0.025 50);
 
-	--bg-base: hsl(0 0% 0%);
+	--bg-base: oklch(0% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(0 0% 15%);
+	--bg1-base: oklch(23% 0 0);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(0 0% 25%);
+	--bg2-base: oklch(30% 0 0);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(217 20% 18%);
+	--bg3-base: oklch(25% 0.03 260);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(217 91% 60%);
+	--primary-base: oklch(65% 0.20 260);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(213 94% 68%);
+	--primary-hover: oklch(72% 0.18 260);
 
-	--secondary-base: hsl(215 21% 65%);
+	--secondary-base: oklch(70% 0.04 260);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(214 32% 84%);
+	--secondary-hover: oklch(85% 0.03 260);
+	--secondary-button-base: oklch(38% 0.03 260);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(32% 0.03 260);
 
-	--success-base: hsl(142 71% 45%);
+	--success-base: oklch(65% 0.16 155);
 	--success: var(--success-base);
-	--success-hover: hsl(142 69% 58%);
+	--success-hover: oklch(72% 0.14 155);
 
-	--warning-base: hsl(48 94% 47%);
+	--warning-base: oklch(82% 0.16 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(48 96% 53%);
+	--warning-hover: oklch(87% 0.14 85);
 
-	--error-base: hsl(0 84% 60%);
+	--error-base: oklch(65% 0.20 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 91% 71%);
+	--error-hover: oklch(75% 0.18 25);
 
-	--info-base: hsl(189 86% 53%);
+	--info-base: oklch(70% 0.12 200);
 	--info: var(--info-base);
-	--info-hover: hsl(189 94% 69%);
+	--info-hover: oklch(80% 0.10 200);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(258 90% 76%);
+	--link-visited: oklch(75% 0.15 295);
 
-	--border: hsl(0 0% 27%);
+	--border: oklch(32% 0 0);
 	--border-focus: var(--primary);
 }
 
@@ -119,50 +126,54 @@
 .ambleside {
 	--font-family: var(--font-source-sans);
 
-	--body: hsl(36 14% 89%);
-	--body1: hsl(34 10% 60%);
-	--body2: hsl(36 5% 40%);
+	--body: oklch(98% 0.015 85);
+	--body1: oklch(80% 0.05 60);
+	--body2: oklch(62% 0.035 60);
 
-	--bg-base: hsl(220 24% 12%);
+	--bg-base: oklch(18% 0.03 260);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(218 18% 17%);
+	--bg1-base: oklch(26% 0.025 260);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(218 14% 26%);
+	--bg2-base: oklch(32% 0.02 260);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(270 12% 19%);
+	--bg3-base: oklch(25% 0.02 300);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(215 50% 72%);
+	--primary-base: oklch(75% 0.08 255);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(215 55% 80%);
-	--primary-button: hsl(215 60% 52%);
-	--primary-button-hover: hsl(215 65% 45%);
+	--primary-hover: oklch(82% 0.07 255);
+	--primary-button-base: oklch(55% 0.14 255);
+	--primary-button: var(--primary-button-base);
+	--primary-button-hover: oklch(48% 0.15 255);
 
-	--secondary-base: hsl(30 10% 72%);
+	--secondary-base: oklch(75% 0.02 60);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(30 10% 80%);
+	--secondary-hover: oklch(82% 0.02 60);
+	--secondary-button-base: oklch(42% 0.01 60);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(36% 0.01 60);
 
-	--success-base: hsl(130 20% 58%);
+	--success-base: oklch(65% 0.08 150);
 	--success: var(--success-base);
-	--success-hover: hsl(130 22% 68%);
+	--success-hover: oklch(72% 0.08 150);
 
-	--warning-base: hsl(42 52% 72%);
+	--warning-base: oklch(78% 0.10 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 55% 80%);
+	--warning-hover: oklch(84% 0.09 85);
 
-	--error-base: hsl(0 55% 68%);
+	--error-base: oklch(70% 0.12 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 58% 76%);
+	--error-hover: oklch(78% 0.11 25);
 
-	--info-base: hsl(197 25% 55%);
+	--info-base: oklch(60% 0.06 220);
 	--info: var(--info-base);
-	--info-hover: hsl(197 28% 65%);
+	--info-hover: oklch(68% 0.06 220);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(280 15% 61%);
+	--link-visited: oklch(65% 0.04 300);
 
-	--border: hsl(218 14% 30%);
+	--border: oklch(35% 0.02 260);
 	--border-focus: var(--primary);
 }
 
@@ -170,48 +181,51 @@
 .windermere {
 	--font-family: var(--font-source-sans);
 
-	--body: hsl(218 20% 22%);
-	--body1: hsl(218 12% 40%);
-	--body2: hsl(218 8% 55%);
+	--body: oklch(28% 0.02 50);
+	--body1: oklch(45% 0.04 45);
+	--body2: oklch(60% 0.025 45);
 
-	--bg-base: hsl(40 20% 95%);
+	--bg-base: oklch(98% 0.008 80);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(38 15% 90%);
+	--bg1-base: oklch(93% 0.003 70);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(218 12% 85%);
+	--bg2-base: oklch(89% 0.01 260);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(150 12% 88%);
+	--bg3-base: oklch(92% 0.01 160);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(215 60% 50%);
+	--primary-base: oklch(52% 0.15 255);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(215 65% 42%);
+	--primary-hover: oklch(45% 0.16 255);
 
-	--secondary-base: hsl(30 12% 45%);
+	--secondary-base: oklch(48% 0.02 60);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(30 14% 38%);
+	--secondary-hover: oklch(42% 0.025 60);
+	--secondary-button-base: oklch(70% 0.02 60);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(62% 0.02 60);
 
-	--success-base: hsl(130 30% 38%);
+	--success-base: oklch(45% 0.10 150);
 	--success: var(--success-base);
-	--success-hover: hsl(130 35% 32%);
+	--success-hover: oklch(40% 0.11 150);
 
-	--warning-base: hsl(42 55% 42%);
+	--warning-base: oklch(55% 0.12 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 60% 35%);
+	--warning-hover: oklch(48% 0.13 85);
 
-	--error-base: hsl(0 50% 45%);
+	--error-base: oklch(48% 0.12 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 55% 38%);
+	--error-hover: oklch(42% 0.13 25);
 
-	--info-base: hsl(197 30% 42%);
+	--info-base: oklch(48% 0.07 220);
 	--info: var(--info-base);
-	--info-hover: hsl(197 35% 35%);
+	--info-hover: oklch(42% 0.08 220);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(280 25% 40%);
+	--link-visited: oklch(42% 0.08 300);
 
-	--border: hsl(218 10% 78%);
+	--border: oklch(82% 0.01 260);
 	--border-focus: var(--primary);
 }
 
@@ -219,48 +233,51 @@
 .peebles {
 	--font-family: var(--font-pt-serif);
 
-	--body: hsl(220 15% 22%);
-	--body1: hsl(218 10% 42%);
-	--body2: hsl(215 8% 58%);
+	--body: oklch(28% 0.015 250);
+	--body1: oklch(48% 0.04 240);
+	--body2: oklch(62% 0.025 240);
 
-	--bg-base: hsl(35 18% 95%);
+	--bg-base: oklch(97% 0.008 70);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(38 25% 90%);
+	--bg1-base: oklch(92% 0.004 70);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(220 8% 85%);
+	--bg2-base: oklch(88% 0.01 260);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(280 15% 90%);
+	--bg3-base: oklch(93% 0.01 300);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(210 45% 45%);
+	--primary-base: oklch(48% 0.10 255);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(210 50% 38%);
+	--primary-hover: oklch(42% 0.12 255);
 
-	--secondary-base: hsl(220 12% 50%);
+	--secondary-base: oklch(52% 0.02 260);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(220 14% 42%);
+	--secondary-hover: oklch(46% 0.025 260);
+	--secondary-button-base: oklch(72% 0.02 260);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.02 260);
 
-	--success-base: hsl(145 35% 38%);
+	--success-base: oklch(45% 0.10 155);
 	--success: var(--success-base);
-	--success-hover: hsl(145 40% 32%);
+	--success-hover: oklch(40% 0.11 155);
 
-	--warning-base: hsl(42 70% 48%);
+	--warning-base: oklch(62% 0.14 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 75% 40%);
+	--warning-hover: oklch(55% 0.15 85);
 
-	--error-base: hsl(355 55% 48%);
+	--error-base: oklch(50% 0.13 20);
 	--error: var(--error-base);
-	--error-hover: hsl(355 60% 40%);
+	--error-hover: oklch(44% 0.14 20);
 
-	--info-base: hsl(205 40% 48%);
+	--info-base: oklch(52% 0.08 240);
 	--info: var(--info-base);
-	--info-hover: hsl(205 45% 40%);
+	--info-hover: oklch(46% 0.09 240);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(280 30% 42%);
+	--link-visited: oklch(45% 0.08 300);
 
-	--border: hsl(220 10% 78%);
+	--border: oklch(82% 0.01 260);
 	--border-focus: var(--primary);
 }
 
@@ -268,48 +285,51 @@
 .uinta {
 	--font-family: var(--font-source-sans);
 
-	--body: hsl(105 10% 17%);
-	--body1: hsl(105 6% 45%);
-	--body2: hsl(105 3% 70%);
+	--body: oklch(22% 0.02 50);
+	--body1: oklch(48% 0.04 40);
+	--body2: oklch(72% 0.025 40);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(150 12% 96%);
+	--bg1-base: oklch(94% 0.006 160);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(150 10% 87%);
+	--bg2-base: oklch(89% 0.015 160);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(40 25% 92%);
+	--bg3-base: oklch(93% 0.025 80);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(175 55% 32%);
+	--primary-base: oklch(45% 0.10 185);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(175 50% 40%);
+	--primary-hover: oklch(52% 0.09 185);
 
-	--secondary-base: hsl(200 12% 42%);
+	--secondary-base: oklch(48% 0.02 230);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(200 12% 52%);
+	--secondary-hover: oklch(56% 0.02 230);
+	--secondary-button-base: oklch(70% 0.02 230);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(62% 0.02 230);
 
-	--success-base: hsl(140 37% 36%);
+	--success-base: oklch(45% 0.10 155);
 	--success: var(--success-base);
-	--success-hover: hsl(140 34% 47%);
+	--success-hover: oklch(54% 0.09 155);
 
-	--warning-base: hsl(42 60% 45%);
+	--warning-base: oklch(58% 0.12 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 58% 55%);
+	--warning-hover: oklch(66% 0.11 85);
 
-	--error-base: hsl(6 37% 45%);
+	--error-base: oklch(48% 0.08 25);
 	--error: var(--error-base);
-	--error-hover: hsl(6 35% 55%);
+	--error-hover: oklch(56% 0.07 25);
 
-	--info-base: hsl(200 43% 44%);
+	--info-base: oklch(52% 0.08 230);
 	--info: var(--info-base);
-	--info-hover: hsl(200 40% 53%);
+	--info-hover: oklch(60% 0.07 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(260 12% 46%);
+	--link-visited: oklch(48% 0.03 290);
 
-	--border: hsl(140 8% 80%);
+	--border: oklch(83% 0.01 160);
 	--border-focus: var(--primary);
 }
 
@@ -317,48 +337,51 @@
 .hokkaido {
 	--font-family: var(--font-sans);
 
-	--body: hsl(205 25% 15%);
-	--body1: hsl(202 10% 45%);
-	--body2: hsl(202 4% 70%);
+	--body: oklch(22% 0.02 50);
+	--body1: oklch(50% 0.04 45);
+	--body2: oklch(72% 0.025 45);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(200 20% 97%);
+	--bg1-base: oklch(95% 0.006 230);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(200 15% 87%);
+	--bg2-base: oklch(89% 0.02 230);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(140 20% 91%);
+	--bg3-base: oklch(92% 0.025 155);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(212 70% 42%);
+	--primary-base: oklch(48% 0.15 255);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(210 65% 50%);
+	--primary-hover: oklch(55% 0.13 255);
 
-	--secondary-base: hsl(200 12% 46%);
+	--secondary-base: oklch(50% 0.02 230);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(200 12% 55%);
+	--secondary-hover: oklch(58% 0.02 230);
+	--secondary-button-base: oklch(72% 0.02 230);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.02 230);
 
-	--success-base: hsl(160 33% 38%);
+	--success-base: oklch(48% 0.08 170);
 	--success: var(--success-base);
-	--success-hover: hsl(160 30% 47%);
+	--success-hover: oklch(55% 0.07 170);
 
-	--warning-base: hsl(36 40% 47%);
+	--warning-base: oklch(58% 0.08 70);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(36 38% 56%);
+	--warning-hover: oklch(65% 0.07 70);
 
-	--error-base: hsl(0 33% 44%);
+	--error-base: oklch(48% 0.07 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 30% 53%);
+	--error-hover: oklch(56% 0.06 25);
 
-	--info-base: hsl(195 47% 47%);
+	--info-base: oklch(55% 0.09 210);
 	--info: var(--info-base);
-	--info-hover: hsl(195 44% 56%);
+	--info-hover: oklch(62% 0.08 210);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(260 18% 46%);
+	--link-visited: oklch(48% 0.04 290);
 
-	--border: hsl(203 18% 81%);
+	--border: oklch(84% 0.02 235);
 	--border-focus: var(--primary);
 }
 
@@ -366,48 +389,51 @@
 .sahel {
 	--font-family: var(--font-lora);
 
-	--body: hsl(230 25% 18%);
-	--body1: hsl(225 10% 45%);
-	--body2: hsl(220 4% 70%);
+	--body: oklch(25% 0.02 260);
+	--body1: oklch(50% 0.04 250);
+	--body2: oklch(72% 0.025 250);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(40 25% 96%);
+	--bg1-base: oklch(94% 0.01 80);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(40 20% 87%);
+	--bg2-base: oklch(89% 0.025 80);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(230 20% 92%);
+	--bg3-base: oklch(93% 0.02 270);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(230 45% 35%);
+	--primary-base: oklch(40% 0.10 270);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(230 42% 45%);
+	--primary-hover: oklch(48% 0.09 270);
 
-	--secondary-base: hsl(25 30% 45%);
+	--secondary-base: oklch(55% 0.02 55);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(25 28% 55%);
+	--secondary-hover: oklch(65% 0.015 55);
+	--secondary-button-base: oklch(72% 0.02 55);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.02 55);
 
-	--success-base: hsl(85 30% 38%);
+	--success-base: oklch(48% 0.08 120);
 	--success: var(--success-base);
-	--success-hover: hsl(85 28% 48%);
+	--success-hover: oklch(56% 0.07 120);
 
-	--warning-base: hsl(42 65% 45%);
+	--warning-base: oklch(60% 0.13 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 60% 55%);
+	--warning-hover: oklch(68% 0.11 85);
 
-	--error-base: hsl(15 45% 45%);
+	--error-base: oklch(50% 0.10 40);
 	--error: var(--error-base);
-	--error-hover: hsl(15 42% 55%);
+	--error-hover: oklch(58% 0.09 40);
 
-	--info-base: hsl(200 35% 45%);
+	--info-base: oklch(52% 0.07 230);
 	--info: var(--info-base);
-	--info-hover: hsl(200 32% 55%);
+	--info-hover: oklch(60% 0.06 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(270 25% 40%);
+	--link-visited: oklch(42% 0.07 300);
 
-	--border: hsl(35 18% 78%);
+	--border: oklch(82% 0.02 70);
 	--border-focus: var(--primary);
 }
 
@@ -415,48 +441,51 @@
 .patagonia {
 	--font-family: var(--font-source-sans);
 
-	--body: hsl(200 15% 90%);
-	--body1: hsl(200 8% 60%);
-	--body2: hsl(200 4% 40%);
+	--body: oklch(98% 0.012 50);
+	--body1: oklch(80% 0.05 45);
+	--body2: oklch(62% 0.035 45);
 
-	--bg-base: hsl(215 30% 10%);
+	--bg-base: oklch(17% 0.04 250);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(210 20% 15%);
+	--bg1-base: oklch(25% 0.03 240);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(210 15% 24%);
+	--bg2-base: oklch(30% 0.025 240);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(30 15% 16%);
+	--bg3-base: oklch(22% 0.02 60);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(185 45% 50%);
+	--primary-base: oklch(62% 0.10 200);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(185 50% 62%);
+	--primary-hover: oklch(70% 0.10 200);
 
-	--secondary-base: hsl(220 15% 55%);
+	--secondary-base: oklch(58% 0.04 255);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(220 18% 68%);
+	--secondary-hover: oklch(70% 0.04 255);
+	--secondary-button-base: oklch(38% 0.03 255);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(32% 0.03 255);
 
-	--success-base: hsl(150 30% 45%);
+	--success-base: oklch(52% 0.08 160);
 	--success: var(--success-base);
-	--success-hover: hsl(150 32% 58%);
+	--success-hover: oklch(62% 0.08 160);
 
-	--warning-base: hsl(35 50% 55%);
+	--warning-base: oklch(68% 0.12 70);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(35 52% 65%);
+	--warning-hover: oklch(75% 0.11 70);
 
-	--error-base: hsl(0 40% 55%);
+	--error-base: oklch(55% 0.12 20);
 	--error: var(--error-base);
-	--error-hover: hsl(0 42% 65%);
+	--error-hover: oklch(65% 0.11 20);
 
-	--info-base: hsl(200 50% 60%);
+	--info-base: oklch(65% 0.10 220);
 	--info: var(--info-base);
-	--info-hover: hsl(200 55% 72%);
+	--info-hover: oklch(75% 0.09 220);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(270 30% 65%);
+	--link-visited: oklch(65% 0.08 295);
 
-	--border: hsl(215 18% 30%);
+	--border: oklch(35% 0.03 250);
 	--border-focus: var(--primary);
 }
 
@@ -464,48 +493,51 @@
 .kerala {
 	--font-family: var(--font-sans);
 
-	--body: hsl(150 20% 15%);
-	--body1: hsl(150 8% 45%);
-	--body2: hsl(150 3% 70%);
+	--body: oklch(25% 0.02 40);
+	--body1: oklch(50% 0.04 35);
+	--body2: oklch(72% 0.025 35);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(135 15% 96%);
+	--bg1-base: oklch(94% 0.006 155);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(135 12% 87%);
+	--bg2-base: oklch(89% 0.02 155);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(15 20% 92%);
+	--bg3-base: oklch(94% 0.02 50);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(155 40% 30%);
+	--primary-base: oklch(40% 0.10 165);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(155 38% 40%);
+	--primary-hover: oklch(48% 0.09 165);
 
-	--secondary-base: hsl(15 25% 45%);
+	--secondary-base: oklch(48% 0.03 50);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(15 23% 55%);
+	--secondary-hover: oklch(56% 0.025 50);
+	--secondary-button-base: oklch(70% 0.03 50);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(62% 0.03 50);
 
-	--success-base: hsl(140 45% 35%);
+	--success-base: oklch(45% 0.12 155);
 	--success: var(--success-base);
-	--success-hover: hsl(140 42% 45%);
+	--success-hover: oklch(53% 0.11 155);
 
-	--warning-base: hsl(45 70% 42%);
+	--warning-base: oklch(58% 0.14 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(45 65% 52%);
+	--warning-hover: oklch(66% 0.12 85);
 
-	--error-base: hsl(5 50% 45%);
+	--error-base: oklch(48% 0.12 25);
 	--error: var(--error-base);
-	--error-hover: hsl(5 47% 55%);
+	--error-hover: oklch(56% 0.11 25);
 
-	--info-base: hsl(195 45% 42%);
+	--info-base: oklch(50% 0.10 210);
 	--info: var(--info-base);
-	--info-hover: hsl(195 42% 52%);
+	--info-hover: oklch(58% 0.09 210);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(280 20% 40%);
+	--link-visited: oklch(42% 0.05 300);
 
-	--border: hsl(130 10% 80%);
+	--border: oklch(82% 0.02 155);
 	--border-focus: var(--primary);
 }
 
@@ -513,48 +545,51 @@
 .svalbard {
 	--font-family: var(--font-inter);
 
-	--body: hsl(200 20% 92%);
-	--body1: hsl(200 10% 60%);
-	--body2: hsl(200 4% 40%);
+	--body: oklch(98% 0.01 150);
+	--body1: oklch(80% 0.045 140);
+	--body2: oklch(62% 0.03 140);
 
-	--bg-base: hsl(220 35% 8%);
+	--bg-base: oklch(15% 0.04 255);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(220 25% 13%);
+	--bg1-base: oklch(23% 0.035 255);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(220 20% 22%);
+	--bg2-base: oklch(28% 0.03 255);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(280 18% 15%);
+	--bg3-base: oklch(22% 0.03 300);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(145 55% 48%);
+	--primary-base: oklch(62% 0.15 155);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(145 58% 60%);
+	--primary-hover: oklch(70% 0.14 155);
 
-	--secondary-base: hsl(200 30% 55%);
+	--secondary-base: oklch(72% 0.03 220);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(200 35% 68%);
+	--secondary-hover: oklch(82% 0.025 220);
+	--secondary-button-base: oklch(38% 0.025 220);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(32% 0.025 220);
 
-	--success-base: hsl(145 50% 45%);
+	--success-base: oklch(58% 0.12 190);
 	--success: var(--success-base);
-	--success-hover: hsl(145 52% 58%);
+	--success-hover: oklch(68% 0.11 190);
 
-	--warning-base: hsl(45 50% 55%);
+	--warning-base: oklch(70% 0.11 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(45 52% 65%);
+	--warning-hover: oklch(78% 0.10 85);
 
-	--error-base: hsl(355 45% 55%);
+	--error-base: oklch(58% 0.12 15);
 	--error: var(--error-base);
-	--error-hover: hsl(355 48% 65%);
+	--error-hover: oklch(68% 0.11 15);
 
-	--info-base: hsl(280 40% 60%);
+	--info-base: oklch(62% 0.12 300);
 	--info: var(--info-base);
-	--info-hover: hsl(280 45% 72%);
+	--info-hover: oklch(72% 0.11 300);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(280 35% 65%);
+	--link-visited: oklch(68% 0.10 300);
 
-	--border: hsl(220 20% 25%);
+	--border: oklch(32% 0.03 255);
 	--border-focus: var(--primary);
 }
 
@@ -562,98 +597,103 @@
 .yucatan {
 	--font-family: var(--font-lora);
 
-	--body: hsl(200 25% 18%);
-	--body1: hsl(200 10% 45%);
-	--body2: hsl(200 5% 70%);
+	--body: oklch(28% 0.02 200);
+	--body1: oklch(50% 0.04 190);
+	--body2: oklch(72% 0.025 190);
 
-	--bg-base: hsl(40 25% 97%);
+	--bg-base: oklch(99% 0.008 80);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(42 35% 91%);
+	--bg1-base: oklch(94% 0.006 80);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(140 25% 88%);
+	--bg2-base: oklch(91% 0.02 160);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(180 30% 92%);
+	--bg3-base: oklch(95% 0.015 195);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(190 85% 42%);
+	--primary-base: oklch(58% 0.15 210);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(190 80% 50%);
+	--primary-hover: oklch(65% 0.14 210);
 
-	--secondary-base: hsl(25 80% 55%);
+	--secondary-base: oklch(55% 0.04 55);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(25 75% 62%);
+	--secondary-hover: oklch(62% 0.035 55);
+	--secondary-button-base: oklch(72% 0.04 55);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.04 55);
 
-	--success-base: hsl(160 65% 38%);
+	--success-base: oklch(52% 0.13 170);
 	--success: var(--success-base);
-	--success-hover: hsl(160 60% 48%);
+	--success-hover: oklch(60% 0.11 170);
 
-	--warning-base: hsl(45 90% 45%);
+	--warning-base: oklch(72% 0.16 90);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(45 85% 52%);
+	--warning-hover: oklch(78% 0.14 90);
 
-	--error-base: hsl(5 75% 50%);
+	--error-base: oklch(55% 0.18 25);
 	--error: var(--error-base);
-	--error-hover: hsl(5 70% 58%);
+	--error-hover: oklch(63% 0.16 25);
 
-	--info-base: hsl(200 75% 45%);
+	--info-base: oklch(58% 0.14 230);
 	--info: var(--info-base);
-	--info-hover: hsl(200 70% 55%);
+	--info-hover: oklch(66% 0.12 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(260 40% 50%);
+	--link-visited: oklch(50% 0.10 290);
 
-	--border: hsl(45 20% 80%);
+	--border: oklch(84% 0.02 80);
 	--border-focus: var(--primary);
 }
 
 /* Aegean - light theme inspired by the cerulean waters of the Greek islands */
 .aegean {
 	--font-family: var(--font-sans);
-	--heading-caps: small-caps;
 
-	--body: hsl(195 30% 18%);
-	--body1: hsl(195 10% 45%);
-	--body2: hsl(195 4% 70%);
+	--body: oklch(28% 0.02 45);
+	--body1: oklch(50% 0.04 40);
+	--body2: oklch(72% 0.025 40);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(192 25% 97%);
+	--bg1-base: oklch(95% 0.008 210);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(192 20% 87%);
+	--bg2-base: oklch(89% 0.025 210);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(25 22% 91%);
+	--bg3-base: oklch(93% 0.02 60);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(188 85% 38%);
+	--primary-base: oklch(55% 0.14 210);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(188 80% 46%);
+	--primary-hover: oklch(62% 0.13 210);
 
-	--secondary-base: hsl(25 20% 50%);
+	--secondary-base: oklch(55% 0.02 55);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(25 18% 60%);
+	--secondary-hover: oklch(65% 0.015 55);
+	--secondary-button-base: oklch(72% 0.02 55);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.02 55);
 
-	--success-base: hsl(160 35% 38%);
+	--success-base: oklch(48% 0.08 170);
 	--success: var(--success-base);
-	--success-hover: hsl(160 32% 48%);
+	--success-hover: oklch(56% 0.07 170);
 
-	--warning-base: hsl(35 55% 50%);
+	--warning-base: oklch(62% 0.11 70);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(35 50% 60%);
+	--warning-hover: oklch(70% 0.10 70);
 
-	--error-base: hsl(5 45% 48%);
+	--error-base: oklch(50% 0.11 25);
 	--error: var(--error-base);
-	--error-hover: hsl(5 42% 58%);
+	--error-hover: oklch(58% 0.10 25);
 
-	--info-base: hsl(200 55% 45%);
+	--info-base: oklch(55% 0.11 230);
 	--info: var(--info-base);
-	--info-hover: hsl(200 50% 55%);
+	--info-hover: oklch(63% 0.10 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(270 25% 45%);
+	--link-visited: oklch(48% 0.06 290);
 
-	--border: hsl(192 15% 82%);
+	--border: oklch(85% 0.02 210);
 	--border-focus: var(--primary);
 }
 
@@ -662,48 +702,51 @@
 	--font-family: var(--font-crimson);
 	--heading-caps: small-caps;
 
-	--body: hsl(160 15% 15%);
-	--body1: hsl(160 6% 45%);
-	--body2: hsl(160 3% 70%);
+	--body: oklch(25% 0.02 45);
+	--body1: oklch(50% 0.04 40);
+	--body2: oklch(72% 0.025 40);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(155 12% 96%);
+	--bg1-base: oklch(94% 0.006 170);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(155 10% 86%);
+	--bg2-base: oklch(88% 0.02 170);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(40 15% 91%);
+	--bg3-base: oklch(93% 0.02 80);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(162 35% 38%);
+	--primary-base: oklch(48% 0.08 175);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(162 32% 48%);
+	--primary-hover: oklch(56% 0.07 175);
 
-	--secondary-base: hsl(40 15% 48%);
+	--secondary-base: oklch(55% 0.015 80);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(40 13% 58%);
+	--secondary-hover: oklch(65% 0.01 80);
+	--secondary-button-base: oklch(72% 0.015 80);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.015 80);
 
-	--success-base: hsl(140 35% 38%);
+	--success-base: oklch(48% 0.08 160);
 	--success: var(--success-base);
-	--success-hover: hsl(140 32% 48%);
+	--success-hover: oklch(56% 0.07 160);
 
-	--warning-base: hsl(45 50% 48%);
+	--warning-base: oklch(62% 0.11 90);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(45 47% 58%);
+	--warning-hover: oklch(70% 0.10 90);
 
-	--error-base: hsl(5 55% 48%);
+	--error-base: oklch(50% 0.12 25);
 	--error: var(--error-base);
-	--error-hover: hsl(5 52% 58%);
+	--error-hover: oklch(58% 0.11 25);
 
-	--info-base: hsl(185 40% 42%);
+	--info-base: oklch(52% 0.08 200);
 	--info: var(--info-base);
-	--info-hover: hsl(185 37% 52%);
+	--info-hover: oklch(60% 0.07 200);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(275 20% 42%);
+	--link-visited: oklch(45% 0.05 295);
 
-	--border: hsl(150 8% 80%);
+	--border: oklch(83% 0.015 170);
 	--border-focus: var(--primary);
 }
 
@@ -711,48 +754,51 @@
 .cusco {
 	--font-family: var(--font-pt-serif);
 
-	--body: hsl(200 12% 88%);
-	--body1: hsl(195 8% 60%);
-	--body2: hsl(190 4% 40%);
+	--body: oklch(98% 0.012 55);
+	--body1: oklch(80% 0.045 50);
+	--body2: oklch(62% 0.03 50);
 
-	--bg-base: hsl(200 8% 10%);
+	--bg-base: oklch(17% 0.015 220);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(195 6% 15%);
+	--bg1-base: oklch(25% 0.01 210);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(190 5% 24%);
+	--bg2-base: oklch(30% 0.01 200);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(35 8% 16%);
+	--bg3-base: oklch(22% 0.015 70);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(185 50% 42%);
+	--primary-base: oklch(55% 0.10 200);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(185 45% 52%);
+	--primary-hover: oklch(63% 0.09 200);
 
-	--secondary-base: hsl(35 40% 50%);
+	--secondary-base: oklch(60% 0.03 70);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(35 35% 60%);
+	--secondary-hover: oklch(70% 0.025 70);
+	--secondary-button-base: oklch(38% 0.025 70);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(32% 0.025 70);
 
-	--success-base: hsl(145 40% 42%);
+	--success-base: oklch(52% 0.10 160);
 	--success: var(--success-base);
-	--success-hover: hsl(145 36% 52%);
+	--success-hover: oklch(62% 0.09 160);
 
-	--warning-base: hsl(40 55% 50%);
+	--warning-base: oklch(65% 0.12 80);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(40 50% 60%);
+	--warning-hover: oklch(73% 0.10 80);
 
-	--error-base: hsl(0 50% 52%);
+	--error-base: oklch(55% 0.12 20);
 	--error: var(--error-base);
-	--error-hover: hsl(0 45% 62%);
+	--error-hover: oklch(65% 0.10 20);
 
-	--info-base: hsl(200 45% 50%);
+	--info-base: oklch(58% 0.10 230);
 	--info: var(--info-base);
-	--info-hover: hsl(200 40% 60%);
+	--info-hover: oklch(68% 0.08 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(195 35% 55%);
+	--link-visited: oklch(60% 0.06 210);
 
-	--border: hsl(195 8% 25%);
+	--border: oklch(32% 0.015 210);
 	--border-focus: var(--primary);
 }
 
@@ -760,48 +806,51 @@
 .cappadocia {
 	--font-family: var(--font-lora);
 
-	--body: hsl(20 20% 18%);
-	--body1: hsl(18 8% 45%);
-	--body2: hsl(18 3% 70%);
+	--body: oklch(28% 0.02 240);
+	--body1: oklch(50% 0.04 230);
+	--body2: oklch(72% 0.025 230);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(25 22% 97%);
+	--bg1-base: oklch(95% 0.008 60);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(25 18% 87%);
+	--bg2-base: oklch(89% 0.025 60);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(200 18% 91%);
+	--bg3-base: oklch(93% 0.02 220);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(12 55% 50%);
+	--primary-base: oklch(55% 0.14 35);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(12 52% 60%);
+	--primary-hover: oklch(63% 0.12 35);
 
-	--secondary-base: hsl(30 20% 48%);
+	--secondary-base: oklch(52% 0.04 60);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(30 18% 58%);
+	--secondary-hover: oklch(62% 0.035 60);
+	--secondary-button-base: oklch(72% 0.04 60);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.04 60);
 
-	--success-base: hsl(85 30% 40%);
+	--success-base: oklch(50% 0.08 120);
 	--success: var(--success-base);
-	--success-hover: hsl(85 28% 50%);
+	--success-hover: oklch(58% 0.07 120);
 
-	--warning-base: hsl(42 60% 48%);
+	--warning-base: oklch(65% 0.12 85);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(42 55% 58%);
+	--warning-hover: oklch(72% 0.11 85);
 
-	--error-base: hsl(355 50% 48%);
+	--error-base: oklch(50% 0.12 15);
 	--error: var(--error-base);
-	--error-hover: hsl(355 47% 58%);
+	--error-hover: oklch(58% 0.11 15);
 
-	--info-base: hsl(195 40% 45%);
+	--info-base: oklch(52% 0.08 210);
 	--info: var(--info-base);
-	--info-hover: hsl(195 37% 55%);
+	--info-hover: oklch(60% 0.07 210);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(345 25% 42%);
+	--link-visited: oklch(45% 0.06 350);
 
-	--border: hsl(22 18% 80%);
+	--border: oklch(83% 0.02 55);
 	--border-focus: var(--primary);
 }
 
@@ -809,48 +858,51 @@
 .marrakech {
 	--font-family: var(--font-crimson);
 
-	--body: hsl(28 30% 16%);
-	--body1: hsl(25 12% 45%);
-	--body2: hsl(25 5% 70%);
+	--body: oklch(26% 0.02 240);
+	--body1: oklch(50% 0.04 230);
+	--body2: oklch(72% 0.025 230);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(35 25% 96%);
+	--bg1-base: oklch(94% 0.008 75);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(35 20% 86%);
+	--bg2-base: oklch(88% 0.025 75);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(200 18% 91%);
+	--bg3-base: oklch(93% 0.02 220);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(25 65% 42%);
+	--primary-base: oklch(52% 0.13 55);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(25 60% 52%);
+	--primary-hover: oklch(60% 0.12 55);
 
-	--secondary-base: hsl(45 30% 42%);
+	--secondary-base: oklch(50% 0.03 85);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(45 27% 52%);
+	--secondary-hover: oklch(58% 0.025 85);
+	--secondary-button-base: oklch(72% 0.03 85);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.03 85);
 
-	--success-base: hsl(120 25% 38%);
+	--success-base: oklch(45% 0.06 145);
 	--success: var(--success-base);
-	--success-hover: hsl(120 23% 48%);
+	--success-hover: oklch(53% 0.055 145);
 
-	--warning-base: hsl(48 70% 45%);
+	--warning-base: oklch(68% 0.14 90);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(48 65% 55%);
+	--warning-hover: oklch(75% 0.12 90);
 
-	--error-base: hsl(0 55% 45%);
+	--error-base: oklch(48% 0.12 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 50% 55%);
+	--error-hover: oklch(56% 0.11 25);
 
-	--info-base: hsl(205 35% 45%);
+	--info-base: oklch(52% 0.07 230);
 	--info: var(--info-base);
-	--info-hover: hsl(205 32% 55%);
+	--info-hover: oklch(60% 0.06 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(340 25% 40%);
+	--link-visited: oklch(42% 0.06 350);
 
-	--border: hsl(32 20% 78%);
+	--border: oklch(82% 0.02 65);
 	--border-focus: var(--primary);
 }
 
@@ -858,48 +910,51 @@
 .uluru {
 	--font-family: var(--font-source-sans);
 
-	--body: hsl(10 20% 18%);
-	--body1: hsl(10 8% 45%);
-	--body2: hsl(10 3% 70%);
+	--body: oklch(28% 0.02 220);
+	--body1: oklch(50% 0.04 210);
+	--body2: oklch(72% 0.025 210);
 
-	--bg-base: hsl(0 0% 100%);
+	--bg-base: oklch(100% 0 0);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(30 20% 96%);
+	--bg1-base: oklch(94% 0.008 70);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(30 18% 86%);
+	--bg2-base: oklch(88% 0.025 70);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(200 15% 91%);
+	--bg3-base: oklch(93% 0.02 220);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(12 70% 40%);
+	--primary-base: oklch(48% 0.16 35);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(12 65% 50%);
+	--primary-hover: oklch(56% 0.14 35);
 
-	--secondary-base: hsl(30 25% 45%);
+	--secondary-base: oklch(50% 0.03 65);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(30 22% 55%);
+	--secondary-hover: oklch(58% 0.025 65);
+	--secondary-button-base: oklch(72% 0.03 65);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(64% 0.03 65);
 
-	--success-base: hsl(100 30% 38%);
+	--success-base: oklch(48% 0.08 130);
 	--success: var(--success-base);
-	--success-hover: hsl(100 28% 48%);
+	--success-hover: oklch(56% 0.07 130);
 
-	--warning-base: hsl(45 65% 45%);
+	--warning-base: oklch(65% 0.12 90);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(45 60% 55%);
+	--warning-hover: oklch(72% 0.11 90);
 
-	--error-base: hsl(0 55% 48%);
+	--error-base: oklch(50% 0.12 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 50% 58%);
+	--error-hover: oklch(58% 0.10 25);
 
-	--info-base: hsl(200 35% 45%);
+	--info-base: oklch(52% 0.07 230);
 	--info: var(--info-base);
-	--info-hover: hsl(200 32% 55%);
+	--info-hover: oklch(60% 0.06 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(350 28% 40%);
+	--link-visited: oklch(42% 0.07 355);
 
-	--border: hsl(25 18% 78%);
+	--border: oklch(82% 0.02 60);
 	--border-focus: var(--primary);
 }
 
@@ -907,369 +962,362 @@
 .lviv {
 	--font-family: var(--font-inter);
 
-	--body: hsl(50 25% 92%);
-	--body1: hsl(50 12% 60%);
-	--body2: hsl(50 5% 40%);
+	--body: oklch(98% 0.015 85);
+	--body1: oklch(80% 0.05 80);
+	--body2: oklch(62% 0.035 80);
 
-	--bg-base: hsl(216 50% 10%);
+	--bg-base: oklch(17% 0.05 260);
 	--bg: var(--bg-base);
-	--bg1-base: hsl(216 40% 15%);
+	--bg1-base: oklch(25% 0.04 260);
 	--bg1: var(--bg1-base);
-	--bg2-base: hsl(216 35% 24%);
+	--bg2-base: oklch(30% 0.04 260);
 	--bg2: var(--bg2-base);
-	--bg3-base: hsl(48 20% 18%);
+	--bg3-base: oklch(25% 0.03 90);
 	--bg3: var(--bg3-base);
 
-	--primary-base: hsl(48 80% 52%);
+	--primary-base: oklch(78% 0.15 95);
 	--primary: var(--primary-base);
-	--primary-hover: hsl(48 75% 62%);
-	--primary-button: hsl(216 85% 45%);
-	--primary-button-hover: hsl(216 90% 38%);
+	--primary-hover: oklch(85% 0.13 95);
+	--primary-button-base: oklch(55% 0.18 260);
+	--primary-button: var(--primary-button-base);
+	--primary-button-hover: oklch(48% 0.20 260);
 
-	--secondary-base: hsl(42 60% 50%);
+	--secondary-base: oklch(65% 0.04 90);
 	--secondary: var(--secondary-base);
-	--secondary-hover: hsl(42 55% 60%);
+	--secondary-hover: oklch(72% 0.035 90);
+	--secondary-button-base: oklch(38% 0.03 90);
+	--secondary-button: var(--secondary-button-base);
+	--secondary-button-hover: oklch(32% 0.03 90);
 
-	--success-base: hsl(145 50% 45%);
+	--success-base: oklch(58% 0.12 160);
 	--success: var(--success-base);
-	--success-hover: hsl(145 45% 55%);
+	--success-hover: oklch(66% 0.10 160);
 
-	--warning-base: hsl(38 65% 52%);
+	--warning-base: oklch(70% 0.13 80);
 	--warning: var(--warning-base);
-	--warning-hover: hsl(38 60% 62%);
+	--warning-hover: oklch(78% 0.11 80);
 
-	--error-base: hsl(0 65% 55%);
+	--error-base: oklch(58% 0.16 25);
 	--error: var(--error-base);
-	--error-hover: hsl(0 60% 65%);
+	--error-hover: oklch(68% 0.14 25);
 
-	--info-base: hsl(200 60% 55%);
+	--info-base: oklch(65% 0.12 230);
 	--info: var(--info-base);
-	--info-hover: hsl(200 55% 65%);
+	--info-hover: oklch(73% 0.10 230);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: hsl(40 50% 60%);
+	--link-visited: oklch(70% 0.10 85);
 
-	--border: hsl(216 30% 28%);
+	--border: oklch(35% 0.04 260);
 	--border-focus: var(--primary);
 }
 
-/* Warm color temperature - does NOT affect --bg */
+/* Warm color temperature - shifts hue +7 degrees and increases saturation */
 .warm {
-	--body1: hsl(30 6% 45%);
-	--body2: hsl(25 4% 70%);
+	--bg: oklch(from var(--bg-base) l calc(c * 1.15) calc(h + 10));
+	--bg1: oklch(from var(--bg1-base) l calc(c * 1.15) calc(h + 10));
+	--bg2: oklch(from var(--bg2-base) l calc(c * 1.15) calc(h + 10));
+	--bg3: oklch(from var(--bg3-base) l calc(c * 1.15) calc(h + 10));
 
-	--bg1-base: hsl(40 33% 97%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(35 25% 87%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(30 25% 91%);
-	--bg3: var(--bg3-base);
+	--primary: oklch(from var(--primary-base) l calc(c * 1.15) calc(h + 10));
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.15) calc(h + 10));
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.15) calc(h + 10));
 
-	--border: hsl(30 8% 82%);
+	--secondary: oklch(from var(--secondary-base) l calc(c * 1.15) calc(h + 10));
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.15) calc(h + 10));
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.15) calc(h + 10));
+
+	--success: oklch(from var(--success-base) l calc(c * 1.15) calc(h + 10));
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
+
+	--warning: oklch(from var(--warning-base) l calc(c * 1.15) calc(h + 10));
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
+
+	--error: oklch(from var(--error-base) l calc(c * 1.15) calc(h + 10));
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
+
+	--info: oklch(from var(--info-base) l calc(c * 1.15) calc(h + 10));
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
+
+	--link-visited: oklch(from var(--link-visited) l calc(c * 1.15) calc(h + 10));
 }
 
-.warm.dark, .dark.warm, .dark .warm {
-	--body1: hsl(30 4% 60%);
-	--body2: hsl(25 2% 40%);
-	--bg1-base: hsl(30 6% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(28 5% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(30 8% 20%);
-	--bg3: var(--bg3-base);
-	--border: hsl(30 4% 32%);
-}
-
-.warm.ambleside, .ambleside.warm, .ambleside .warm {
-	--body1: hsl(30 12% 60%);
-	--body2: hsl(32 6% 40%);
-	--bg1-base: hsl(200 12% 17%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(195 10% 26%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(30 10% 20%);
-	--bg3: var(--bg3-base);
-	--border: hsl(200 8% 32%);
-}
-
-.warm.patagonia, .patagonia.warm, .patagonia .warm {
-	--body1: hsl(190 10% 60%);
-	--body2: hsl(185 5% 40%);
-	--bg1-base: hsl(195 15% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(190 12% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(25 12% 18%);
-	--bg3: var(--bg3-base);
-	--border: hsl(195 8% 30%);
-}
-
-.warm.svalbard, .svalbard.warm, .svalbard .warm {
-	--body1: hsl(200 12% 60%);
-	--body2: hsl(195 5% 40%);
-	--bg1-base: hsl(200 20% 13%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(195 16% 22%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(30 12% 17%);
-	--bg3: var(--bg3-base);
-	--border: hsl(200 10% 28%);
-}
-
-.warm.cusco, .cusco.warm, .cusco .warm {
-	--body1: hsl(180 6% 60%);
-	--body2: hsl(175 3% 40%);
-	--bg1-base: hsl(180 5% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(175 4% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(30 6% 18%);
-	--bg3: var(--bg3-base);
-	--border: hsl(180 4% 28%);
-}
-
-.warm.lviv, .lviv.warm, .lviv .warm {
-	--body1: hsl(48 14% 60%);
-	--body2: hsl(45 6% 40%);
-	--bg1-base: hsl(210 35% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(205 30% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(40 15% 20%);
-	--bg3: var(--bg3-base);
-	--border: hsl(210 18% 28%);
-}
-
-/* Cool color temperature - does NOT affect --bg */
+/* Cool color temperature - shifts hue -7 degrees and decreases saturation */
 .cool {
-	--body1: hsl(218 10% 45%);
-	--body2: hsl(217 5% 70%);
+	--bg: oklch(from var(--bg-base) l calc(c * 0.85) calc(h - 10));
+	--bg1: oklch(from var(--bg1-base) l calc(c * 0.85) calc(h - 10));
+	--bg2: oklch(from var(--bg2-base) l calc(c * 0.85) calc(h - 10));
+	--bg3: oklch(from var(--bg3-base) l calc(c * 0.85) calc(h - 10));
 
-	--bg1-base: hsl(210 40% 98%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(214 32% 87%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(220 25% 91%);
-	--bg3: var(--bg3-base);
+	--primary: oklch(from var(--primary-base) l calc(c * 0.85) calc(h - 10));
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.85) calc(h - 10));
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.85) calc(h - 10));
 
-	--border: hsl(214 20% 84%);
-}
+	--secondary: oklch(from var(--secondary-base) l calc(c * 0.85) calc(h - 10));
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.85) calc(h - 10));
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.85) calc(h - 10));
 
-.cool.dark, .dark.cool, .dark .cool {
-	--body1: hsl(216 10% 60%);
-	--body2: hsl(218 4% 40%);
-	--bg1-base: hsl(218 20% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(216 15% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(220 15% 20%);
-	--bg3: var(--bg3-base);
-	--border: hsl(217 10% 35%);
-}
+	--success: oklch(from var(--success-base) l calc(c * 0.85) calc(h - 10));
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
 
-.cool.ambleside, .ambleside.cool, .ambleside .cool {
-	--body1: hsl(210 12% 60%);
-	--body2: hsl(215 5% 40%);
-	--bg1-base: hsl(225 22% 17%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(222 18% 26%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(220 15% 20%);
-	--bg3: var(--bg3-base);
-	--border: hsl(220 12% 32%);
-}
+	--warning: oklch(from var(--warning-base) l calc(c * 0.85) calc(h - 10));
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
 
-.cool.patagonia, .patagonia.cool, .patagonia .cool {
-	--body1: hsl(210 10% 60%);
-	--body2: hsl(215 4% 40%);
-	--bg1-base: hsl(220 25% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(218 20% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(215 18% 18%);
-	--bg3: var(--bg3-base);
-	--border: hsl(218 12% 30%);
-}
+	--error: oklch(from var(--error-base) l calc(c * 0.85) calc(h - 10));
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
 
-.cool.svalbard, .svalbard.cool, .svalbard .cool {
-	--body1: hsl(210 12% 60%);
-	--body2: hsl(215 5% 40%);
-	--bg1-base: hsl(225 30% 13%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(222 25% 22%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(225 20% 17%);
-	--bg3: var(--bg3-base);
-	--border: hsl(220 15% 28%);
-}
+	--info: oklch(from var(--info-base) l calc(c * 0.85) calc(h - 10));
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
 
-.cool.cusco, .cusco.cool, .cusco .cool {
-	--body1: hsl(210 10% 60%);
-	--body2: hsl(215 4% 40%);
-	--bg1-base: hsl(210 10% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(208 8% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(215 8% 18%);
-	--bg3: var(--bg3-base);
-	--border: hsl(210 6% 28%);
-}
-
-.cool.lviv, .lviv.cool, .lviv .cool {
-	--body1: hsl(215 15% 60%);
-	--body2: hsl(218 6% 40%);
-	--bg1-base: hsl(220 45% 15%);
-	--bg1: var(--bg1-base);
-	--bg2-base: hsl(218 40% 24%);
-	--bg2: var(--bg2-base);
-	--bg3-base: hsl(220 30% 20%);
-	--bg3: var(--bg3-base);
-	--border: hsl(218 25% 28%);
-}
-
-.warm.yucatan, .yucatan.warm, .yucatan .warm {
-	--bg-base: hsl(38 32% 96%);
-	--bg: var(--bg-base);
-	--bg1-base: hsl(40 42% 93%);
-	--bg1: var(--bg1-base);
-	--bg3-base: hsl(45 30% 90%);
-	--bg3: var(--bg3-base);
-	--border: hsl(38 20% 76%);
-}
-
-.cool.yucatan, .yucatan.cool, .yucatan .cool {
-	--bg-base: hsl(190 30% 97%);
-	--bg: var(--bg-base);
-	--bg1-base: hsl(185 25% 94%);
-	--bg1: var(--bg1-base);
-	--bg3-base: hsl(180 35% 91%);
-	--bg3: var(--bg3-base);
-	--border: hsl(190 15% 78%);
-}
-
-.warm.windermere, .windermere.warm, .windermere .warm {
-	--bg-base: hsl(38 28% 94%);
-	--bg: var(--bg-base);
-	--bg1-base: hsl(35 18% 89%);
-	--bg1: var(--bg1-base);
-	--bg3-base: hsl(45 15% 88%);
-	--bg3: var(--bg3-base);
-	--border: hsl(35 12% 75%);
-}
-
-.cool.windermere, .windermere.cool, .windermere .cool {
-	--bg-base: hsl(210 18% 95%);
-	--bg: var(--bg-base);
-	--bg1-base: hsl(215 14% 90%);
-	--bg1: var(--bg1-base);
-	--bg3-base: hsl(200 12% 88%);
-	--bg3: var(--bg3-base);
-	--border: hsl(215 10% 76%);
+	--link-visited: oklch(from var(--link-visited) l calc(c * 0.85) calc(h - 10));
 }
 
 /* Saturated - more vivid colors using relative color syntax */
 .sat {
-	--bg: hsl(from var(--bg-base) h calc(s * 1.4) l);
-	--bg1: hsl(from var(--bg1-base) h calc(s * 1.4) l);
-	--bg2: hsl(from var(--bg2-base) h calc(s * 1.4) l);
-	--bg3: hsl(from var(--bg3-base) h calc(s * 1.4) l);
+	--bg: oklch(from var(--bg-base) l calc(c * 1.5) h);
+	--bg1: oklch(from var(--bg1-base) l calc(c * 1.5) h);
+	--bg2: oklch(from var(--bg2-base) l calc(c * 1.5) h);
+	--bg3: oklch(from var(--bg3-base) l calc(c * 1.5) h);
 
-	--primary: hsl(from var(--primary-base) h calc(s * 1.4) l);
-	--primary-hover: hsl(from var(--primary-base) h calc(s * 1.4) calc(l * 1.15));
+	--primary: oklch(from var(--primary-base) l calc(c * 1.5) h);
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.5) h);
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.5) h);
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.5) h);
 
-	--secondary: hsl(from var(--secondary-base) h calc(s * 1.4) l);
-	--secondary-hover: hsl(from var(--secondary-base) h calc(s * 1.4) calc(l * 1.15));
+	--secondary: oklch(from var(--secondary-base) l calc(c * 1.5) h);
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.5) h);
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.5) h);
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.5) h);
 
-	--success: hsl(from var(--success-base) h calc(s * 1.4) l);
-	--success-hover: hsl(from var(--success-base) h calc(s * 1.4) calc(l * 1.15));
+	--success: oklch(from var(--success-base) l calc(c * 1.5) h);
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.5) h);
 
-	--warning: hsl(from var(--warning-base) h calc(s * 1.4) l);
-	--warning-hover: hsl(from var(--warning-base) h calc(s * 1.4) calc(l * 1.15));
+	--warning: oklch(from var(--warning-base) l calc(c * 1.5) h);
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.5) h);
 
-	--error: hsl(from var(--error-base) h calc(s * 1.4) l);
-	--error-hover: hsl(from var(--error-base) h calc(s * 1.4) calc(l * 1.15));
+	--error: oklch(from var(--error-base) l calc(c * 1.5) h);
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.5) h);
 
-	--info: hsl(from var(--info-base) h calc(s * 1.4) l);
-	--info-hover: hsl(from var(--info-base) h calc(s * 1.4) calc(l * 1.15));
+	--info: oklch(from var(--info-base) l calc(c * 1.5) h);
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.5) h);
 
-	--link-visited: hsl(from var(--link-visited) h calc(s * 1.4) l);
+	--link-visited: oklch(from var(--link-visited) l calc(c * 1.5) h);
 }
 
 /* Desaturated - muted colors using relative color syntax */
 .desat {
-	--bg: hsl(from var(--bg-base) h calc(s * 0.6) l);
-	--bg1: hsl(from var(--bg1-base) h calc(s * 0.6) l);
-	--bg2: hsl(from var(--bg2-base) h calc(s * 0.6) l);
-	--bg3: hsl(from var(--bg3-base) h calc(s * 0.6) l);
+	--bg: oklch(from var(--bg-base) l calc(c * 0.5) h);
+	--bg1: oklch(from var(--bg1-base) l calc(c * 0.5) h);
+	--bg2: oklch(from var(--bg2-base) l calc(c * 0.5) h);
+	--bg3: oklch(from var(--bg3-base) l calc(c * 0.5) h);
 
-	--primary: hsl(from var(--primary-base) h calc(s * 0.6) l);
-	--primary-hover: hsl(from var(--primary-base) h calc(s * 0.6) calc(l * 1.15));
+	--primary: oklch(from var(--primary-base) l calc(c * 0.5) h);
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.5) h);
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.5) h);
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.5) h);
 
-	--secondary: hsl(from var(--secondary-base) h calc(s * 0.6) l);
-	--secondary-hover: hsl(from var(--secondary-base) h calc(s * 0.6) calc(l * 1.15));
+	--secondary: oklch(from var(--secondary-base) l calc(c * 0.5) h);
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.5) h);
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.5) h);
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.5) h);
 
-	--success: hsl(from var(--success-base) h calc(s * 0.6) l);
-	--success-hover: hsl(from var(--success-base) h calc(s * 0.6) calc(l * 1.15));
+	--success: oklch(from var(--success-base) l calc(c * 0.5) h);
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.5) h);
 
-	--warning: hsl(from var(--warning-base) h calc(s * 0.6) l);
-	--warning-hover: hsl(from var(--warning-base) h calc(s * 0.6) calc(l * 1.15));
+	--warning: oklch(from var(--warning-base) l calc(c * 0.5) h);
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.5) h);
 
-	--error: hsl(from var(--error-base) h calc(s * 0.6) l);
-	--error-hover: hsl(from var(--error-base) h calc(s * 0.6) calc(l * 1.15));
+	--error: oklch(from var(--error-base) l calc(c * 0.5) h);
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.5) h);
 
-	--info: hsl(from var(--info-base) h calc(s * 0.6) l);
-	--info-hover: hsl(from var(--info-base) h calc(s * 0.6) calc(l * 1.15));
+	--info: oklch(from var(--info-base) l calc(c * 0.5) h);
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.5) h);
 
-	--link-visited: hsl(from var(--link-visited) h calc(s * 0.6) l);
+	--link-visited: oklch(from var(--link-visited) l calc(c * 0.5) h);
+}
+
+/* Combined warm + sat: hue +10, chroma * 1.15 * 1.5 */
+.warm.sat, .sat.warm {
+	--bg: oklch(from var(--bg-base) l calc(c * 1.725) calc(h + 10));
+	--bg1: oklch(from var(--bg1-base) l calc(c * 1.725) calc(h + 10));
+	--bg2: oklch(from var(--bg2-base) l calc(c * 1.725) calc(h + 10));
+	--bg3: oklch(from var(--bg3-base) l calc(c * 1.725) calc(h + 10));
+
+	--primary: oklch(from var(--primary-base) l calc(c * 1.725) calc(h + 10));
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.725) calc(h + 10));
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.725) calc(h + 10));
+
+	--secondary: oklch(from var(--secondary-base) l calc(c * 1.725) calc(h + 10));
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.725) calc(h + 10));
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.725) calc(h + 10));
+
+	--success: oklch(from var(--success-base) l calc(c * 1.725) calc(h + 10));
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
+
+	--warning: oklch(from var(--warning-base) l calc(c * 1.725) calc(h + 10));
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
+
+	--error: oklch(from var(--error-base) l calc(c * 1.725) calc(h + 10));
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
+
+	--info: oklch(from var(--info-base) l calc(c * 1.725) calc(h + 10));
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
+
+	--link-visited: oklch(from var(--link-visited) l calc(c * 1.725) calc(h + 10));
+}
+
+/* Combined warm + desat: hue +10, chroma * 1.15 * 0.5 */
+.warm.desat, .desat.warm {
+	--bg: oklch(from var(--bg-base) l calc(c * 0.575) calc(h + 10));
+	--bg1: oklch(from var(--bg1-base) l calc(c * 0.575) calc(h + 10));
+	--bg2: oklch(from var(--bg2-base) l calc(c * 0.575) calc(h + 10));
+	--bg3: oklch(from var(--bg3-base) l calc(c * 0.575) calc(h + 10));
+
+	--primary: oklch(from var(--primary-base) l calc(c * 0.575) calc(h + 10));
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.575) calc(h + 10));
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.575) calc(h + 10));
+
+	--secondary: oklch(from var(--secondary-base) l calc(c * 0.575) calc(h + 10));
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.575) calc(h + 10));
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.575) calc(h + 10));
+
+	--success: oklch(from var(--success-base) l calc(c * 0.575) calc(h + 10));
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
+
+	--warning: oklch(from var(--warning-base) l calc(c * 0.575) calc(h + 10));
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
+
+	--error: oklch(from var(--error-base) l calc(c * 0.575) calc(h + 10));
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
+
+	--info: oklch(from var(--info-base) l calc(c * 0.575) calc(h + 10));
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
+
+	--link-visited: oklch(from var(--link-visited) l calc(c * 0.575) calc(h + 10));
+}
+
+/* Combined cool + sat: hue -10, chroma * 0.85 * 1.5 */
+.cool.sat, .sat.cool {
+	--bg: oklch(from var(--bg-base) l calc(c * 1.275) calc(h - 10));
+	--bg1: oklch(from var(--bg1-base) l calc(c * 1.275) calc(h - 10));
+	--bg2: oklch(from var(--bg2-base) l calc(c * 1.275) calc(h - 10));
+	--bg3: oklch(from var(--bg3-base) l calc(c * 1.275) calc(h - 10));
+
+	--primary: oklch(from var(--primary-base) l calc(c * 1.275) calc(h - 10));
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.275) calc(h - 10));
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.275) calc(h - 10));
+
+	--secondary: oklch(from var(--secondary-base) l calc(c * 1.275) calc(h - 10));
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.275) calc(h - 10));
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.275) calc(h - 10));
+
+	--success: oklch(from var(--success-base) l calc(c * 1.275) calc(h - 10));
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
+
+	--warning: oklch(from var(--warning-base) l calc(c * 1.275) calc(h - 10));
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
+
+	--error: oklch(from var(--error-base) l calc(c * 1.275) calc(h - 10));
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
+
+	--info: oklch(from var(--info-base) l calc(c * 1.275) calc(h - 10));
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
+
+	--link-visited: oklch(from var(--link-visited) l calc(c * 1.275) calc(h - 10));
+}
+
+/* Combined cool + desat: hue -10, chroma * 0.85 * 0.5 */
+.cool.desat, .desat.cool {
+	--bg: oklch(from var(--bg-base) l calc(c * 0.425) calc(h - 10));
+	--bg1: oklch(from var(--bg1-base) l calc(c * 0.425) calc(h - 10));
+	--bg2: oklch(from var(--bg2-base) l calc(c * 0.425) calc(h - 10));
+	--bg3: oklch(from var(--bg3-base) l calc(c * 0.425) calc(h - 10));
+
+	--primary: oklch(from var(--primary-base) l calc(c * 0.425) calc(h - 10));
+	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
+	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.425) calc(h - 10));
+	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.425) calc(h - 10));
+
+	--secondary: oklch(from var(--secondary-base) l calc(c * 0.425) calc(h - 10));
+	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
+	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.425) calc(h - 10));
+	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.425) calc(h - 10));
+
+	--success: oklch(from var(--success-base) l calc(c * 0.425) calc(h - 10));
+	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
+
+	--warning: oklch(from var(--warning-base) l calc(c * 0.425) calc(h - 10));
+	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
+
+	--error: oklch(from var(--error-base) l calc(c * 0.425) calc(h - 10));
+	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
+
+	--info: oklch(from var(--info-base) l calc(c * 0.425) calc(h - 10));
+	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
+
+	--link-visited: oklch(from var(--link-visited) l calc(c * 0.425) calc(h - 10));
 }
 
 /* System preference auto-detection */
 @media (prefers-color-scheme: dark) {
-	:root:not(.light):not(.uinta):not(.hokkaido):not(.sahel):not(.kerala):not(.yucatan):not(.aegean):not(.guilin):not(.cappadocia):not(.marrakech):not(.uluru) {
+	:root:not(.light):not(.uinta):not(.hokkaido):not(.sahel):not(.kerala):not(.yucatan):not(.aegean):not(.guilin):not(.cappadocia):not(.marrakech):not(.uluru):not(.windermere):not(.peebles) {
 
-		--body: hsl(0 0% 96%);
-		--body1: hsl(0 0% 60%);
-		--body2: hsl(0 0% 40%);
+		--body: oklch(98% 0.01 60);
+		--body1: oklch(80% 0.04 50);
+		--body2: oklch(62% 0.025 50);
 
-		--bg-base: hsl(0 0% 0%);
+		--bg-base: oklch(0% 0 0);
 		--bg: var(--bg-base);
-		--bg1-base: hsl(0 0% 15%);
+		--bg1-base: oklch(23% 0 0);
 		--bg1: var(--bg1-base);
-		--bg2-base: hsl(0 0% 25%);
+		--bg2-base: oklch(30% 0 0);
 		--bg2: var(--bg2-base);
-		--bg3-base: hsl(217 20% 18%);
+		--bg3-base: oklch(25% 0.03 260);
 		--bg3: var(--bg3-base);
 
-		--primary-base: hsl(217 91% 60%);
+		--primary-base: oklch(65% 0.20 260);
 		--primary: var(--primary-base);
-		--primary-hover: hsl(213 94% 68%);
+		--primary-hover: oklch(72% 0.18 260);
 
-		--secondary-base: hsl(215 21% 65%);
+		--secondary-base: oklch(70% 0.04 260);
 		--secondary: var(--secondary-base);
-		--secondary-hover: hsl(214 32% 84%);
+		--secondary-hover: oklch(85% 0.03 260);
+		--secondary-button-base: oklch(38% 0.03 260);
+		--secondary-button: var(--secondary-button-base);
+		--secondary-button-hover: oklch(32% 0.03 260);
 
-		--success-base: hsl(142 71% 45%);
+		--success-base: oklch(65% 0.16 155);
 		--success: var(--success-base);
-		--success-hover: hsl(142 69% 58%);
+		--success-hover: oklch(72% 0.14 155);
 
-		--warning-base: hsl(48 94% 47%);
+		--warning-base: oklch(82% 0.16 85);
 		--warning: var(--warning-base);
-		--warning-hover: hsl(48 96% 53%);
+		--warning-hover: oklch(87% 0.14 85);
 
-		--error-base: hsl(0 84% 60%);
+		--error-base: oklch(65% 0.20 25);
 		--error: var(--error-base);
-		--error-hover: hsl(0 91% 71%);
+		--error-hover: oklch(75% 0.18 25);
 
-		--info-base: hsl(189 86% 53%);
+		--info-base: oklch(70% 0.12 200);
 		--info: var(--info-base);
-		--info-hover: hsl(189 94% 69%);
+		--info-hover: oklch(80% 0.10 200);
 
 		--link: var(--primary);
 		--link-hover: var(--primary-hover);
-		--link-visited: hsl(258 90% 76%);
+		--link-visited: oklch(75% 0.15 295);
 
-		--border: hsl(0 0% 27%);
+		--border: oklch(32% 0 0);
 		--border-focus: var(--primary);
 	}
 }

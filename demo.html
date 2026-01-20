@@ -119,44 +119,21 @@
 				<span class="error">.error</span>,
 				<span class="info">.info</span>
 			</p>
-			<p>Regular text and <span class="muted">.muted text</span>.</p>
-
-			<div class="alert error">.alert .error (also .success, .warning, .info)</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span style="color: var(--body1)">Sed do eiusmod tempor incididunt ut labore (body1).</span> <span style="color: var(--body2)">Ut enim ad minim veniam, quis nostrud (body2).</span> <span class="muted">Duis aute irure dolor in reprehenderit (.muted).</span></p>
 
 			<div class="mt1">
-				<button type="button">Primary</button>
+				<button type="button">.primary button</button>
 				<button type="button" class="secondary">.secondary</button>
 			</div>
 
-			<h3>Backgrounds and Modifiers</h3>
 			<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-				<div class="bg1 p1">.bg1 <span class="muted">muted</span> <span class="primary">primary</span></div>
-				<div class="bg2 p1">.bg2 <span class="muted">muted</span> <span class="primary">primary</span></div>
-				<div class="bg3 p1">.bg3 <span class="muted">muted</span> <span class="primary">primary</span></div>
+				<div class="bg1 p2">.bg1 <span class="muted">muted</span> <span class="primary">primary</span></div>
+				<div class="bg2 p2">.bg2 <span class="muted">muted</span> <span class="primary">primary</span></div>
+				<div class="bg3 p2">.bg3 <span class="muted">muted</span> <span class="primary">primary</span></div>
 			</div>
-			<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-				<div class="warm bg2 p1"><span class="primary">.warm</span></div>
-				<div class="cool bg2 p1"><span class="primary">.cool</span></div>
-				<div class="sat bg2 p1"><span class="primary">.sat</span></div>
-				<div class="desat bg2 p1"><span class="primary">.desat</span></div>
-			</div>
-
-			<p>Theme classes can be applied to any element, or the entire <code>&lt;html&gt;</code>.</p>
-			<div class="patagonia bg p1 r1 mt1">
-				<p style="margin: 0;"><strong>Patagonia</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
-			</div>
-			<div class="marrakech bg1 p1 r1 mt1">
-				<p style="margin: 0;"><strong>Marrakech</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
-			</div>
-			<div class="svalbard bg p1 r1 mt1">
-				<p style="margin: 0;"><strong>Svalbard</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
-			</div>
-			<div class="yucatan bg2 p1 r1 mt1">
-				<p style="margin: 0;"><strong>Yucatan</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
-			</div>
-			<div class="lviv bg p1 r1 mt1">
-				<p style="margin: 0;"><strong>Lviv</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
-			</div>
+			
+			<div class="alert success">.alert .success</div>
+			<div class="alert error">.alert .error (also .warning, .info)</div>
 			<p class="text-right"><a href="#top">Top</a></p>
 		</div>
 	</details>
@@ -192,8 +169,8 @@
 
 			<pre><code>Text alignment: .text-center  .text-right  .text-left</code></pre>
 
-			<p><code>.m0</code>-<code>.m10</code>, <code>.mt0</code>, <code>.mb0</code>, <code>.ml0</code>, <code>.mr0</code>, <code>.mx0</code>, <code>.my0</code> (margins)</p>
-			<p><code>.p0</code>-<code>.p10</code>, <code>.pt0</code>, <code>.pb0</code>, <code>.pl0</code>, <code>.pr0</code>, <code>.px0</code>, <code>.py0</code> (padding)</p>
+			<p><code>.m0</code>-<code>.m5</code>, <code>.mt0</code>, <code>.mb0</code>, <code>.ml0</code>, <code>.mr0</code>, <code>.mx0</code>, <code>.my0</code> (margins)</p>
+			<p><code>.p0</code>-<code>.p5</code>, <code>.pt0</code>, <code>.pb0</code>, <code>.pl0</code>, <code>.pr0</code>, <code>.px0</code>, <code>.py0</code> (padding)</p>
 
 			<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
 				<div class="bg1 p1 r0">.r0</div>
@@ -303,11 +280,28 @@
 	</details>
 </section>
 
-<section id="more-elements">
+<section id="more">
 	<details>
-		<summary>More Elements</summary>
+		<summary>More</summary>
 
 		<div class="readable">
+			<p>Theme classes can be applied to any element, or the entire <code>&lt;html&gt;</code>.</p>
+			<div class="patagonia bg p1 r1 mt1">
+				<p style="margin: 0;"><strong>Patagonia</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="marrakech bg1 p1 r1 mt1">
+				<p style="margin: 0;"><strong>Marrakech</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="svalbard bg p1 r1 mt1">
+				<p style="margin: 0;"><strong>Svalbard</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="yucatan bg2 p1 r1 mt1">
+				<p style="margin: 0;"><strong>Yucatan</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+			<div class="lviv bg p1 r1 mt1">
+				<p style="margin: 0;"><strong>Lviv</strong> — <a href="#">link</a>, <span class="primary">primary</span>, <span class="secondary">secondary</span>, <span class="success">success</span>, <span class="warning">warning</span>, <span class="error">error</span>, <span class="muted">muted</span></p>
+			</div>
+
 			<h3>Tables</h3>
 			<p>Add <code>.striped</code> for alternating rows.</p>
 			<table class="striped">

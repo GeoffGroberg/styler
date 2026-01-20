@@ -68,10 +68,22 @@ styler/
 
 **Ambleside** (dark)
 - Inspired by a winter evening in England's Lake District
-- Deep slate blue-gray background (#181c24)
-- Lighter slate surfaces
+- Deep slate blue-gray background
+- Lighter slate surfaces, heather lavender accent (bg3)
 - Misty lake blue primary
 - Warm amber warning tones (like cottage lights through windows)
+
+**Windermere** (light)
+- Inspired by a misty morning in England's Lake District
+- Warm cream background with cool slate accents
+- Pairs with Ambleside as light/dark companions
+- Cool slate blue primary
+
+**Peebles** (light)
+- Inspired by a rainy day and a warm bakery in Scotland
+- Warm bakery cream background
+- Cool slate blue primary
+- Cozy and inviting atmosphere
 
 **Uinta** (light)
 - Inspired by a crisp morning in Utah's Uinta mountains
@@ -213,6 +225,13 @@ When creating a new dark theme, include these requirements:
 
 This ensures modifiers work whether classes are on the same element (`class="dark warm"` or `class="warm dark"`) or nested (`<html class="dark"><div class="warm">`).
 
+**3. Update dark theme selectors** - Three places list dark themes explicitly:
+- `forms.css` - Select dropdown arrow color (lines ~112-116)
+- `typography.css` - Inserted/deleted text colors (lines ~231-241)
+- `colors.css` - Media query exclusion list (line ~1274)
+
+When adding a new dark theme, update all three locations.
+
 #### Creating Modifiers That Override Backgrounds
 
 When creating a modifier that changes background colors (like `warm` or `cool`), you must set both the `-base` variable and the display variable. This ensures `sat` and `desat` work correctly with your modifier:
@@ -220,15 +239,15 @@ When creating a modifier that changes background colors (like `warm` or `cool`),
 ```css
 /* WRONG - sat/desat will ignore these overrides */
 .mymodifier {
-  --bg1: hsl(40 33% 97%);
-  --bg2: hsl(35 25% 92%);
+  --bg1: oklch(98% 0.025 80);
+  --bg2: oklch(89% 0.03 75);
 }
 
 /* CORRECT - sat/desat will use these values */
 .mymodifier {
-  --bg1-base: hsl(40 33% 97%);
+  --bg1-base: oklch(98% 0.025 80);
   --bg1: var(--bg1-base);
-  --bg2-base: hsl(35 25% 92%);
+  --bg2-base: oklch(89% 0.03 75);
   --bg2: var(--bg2-base);
 }
 ```
@@ -237,43 +256,69 @@ Without setting the `-base` variables, `sat` and `desat` will read the original 
 
 ## Color Variables
 
-All colors use HSL format for consistency and to enable dynamic saturation modification.
+All colors use OKLCH format for perceptual uniformity. OKLCH provides consistent perceived lightness across different hues, making color adjustments more predictable.
 
 ```css
 --body, --body1, --body2      /* Text colors (dark to light) */
 --bg, --bg1, --bg2, --bg3     /* Background colors (bg3 uses complementary hue) */
 --primary, --primary-hover    /* Primary action color */
+--primary-button, --primary-button-hover  /* Button colors (may differ from text in dark themes) */
 --secondary, --secondary-hover
+--secondary-button, --secondary-button-hover
 --success, --warning, --error, --info
 --border, --border-focus
 --link, --link-hover
 ```
 
-### HSL and Base Variables
+### OKLCH Color Format
+
+OKLCH uses three components:
+- **L (Lightness)**: 0% (black) to 100% (white) - perceptually uniform
+- **C (Chroma)**: 0 (gray) to ~0.4 (vivid) - color intensity
+- **H (Hue)**: 0-360 degrees - color wheel position
+
+```css
+oklch(55% 0.22 260)  /* L=55%, C=0.22, H=260 (blue) */
+oklch(70% 0.12 155)  /* L=70%, C=0.12, H=155 (green) */
+```
+
+### Base Variables for Modifiers
 
 Backgrounds and semantic colors use a two-tier variable system that enables the `sat` and `desat` modifiers to work with any theme:
 
 ```css
 /* Themes define -base variables for backgrounds */
---bg-base: hsl(0 0% 100%);
+--bg-base: oklch(100% 0 0);
 --bg: var(--bg-base);
---bg1-base: hsl(0 0% 96%);
+--bg1-base: oklch(97% 0 0);
 --bg1: var(--bg1-base);
 
 /* ...and for semantic colors */
---primary-base: hsl(217 84% 53%);
+--primary-base: oklch(55% 0.22 260);
 --primary: var(--primary-base);
---primary-hover: hsl(217 91% 60%);
+--primary-hover: oklch(62% 0.21 260);
 
-/* sat/desat use CSS relative color syntax to modify the base */
+/* Button colors can differ from text (useful in dark themes) */
+--primary-button-base: var(--primary-base);
+--primary-button: var(--primary-button-base);
+
+/* sat/desat use CSS relative color syntax to modify chroma */
 .sat {
-  --bg: hsl(from var(--bg-base) h calc(s * 1.4) l);
-  --bg1: hsl(from var(--bg1-base) h calc(s * 1.4) l);
-  --primary: hsl(from var(--primary-base) h calc(s * 1.4) l);
+  --bg: oklch(from var(--bg-base) l calc(c * 1.4) h);
+  --bg1: oklch(from var(--bg1-base) l calc(c * 1.4) h);
+  --primary: oklch(from var(--primary-base) l calc(c * 1.4) h);
+}
+
+/* warm/cool use hue shifts */
+.warm {
+  --primary: oklch(from var(--primary-base) l c calc(h + 6));
+}
+.cool {
+  --primary: oklch(from var(--primary-base) l c calc(h - 6));
 }
 ```
 
-This allows `sat` and `desat` to dynamically adjust any theme's colors rather than replacing them with fixed values. For themes with neutral backgrounds (0% saturation), the background won't visibly change. For place-inspired themes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
+This allows `sat` and `desat` to dynamically adjust any theme's colors rather than replacing them with fixed values. For themes with neutral backgrounds (0 chroma), the background won't visibly change. For place-inspired themes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
 
 **Browser support:** CSS relative color syntax requires Chrome 119+, Safari 16.4+, or Firefox 128+.
 
@@ -290,13 +335,13 @@ Themes include a default `--font-family`. Font classes override the theme defaul
 | Theme | Default Font | Notes |
 |-------|--------------|-------|
 | Light, Dark, Hokkaido, Kerala, Aegean | System Sans | Clean, neutral |
-| Uinta, Patagonia, Uluru | Source Sans | Fresh, modern |
+| Uinta, Patagonia, Uluru, Ambleside, Windermere | Source Sans | Fresh, modern |
 | Svalbard, Lviv | Inter | Crisp, technical |
 | Sahel, Yucatan, Cappadocia | Lora | Warm, earthy |
 | Guilin, Marrakech | Crimson Pro | Refined, elegant |
-| Ambleside, Cusco | PT Serif | Traditional |
+| Peebles, Cusco | PT Serif | Traditional |
 
-Aegean and Guilin use `--heading-caps: small-caps` for elegant headings.
+Guilin uses `--heading-caps: small-caps` for elegant headings.
 
 ### Font Classes
 
@@ -364,8 +409,8 @@ Columns collapse to single column at 45rem breakpoint.
 
 ### Utility Classes
 
-**Margins** (0-10 rem): `m0`, `m1`, `mx0`, `mx1`, `my0`, `my1`, `mt0`, `mt1`, `mb0`, `mb1`, `ml0`, `ml1`, `mr0`, `mr1`
-**Padding** (0-10 rem): `p0`, `p1`, `px0`, `px1`, `py0`, `py1`, `pt0`, `pt1`, `pb0`, `pb1`, `pl0`, `pl1`, `pr0`, `pr1`
+**Margins** (0-5 rem): `m0`, `m1`, `mx0`, `mx1`, `my0`, `my1`, `mt0`, `mt1`, `mb0`, `mb1`, `ml0`, `ml1`, `mr0`, `mr1`
+**Padding** (0-5 rem): `p0`, `p1`, `px0`, `px1`, `py0`, `py1`, `pt0`, `pt1`, `pb0`, `pb1`, `pl0`, `pl1`, `pr0`, `pr1`
 **Border radius**: `r0` (none), `r1`-`r4` (progressive), `r100` (circular)
 **Backgrounds**: `bg`, `bg1`, `bg2`, `bg3`
 **Text colors**: `muted`, `primary`, `secondary`, `success`, `warning`, `error`, `info`
@@ -555,15 +600,20 @@ These HTML elements are styled automatically:
 
 ## Customizing
 
-Override any CSS variable in your own stylesheet. Use HSL format for colors:
+Override any CSS variable in your own stylesheet. Use OKLCH format for colors:
 
 ```css
 :root {
   --readable-width: 40rem;
   --base-font-size: 18px;
   --box-radius: 0.5rem;
-  --primary-base: hsl(263 90% 66%);
+  --primary-base: oklch(60% 0.20 295);
   --primary: var(--primary-base);
-  --primary-hover: hsl(263 90% 75%);
+  --primary-hover: oklch(68% 0.18 295);
 }
 ```
+
+OKLCH format: `oklch(lightness% chroma hue)`
+- Lightness: 0% (black) to 100% (white)
+- Chroma: 0 (gray) to ~0.4 (vivid) - typical values are 0.05-0.25
+- Hue: 0-360 degrees (0=red, 90=yellow, 150=green, 260=blue, 330=magenta)
