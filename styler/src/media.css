@@ -10,7 +10,7 @@ figure img {
 	display: block;
 	width: 100%;
 	height: auto;
-	border-radius: var(--box-radius);
+	border-radius: var(--image-radius);
 }
 
 /* Figure captions */
@@ -26,7 +26,7 @@ figcaption {
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: var(--box-radius);
+	border-radius: var(--image-radius);
 	object-fit: cover;
 }
 
@@ -47,7 +47,7 @@ img {
 	width: 100%;
 	padding-bottom: 56.25%; /* 16:9 aspect ratio */
 	margin: 1.5rem 0;
-	background-color: var(--bg1);
+	background: var(--bg1);
 	border-radius: var(--box-radius);
 	overflow: hidden;
 }
@@ -85,7 +85,7 @@ audio {
 	align-items: center;
 	gap: 1rem;
 	padding: 1rem;
-	background-color: var(--bg1);
+	background: var(--bg1);
 	border-radius: var(--box-radius);
 	margin: 1.5rem 0;
 }

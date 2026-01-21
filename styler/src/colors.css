@@ -1,5 +1,5 @@
 /* colors.css - Color palette with theme support */
-/* All colors use OKLCH format for perceptual uniformity. Base vars enable sat/desat modifiers. */
+/* All colors use HSL format for maximum browser compatibility */
 
 :root {
 	/* Font stacks for theme defaults (used by --font-family in themes) */
@@ -14,1310 +14,927 @@
 
 	/* Default font for light theme */
 	--font-family: var(--font-sans);
+	--heading-font-family: var(--font-family);
 	--heading-caps: none;
 
 	/* Light theme (default) - pure white bg, warm-tinted text */
-	--body: oklch(15% 0.01 60);
-	--body1: oklch(50% 0.04 50);
-	--body2: oklch(73% 0.025 50);
+	--body: hsl(30 10% 10%);
+	--body-strong: hsl(30 10% 0%);
+	--body1: hsl(30 15% 40%);
+	--body2: hsl(30 10% 60%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0 0);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0 0);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(94% 0.02 260);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(0 0% 91%), hsl(0 0% 94%));
+	--bg1-solid: hsl(0 0% 96%);
+	--bg2: linear-gradient(hsl(0 0% 83%), hsl(0 0% 88%));
+	--bg3: linear-gradient(hsl(220 20% 90%), hsl(220 20% 94%));
 
-	/* Semantic colors - base values for sat/desat modification */
-	--primary-base: oklch(55% 0.22 260);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(62% 0.21 260);
-	--primary-button-base: var(--primary-base);
-	--primary-button: var(--primary-button-base);
-	--primary-button-hover: var(--primary-hover);
+	/* Semantic colors */
+	--primary: hsl(220 70% 45%);
+	--primary-hover: hsl(220 65% 52%);
+	--primary-button: linear-gradient(hsl(220 70% 60%), hsl(220 70% 50%));
+	--primary-button-hover: linear-gradient(hsl(220 65% 52%), hsl(220 65% 52%));
 
-	--secondary-base: oklch(50% 0.04 260);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(59% 0.04 260);
-	--secondary-button-base: oklch(72% 0.04 260);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(65% 0.04 260);
+	--secondary: hsl(220 10% 45%);
+	--secondary-hover: hsl(220 10% 55%);
+	--secondary-button: hsl(220 8% 65%);
+	--secondary-button-hover: hsl(220 8% 55%);
 
-	--success-base: oklch(52% 0.15 155);
-	--success: var(--success-base);
-	--success-hover: oklch(60% 0.15 155);
+	--success: hsl(145 50% 38%);
+	--success-hover: hsl(145 45% 46%);
 
-	--warning-base: oklch(75% 0.16 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(68% 0.18 85);
+	--warning: hsl(45 80% 50%);
+	--warning-hover: hsl(45 85% 42%);
 
-	--error-base: oklch(55% 0.22 25);
-	--error: var(--error-base);
-	--error-hover: oklch(63% 0.20 25);
+	--error: hsl(5 70% 45%);
+	--error-hover: hsl(5 65% 52%);
 
-	--info-base: oklch(55% 0.12 200);
-	--info: var(--info-base);
-	--info-hover: oklch(65% 0.12 200);
+	--info: hsl(180 45% 42%);
+	--info-hover: hsl(180 40% 52%);
 
 	/* Links */
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(52% 0.20 295);
+	--link-visited: var(--link);
 
 	/* Borders */
-	--border: oklch(86% 0.01 260);
+	--border: hsl(220 5% 84%);
 	--border-focus: var(--primary);
 }
 
 /* Dark theme - pure black bg, warm-tinted text */
 .dark {
 
-	--body: oklch(98% 0.01 60);
-	--body1: oklch(80% 0.04 50);
-	--body2: oklch(62% 0.025 50);
+	--body: hsl(30 15% 95%);
+	--body-strong: hsl(30 0% 100%);
+	--body1: hsl(30 12% 70%);
+	--body2: hsl(30 8% 52%);
 
-	--bg-base: oklch(0% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(23% 0 0);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(30% 0 0);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(25% 0.03 260);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 0%);
+	--bg1: linear-gradient(hsl(0 0% 14%), hsl(0 0% 17%));
+	--bg1-solid: hsl(0 0% 15%);
+	--bg2: linear-gradient(hsl(0 0% 20%), hsl(0 0% 25%));
+	--bg3: linear-gradient(hsl(220 15% 17%), hsl(220 15% 21%));
 
-	--primary-base: oklch(65% 0.20 260);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(72% 0.18 260);
+	--primary: hsl(220 60% 70%);
+	--primary-hover: hsl(220 55% 68%);
+	--primary-button: linear-gradient(hsl(220 60% 60%), hsl(220 60% 50%));
+	--primary-button-hover: linear-gradient(hsl(220 55% 60%), hsl(220 55% 60%));
 
-	--secondary-base: oklch(70% 0.04 260);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(85% 0.03 260);
-	--secondary-button-base: oklch(38% 0.03 260);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(32% 0.03 260);
+	--secondary: hsl(220 10% 62%);
+	--secondary-hover: hsl(220 8% 78%);
+	--secondary-button: hsl(220 8% 28%);
+	--secondary-button-hover: hsl(220 8% 22%);
 
-	--success-base: oklch(65% 0.16 155);
-	--success: var(--success-base);
-	--success-hover: oklch(72% 0.14 155);
+	--success: hsl(145 50% 52%);
+	--success-hover: hsl(145 45% 62%);
 
-	--warning-base: oklch(82% 0.16 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(87% 0.14 85);
+	--warning: hsl(45 75% 62%);
+	--warning-hover: hsl(45 70% 72%);
 
-	--error-base: oklch(65% 0.20 25);
-	--error: var(--error-base);
-	--error-hover: oklch(75% 0.18 25);
+	--error: hsl(5 65% 55%);
+	--error-hover: hsl(5 60% 65%);
 
-	--info-base: oklch(70% 0.12 200);
-	--info: var(--info-base);
-	--info-hover: oklch(80% 0.10 200);
+	--info: hsl(180 45% 58%);
+	--info-hover: hsl(180 40% 70%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(75% 0.15 295);
+	--link-visited: var(--link);
 
-	--border: oklch(32% 0 0);
+	--border: hsl(0 0% 22%);
 	--border-focus: var(--primary);
 }
 
 /* Ambleside - dark theme inspired by a winter evening in England's Lake District */
 .ambleside {
 	--font-family: var(--font-source-sans);
+	--heading-font-family: var(--font-cormorant);
 
-	--body: oklch(98% 0.015 85);
-	--body1: oklch(80% 0.05 60);
-	--body2: oklch(62% 0.035 60);
+	--body: hsl(45 0% 80%);
+	--body-strong: hsl(45 0% 100%);
+	--body1: hsl(35 18% 68%);
+	--body2: hsl(35 12% 50%);
 
-	--bg-base: oklch(18% 0.03 260);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(26% 0.025 260);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(32% 0.02 260);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(25% 0.02 300);
-	--bg3: var(--bg3-base);
+	--bg: hsl(220 30% 12%);
+	--bg1: linear-gradient(hsl(220 25% 17%), hsl(220 25% 20%));
+	--bg1-solid: hsl(220 25% 18%);
+	--bg2: linear-gradient(hsl(220 20% 24%), hsl(220 20% 28%));
+	--bg3: linear-gradient(hsl(280 20% 18%), hsl(280 20% 22%));
 
-	--primary-base: oklch(75% 0.08 255);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(82% 0.07 255);
-	--primary-button-base: oklch(55% 0.14 255);
-	--primary-button: var(--primary-button-base);
-	--primary-button-hover: oklch(48% 0.15 255);
+	--primary: hsl(220 60% 75%);
+	--primary-hover: hsl(220 60% 85%);
+	--primary-button: linear-gradient(hsl(220 45% 50%), hsl(220 45% 40%));
+	--primary-button-hover: linear-gradient(hsl(220 50% 38%), hsl(220 50% 38%));
 
-	--secondary-base: oklch(75% 0.02 60);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(82% 0.02 60);
-	--secondary-button-base: oklch(42% 0.01 60);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(36% 0.01 60);
+	--secondary: hsl(220 8% 68%);
+	--secondary-hover: hsl(220 8% 78%);
+	--secondary-button: hsl(220 5% 32%);
+	--secondary-button-hover: hsl(220 5% 26%);
 
-	--success-base: oklch(65% 0.08 150);
-	--success: var(--success-base);
-	--success-hover: oklch(72% 0.08 150);
+	--success: hsl(140 30% 52%);
+	--success-hover: hsl(140 28% 62%);
 
-	--warning-base: oklch(78% 0.10 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(84% 0.09 85);
+	--warning: hsl(45 40% 62%);
+	--warning-hover: hsl(45 38% 72%);
 
-	--error-base: oklch(70% 0.12 25);
-	--error: var(--error-base);
-	--error-hover: oklch(78% 0.11 25);
+	--error: hsl(10 45% 60%);
+	--error-hover: hsl(10 42% 70%);
 
-	--info-base: oklch(60% 0.06 220);
-	--info: var(--info-base);
-	--info-hover: oklch(68% 0.06 220);
+	--info: hsl(190 25% 50%);
+	--info-hover: hsl(190 22% 60%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(65% 0.04 300);
+	--link-visited: var(--link);
 
-	--border: oklch(35% 0.02 260);
+	--border: hsl(220 18% 28%);
 	--border-focus: var(--primary);
 }
 
 /* Windermere - light theme inspired by a misty morning in England's Lake District */
 .windermere {
 	--font-family: var(--font-source-sans);
+	--heading-font-family: var(--font-serif);
 
-	--body: oklch(28% 0.02 50);
-	--body1: oklch(45% 0.04 45);
-	--body2: oklch(60% 0.025 45);
+	--body: hsl(30 15% 20%);
+	--body-strong: hsl(30 15% 5%);
+	--body1: hsl(28 15% 38%);
+	--body2: hsl(28 10% 52%);
 
-	--bg-base: oklch(98% 0.008 80);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(93% 0.003 70);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0.01 260);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(92% 0.01 160);
-	--bg3: var(--bg3-base);
+	--bg: hsl(50 25% 98%);
+	--bg1: linear-gradient(hsl(45 20% 90%), hsl(45 20% 93%));
+	--bg1-solid: hsl(45 15% 95%);
+	--bg2: linear-gradient(hsl(240 15% 84%), hsl(240 15% 88%));
+	--bg3: linear-gradient(hsl(150 15% 88%), hsl(150 15% 92%));
 
-	--primary-base: oklch(52% 0.15 255);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(45% 0.16 255);
+	--primary: hsl(230 50% 42%);
+	--primary-hover: hsl(230 55% 35%);
+	--primary-button: linear-gradient(hsl(230 50% 48%), hsl(230 50% 38%));
+	--primary-button-hover: linear-gradient(hsl(230 55% 35%), hsl(230 55% 35%));
 
-	--secondary-base: oklch(48% 0.02 60);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(42% 0.025 60);
-	--secondary-button-base: oklch(70% 0.02 60);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(62% 0.02 60);
+	--secondary: hsl(35 8% 42%);
+	--secondary-hover: hsl(35 10% 35%);
+	--secondary-button: hsl(35 8% 62%);
+	--secondary-button-hover: hsl(35 8% 52%);
 
-	--success-base: oklch(45% 0.10 150);
-	--success: var(--success-base);
-	--success-hover: oklch(40% 0.11 150);
+	--success: hsl(140 40% 35%);
+	--success-hover: hsl(140 42% 30%);
 
-	--warning-base: oklch(55% 0.12 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(48% 0.13 85);
+	--warning: hsl(45 50% 42%);
+	--warning-hover: hsl(45 55% 35%);
 
-	--error-base: oklch(48% 0.12 25);
-	--error: var(--error-base);
-	--error-hover: oklch(42% 0.13 25);
+	--error: hsl(10 50% 40%);
+	--error-hover: hsl(10 52% 34%);
 
-	--info-base: oklch(48% 0.07 220);
-	--info: var(--info-base);
-	--info-hover: oklch(42% 0.08 220);
+	--info: hsl(210 35% 40%);
+	--info-hover: hsl(210 38% 34%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(42% 0.08 300);
+	--link-visited: var(--link);
 
-	--border: oklch(82% 0.01 260);
+	--border: hsl(240 10% 80%);
 	--border-focus: var(--primary);
 }
 
 /* Peebles - light theme inspired by a rainy day and a warm bakery in Scotland */
 .peebles {
 	--font-family: var(--font-pt-serif);
+	--heading-font-family: var(--font-cormorant);
 
-	--body: oklch(28% 0.015 250);
-	--body1: oklch(48% 0.04 240);
-	--body2: oklch(62% 0.025 240);
+	/* Warm sepia body text - like aged paper */
+	--body: hsl(30 20% 22%);
+	--body-strong: hsl(30 25% 10%);
+	--body1: hsl(30 15% 42%);
+	--body2: hsl(30 10% 55%);
 
-	--bg-base: oklch(97% 0.008 70);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(92% 0.004 70);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(88% 0.01 260);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.01 300);
-	--bg3: var(--bg3-base);
+	/* Warm cream backgrounds - like fresh bread */
+	--bg: hsl(40 40% 97%);
+	--bg1: linear-gradient(hsl(38 30% 90%), hsl(38 30% 93%));
+	--bg1-solid: hsl(38 25% 92%);
+	--bg2: linear-gradient(hsl(120 20% 87%), hsl(120 20% 92%));
+	--bg3: linear-gradient(hsl(30 38% 76%), hsl(30 38% 82%));
 
-	--primary-base: oklch(48% 0.10 255);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(42% 0.12 255);
+	/* Slate blue primary - rainy sky outside */
+	--primary: hsl(215 45% 45%);
+	--primary-hover: hsl(215 45% 55%);
+	--primary-button: linear-gradient(hsl(215 50% 50%), hsl(215 50% 40%));
+	--primary-button-hover: linear-gradient(hsl(215 60% 55%), hsl(215 60% 55%));
 
-	--secondary-base: oklch(52% 0.02 260);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(46% 0.025 260);
-	--secondary-button-base: oklch(72% 0.02 260);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.02 260);
+	/* Warm gray secondary */
+	--secondary: hsl(30 10% 45%);
+	--secondary-hover: hsl(30 12% 38%);
+	--secondary-button: hsl(30 10% 70%);
+	--secondary-button-hover: hsl(30 12% 60%);
 
-	--success-base: oklch(45% 0.10 155);
-	--success: var(--success-base);
-	--success-hover: oklch(40% 0.11 155);
+	--success: hsl(140 35% 35%);
+	--success-hover: hsl(140 38% 28%);
 
-	--warning-base: oklch(62% 0.14 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(55% 0.15 85);
+	--warning: hsl(42 55% 45%);
+	--warning-hover: hsl(42 58% 38%);
 
-	--error-base: oklch(50% 0.13 20);
-	--error: var(--error-base);
-	--error-hover: oklch(44% 0.14 20);
+	--error: hsl(8 45% 42%);
+	--error-hover: hsl(8 48% 35%);
 
-	--info-base: oklch(52% 0.08 240);
-	--info: var(--info-base);
-	--info-hover: oklch(46% 0.09 240);
+	--info: hsl(200 30% 45%);
+	--info-hover: hsl(200 35% 38%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(45% 0.08 300);
+	--link-visited: var(--link);
 
-	--border: oklch(82% 0.01 260);
-	--border-focus: var(--primary);
+	--border: hsl(35 18% 80%);
+	--border-focus: hsl(215 40% 50%);
 }
 
 /* Uinta - light theme inspired by a crisp morning in Utah's Uinta mountains */
 .uinta {
 	--font-family: var(--font-source-sans);
+	--heading-font-family: var(--font-pt-serif);
 
-	--body: oklch(22% 0.02 50);
-	--body1: oklch(48% 0.04 40);
-	--body2: oklch(72% 0.025 40);
+	--body: hsl(30 18% 15%);
+	--body-strong: hsl(30 18% 0%);
+	--body1: hsl(25 15% 40%);
+	--body2: hsl(25 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0.006 160);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0.015 160);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.025 80);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(150 15% 91%), hsl(150 15% 94%));
+	--bg1-solid: hsl(150 10% 96%);
+	--bg2: linear-gradient(hsl(150 25% 83%), hsl(150 25% 88%));
+	--bg3: linear-gradient(hsl(50 30% 88%), hsl(50 30% 92%));
 
-	--primary-base: oklch(45% 0.10 185);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(52% 0.09 185);
+	--primary: hsl(175 45% 32%);
+	--primary-hover: hsl(175 40% 40%);
+	--primary-button: linear-gradient(hsl(175 45% 38%), hsl(175 45% 28%));
+	--primary-button-hover: linear-gradient(hsl(175 40% 40%), hsl(175 40% 40%));
 
-	--secondary-base: oklch(48% 0.02 230);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(56% 0.02 230);
-	--secondary-button-base: oklch(70% 0.02 230);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(62% 0.02 230);
+	--secondary: hsl(210 10% 42%);
+	--secondary-hover: hsl(210 10% 50%);
+	--secondary-button: hsl(210 8% 62%);
+	--secondary-button-hover: hsl(210 8% 52%);
 
-	--success-base: oklch(45% 0.10 155);
-	--success: var(--success-base);
-	--success-hover: oklch(54% 0.09 155);
+	--success: hsl(145 40% 35%);
+	--success-hover: hsl(145 38% 44%);
 
-	--warning-base: oklch(58% 0.12 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(66% 0.11 85);
+	--warning: hsl(45 50% 45%);
+	--warning-hover: hsl(45 48% 54%);
 
-	--error-base: oklch(48% 0.08 25);
-	--error: var(--error-base);
-	--error-hover: oklch(56% 0.07 25);
+	--error: hsl(10 35% 42%);
+	--error-hover: hsl(10 32% 50%);
 
-	--info-base: oklch(52% 0.08 230);
-	--info: var(--info-base);
-	--info-hover: oklch(60% 0.07 230);
+	--info: hsl(210 35% 45%);
+	--info-hover: hsl(210 32% 53%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(48% 0.03 290);
+	--link-visited: var(--link);
 
-	--border: oklch(83% 0.01 160);
+	--border: hsl(150 12% 82%);
 	--border-focus: var(--primary);
 }
 
 /* Hokkaido - light theme inspired by where mountain meets sea in Hokkaido, Japan */
 .hokkaido {
-	--font-family: var(--font-sans);
+	--font-family: var(--font-source-sans);
+	--heading-font-family: var(--font-family);
 
-	--body: oklch(22% 0.02 50);
-	--body1: oklch(50% 0.04 45);
-	--body2: oklch(72% 0.025 45);
+	--body: hsl(30 18% 15%);
+	--body-strong: hsl(30 18% 0%);
+	--body1: hsl(28 15% 42%);
+	--body2: hsl(28 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(95% 0.006 230);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0.02 230);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(92% 0.025 155);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(220 18% 92%), hsl(220 18% 95%));
+	--bg1-solid: hsl(220 12% 97%);
+	--bg2: linear-gradient(hsl(220 30% 84%), hsl(220 30% 88%));
+	--bg3: linear-gradient(hsl(145 30% 88%), hsl(145 30% 92%));
 
-	--primary-base: oklch(48% 0.15 255);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(55% 0.13 255);
+	--primary: hsl(220 50% 55%);
+	--primary-hover: hsl(220 50% 65%);
+	--primary-button: linear-gradient(hsl(220 30% 60%), hsl(220 30% 40%));
+	--primary-button-hover: linear-gradient(hsl(220 45% 60%), hsl(220 45% 60%));
 
-	--secondary-base: oklch(50% 0.02 230);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(58% 0.02 230);
-	--secondary-button-base: oklch(72% 0.02 230);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.02 230);
+	--secondary: hsl(220 10% 44%);
+	--secondary-hover: hsl(220 10% 52%);
+	--secondary-button: hsl(220 8% 75%);
+	--secondary-button-hover: hsl(220 8% 65%);
 
-	--success-base: oklch(48% 0.08 170);
-	--success: var(--success-base);
-	--success-hover: oklch(55% 0.07 170);
+	--success: hsl(160 35% 40%);
+	--success-hover: hsl(160 32% 48%);
 
-	--warning-base: oklch(58% 0.08 70);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(65% 0.07 70);
+	--warning: hsl(40 35% 48%);
+	--warning-hover: hsl(40 32% 56%);
 
-	--error-base: oklch(48% 0.07 25);
-	--error: var(--error-base);
-	--error-hover: oklch(56% 0.06 25);
+	--error: hsl(10 32% 42%);
+	--error-hover: hsl(10 28% 50%);
 
-	--info-base: oklch(55% 0.09 210);
-	--info: var(--info-base);
-	--info-hover: oklch(62% 0.08 210);
+	--info: hsl(190 40% 48%);
+	--info-hover: hsl(190 36% 56%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(48% 0.04 290);
+	--link-visited: var(--link);
 
-	--border: oklch(84% 0.02 235);
+	--border: hsl(220 25% 82%);
 	--border-focus: var(--primary);
 }
 
 /* Sahel - light theme inspired by golden hour where savanna meets desert in West Africa */
 .sahel {
 	--font-family: var(--font-lora);
+	--heading-font-family: var(--font-family);
 
-	--body: oklch(25% 0.02 260);
-	--body1: oklch(50% 0.04 250);
-	--body2: oklch(72% 0.025 250);
+	--body: hsl(240 15% 18%);
+	--body-strong: hsl(240 15% 3%);
+	--body1: hsl(230 12% 42%);
+	--body2: hsl(230 8% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0.01 80);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0.025 80);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.02 270);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(50 25% 91%), hsl(50 25% 94%));
+	--bg1-solid: hsl(50 18% 96%);
+	--bg2: linear-gradient(hsl(50 40% 83%), hsl(50 40% 88%));
+	--bg3: linear-gradient(hsl(255 25% 88%), hsl(255 25% 92%));
 
-	--primary-base: oklch(40% 0.10 270);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(48% 0.09 270);
+	--primary: hsl(255 40% 48%);
+	--primary-hover: hsl(255 36% 56%);
+	--primary-button: linear-gradient(hsl(255 40% 52%), hsl(255 40% 42%));
+	--primary-button-hover: linear-gradient(hsl(255 36% 56%), hsl(255 36% 56%));
 
-	--secondary-base: oklch(55% 0.02 55);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(65% 0.015 55);
-	--secondary-button-base: oklch(72% 0.02 55);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.02 55);
+	--secondary: hsl(35 10% 48%);
+	--secondary-hover: hsl(35 8% 58%);
+	--secondary-button: hsl(35 10% 65%);
+	--secondary-button-hover: hsl(35 10% 55%);
 
-	--success-base: oklch(48% 0.08 120);
-	--success: var(--success-base);
-	--success-hover: oklch(56% 0.07 120);
+	--success: hsl(100 35% 38%);
+	--success-hover: hsl(100 32% 48%);
 
-	--warning-base: oklch(60% 0.13 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(68% 0.11 85);
+	--warning: hsl(45 55% 48%);
+	--warning-hover: hsl(45 50% 58%);
 
-	--error-base: oklch(50% 0.10 40);
-	--error: var(--error-base);
-	--error-hover: oklch(58% 0.09 40);
+	--error: hsl(20 45% 42%);
+	--error-hover: hsl(20 42% 50%);
 
-	--info-base: oklch(52% 0.07 230);
-	--info: var(--info-base);
-	--info-hover: oklch(60% 0.06 230);
+	--info: hsl(210 32% 45%);
+	--info-hover: hsl(210 28% 53%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(42% 0.07 300);
+	--link-visited: var(--link);
 
-	--border: oklch(82% 0.02 70);
+	--border: hsl(45 25% 80%);
 	--border-focus: var(--primary);
 }
 
 /* Patagonia - dark theme inspired by twilight over glacial lakes in southern South America */
 .patagonia {
 	--font-family: var(--font-source-sans);
+	--heading-font-family: var(--font-family);
 
-	--body: oklch(98% 0.012 50);
-	--body1: oklch(80% 0.05 45);
-	--body2: oklch(62% 0.035 45);
+	--body: hsl(30 18% 95%);
+	--body-strong: hsl(30 0% 100%);
+	--body1: hsl(28 16% 68%);
+	--body2: hsl(28 12% 50%);
 
-	--bg-base: oklch(17% 0.04 250);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(25% 0.03 240);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(30% 0.025 240);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(22% 0.02 60);
-	--bg3: var(--bg3-base);
+	--bg: hsl(225 45% 11%);
+	--bg1: linear-gradient(hsl(220 35% 16%), hsl(220 35% 19%));
+	--bg1-solid: hsl(220 35% 17%);
+	--bg2: linear-gradient(hsl(220 30% 22%), hsl(220 30% 27%));
+	--bg3: linear-gradient(hsl(35 25% 15%), hsl(35 25% 19%));
 
-	--primary-base: oklch(62% 0.10 200);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(70% 0.10 200);
+	--primary: hsl(190 40% 52%);
+	--primary-hover: hsl(190 38% 62%);
+	--primary-button: linear-gradient(hsl(190 40% 56%), hsl(190 40% 46%));
+	--primary-button-hover: linear-gradient(hsl(190 38% 60%), hsl(190 38% 60%));
 
-	--secondary-base: oklch(58% 0.04 255);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(70% 0.04 255);
-	--secondary-button-base: oklch(38% 0.03 255);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(32% 0.03 255);
+	--secondary: hsl(230 15% 50%);
+	--secondary-hover: hsl(230 12% 62%);
+	--secondary-button: hsl(230 10% 28%);
+	--secondary-button-hover: hsl(230 10% 22%);
 
-	--success-base: oklch(52% 0.08 160);
-	--success: var(--success-base);
-	--success-hover: oklch(62% 0.08 160);
+	--success: hsl(150 35% 42%);
+	--success-hover: hsl(150 32% 52%);
 
-	--warning-base: oklch(68% 0.12 70);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(75% 0.11 70);
+	--warning: hsl(40 50% 55%);
+	--warning-hover: hsl(40 45% 65%);
 
-	--error-base: oklch(55% 0.12 20);
-	--error: var(--error-base);
-	--error-hover: oklch(65% 0.11 20);
+	--error: hsl(8 48% 48%);
+	--error-hover: hsl(8 45% 58%);
 
-	--info-base: oklch(65% 0.10 220);
-	--info: var(--info-base);
-	--info-hover: oklch(75% 0.09 220);
+	--info: hsl(200 45% 55%);
+	--info-hover: hsl(200 40% 65%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(65% 0.08 295);
+	--link-visited: var(--link);
 
-	--border: oklch(35% 0.03 250);
+	--border: hsl(225 30% 28%);
 	--border-focus: var(--primary);
 }
 
 /* Kerala - light theme inspired by a monsoon morning on the backwaters of South India */
 .kerala {
 	--font-family: var(--font-sans);
+	--heading-font-family: var(--font-crimson);
 
-	--body: oklch(25% 0.02 40);
-	--body1: oklch(50% 0.04 35);
-	--body2: oklch(72% 0.025 35);
+	--body: hsl(25 18% 18%);
+	--body-strong: hsl(25 18% 3%);
+	--body1: hsl(20 15% 42%);
+	--body2: hsl(20 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0.006 155);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0.02 155);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(94% 0.02 50);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(145 18% 91%), hsl(145 18% 94%));
+	--bg1-solid: hsl(145 12% 96%);
+	--bg2: linear-gradient(hsl(145 30% 83%), hsl(145 30% 88%));
+	--bg3: linear-gradient(hsl(30 30% 90%), hsl(30 30% 94%));
 
-	--primary-base: oklch(40% 0.10 165);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(48% 0.09 165);
+	--primary: hsl(155 50% 28%);
+	--primary-hover: hsl(155 45% 36%);
+	--primary-button: linear-gradient(hsl(155 50% 34%), hsl(155 50% 24%));
+	--primary-button-hover: linear-gradient(hsl(155 45% 38%), hsl(155 45% 38%));
 
-	--secondary-base: oklch(48% 0.03 50);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(56% 0.025 50);
-	--secondary-button-base: oklch(70% 0.03 50);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(62% 0.03 50);
+	--secondary: hsl(30 12% 42%);
+	--secondary-hover: hsl(30 10% 50%);
+	--secondary-button: hsl(30 12% 62%);
+	--secondary-button-hover: hsl(30 12% 52%);
 
-	--success-base: oklch(45% 0.12 155);
-	--success: var(--success-base);
-	--success-hover: oklch(53% 0.11 155);
+	--success: hsl(145 50% 35%);
+	--success-hover: hsl(145 45% 44%);
 
-	--warning-base: oklch(58% 0.14 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(66% 0.12 85);
+	--warning: hsl(45 58% 45%);
+	--warning-hover: hsl(45 52% 55%);
 
-	--error-base: oklch(48% 0.12 25);
-	--error: var(--error-base);
-	--error-hover: oklch(56% 0.11 25);
+	--error: hsl(10 50% 40%);
+	--error-hover: hsl(10 45% 48%);
 
-	--info-base: oklch(50% 0.10 210);
-	--info: var(--info-base);
-	--info-hover: oklch(58% 0.09 210);
+	--info: hsl(200 45% 42%);
+	--info-hover: hsl(200 40% 50%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(42% 0.05 300);
+	--link-visited: var(--link);
 
-	--border: oklch(82% 0.02 155);
+	--border: hsl(145 22% 80%);
 	--border-focus: var(--primary);
 }
 
 /* Svalbard - dark theme inspired by polar night with aurora in the High Arctic */
 .svalbard {
 	--font-family: var(--font-inter);
+	--heading-font-family: var(--font-family);
 
-	--body: oklch(98% 0.01 150);
-	--body1: oklch(80% 0.045 140);
-	--body2: oklch(62% 0.03 140);
+	--body: hsl(140 15% 95%);
+	--body-strong: hsl(140 0% 100%);
+	--body1: hsl(130 14% 68%);
+	--body2: hsl(130 10% 50%);
 
-	--bg-base: oklch(15% 0.04 255);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(23% 0.035 255);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(28% 0.03 255);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(22% 0.03 300);
-	--bg3: var(--bg3-base);
+	--bg: hsl(230 50% 10%);
+	--bg1: linear-gradient(hsl(230 40% 15%), hsl(230 40% 18%));
+	--bg1-solid: hsl(230 40% 16%);
+	--bg2: linear-gradient(hsl(230 35% 20%), hsl(230 35% 25%));
+	--bg3: linear-gradient(hsl(280 35% 16%), hsl(280 35% 20%));
 
-	--primary-base: oklch(62% 0.15 155);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(70% 0.14 155);
+	--primary: hsl(145 55% 52%);
+	--primary-hover: hsl(145 50% 62%);
+	--primary-button: linear-gradient(hsl(145 55% 56%), hsl(145 55% 46%));
+	--primary-button-hover: linear-gradient(hsl(145 50% 60%), hsl(145 50% 60%));
 
-	--secondary-base: oklch(72% 0.03 220);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(82% 0.025 220);
-	--secondary-button-base: oklch(38% 0.025 220);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(32% 0.025 220);
+	--secondary: hsl(200 15% 62%);
+	--secondary-hover: hsl(200 12% 75%);
+	--secondary-button: hsl(200 12% 28%);
+	--secondary-button-hover: hsl(200 12% 22%);
 
-	--success-base: oklch(58% 0.12 190);
-	--success: var(--success-base);
-	--success-hover: oklch(68% 0.11 190);
+	--success: hsl(180 45% 48%);
+	--success-hover: hsl(180 40% 58%);
 
-	--warning-base: oklch(70% 0.11 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(78% 0.10 85);
+	--warning: hsl(45 45% 58%);
+	--warning-hover: hsl(45 40% 68%);
 
-	--error-base: oklch(58% 0.12 15);
-	--error: var(--error-base);
-	--error-hover: oklch(68% 0.11 15);
+	--error: hsl(5 48% 50%);
+	--error-hover: hsl(5 44% 60%);
 
-	--info-base: oklch(62% 0.12 300);
-	--info: var(--info-base);
-	--info-hover: oklch(72% 0.11 300);
+	--info: hsl(280 45% 55%);
+	--info-hover: hsl(280 40% 65%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(68% 0.10 300);
+	--link-visited: var(--link);
 
-	--border: oklch(32% 0.03 255);
+	--border: hsl(230 30% 24%);
 	--border-focus: var(--primary);
 }
 
 /* Yucatan - light theme inspired by Cozumel's azul waters, coral reefs, and tropical fish */
 .yucatan {
-	--font-family: var(--font-lora);
+	--font-family: var(--font-sans);
+	--heading-font-family: var(--font-lora);
 
-	--body: oklch(28% 0.02 200);
-	--body1: oklch(50% 0.04 190);
-	--body2: oklch(72% 0.025 190);
+	--body: hsl(190 15% 20%);
+	--body-strong: hsl(190 15% 5%);
+	--body1: hsl(185 14% 42%);
+	--body2: hsl(185 10% 62%);
 
-	--bg-base: oklch(99% 0.008 80);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0.006 80);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(91% 0.02 160);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(95% 0.015 195);
-	--bg3: var(--bg3-base);
+	--bg: hsl(50 15% 98%);
+	--bg1: linear-gradient(hsl(50 18% 91%), hsl(50 18% 94%));
+	--bg1-solid: hsl(50 12% 96%);
+	--bg2: linear-gradient(hsl(150 25% 86%), hsl(150 25% 90%));
+	--bg3: linear-gradient(hsl(185 22% 91%), hsl(185 22% 95%));
 
-	--primary-base: oklch(58% 0.15 210);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(65% 0.14 210);
+	--primary: hsl(195 75% 50%);
+	--primary-hover: hsl(195 75% 60%);
+	--primary-button: linear-gradient(hsl(195 75% 52%), hsl(195 75% 42%));
+	--primary-button-hover: linear-gradient(hsl(195 70% 56%), hsl(195 70% 56%));
 
-	--secondary-base: oklch(55% 0.04 55);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(62% 0.035 55);
-	--secondary-button-base: oklch(72% 0.04 55);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.04 55);
+	--secondary: hsl(35 15% 48%);
+	--secondary-hover: hsl(35 12% 55%);
+	--secondary-button: hsl(35 5% 65%);
+	--secondary-button-hover: hsl(35 5% 55%);
 
-	--success-base: oklch(52% 0.13 170);
-	--success: var(--success-base);
-	--success-hover: oklch(60% 0.11 170);
+	--success: hsl(160 50% 42%);
+	--success-hover: hsl(160 45% 50%);
 
-	--warning-base: oklch(72% 0.16 90);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(78% 0.14 90);
+	--warning: hsl(50 65% 55%);
+	--warning-hover: hsl(50 60% 62%);
 
-	--error-base: oklch(55% 0.18 25);
-	--error: var(--error-base);
-	--error-hover: oklch(63% 0.16 25);
+	--error: hsl(10 65% 48%);
+	--error-hover: hsl(10 58% 55%);
 
-	--info-base: oklch(58% 0.14 230);
-	--info: var(--info-base);
-	--info-hover: oklch(66% 0.12 230);
+	--info: hsl(210 55% 50%);
+	--info-hover: hsl(210 48% 58%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(50% 0.10 290);
+	--link-visited: var(--link);
 
-	--border: oklch(84% 0.02 80);
+	--border: hsl(50 20% 82%);
 	--border-focus: var(--primary);
 }
 
 /* Aegean - light theme inspired by the cerulean waters of the Greek islands */
 .aegean {
 	--font-family: var(--font-sans);
+	--heading-font-family: var(--font-source-sans);
 
-	--body: oklch(28% 0.02 45);
-	--body1: oklch(50% 0.04 40);
-	--body2: oklch(72% 0.025 40);
+	--body: hsl(28 15% 20%);
+	--body-strong: hsl(28 15% 5%);
+	--body1: hsl(25 14% 42%);
+	--body2: hsl(25 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(95% 0.008 210);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0.025 210);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.02 60);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(200 22% 92%), hsl(200 22% 95%));
+	--bg1-solid: hsl(200 15% 97%);
+	--bg2: linear-gradient(hsl(200 35% 84%), hsl(200 35% 88%));
+	--bg3: linear-gradient(hsl(35 28% 88%), hsl(35 28% 92%));
 
-	--primary-base: oklch(55% 0.14 210);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(62% 0.13 210);
+	--primary: hsl(200 55% 45%);
+	--primary-hover: hsl(200 50% 52%);
+	--primary-button: linear-gradient(hsl(200 55% 50%), hsl(200 55% 40%));
+	--primary-button-hover: linear-gradient(hsl(200 50% 52%), hsl(200 50% 52%));
 
-	--secondary-base: oklch(55% 0.02 55);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(65% 0.015 55);
-	--secondary-button-base: oklch(72% 0.02 55);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.02 55);
+	--secondary: hsl(35 10% 48%);
+	--secondary-hover: hsl(35 8% 58%);
+	--secondary-button: hsl(35 5% 70%);
+	--secondary-button-hover: hsl(35 5% 60%);
 
-	--success-base: oklch(48% 0.08 170);
-	--success: var(--success-base);
-	--success-hover: oklch(56% 0.07 170);
+	--success: hsl(160 35% 40%);
+	--success-hover: hsl(160 32% 48%);
 
-	--warning-base: oklch(62% 0.11 70);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(70% 0.10 70);
+	--warning: hsl(40 48% 52%);
+	--warning-hover: hsl(40 44% 60%);
 
-	--error-base: oklch(50% 0.11 25);
-	--error: var(--error-base);
-	--error-hover: oklch(58% 0.10 25);
+	--error: hsl(10 48% 44%);
+	--error-hover: hsl(10 44% 52%);
 
-	--info-base: oklch(55% 0.11 230);
-	--info: var(--info-base);
-	--info-hover: oklch(63% 0.10 230);
+	--info: hsl(210 48% 48%);
+	--info-hover: hsl(210 44% 56%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(48% 0.06 290);
+	--link-visited: var(--link);
 
-	--border: oklch(85% 0.02 210);
+	--border: hsl(200 25% 83%);
 	--border-focus: var(--primary);
 }
 
 /* Guilin - light theme inspired by misty karst mountains and the Li River in southern China */
 .guilin {
 	--font-family: var(--font-crimson);
+	--heading-font-family: var(--font-family);
 	--heading-caps: small-caps;
 
-	--body: oklch(25% 0.02 45);
-	--body1: oklch(50% 0.04 40);
-	--body2: oklch(72% 0.025 40);
+	--body: hsl(28 18% 18%);
+	--body-strong: hsl(28 18% 3%);
+	--body1: hsl(25 14% 42%);
+	--body2: hsl(25 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0.006 170);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(88% 0.02 170);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.02 80);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(160 18% 91%), hsl(160 18% 94%));
+	--bg1-solid: hsl(160 12% 96%);
+	--bg2: linear-gradient(hsl(160 28% 82%), hsl(160 28% 87%));
+	--bg3: linear-gradient(hsl(50 28% 88%), hsl(50 28% 92%));
 
-	--primary-base: oklch(48% 0.08 175);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(56% 0.07 175);
+	--primary: hsl(165 38% 38%);
+	--primary-hover: hsl(165 34% 46%);
+	--primary-button: linear-gradient(hsl(165 38% 42%), hsl(165 38% 32%));
+	--primary-button-hover: linear-gradient(hsl(165 34% 46%), hsl(165 34% 46%));
 
-	--secondary-base: oklch(55% 0.015 80);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(65% 0.01 80);
-	--secondary-button-base: oklch(72% 0.015 80);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.015 80);
+	--secondary: hsl(50 8% 48%);
+	--secondary-hover: hsl(50 6% 58%);
+	--secondary-button: hsl(50 8% 65%);
+	--secondary-button-hover: hsl(50 8% 55%);
 
-	--success-base: oklch(48% 0.08 160);
-	--success: var(--success-base);
-	--success-hover: oklch(56% 0.07 160);
+	--success: hsl(150 35% 40%);
+	--success-hover: hsl(150 32% 48%);
 
-	--warning-base: oklch(62% 0.11 90);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(70% 0.10 90);
+	--warning: hsl(55 48% 52%);
+	--warning-hover: hsl(55 44% 60%);
 
-	--error-base: oklch(50% 0.12 25);
-	--error: var(--error-base);
-	--error-hover: oklch(58% 0.11 25);
+	--error: hsl(10 50% 44%);
+	--error-hover: hsl(10 45% 52%);
 
-	--info-base: oklch(52% 0.08 200);
-	--info: var(--info-base);
-	--info-hover: oklch(60% 0.07 200);
+	--info: hsl(190 38% 44%);
+	--info-hover: hsl(190 34% 52%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(45% 0.05 295);
+	--link-visited: var(--link);
 
-	--border: oklch(83% 0.015 170);
+	--border: hsl(160 18% 82%);
 	--border-focus: var(--primary);
 }
 
 /* Cusco - dark theme inspired by Machu Picchu's stone cliffs and misty peaks */
 .cusco {
-	--font-family: var(--font-pt-serif);
+	--font-family: var(--font-sans);
+	--heading-font-family: var(--font-pt-serif);
 
-	--body: oklch(98% 0.012 55);
-	--body1: oklch(80% 0.045 50);
-	--body2: oklch(62% 0.03 50);
+	--body: hsl(35 18% 95%);
+	--body-strong: hsl(35 0% 100%);
+	--body1: hsl(32 15% 68%);
+	--body2: hsl(32 10% 50%);
 
-	--bg-base: oklch(17% 0.015 220);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(25% 0.01 210);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(30% 0.01 200);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(22% 0.015 70);
-	--bg3: var(--bg3-base);
+	--bg: hsl(205 20% 11%);
+	--bg1: linear-gradient(hsl(200 15% 16%), hsl(200 15% 19%));
+	--bg1-solid: hsl(200 15% 17%);
+	--bg2: linear-gradient(hsl(195 12% 22%), hsl(195 12% 27%));
+	--bg3: linear-gradient(hsl(40 20% 15%), hsl(40 20% 19%));
 
-	--primary-base: oklch(55% 0.10 200);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(63% 0.09 200);
+	--primary: hsl(190 40% 65%);
+	--primary-hover: hsl(190 35% 75%);
+	--primary-button: linear-gradient(hsl(190 40% 50%), hsl(190 40% 40%));
+	--primary-button-hover: linear-gradient(hsl(190 38% 54%), hsl(190 38% 54%));
 
-	--secondary-base: oklch(60% 0.03 70);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(70% 0.025 70);
-	--secondary-button-base: oklch(38% 0.025 70);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(32% 0.025 70);
+	--secondary: hsl(40 5% 52%);
+	--secondary-hover: hsl(40 5% 62%);
+	--secondary-button: hsl(40 5% 28%);
+	--secondary-button-hover: hsl(40 5% 22%);
 
-	--success-base: oklch(52% 0.10 160);
-	--success: var(--success-base);
-	--success-hover: oklch(62% 0.09 160);
+	--success: hsl(150 42% 42%);
+	--success-hover: hsl(150 38% 52%);
 
-	--warning-base: oklch(65% 0.12 80);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(73% 0.10 80);
+	--warning: hsl(50 50% 52%);
+	--warning-hover: hsl(50 45% 62%);
 
-	--error-base: oklch(55% 0.12 20);
-	--error: var(--error-base);
-	--error-hover: oklch(65% 0.10 20);
+	--error: hsl(8 48% 48%);
+	--error-hover: hsl(8 44% 58%);
 
-	--info-base: oklch(58% 0.10 230);
-	--info: var(--info-base);
-	--info-hover: oklch(68% 0.08 230);
+	--info: hsl(210 42% 50%);
+	--info-hover: hsl(210 38% 60%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(60% 0.06 210);
+	--link-visited: var(--link);
 
-	--border: oklch(32% 0.015 210);
+	--border: hsl(200 15% 24%);
 	--border-focus: var(--primary);
 }
 
 /* Cappadocia - light theme inspired by rose valleys and fairy chimneys at dawn in Turkey */
 .cappadocia {
-	--font-family: var(--font-lora);
+	--font-family: var(--font-sans);
+	--heading-font-family: var(--font-lora);
 
-	--body: oklch(28% 0.02 240);
-	--body1: oklch(50% 0.04 230);
-	--body2: oklch(72% 0.025 230);
+	--body: hsl(220 15% 20%);
+	--body-strong: hsl(220 15% 5%);
+	--body1: hsl(215 14% 42%);
+	--body2: hsl(215 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(95% 0.008 60);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(89% 0.025 60);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.02 220);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(35 22% 92%), hsl(35 22% 95%));
+	--bg1-solid: hsl(35 15% 97%);
+	--bg2: linear-gradient(hsl(35 35% 84%), hsl(35 35% 88%));
+	--bg3: linear-gradient(hsl(205 28% 88%), hsl(205 28% 92%));
 
-	--primary-base: oklch(55% 0.14 35);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(63% 0.12 35);
+	--primary: hsl(15 55% 48%);
+	--primary-hover: hsl(15 48% 55%);
+	--primary-button: linear-gradient(hsl(15 55% 52%), hsl(15 55% 42%));
+	--primary-button-hover: linear-gradient(hsl(15 48% 55%), hsl(15 48% 55%));
 
-	--secondary-base: oklch(52% 0.04 60);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(62% 0.035 60);
-	--secondary-button-base: oklch(72% 0.04 60);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.04 60);
+	--secondary: hsl(35 15% 45%);
+	--secondary-hover: hsl(35 12% 55%);
+	--secondary-button: hsl(35 15% 65%);
+	--secondary-button-hover: hsl(35 15% 55%);
 
-	--success-base: oklch(50% 0.08 120);
-	--success: var(--success-base);
-	--success-hover: oklch(58% 0.07 120);
+	--success: hsl(100 35% 42%);
+	--success-hover: hsl(100 32% 50%);
 
-	--warning-base: oklch(65% 0.12 85);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(72% 0.11 85);
+	--warning: hsl(48 50% 55%);
+	--warning-hover: hsl(48 45% 62%);
 
-	--error-base: oklch(50% 0.12 15);
-	--error: var(--error-base);
-	--error-hover: oklch(58% 0.11 15);
+	--error: hsl(5 50% 44%);
+	--error-hover: hsl(5 45% 52%);
 
-	--info-base: oklch(52% 0.08 210);
-	--info: var(--info-base);
-	--info-hover: oklch(60% 0.07 210);
+	--info: hsl(200 38% 45%);
+	--info-hover: hsl(200 34% 53%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(45% 0.06 350);
+	--link-visited: var(--link);
 
-	--border: oklch(83% 0.02 55);
+	--border: hsl(32 22% 82%);
 	--border-focus: var(--primary);
 }
 
 /* Marrakech - light theme inspired by spice markets and ochre walls of Morocco */
 .marrakech {
 	--font-family: var(--font-crimson);
+	--heading-font-family: var(--font-family);
 
-	--body: oklch(26% 0.02 240);
-	--body1: oklch(50% 0.04 230);
-	--body2: oklch(72% 0.025 230);
+	--body: hsl(220 15% 18%);
+	--body-strong: hsl(220 15% 3%);
+	--body1: hsl(215 14% 42%);
+	--body2: hsl(215 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0.008 75);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(88% 0.025 75);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.02 220);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(45 22% 91%), hsl(45 22% 94%));
+	--bg1-solid: hsl(45 15% 96%);
+	--bg2: linear-gradient(hsl(45 35% 82%), hsl(45 35% 87%));
+	--bg3: linear-gradient(hsl(205 28% 88%), hsl(205 28% 92%));
 
-	--primary-base: oklch(52% 0.13 55);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(60% 0.12 55);
+	--primary: hsl(30 55% 44%);
+	--primary-hover: hsl(30 48% 52%);
+	--primary-button: linear-gradient(hsl(30 55% 48%), hsl(30 55% 38%));
+	--primary-button-hover: linear-gradient(hsl(30 48% 52%), hsl(30 48% 52%));
 
-	--secondary-base: oklch(50% 0.03 85);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(58% 0.025 85);
-	--secondary-button-base: oklch(72% 0.03 85);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.03 85);
+	--secondary: hsl(50 12% 44%);
+	--secondary-hover: hsl(50 10% 52%);
+	--secondary-button: hsl(50 12% 65%);
+	--secondary-button-hover: hsl(50 12% 55%);
 
-	--success-base: oklch(45% 0.06 145);
-	--success: var(--success-base);
-	--success-hover: oklch(53% 0.055 145);
+	--success: hsl(135 28% 38%);
+	--success-hover: hsl(135 25% 46%);
 
-	--warning-base: oklch(68% 0.14 90);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(75% 0.12 90);
+	--warning: hsl(55 58% 55%);
+	--warning-hover: hsl(55 52% 62%);
 
-	--error-base: oklch(48% 0.12 25);
-	--error: var(--error-base);
-	--error-hover: oklch(56% 0.11 25);
+	--error: hsl(10 50% 42%);
+	--error-hover: hsl(10 45% 50%);
 
-	--info-base: oklch(52% 0.07 230);
-	--info: var(--info-base);
-	--info-hover: oklch(60% 0.06 230);
+	--info: hsl(210 32% 45%);
+	--info-hover: hsl(210 28% 53%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(42% 0.06 350);
+	--link-visited: var(--link);
 
-	--border: oklch(82% 0.02 65);
+	--border: hsl(42 22% 80%);
 	--border-focus: var(--primary);
 }
 
 /* Uluru - light theme inspired by the red center at sunrise in Australia */
 .uluru {
 	--font-family: var(--font-source-sans);
+	--heading-font-family: var(--font-pt-serif);
 
-	--body: oklch(28% 0.02 220);
-	--body1: oklch(50% 0.04 210);
-	--body2: oklch(72% 0.025 210);
+	--body: hsl(205 15% 20%);
+	--body-strong: hsl(205 15% 5%);
+	--body1: hsl(200 14% 42%);
+	--body2: hsl(200 10% 62%);
 
-	--bg-base: oklch(100% 0 0);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(94% 0.008 70);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(88% 0.025 70);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(93% 0.02 220);
-	--bg3: var(--bg3-base);
+	--bg: hsl(0 0% 100%);
+	--bg1: linear-gradient(hsl(40 22% 91%), hsl(40 22% 94%));
+	--bg1-solid: hsl(40 15% 96%);
+	--bg2: linear-gradient(hsl(40 35% 82%), hsl(40 35% 87%));
+	--bg3: linear-gradient(hsl(205 28% 88%), hsl(205 28% 92%));
 
-	--primary-base: oklch(48% 0.16 35);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(56% 0.14 35);
+	--primary: hsl(15 60% 42%);
+	--primary-hover: hsl(15 52% 50%);
+	--primary-button: linear-gradient(hsl(15 60% 46%), hsl(15 60% 36%));
+	--primary-button-hover: linear-gradient(hsl(15 52% 50%), hsl(15 52% 50%));
 
-	--secondary-base: oklch(50% 0.03 65);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(58% 0.025 65);
-	--secondary-button-base: oklch(72% 0.03 65);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(64% 0.03 65);
+	--secondary: hsl(40 12% 44%);
+	--secondary-hover: hsl(40 10% 52%);
+	--secondary-button: hsl(40 12% 65%);
+	--secondary-button-hover: hsl(40 12% 55%);
 
-	--success-base: oklch(48% 0.08 130);
-	--success: var(--success-base);
-	--success-hover: oklch(56% 0.07 130);
+	--success: hsl(115 35% 40%);
+	--success-hover: hsl(115 32% 48%);
 
-	--warning-base: oklch(65% 0.12 90);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(72% 0.11 90);
+	--warning: hsl(55 50% 52%);
+	--warning-hover: hsl(55 45% 60%);
 
-	--error-base: oklch(50% 0.12 25);
-	--error: var(--error-base);
-	--error-hover: oklch(58% 0.10 25);
+	--error: hsl(10 50% 44%);
+	--error-hover: hsl(10 45% 52%);
 
-	--info-base: oklch(52% 0.07 230);
-	--info: var(--info-base);
-	--info-hover: oklch(60% 0.06 230);
+	--info: hsl(210 32% 45%);
+	--info-hover: hsl(210 28% 53%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(42% 0.07 355);
+	--link-visited: var(--link);
 
-	--border: oklch(82% 0.02 60);
+	--border: hsl(38 22% 80%);
 	--border-focus: var(--primary);
 }
 
 /* Lviv - dark theme inspired by twilight over sunflower fields, Ukrainian flag colors */
 .lviv {
 	--font-family: var(--font-inter);
+	--heading-font-family: var(--font-family);
 
-	--body: oklch(98% 0.015 85);
-	--body1: oklch(80% 0.05 80);
-	--body2: oklch(62% 0.035 80);
+	--body: hsl(50 22% 95%);
+	--body-strong: hsl(50 0% 100%);
+	--body1: hsl(48 18% 68%);
+	--body2: hsl(48 12% 50%);
 
-	--bg-base: oklch(17% 0.05 260);
-	--bg: var(--bg-base);
-	--bg1-base: oklch(25% 0.04 260);
-	--bg1: var(--bg1-base);
-	--bg2-base: oklch(30% 0.04 260);
-	--bg2: var(--bg2-base);
-	--bg3-base: oklch(25% 0.03 90);
-	--bg3: var(--bg3-base);
+	--bg: hsl(235 55% 12%);
+	--bg1: linear-gradient(hsl(235 45% 17%), hsl(235 45% 20%));
+	--bg1-solid: hsl(235 45% 18%);
+	--bg2: linear-gradient(hsl(235 40% 22%), hsl(235 40% 27%));
+	--bg3: linear-gradient(hsl(55 35% 18%), hsl(55 35% 22%));
 
-	--primary-base: oklch(78% 0.15 95);
-	--primary: var(--primary-base);
-	--primary-hover: oklch(85% 0.13 95);
-	--primary-button-base: oklch(55% 0.18 260);
-	--primary-button: var(--primary-button-base);
-	--primary-button-hover: oklch(48% 0.20 260);
+	--primary: hsl(52 70% 62%);
+	--primary-hover: hsl(52 65% 72%);
+	--primary-button: linear-gradient(hsl(235 65% 52%), hsl(235 65% 42%));
+	--primary-button-hover: linear-gradient(hsl(235 70% 40%), hsl(235 70% 40%));
 
-	--secondary-base: oklch(65% 0.04 90);
-	--secondary: var(--secondary-base);
-	--secondary-hover: oklch(72% 0.035 90);
-	--secondary-button-base: oklch(38% 0.03 90);
-	--secondary-button: var(--secondary-button-base);
-	--secondary-button-hover: oklch(32% 0.03 90);
+	--secondary: hsl(55 15% 55%);
+	--secondary-hover: hsl(55 12% 65%);
+	--secondary-button: hsl(55 12% 28%);
+	--secondary-button-hover: hsl(55 12% 22%);
 
-	--success-base: oklch(58% 0.12 160);
-	--success: var(--success-base);
-	--success-hover: oklch(66% 0.10 160);
+	--success: hsl(150 48% 50%);
+	--success-hover: hsl(150 42% 58%);
 
-	--warning-base: oklch(70% 0.13 80);
-	--warning: var(--warning-base);
-	--warning-hover: oklch(78% 0.11 80);
+	--warning: hsl(50 55% 58%);
+	--warning-hover: hsl(50 48% 68%);
 
-	--error-base: oklch(58% 0.16 25);
-	--error: var(--error-base);
-	--error-hover: oklch(68% 0.14 25);
+	--error: hsl(10 60% 52%);
+	--error-hover: hsl(10 55% 62%);
 
-	--info-base: oklch(65% 0.12 230);
-	--info: var(--info-base);
-	--info-hover: oklch(73% 0.10 230);
+	--info: hsl(210 50% 55%);
+	--info-hover: hsl(210 45% 65%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
-	--link-visited: oklch(70% 0.10 85);
+	--link-visited: var(--link);
 
-	--border: oklch(35% 0.04 260);
+	--border: hsl(235 40% 28%);
 	--border-focus: var(--primary);
-}
-
-/* Warm color temperature - shifts hue +7 degrees and increases saturation */
-.warm {
-	--bg: oklch(from var(--bg-base) l calc(c * 1.15) calc(h + 10));
-	--bg1: oklch(from var(--bg1-base) l calc(c * 1.15) calc(h + 10));
-	--bg2: oklch(from var(--bg2-base) l calc(c * 1.15) calc(h + 10));
-	--bg3: oklch(from var(--bg3-base) l calc(c * 1.15) calc(h + 10));
-
-	--primary: oklch(from var(--primary-base) l calc(c * 1.15) calc(h + 10));
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.15) calc(h + 10));
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.15) calc(h + 10));
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 1.15) calc(h + 10));
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.15) calc(h + 10));
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.15) calc(h + 10));
-
-	--success: oklch(from var(--success-base) l calc(c * 1.15) calc(h + 10));
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
-
-	--warning: oklch(from var(--warning-base) l calc(c * 1.15) calc(h + 10));
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
-
-	--error: oklch(from var(--error-base) l calc(c * 1.15) calc(h + 10));
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
-
-	--info: oklch(from var(--info-base) l calc(c * 1.15) calc(h + 10));
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.15) calc(h + 10));
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 1.15) calc(h + 10));
-}
-
-/* Cool color temperature - shifts hue -7 degrees and decreases saturation */
-.cool {
-	--bg: oklch(from var(--bg-base) l calc(c * 0.85) calc(h - 10));
-	--bg1: oklch(from var(--bg1-base) l calc(c * 0.85) calc(h - 10));
-	--bg2: oklch(from var(--bg2-base) l calc(c * 0.85) calc(h - 10));
-	--bg3: oklch(from var(--bg3-base) l calc(c * 0.85) calc(h - 10));
-
-	--primary: oklch(from var(--primary-base) l calc(c * 0.85) calc(h - 10));
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.85) calc(h - 10));
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.85) calc(h - 10));
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 0.85) calc(h - 10));
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.85) calc(h - 10));
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.85) calc(h - 10));
-
-	--success: oklch(from var(--success-base) l calc(c * 0.85) calc(h - 10));
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
-
-	--warning: oklch(from var(--warning-base) l calc(c * 0.85) calc(h - 10));
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
-
-	--error: oklch(from var(--error-base) l calc(c * 0.85) calc(h - 10));
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
-
-	--info: oklch(from var(--info-base) l calc(c * 0.85) calc(h - 10));
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.85) calc(h - 10));
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 0.85) calc(h - 10));
-}
-
-/* Saturated - more vivid colors using relative color syntax */
-.sat {
-	--bg: oklch(from var(--bg-base) l calc(c * 1.5) h);
-	--bg1: oklch(from var(--bg1-base) l calc(c * 1.5) h);
-	--bg2: oklch(from var(--bg2-base) l calc(c * 1.5) h);
-	--bg3: oklch(from var(--bg3-base) l calc(c * 1.5) h);
-
-	--primary: oklch(from var(--primary-base) l calc(c * 1.5) h);
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.5) h);
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.5) h);
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.5) h);
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 1.5) h);
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.5) h);
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.5) h);
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.5) h);
-
-	--success: oklch(from var(--success-base) l calc(c * 1.5) h);
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.5) h);
-
-	--warning: oklch(from var(--warning-base) l calc(c * 1.5) h);
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.5) h);
-
-	--error: oklch(from var(--error-base) l calc(c * 1.5) h);
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.5) h);
-
-	--info: oklch(from var(--info-base) l calc(c * 1.5) h);
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.5) h);
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 1.5) h);
-}
-
-/* Desaturated - muted colors using relative color syntax */
-.desat {
-	--bg: oklch(from var(--bg-base) l calc(c * 0.5) h);
-	--bg1: oklch(from var(--bg1-base) l calc(c * 0.5) h);
-	--bg2: oklch(from var(--bg2-base) l calc(c * 0.5) h);
-	--bg3: oklch(from var(--bg3-base) l calc(c * 0.5) h);
-
-	--primary: oklch(from var(--primary-base) l calc(c * 0.5) h);
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.5) h);
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.5) h);
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.5) h);
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 0.5) h);
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.5) h);
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.5) h);
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.5) h);
-
-	--success: oklch(from var(--success-base) l calc(c * 0.5) h);
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.5) h);
-
-	--warning: oklch(from var(--warning-base) l calc(c * 0.5) h);
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.5) h);
-
-	--error: oklch(from var(--error-base) l calc(c * 0.5) h);
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.5) h);
-
-	--info: oklch(from var(--info-base) l calc(c * 0.5) h);
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.5) h);
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 0.5) h);
-}
-
-/* Combined warm + sat: hue +10, chroma * 1.15 * 1.5 */
-.warm.sat, .sat.warm {
-	--bg: oklch(from var(--bg-base) l calc(c * 1.725) calc(h + 10));
-	--bg1: oklch(from var(--bg1-base) l calc(c * 1.725) calc(h + 10));
-	--bg2: oklch(from var(--bg2-base) l calc(c * 1.725) calc(h + 10));
-	--bg3: oklch(from var(--bg3-base) l calc(c * 1.725) calc(h + 10));
-
-	--primary: oklch(from var(--primary-base) l calc(c * 1.725) calc(h + 10));
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.725) calc(h + 10));
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.725) calc(h + 10));
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 1.725) calc(h + 10));
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.725) calc(h + 10));
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.725) calc(h + 10));
-
-	--success: oklch(from var(--success-base) l calc(c * 1.725) calc(h + 10));
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
-
-	--warning: oklch(from var(--warning-base) l calc(c * 1.725) calc(h + 10));
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
-
-	--error: oklch(from var(--error-base) l calc(c * 1.725) calc(h + 10));
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
-
-	--info: oklch(from var(--info-base) l calc(c * 1.725) calc(h + 10));
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.725) calc(h + 10));
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 1.725) calc(h + 10));
-}
-
-/* Combined warm + desat: hue +10, chroma * 1.15 * 0.5 */
-.warm.desat, .desat.warm {
-	--bg: oklch(from var(--bg-base) l calc(c * 0.575) calc(h + 10));
-	--bg1: oklch(from var(--bg1-base) l calc(c * 0.575) calc(h + 10));
-	--bg2: oklch(from var(--bg2-base) l calc(c * 0.575) calc(h + 10));
-	--bg3: oklch(from var(--bg3-base) l calc(c * 0.575) calc(h + 10));
-
-	--primary: oklch(from var(--primary-base) l calc(c * 0.575) calc(h + 10));
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.575) calc(h + 10));
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.575) calc(h + 10));
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 0.575) calc(h + 10));
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.575) calc(h + 10));
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.575) calc(h + 10));
-
-	--success: oklch(from var(--success-base) l calc(c * 0.575) calc(h + 10));
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
-
-	--warning: oklch(from var(--warning-base) l calc(c * 0.575) calc(h + 10));
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
-
-	--error: oklch(from var(--error-base) l calc(c * 0.575) calc(h + 10));
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
-
-	--info: oklch(from var(--info-base) l calc(c * 0.575) calc(h + 10));
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.575) calc(h + 10));
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 0.575) calc(h + 10));
-}
-
-/* Combined cool + sat: hue -10, chroma * 0.85 * 1.5 */
-.cool.sat, .sat.cool {
-	--bg: oklch(from var(--bg-base) l calc(c * 1.275) calc(h - 10));
-	--bg1: oklch(from var(--bg1-base) l calc(c * 1.275) calc(h - 10));
-	--bg2: oklch(from var(--bg2-base) l calc(c * 1.275) calc(h - 10));
-	--bg3: oklch(from var(--bg3-base) l calc(c * 1.275) calc(h - 10));
-
-	--primary: oklch(from var(--primary-base) l calc(c * 1.275) calc(h - 10));
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 1.275) calc(h - 10));
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 1.275) calc(h - 10));
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 1.275) calc(h - 10));
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 1.275) calc(h - 10));
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 1.275) calc(h - 10));
-
-	--success: oklch(from var(--success-base) l calc(c * 1.275) calc(h - 10));
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
-
-	--warning: oklch(from var(--warning-base) l calc(c * 1.275) calc(h - 10));
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
-
-	--error: oklch(from var(--error-base) l calc(c * 1.275) calc(h - 10));
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
-
-	--info: oklch(from var(--info-base) l calc(c * 1.275) calc(h - 10));
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 1.275) calc(h - 10));
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 1.275) calc(h - 10));
-}
-
-/* Combined cool + desat: hue -10, chroma * 0.85 * 0.5 */
-.cool.desat, .desat.cool {
-	--bg: oklch(from var(--bg-base) l calc(c * 0.425) calc(h - 10));
-	--bg1: oklch(from var(--bg1-base) l calc(c * 0.425) calc(h - 10));
-	--bg2: oklch(from var(--bg2-base) l calc(c * 0.425) calc(h - 10));
-	--bg3: oklch(from var(--bg3-base) l calc(c * 0.425) calc(h - 10));
-
-	--primary: oklch(from var(--primary-base) l calc(c * 0.425) calc(h - 10));
-	--primary-hover: oklch(from var(--primary-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
-	--primary-button: oklch(from var(--primary-button-base) l calc(c * 0.425) calc(h - 10));
-	--primary-button-hover: oklch(from var(--primary-button-base) calc(l * 0.85) calc(c * 0.425) calc(h - 10));
-
-	--secondary: oklch(from var(--secondary-base) l calc(c * 0.425) calc(h - 10));
-	--secondary-hover: oklch(from var(--secondary-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
-	--secondary-button: oklch(from var(--secondary-button-base) l calc(c * 0.425) calc(h - 10));
-	--secondary-button-hover: oklch(from var(--secondary-button-base) calc(l * 0.85) calc(c * 0.425) calc(h - 10));
-
-	--success: oklch(from var(--success-base) l calc(c * 0.425) calc(h - 10));
-	--success-hover: oklch(from var(--success-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
-
-	--warning: oklch(from var(--warning-base) l calc(c * 0.425) calc(h - 10));
-	--warning-hover: oklch(from var(--warning-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
-
-	--error: oklch(from var(--error-base) l calc(c * 0.425) calc(h - 10));
-	--error-hover: oklch(from var(--error-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
-
-	--info: oklch(from var(--info-base) l calc(c * 0.425) calc(h - 10));
-	--info-hover: oklch(from var(--info-base) calc(l * 1.15) calc(c * 0.425) calc(h - 10));
-
-	--link-visited: oklch(from var(--link-visited) l calc(c * 0.425) calc(h - 10));
 }
 
 /* System preference auto-detection */
 @media (prefers-color-scheme: dark) {
 	:root:not(.light):not(.uinta):not(.hokkaido):not(.sahel):not(.kerala):not(.yucatan):not(.aegean):not(.guilin):not(.cappadocia):not(.marrakech):not(.uluru):not(.windermere):not(.peebles) {
 
-		--body: oklch(98% 0.01 60);
-		--body1: oklch(80% 0.04 50);
-		--body2: oklch(62% 0.025 50);
+		--body: hsl(30 15% 95%);
+		--body-strong: hsl(30 0% 100%);
+		--body1: hsl(30 12% 70%);
+		--body2: hsl(30 8% 52%);
 
-		--bg-base: oklch(0% 0 0);
-		--bg: var(--bg-base);
-		--bg1-base: oklch(23% 0 0);
-		--bg1: var(--bg1-base);
-		--bg2-base: oklch(30% 0 0);
-		--bg2: var(--bg2-base);
-		--bg3-base: oklch(25% 0.03 260);
-		--bg3: var(--bg3-base);
+		--bg: hsl(0 0% 0%);
+		--bg1: linear-gradient(hsl(0 0% 14%), hsl(0 0% 17%));
+		--bg1-solid: hsl(0 0% 15%);
+		--bg2: linear-gradient(hsl(0 0% 20%), hsl(0 0% 25%));
+		--bg3: linear-gradient(hsl(240 15% 17%), hsl(240 15% 21%));
 
-		--primary-base: oklch(65% 0.20 260);
-		--primary: var(--primary-base);
-		--primary-hover: oklch(72% 0.18 260);
+		--primary: hsl(245 60% 58%);
+		--primary-hover: hsl(245 55% 68%);
+		--primary-button: linear-gradient(hsl(245 60% 62%), hsl(245 60% 52%));
+		--primary-button-hover: linear-gradient(hsl(245 55% 65%), hsl(245 55% 65%));
 
-		--secondary-base: oklch(70% 0.04 260);
-		--secondary: var(--secondary-base);
-		--secondary-hover: oklch(85% 0.03 260);
-		--secondary-button-base: oklch(38% 0.03 260);
-		--secondary-button: var(--secondary-button-base);
-		--secondary-button-hover: oklch(32% 0.03 260);
+		--secondary: hsl(240 10% 62%);
+		--secondary-hover: hsl(240 8% 78%);
+		--secondary-button: hsl(240 8% 28%);
+		--secondary-button-hover: hsl(240 8% 22%);
 
-		--success-base: oklch(65% 0.16 155);
-		--success: var(--success-base);
-		--success-hover: oklch(72% 0.14 155);
+		--success: hsl(145 50% 52%);
+		--success-hover: hsl(145 45% 62%);
 
-		--warning-base: oklch(82% 0.16 85);
-		--warning: var(--warning-base);
-		--warning-hover: oklch(87% 0.14 85);
+		--warning: hsl(45 75% 62%);
+		--warning-hover: hsl(45 70% 72%);
 
-		--error-base: oklch(65% 0.20 25);
-		--error: var(--error-base);
-		--error-hover: oklch(75% 0.18 25);
+		--error: hsl(5 65% 55%);
+		--error-hover: hsl(5 60% 65%);
 
-		--info-base: oklch(70% 0.12 200);
-		--info: var(--info-base);
-		--info-hover: oklch(80% 0.10 200);
+		--info: hsl(200 45% 58%);
+		--info-hover: hsl(200 40% 70%);
 
 		--link: var(--primary);
 		--link-hover: var(--primary-hover);
-		--link-visited: oklch(75% 0.15 295);
+		--link-visited: var(--link);
 
-		--border: oklch(32% 0 0);
+		--border: hsl(0 0% 22%);
 		--border-focus: var(--primary);
 	}
 }

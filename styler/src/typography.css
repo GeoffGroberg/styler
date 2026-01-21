@@ -23,15 +23,15 @@ body {
 }
 
 /* Typography modifiers - can be applied to html, body, or any container */
-/* Note: body has font-family set directly, so we must also target body when class is on html */
-.sans, .sans body { font-family: var(--font-sans); }
-.serif, .serif body { font-family: var(--font-serif); }
-.source-sans, .source-sans body { font-family: var(--font-source-sans); }
-.inter, .inter body { font-family: var(--font-inter); }
-.pt-serif, .pt-serif body { font-family: var(--font-pt-serif); }
-.lora, .lora body { font-family: var(--font-lora); }
-.crimson, .crimson body { font-family: var(--font-crimson); }
-.cormorant, .cormorant body { font-family: var(--font-cormorant); }
+/* Sets both body and heading fonts to override theme defaults */
+.sans { --font-family: var(--font-sans); --heading-font-family: var(--font-sans); }
+.serif { --font-family: var(--font-serif); --heading-font-family: var(--font-serif); }
+.source-sans { --font-family: var(--font-source-sans); --heading-font-family: var(--font-source-sans); }
+.inter { --font-family: var(--font-inter); --heading-font-family: var(--font-inter); }
+.pt-serif { --font-family: var(--font-pt-serif); --heading-font-family: var(--font-pt-serif); }
+.lora { --font-family: var(--font-lora); --heading-font-family: var(--font-lora); }
+.crimson { --font-family: var(--font-crimson); --heading-font-family: var(--font-crimson); }
+.cormorant { --font-family: var(--font-cormorant); --heading-font-family: var(--font-cormorant); }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -40,6 +40,8 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 1.5em;
 	margin-bottom: 0.5em;
 	font-variant-caps: var(--heading-caps);
+  color: var(--body-strong);
+  font-family: var(--heading-font-family);
 }
 
 h1 { font-size: 2.5rem; }
@@ -88,7 +90,7 @@ blockquote p:last-child {
 code {
 	font-family: var(--font-mono);
 	font-size: 0.9em;
-	background-color: var(--bg1);
+	background: var(--bg1);
 	padding: 0.1em 0.3em;
 	border-radius: var(--box-radius);
 }
@@ -96,7 +98,7 @@ code {
 pre {
 	font-family: var(--font-mono);
 	font-size: 0.85rem;
-	background-color: var(--bg1);
+	background: var(--bg1);
 	padding: 1rem;
 	border-radius: var(--box-radius);
 	overflow-x: auto;
@@ -176,7 +178,7 @@ dd {
 kbd {
 	font-family: var(--font-mono);
 	font-size: 0.85em;
-	background-color: var(--bg2);
+	background: var(--bg2);
 	padding: 0.15em 0.4em;
 	border-radius: var(--box-radius);
 	border: 1px solid var(--border);
@@ -187,7 +189,7 @@ kbd {
 samp {
 	font-family: var(--font-mono);
 	font-size: 0.9em;
-	background-color: var(--bg1);
+	background: var(--bg1);
 	padding: 0.1em 0.3em;
 	border-radius: var(--box-radius);
 }

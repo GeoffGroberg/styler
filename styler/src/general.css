@@ -1,8 +1,9 @@
 /* general.css - Design variables and utility classes */
 
 :root {
-	--box-radius: 0.25rem;
-	--button-radius: var(--box-radius);
+	--box-radius: .25rem;
+	--image-radius: .5rem;
+	--button-radius: .5rem;
 	--transition: 150ms ease;
 }
 
@@ -258,12 +259,12 @@ figure.inline:last-child {
 
 /* Background color utilities */
 .bg { background-color: var(--bg); }
-.bg1 { background-color: var(--bg1); }
-.bg2 { background-color: var(--bg2); }
-.bg3 { background-color: var(--bg3); }
+.bg1 { background: var(--bg1); }
+.bg2 { background: var(--bg2); }
+.bg3 { background: var(--bg3); }
 
-/* Text color utilities - muted uses opacity for better blending on any background */
-.muted { color: hsl(from var(--body) h s l / 0.55); }
+/* Text color utilities */
+.muted { opacity: 0.5; }
 .primary { color: var(--primary); }
 .secondary { color: var(--secondary); }
 .success { color: var(--success); }
@@ -286,12 +287,12 @@ th, td {
 
 th {
 	font-weight: 600;
-	background-color: var(--bg2);
+	background: var(--bg2);
 }
 
 /* Striped tables - opt-in */
 table.striped tr:nth-child(even) {
-	background-color: var(--bg1);
+	background: var(--bg1);
 }
 
 /* Details/Summary (native accordion) */
@@ -309,7 +310,7 @@ summary {
 	padding: 1rem;
 	font-weight: 600;
 	cursor: pointer;
-	background-color: var(--bg1);
+	background: var(--bg1);
 	border-radius: var(--box-radius);
 }
 
@@ -337,25 +338,25 @@ details > *:last-child {
 }
 
 .alert.success {
-	background-color: var(--bg1);
+	background: var(--bg1);
 	border-left-color: var(--success);
 	color: var(--success);
 }
 
 .alert.warning {
-	background-color: var(--bg1);
+	background: var(--bg1);
 	border-left-color: var(--warning);
 	color: var(--warning);
 }
 
 .alert.error {
-	background-color: var(--bg1);
+	background: var(--bg1);
 	border-left-color: var(--error);
 	color: var(--error);
 }
 
 .alert.info {
-	background-color: var(--bg1);
+	background: var(--bg1);
 	border-left-color: var(--info);
 	color: var(--info);
 }

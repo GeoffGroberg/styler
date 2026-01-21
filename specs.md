@@ -20,7 +20,7 @@ styler/
   extrafonts.css       - Optional Google Fonts (~200-400KB)
   src/
     reset.css          - CSS reset/normalize baseline
-    colors.css         - Themes, modifiers, selection styling
+    colors.css         - Themes, selection styling
     general.css        - Layout, utilities, tables, details, alerts, print
     typography.css     - Fonts and text styling
     forms.css          - Form element styling
@@ -42,7 +42,7 @@ styler/
 
 <html class="dark">           <!-- theme -->
 <html class="serif">          <!-- font -->
-<html class="dark warm serif"> <!-- combine classes -->
+<html class="dark serif">      <!-- combine classes -->
 
 <!-- Themes and fonts work on any element -->
 <footer class="patagonia bg">Footer with different theme</footer>
@@ -183,136 +183,54 @@ styler/
 - Sunflower yellow primary
 - Warm gold secondary, wheat-toned text
 
-### Modifiers
-
-Modifiers can be combined with any theme:
-
-**warm** - Adds warm tints to bg1, bg2, body1, body2, and borders
-**cool** - Adds cool tints to the same properties
-**sat** - Increases saturation of backgrounds and semantic colors by 40% (uses relative color syntax)
-**desat** - Decreases saturation of backgrounds and semantic colors by 40% (uses relative color syntax)
-
-```html
-<html class="dark warm">      <!-- dark theme with warm tints -->
-<html class="uinta sat">      <!-- uinta theme with vivid colors -->
-<div class="cool">            <!-- cool section within any theme -->
-```
-
 #### Creating Dark Themes
 
-When creating a new dark theme, include these requirements:
-
-**1. Warm/cool modifier support** - Use compound selectors for all class orderings and nesting:
-```css
-.warm.dark, .dark.warm, .dark .warm,
-.warm.mytheme, .mytheme.warm, .mytheme .warm {
-  /* dark warm overrides */
-}
-
-.cool.dark, .dark.cool, .dark .cool,
-.cool.mytheme, .mytheme.cool, .mytheme .cool {
-  /* dark cool overrides */
-}
-```
-
-This ensures modifiers work whether classes are on the same element (`class="dark warm"` or `class="warm dark"`) or nested (`<html class="dark"><div class="warm">`).
-
-**2. Update dark theme selectors** - Three places list dark themes explicitly:
+When creating a new dark theme, update three places that list dark themes explicitly:
 - `forms.css` - Select dropdown arrow color (lines ~112-116)
 - `typography.css` - Inserted/deleted text colors (lines ~231-241)
 - `colors.css` - Media query exclusion list (line ~1274)
 
 When adding a new dark theme, update all three locations.
 
-#### Creating Modifiers That Override Backgrounds
-
-When creating a modifier that changes background colors (like `warm` or `cool`), you must set both the `-base` variable and the display variable. This ensures `sat` and `desat` work correctly with your modifier:
-
-```css
-/* WRONG - sat/desat will ignore these overrides */
-.mymodifier {
-  --bg1: oklch(98% 0.025 80);
-  --bg2: oklch(89% 0.03 75);
-}
-
-/* CORRECT - sat/desat will use these values */
-.mymodifier {
-  --bg1-base: oklch(98% 0.025 80);
-  --bg1: var(--bg1-base);
-  --bg2-base: oklch(89% 0.03 75);
-  --bg2: var(--bg2-base);
-}
-```
-
-Without setting the `-base` variables, `sat` and `desat` will read the original theme's base values instead of your modifier's overrides, causing unexpected color combinations.
-
 ## Color Variables
 
-All colors use OKLCH format for perceptual uniformity. OKLCH provides consistent perceived lightness across different hues, making color adjustments more predictable.
+All colors use HSL format for maximum browser compatibility (~100% support).
 
 ```css
---body, --body1, --body2      /* Text colors (dark to light) */
---bg, --bg1, --bg2, --bg3     /* Background colors (bg3 uses complementary hue) */
---primary, --primary-hover    /* Primary action color */
---primary-button, --primary-button-hover  /* Button colors (may differ from text in dark themes) */
+/* Text colors */
+--body                        /* Primary text */
+--body-strong                 /* Headings (darker/lighter than body) */
+--body1                       /* Secondary text */
+--body2                       /* Tertiary/muted text */
+
+/* Backgrounds */
+--bg                          /* Page background (solid) */
+--bg1                         /* Subtle elevation (gradient) */
+--bg1-solid                   /* Solid version for form inputs */
+--bg2                         /* Medium elevation (gradient) */
+--bg3                         /* Accent areas (gradient, may have hue shift) */
+
+/* Semantic colors */
+--primary, --primary-hover
+--primary-button, --primary-button-hover  /* May differ from --primary in some themes */
 --secondary, --secondary-hover
 --secondary-button, --secondary-button-hover
---success, --warning, --error, --info
+--success, --warning, --error, --info     /* Each has -hover variant */
 --border, --border-focus
---link, --link-hover
+--link, --link-hover, --link-visited
 ```
 
-### OKLCH Color Format
+### HSL Color Format
 
-OKLCH uses three components:
-- **L (Lightness)**: 0% (black) to 100% (white) - perceptually uniform
-- **C (Chroma)**: 0 (gray) to ~0.4 (vivid) - color intensity
-- **H (Hue)**: 0-360 degrees - color wheel position
+HSL uses three components:
+- **H (Hue)**: 0-360 degrees (0=red, 60=yellow, 120=green, 240=blue)
+- **S (Saturation)**: 0% (gray) to 100% (vivid)
+- **L (Lightness)**: 0% (black) to 100% (white)
 
 ```css
-oklch(55% 0.22 260)  /* L=55%, C=0.22, H=260 (blue) */
-oklch(70% 0.12 155)  /* L=70%, C=0.12, H=155 (green) */
+hsl(220 70% 45%)  /* H=220 (blue), S=70%, L=45% */
+hsl(30 20% 22%)   /* H=30 (warm brown), S=20%, L=22% */
 ```
-
-### Base Variables for Modifiers
-
-Backgrounds and semantic colors use a two-tier variable system that enables the `sat` and `desat` modifiers to work with any theme:
-
-```css
-/* Themes define -base variables for backgrounds */
---bg-base: oklch(100% 0 0);
---bg: var(--bg-base);
---bg1-base: oklch(97% 0 0);
---bg1: var(--bg1-base);
-
-/* ...and for semantic colors */
---primary-base: oklch(55% 0.22 260);
---primary: var(--primary-base);
---primary-hover: oklch(62% 0.21 260);
-
-/* Button colors can differ from text (useful in dark themes) */
---primary-button-base: var(--primary-base);
---primary-button: var(--primary-button-base);
-
-/* sat/desat use CSS relative color syntax to modify chroma */
-.sat {
-  --bg: oklch(from var(--bg-base) l calc(c * 1.4) h);
-  --bg1: oklch(from var(--bg1-base) l calc(c * 1.4) h);
-  --primary: oklch(from var(--primary-base) l calc(c * 1.4) h);
-}
-
-/* warm/cool use hue shifts */
-.warm {
-  --primary: oklch(from var(--primary-base) l c calc(h + 6));
-}
-.cool {
-  --primary: oklch(from var(--primary-base) l c calc(h - 6));
-}
-```
-
-This allows `sat` and `desat` to dynamically adjust any theme's colors rather than replacing them with fixed values. For themes with neutral backgrounds (0 chroma), the background won't visibly change. For place-inspired themes like Uinta, Hokkaido, and Ambleside with tinted backgrounds, the tints become more or less pronounced.
-
-**Browser support:** CSS relative color syntax requires Chrome 119+, Safari 16.4+, or Firefox 128+.
 
 ## Typography
 
@@ -322,18 +240,27 @@ This allows `sat` and `desat` to dynamically adjust any theme's colors rather th
 
 ### Theme Fonts
 
-Themes include a default `--font-family`. Font classes override the theme default:
+Themes define `--font-family` (body text) and `--heading-font-family` (headings). Most themes use the same font for both, but some pair different fonts for typographic interest:
 
-| Theme | Default Font | Notes |
-|-------|--------------|-------|
-| Light, Dark, Hokkaido, Kerala, Aegean | System Sans | Clean, neutral |
-| Uinta, Patagonia, Uluru, Ambleside, Windermere | Source Sans | Fresh, modern |
-| Svalbard, Lviv | Inter | Crisp, technical |
-| Sahel, Yucatan, Cappadocia | Lora | Warm, earthy |
-| Guilin, Marrakech | Crimson Pro | Refined, elegant |
-| Peebles, Cusco | PT Serif | Traditional |
+| Theme | Body Font | Heading Font | Notes |
+|-------|-----------|--------------|-------|
+| Light, Dark, Hokkaido, Kerala | System Sans | Same | Clean, neutral |
+| Aegean | System Sans | Source Sans | Subtle difference |
+| Yucatan, Cappadocia | System Sans | Lora | Sans body, serif headings |
+| Cusco | System Sans | PT Serif | Sans body, serif headings |
+| Uinta, Uluru | Source Sans | PT Serif | Modern body, traditional headings |
+| Patagonia | Source Sans | Same | Fresh, modern |
+| Windermere | Source Sans | System Serif | Modern body, classic headings |
+| Ambleside | Source Sans | Cormorant | Modern body, elegant headings |
+| Svalbard, Lviv | Inter | Same | Crisp, technical |
+| Sahel | Lora | Same | Warm, earthy |
+| Guilin, Marrakech | Crimson Pro | Same | Refined, elegant |
+| Peebles | PT Serif | Cormorant | Traditional body, elegant headings |
+| Kerala | System Sans | Crimson Pro | Clean body, refined headings |
 
 Guilin uses `--heading-caps: small-caps` for elegant headings.
+
+Font modifier classes (`.inter`, `.lora`, etc.) override both body and heading fonts.
 
 ### Font Classes
 
@@ -592,20 +519,19 @@ These HTML elements are styled automatically:
 
 ## Customizing
 
-Override any CSS variable in your own stylesheet. Use OKLCH format for colors:
+Override any CSS variable in your own stylesheet:
 
 ```css
 :root {
   --readable-width: 40rem;
   --base-font-size: 18px;
   --box-radius: 0.5rem;
-  --primary-base: oklch(60% 0.20 295);
-  --primary: var(--primary-base);
-  --primary-hover: oklch(68% 0.18 295);
+  --primary: hsl(295 50% 45%);
+  --primary-hover: hsl(295 45% 55%);
 }
 ```
 
-OKLCH format: `oklch(lightness% chroma hue)`
+HSL format: `hsl(hue saturation% lightness%)`
+- Hue: 0-360 degrees (0=red, 60=yellow, 120=green, 240=blue, 300=magenta)
+- Saturation: 0% (gray) to 100% (vivid)
 - Lightness: 0% (black) to 100% (white)
-- Chroma: 0 (gray) to ~0.4 (vivid) - typical values are 0.05-0.25
-- Hue: 0-360 degrees (0=red, 90=yellow, 150=green, 260=blue, 330=magenta)

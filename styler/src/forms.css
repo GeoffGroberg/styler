@@ -34,7 +34,7 @@ select {
 	font-size: 1rem;
 	line-height: 1.5;
 	color: var(--body);
-	background-color: var(--bg1);
+	background-color: var(--bg1-solid);
 	border: 1px solid var(--border);
 	border-radius: var(--box-radius);
 	transition: border-color var(--transition), box-shadow var(--transition);
@@ -126,11 +126,10 @@ input[type="radio"] {
 	accent-color: var(--primary);
 }
 
-/* Inline checkbox/radio with label */
-label:has(input[type="checkbox"]),
-label:has(input[type="radio"]) {
-	display: flex;
-	align-items: center;
+/* Inline checkbox/radio with label - supports input + label pattern */
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+	display: inline;
 	font-weight: normal;
 	cursor: pointer;
 	margin-bottom: 0.5rem;
@@ -151,7 +150,7 @@ a.button {
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
-	background-color: var(--primary-button);
+	background: var(--primary-button);
 	border: none;
 	border-radius: var(--button-radius);
 	cursor: pointer;
@@ -164,7 +163,7 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 .button:hover,
 a.button:hover {
-	background-color: var(--primary-button-hover);
+	background: var(--primary-button-hover);
 	color: #fff;
 }
 
@@ -190,7 +189,7 @@ button.secondary,
 input[type="reset"],
 .button.secondary,
 a.button.secondary {
-	background-color: var(--secondary-button);
+	background: var(--secondary-button);
 	color: #fff;
 }
 
@@ -198,7 +197,7 @@ button.secondary:hover,
 input[type="reset"]:hover,
 .button.secondary:hover,
 a.button.secondary:hover {
-	background-color: var(--secondary-button-hover);
+	background: var(--secondary-button-hover);
 	color: #fff;
 }
 
@@ -326,12 +325,12 @@ progress {
 	margin-bottom: 1rem;
 	border: none;
 	border-radius: var(--box-radius);
-	background-color: var(--bg2);
+	background: var(--bg2);
 	accent-color: var(--primary);
 }
 
 progress::-webkit-progress-bar {
-	background-color: var(--bg2);
+	background: var(--bg2);
 	border-radius: var(--box-radius);
 }
 
@@ -353,11 +352,11 @@ meter {
 	margin-bottom: 1rem;
 	border: none;
 	border-radius: var(--box-radius);
-	background-color: var(--bg2);
+	background: var(--bg2);
 }
 
 meter::-webkit-meter-bar {
-	background-color: var(--bg2);
+	background: var(--bg2);
 	border-radius: var(--box-radius);
 	border: none;
 }

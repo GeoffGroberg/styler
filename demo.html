@@ -32,10 +32,13 @@
 			background: none;
 			border: none;
 			border-radius: 0;
-			font-size: 1.5rem;
 			max-width: 45rem;
 			margin: 0 auto;
 			border-bottom: 1px solid var(--border);
+		}
+		section > details > summary h2 {
+			margin: 0;
+			font-size: 1.5rem;
 		}
 		section > details[open] {
 			padding-bottom: 2rem;
@@ -81,16 +84,6 @@
 				<option value="yucatan">Yucatan</option>
 			</select>
 		</label>
-		<select id="variant-select">
-			<option value="">Neutral</option>
-			<option value="warm">Warm</option>
-			<option value="cool">Cool</option>
-		</select>
-		<select id="saturation-select">
-			<option value="">Normal</option>
-			<option value="sat">Saturated</option>
-			<option value="desat">Desaturated</option>
-		</select>
 		<select id="font-select">
 				<option value="" selected>Theme Font</option>
 				<option value="sans">System Sans</option>
@@ -108,7 +101,7 @@
 
 <section id="colors">
 	<details open>
-		<summary>Colors</summary>
+		<summary><h2>Colors</h2></summary>
 
 		<div class="readable">
 			<p>
@@ -141,7 +134,7 @@
 
 <section id="typography">
 	<details>
-		<summary>Typography</summary>
+		<summary><h2>Typography</h2></summary>
 
 		<div class="readable">
 			<p>Headings: <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> styled automatically.</p>
@@ -186,7 +179,7 @@
 
 <section id="media">
 	<details>
-		<summary>Media</summary>
+		<summary><h2>Media</h2></summary>
 
 		<div class="readable">
 			<figure class="left">
@@ -247,7 +240,7 @@
 
 <section id="forms">
 	<details>
-		<summary>Forms</summary>
+		<summary><h2>Forms</h2></summary>
 
 		<div class="readable">
 			<form>
@@ -282,7 +275,7 @@
 
 <section id="more">
 	<details>
-		<summary>More</summary>
+		<summary><h2>More</h2></summary>
 
 		<div class="readable">
 			<p>Theme classes can be applied to any element, or the entire <code>&lt;html&gt;</code>.</p>
@@ -390,20 +383,16 @@
 (function() {
 	var html = document.documentElement;
 	var themeSelect = document.getElementById('theme-select');
-	var variantSelect = document.getElementById('variant-select');
-	var saturationSelect = document.getElementById('saturation-select');
 	var fontSelect = document.getElementById('font-select');
 
 	function updateClasses() {
-		var classes = [themeSelect.value, variantSelect.value, saturationSelect.value, fontSelect.value]
+		var classes = [themeSelect.value, fontSelect.value]
 			.filter(function(c) { return c; })
 			.join(' ');
 		html.className = classes;
 	}
 
 	themeSelect.addEventListener('change', updateClasses);
-	variantSelect.addEventListener('change', updateClasses);
-	saturationSelect.addEventListener('change', updateClasses);
 	fontSelect.addEventListener('change', updateClasses);
 })();
 </script>
