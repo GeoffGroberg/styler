@@ -305,10 +305,10 @@
 	--body2: hsl(28 10% 62%);
 
 	--bg: hsl(0 0% 100%);
-	--bg1: linear-gradient(hsl(220 18% 92%), hsl(220 18% 95%));
+	--bg1: linear-gradient(hsl(220 18% 90%), hsl(220 18% 96%));
 	--bg1-solid: hsl(220 12% 97%);
-	--bg2: linear-gradient(hsl(220 30% 84%), hsl(220 30% 88%));
-	--bg3: linear-gradient(hsl(145 30% 88%), hsl(145 30% 92%));
+	--bg2: linear-gradient(hsl(220 30% 82%), hsl(220 30% 90%));
+	--bg3: linear-gradient(hsl(145 30% 82%), hsl(145 30% 90%));
 
 	--primary: hsl(220 50% 55%);
 	--primary-hover: hsl(220 50% 65%);
