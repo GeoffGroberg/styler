@@ -16,8 +16,7 @@ A simple, clean CSS framework that applies reasonable styles to HTML tags withou
 ```
 demo.html              - Interactive demo with theme/font switchers
 styler/
-  base.css             - Main stylesheet (imports src files)
-  extrafonts.css       - Optional Google Fonts (~200-400KB)
+  base.css             - Main stylesheet (includes Google Fonts + imports src files)
   src/
     reset.css          - CSS reset/normalize baseline
     colors.css         - Themes, selection styling
@@ -30,15 +29,8 @@ styler/
 ### Usage
 
 ```html
-<!-- Basic (system fonts only) -->
 <link rel="stylesheet" href="styler/base.css">
-
-<!-- With Google Fonts (extrafonts.css must come first) -->
-<link rel="stylesheet" href="styler/extrafonts.css">
-<link rel="stylesheet" href="styler/base.css">
-
-<!-- Then your overrides -->
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">  <!-- your overrides -->
 
 <html class="dark">           <!-- theme -->
 <html class="serif">          <!-- font -->
@@ -236,7 +228,7 @@ hsl(30 20% 22%)   /* H=30 (warm brown), S=20%, L=22% */
 
 - Base font-size: 20px
 - All measurements in rem units
-- Each theme has a default font (falls back to system fonts if extrafonts.css not loaded)
+- Each theme has a default font (falls back to system fonts if Google Fonts fail to load)
 
 ### Theme Fonts
 
@@ -268,7 +260,7 @@ Font modifier classes (`.inter`, `.lora`, etc.) override both body and heading f
 - `sans` - System sans-serif
 - `serif` - System serif (Times New Roman, Georgia)
 
-**Google Fonts** (require extrafonts.css)
+**Google Fonts** (included in base.css)
 - `source-sans` - Source Sans 3 (weights: 400, 600 + italics)
 - `inter` - Inter (weights: 400, 600)
 - `pt-serif` - PT Serif (weights: 400, 700 + italics)
@@ -515,7 +507,7 @@ These HTML elements are styled automatically:
 - Text selection uses `--primary` color
 - Print styles hide navigation, buttons, and alerts; show URLs after links
 - CSS variables for easy customization
-- No external dependencies by default (Google Fonts optional via extrafonts.css)
+- Google Fonts included by default (comment out in base.css for system fonts only)
 
 ## Customizing
 
