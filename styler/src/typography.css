@@ -39,9 +39,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	margin-top: 1.5em;
 	margin-bottom: 0.5em;
-	font-variant-caps: var(--heading-caps);
-  color: var(--body-strong);
-  font-family: var(--heading-font-family);
+	color: var(--body-strong);
+	font-family: var(--heading-font-family);
 }
 
 h1 { font-size: 2.5rem; }

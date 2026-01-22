@@ -15,7 +15,6 @@
 	/* Default font for light theme */
 	--font-family: var(--font-sans);
 	--heading-font-family: var(--font-family);
-	--heading-caps: none;
 
 	/* Light theme (default) - pure white bg, warm-tinted text */
 	--body: hsl(30 10% 10%);
@@ -620,7 +619,6 @@
 .guilin {
 	--font-family: var(--font-crimson);
 	--heading-font-family: var(--font-family);
-	--heading-caps: small-caps;
 
 	--body: hsl(28 18% 18%);
 	--body-strong: hsl(28 18% 3%);

@@ -250,8 +250,6 @@ Themes define `--font-family` (body text) and `--heading-font-family` (headings)
 | Peebles | PT Serif | Cormorant | Traditional body, elegant headings |
 | Kerala | System Sans | Crimson Pro | Clean body, refined headings |
 
-Guilin uses `--heading-caps: small-caps` for elegant headings.
-
 Font modifier classes (`.inter`, `.lora`, etc.) override both body and heading fonts.
 
 ### Font Classes
@@ -265,7 +263,7 @@ Font modifier classes (`.inter`, `.lora`, etc.) override both body and heading f
 - `inter` - Inter (weights: 400, 600)
 - `pt-serif` - PT Serif (weights: 400, 700 + italics)
 - `lora` - Lora (weights: 400, 600 + italics)
-- `crimson` - Crimson Pro (weights: 400, 600 + italics, has small-caps)
+- `crimson` - Crimson Pro (weights: 400, 600 + italics)
 - `cormorant` - Cormorant Garamond (weights: 400, 600 + italics) - decorative, best for poetry/quotes
 
 ```html
