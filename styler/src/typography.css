@@ -22,16 +22,16 @@ body {
 	line-height: var(--line-height);
 }
 
-/* Typography modifiers - can be applied to html, body, or any container */
-/* Sets both body and heading fonts to override theme defaults */
-.sans { --font-family: var(--font-sans); --heading-font-family: var(--font-sans); }
-.serif { --font-family: var(--font-serif); --heading-font-family: var(--font-serif); }
-.source-sans { --font-family: var(--font-source-sans); --heading-font-family: var(--font-source-sans); }
-.inter { --font-family: var(--font-inter); --heading-font-family: var(--font-inter); }
-.pt-serif { --font-family: var(--font-pt-serif); --heading-font-family: var(--font-pt-serif); }
-.lora { --font-family: var(--font-lora); --heading-font-family: var(--font-lora); }
-.crimson { --font-family: var(--font-crimson); --heading-font-family: var(--font-crimson); }
-.cormorant { --font-family: var(--font-cormorant); --heading-font-family: var(--font-cormorant); }
+/* Typography modifiers - can be applied to html, body, or any element */
+/* Sets variables for cascade AND font-family directly for use on individual elements */
+.sans { --font-family: var(--font-sans); --heading-font-family: var(--font-sans); font-family: var(--font-sans); }
+.serif { --font-family: var(--font-serif); --heading-font-family: var(--font-serif); font-family: var(--font-serif); }
+.source-sans { --font-family: var(--font-source-sans); --heading-font-family: var(--font-source-sans); font-family: var(--font-source-sans); }
+.inter { --font-family: var(--font-inter); --heading-font-family: var(--font-inter); font-family: var(--font-inter); }
+.pt-serif { --font-family: var(--font-pt-serif); --heading-font-family: var(--font-pt-serif); font-family: var(--font-pt-serif); }
+.lora { --font-family: var(--font-lora); --heading-font-family: var(--font-lora); font-family: var(--font-lora); }
+.crimson { --font-family: var(--font-crimson); --heading-font-family: var(--font-crimson); font-family: var(--font-crimson); }
+.cormorant { --font-family: var(--font-cormorant); --heading-font-family: var(--font-cormorant); font-family: var(--font-cormorant); }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -78,7 +78,6 @@ blockquote {
 	padding: 1rem 1.5rem;
 	border-left: 0.25rem solid var(--border);
 	color: var(--body1);
-	font-style: italic;
 }
 
 blockquote p:last-child {

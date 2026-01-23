@@ -298,38 +298,38 @@
 	--font-family: var(--font-source-sans);
 	--heading-font-family: var(--font-family);
 
-	--body: hsl(30 18% 15%);
+	--body: hsl(30 18% 30%);
 	--body-strong: hsl(30 18% 0%);
-	--body1: hsl(28 15% 42%);
-	--body2: hsl(28 10% 62%);
+	--body1: hsl(20 25% 42%);
+	--body2: hsl(20 20% 55%);
 
 	--bg: hsl(0 0% 100%);
-	--bg1: linear-gradient(hsl(220 18% 90%), hsl(220 18% 96%));
-	--bg1-solid: hsl(220 12% 97%);
-	--bg2: linear-gradient(hsl(220 30% 82%), hsl(220 30% 90%));
-	--bg3: linear-gradient(hsl(145 30% 82%), hsl(145 30% 90%));
+	--bg1: linear-gradient(hsl(220 18% 95%), hsl(220 18% 97%));
+	--bg1-solid: hsl(220 18% 97%);
+	--bg2: linear-gradient(hsl(210 30% 82%), hsl(210 30% 95%));
+	--bg3: linear-gradient(hsl(145 20% 82%), hsl(145 20% 95%));
 
-	--primary: hsl(220 50% 55%);
-	--primary-hover: hsl(220 50% 65%);
-	--primary-button: linear-gradient(hsl(220 30% 60%), hsl(220 30% 40%));
-	--primary-button-hover: linear-gradient(hsl(220 45% 60%), hsl(220 45% 60%));
+	--primary: hsl(220 60% 55%);
+	--primary-hover: hsl(220 60% 65%);
+	--primary-button: linear-gradient(hsl(220 40% 65%), hsl(220 40% 45%));
+	--primary-button-hover: linear-gradient(hsl(220 45% 65%), hsl(220 45% 65%));
 
-	--secondary: hsl(220 10% 44%);
-	--secondary-hover: hsl(220 10% 52%);
-	--secondary-button: hsl(220 8% 75%);
-	--secondary-button-hover: hsl(220 8% 65%);
+	--secondary: hsl(30 20% 44%);
+	--secondary-hover: hsl(30 20% 52%);
+	--secondary-button: hsl(30 8% 75%);
+	--secondary-button-hover: hsl(30 8% 65%);
 
-	--success: hsl(160 35% 40%);
-	--success-hover: hsl(160 32% 48%);
+	--success: hsl(150 35% 35%);
+	--success-hover: hsl(150 32% 43%);
 
-	--warning: hsl(40 35% 48%);
-	--warning-hover: hsl(40 32% 56%);
+	--warning: hsl(40 55% 48%);
+	--warning-hover: hsl(40 52% 56%);
 
-	--error: hsl(10 32% 42%);
-	--error-hover: hsl(10 28% 50%);
+	--error: hsl(10 52% 45%);
+	--error-hover: hsl(10 48% 55%);
 
-	--info: hsl(190 40% 48%);
-	--info-hover: hsl(190 36% 56%);
+	--info: hsl(180 40% 58%);
+	--info-hover: hsl(180 36% 66%);
 
 	--link: var(--primary);
 	--link-hover: var(--primary-hover);
