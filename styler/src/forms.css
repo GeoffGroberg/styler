@@ -30,15 +30,23 @@ textarea,
 select {
 	display: block;
 	width: 100%;
+	box-sizing: border-box;
 	padding: 0.5rem 0.75rem;
 	font-size: 1rem;
 	line-height: 1.5;
+	height: 2.5rem;
 	color: var(--body);
 	background-color: var(--bg1-solid);
 	border: 1px solid var(--border);
 	border-radius: var(--box-radius);
 	transition: border-color var(--transition), box-shadow var(--transition);
 	margin-bottom: 1rem;
+}
+
+/* Textarea and select need auto height */
+textarea,
+select {
+	height: auto;
 }
 
 /* Standard width inputs */
