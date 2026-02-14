@@ -130,6 +130,15 @@
 			
 			<div class="alert success">.alert .success</div>
 			<div class="alert error">.alert .error (also .warning, .info)</div>
+
+			<h3>Toast Notifications</h3>
+			<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+				<button type="button" onclick="showToast('Changes saved!', 'success')">Success Toast</button>
+				<button type="button" onclick="showToast('Something went wrong', 'error')">Error Toast</button>
+				<button type="button" onclick="showToast('Heads up — check this out', 'info')">Info Toast</button>
+				<button type="button" onclick="showToast('Careful with that', 'warning')">Warning Toast</button>
+			</div>
+
 			<p class="text-right"><a href="#top">Top</a></p>
 		</div>
 	</details>
@@ -404,7 +413,9 @@
 	themeSelect.addEventListener('change', updateClasses);
 	fontSelect.addEventListener('change', updateClasses);
 })();
+
 </script>
+<script src="styler/toast.js"></script>
 
 </body>
 </html>

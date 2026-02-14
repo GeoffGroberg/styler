@@ -333,8 +333,12 @@ details > *:last-child {
 .alert {
 	padding: 1rem 1.25rem;
 	border-radius: var(--box-radius);
-	margin-bottom: 1rem;
+	margin: 1rem 0;
 	border-left: 4px solid;
+}
+
+.alert ul {
+	margin: 0;
 }
 
 .alert.success {
@@ -359,6 +363,35 @@ details > *:last-child {
 	background: var(--bg1);
 	border-left-color: var(--info);
 	color: var(--info);
+}
+
+/* Toast notifications */
+.toast-container {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.alert.toast {
+	animation: toast-in 0.3s ease, toast-out 0.4s ease 3s forwards;
+	margin: 0;
+	min-width: 15rem;
+	max-width: 25rem;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes toast-in {
+	from { opacity: 0; transform: translateX(1rem); }
+	to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toast-out {
+	from { opacity: 1; }
+	to { opacity: 0; }
 }
 
 /* Dialog (native modal) */
