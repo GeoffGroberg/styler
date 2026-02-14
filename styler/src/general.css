@@ -407,6 +407,13 @@ dialog::backdrop {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+dialog .buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
 /* Print styles */
 @media print {
 	body {
