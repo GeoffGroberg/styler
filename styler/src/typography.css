@@ -37,8 +37,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	font-weight: 600;
-	margin-top: 1.5em;
-	margin-bottom: 0.5em;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
 	color: var(--body-strong);
 	font-family: var(--heading-font-family);
 }
