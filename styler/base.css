@@ -3,9 +3,9 @@
 /* Google Fonts - comment out to use only system fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
-@import url('src/reset.css');
-@import url('src/colors.css');
-@import url('src/typography.css');
-@import url('src/general.css');
-@import url('src/forms.css');
-@import url('src/media.css');
+@import url('reset.css');
+@import url('colors.css');
+@import url('typography.css');
+@import url('general.css');
+@import url('forms.css');
+@import url('media.css');
