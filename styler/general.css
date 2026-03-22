@@ -148,6 +148,10 @@ figure.inline:last-child {
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
+.text-center input, .text-center select {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Margin utilities: m0-m5, mx, my, mt, mb, ml, mr */
 .m0 { margin: 0 !important; }
