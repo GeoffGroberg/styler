@@ -91,6 +91,14 @@ html {
 	flex-wrap: wrap;
 	gap: 1rem;
 	margin: 1.5rem 0;
+  
+  /*  break out of container div*/
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .cols2 > * {
@@ -405,6 +413,8 @@ dialog {
 	padding: 1.5rem;
 	max-width: min(90vw, 30rem);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: var(--bg);
+  font-family: var(--font-family);
 }
 
 dialog::backdrop {

@@ -218,20 +218,18 @@
 		</div>
 
 		<div class="readable">
-			<div class="cols3">
-				<figure class="square" style="max-width: 100px;">
-					<img src="https://picsum.photos/100/100" alt="square">
-					<figcaption>.square</figcaption>
-				</figure>
-				<figure style="max-width: 100px;">
-					<img src="https://picsum.photos/100/100?2" alt="r2" class="r2">
-					<figcaption>.r2</figcaption>
-				</figure>
-				<figure style="max-width: 100px;">
-					<img src="https://picsum.photos/100/100?3" alt="r100" class="r100">
-					<figcaption>.r100</figcaption>
-				</figure>
-			</div>
+			<figure class="inline" style="max-width: 100px;">
+				<img src="https://picsum.photos/100/100" alt="square">
+				<figcaption>.square</figcaption>
+			</figure>
+			<figure class="inline" style="max-width: 100px;">
+				<img src="https://picsum.photos/100/100?2" alt="r2" class="r2">
+				<figcaption>.r2</figcaption>
+			</figure>
+			<figure class="inline" style="max-width: 100px;">
+				<img src="https://picsum.photos/100/100?3" alt="r100" class="r100">
+				<figcaption>.r100</figcaption>
+			</figure>
 
 			<h3>Audio &amp; Video</h3>
 			<pre><code>&lt;audio controls&gt;
@@ -377,7 +375,7 @@
 
 			<button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
 
-			<dialog id="demo-dialog">
+			<dialog id="demo-dialog" class="">
 				<h3 style="margin-top: 0;">Dialog Title</h3>
 				<p>This is a native HTML dialog element with styled backdrop.</p>
 				<form method="dialog">
