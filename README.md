@@ -2,8 +2,6 @@
 
 A simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes.
 
-This project is deployed at geoffgroberg.com/styler
-
 ## Goals
 
 - Tags are styled without needing to specify classes
