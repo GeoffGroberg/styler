@@ -42,6 +42,33 @@ styler/
 <div class="sahel bg1 p2">Themed section</div>
 ```
 
+### CDN
+
+Styler is available via [jsDelivr](https://www.jsdelivr.com/) using GitHub releases:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GeoffGroberg/styler@v1.0.0/styler/base.css">
+<script src="https://cdn.jsdelivr.net/gh/GeoffGroberg/styler@v1.0.0/styler/toast.js"></script>
+```
+
+Replace `v1.0.0` with the desired release tag. Tagged versions are cached permanently by the CDN. Avoid using `@main` in production — it has a 12-hour cache and any push to main immediately affects all sites.
+
+## Releases
+
+Create a new release by tagging a commit:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Use [semantic versioning](https://semver.org/):
+- **Patch** (`v1.0.1`) — bug fixes, minor tweaks
+- **Minor** (`v1.1.0`) — new themes, new utility classes, non-breaking additions
+- **Major** (`v2.0.0`) — breaking changes (renamed variables, removed classes, restructured files)
+
+After pushing a tag, the new version is available on jsDelivr within minutes.
+
 ## Themes
 
 ### Base Themes
