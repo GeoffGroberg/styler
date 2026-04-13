@@ -2,19 +2,21 @@
 
 A simple, clean CSS framework that applies reasonable styles to HTML tags without requiring many custom classes.
 
+This project is deployed at geoffgroberg.com/styler
+
 ## Goals
 
 - Tags are styled without needing to specify classes
 - Simplicity in HTML code - allows for simple, clean, lean markup
 - Consistency across platforms (including/especially mobile)
 - Elegance in the visual style
-- Avoid JavaScript - everything is done with CSS (demo.html has minimal JS for theme switching only)
+- Avoid JavaScript - everything is done with CSS (index.html has minimal JS for theme switching only)
 - Mobile-first approach, preferring fewer media queries
 
 ## Files
 
 ```
-demo.html              - Interactive demo with theme/font switchers
+index.html              - Interactive demo with theme/font switchers
 styler/
   base.css             - Main stylesheet (includes Google Fonts + imports src files)
   src/
