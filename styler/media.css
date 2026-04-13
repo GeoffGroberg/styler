@@ -28,6 +28,8 @@ img {
 	height: auto;
 	border-radius: var(--image-radius);
 	object-fit: cover;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Square aspect ratio - crops to 1:1 */
