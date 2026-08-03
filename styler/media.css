@@ -16,7 +16,7 @@ figure img {
 /* Inline class on individual figures and images */
 figure.inline, img.inline {
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 	margin-right: 1rem;
 	max-width: calc(33% - 1rem);
 }
