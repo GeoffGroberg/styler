@@ -132,26 +132,6 @@ html {
 	}
 }
 
-/* Inline class on individual figures - allows small figures to flow */
-figure.inline {
-	display: inline-block;
-	vertical-align: top;
-	margin-right: 1rem;
-	max-width: calc(33% - 1rem);
-}
-
-figure.inline:last-child {
-	margin-right: 0;
-}
-
-@media (max-width: 45rem) {
-	figure.inline {
-		display: block;
-		max-width: 100%;
-		margin-right: 0;
-	}
-}
-
 /* Text alignment */
 .text-center { text-align: center; }
 .text-left { text-align: left; }

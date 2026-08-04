@@ -13,6 +13,26 @@ figure img {
 	border-radius: var(--image-radius);
 }
 
+/* Inline class on individual figures and images */
+figure.inline, img.inline {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 1rem;
+	max-width: calc(33% - 1rem);
+}
+
+figure.inline:last-child, img.inline:last-child {
+	margin-right: 0;
+}
+
+/*@media (max-width: 45rem) {
+  figure.inline, img.inline {
+    display: block;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+*/
 /* Figure captions */
 figcaption {
 	font-size: 0.875rem;
