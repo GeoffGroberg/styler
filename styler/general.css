@@ -263,6 +263,8 @@ html {
 .warning { color: var(--warning); }
 .error { color: var(--error); }
 .info { color: var(--info); }
+.body1 { color: var(--body1); }
+.body2 { color: var(--body2); }
 
 /* Tables */
 table {
