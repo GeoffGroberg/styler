@@ -16,7 +16,9 @@ A simple, clean CSS framework that applies reasonable styles to HTML tags withou
 ```
 index.html              - Interactive demo with theme/font switchers
 styler/
-  base.css             - Main stylesheet (includes Google Fonts + imports src files)
+  base.css             - Main stylesheet (imports fonts.css + src files)
+  fonts.css            - @font-face rules for the bundled webfonts
+  fonts/               - Self-hosted woff2 files (OFL licensed, see fonts/OFL.txt)
   src/
     reset.css          - CSS reset/normalize baseline
     colors.css         - Themes, selection styling
@@ -255,7 +257,7 @@ hsl(30 20% 22%)   /* H=30 (warm brown), S=20%, L=22% */
 
 - Base font-size: 20px
 - All measurements in rem units
-- Each theme has a default font (falls back to system fonts if Google Fonts fail to load)
+- Each theme has a default font (falls back to system fonts if the webfonts fail to load)
 
 ### Theme Fonts
 
@@ -285,7 +287,7 @@ Font modifier classes (`.inter`, `.lora`, etc.) override both body and heading f
 - `sans` - System sans-serif
 - `serif` - System serif (Times New Roman, Georgia)
 
-**Google Fonts** (included in base.css)
+**Bundled Webfonts** (self-hosted in `styler/fonts/`, no external requests)
 - `source-sans` - Source Sans 3 (weights: 400, 600 + italics)
 - `inter` - Inter (weights: 400, 600)
 - `pt-serif` - PT Serif (weights: 400, 700 + italics)
@@ -532,7 +534,7 @@ These HTML elements are styled automatically:
 - Text selection uses `--primary` color
 - Print styles hide navigation, buttons, and alerts; show URLs after links
 - CSS variables for easy customization
-- Google Fonts included by default (comment out in base.css for system fonts only)
+- Webfonts are self-hosted - no Google Fonts or other third-party requests (comment out the fonts.css import in base.css for system fonts only)
 
 ## Customizing
 

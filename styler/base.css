@@ -1,7 +1,7 @@
 /* Styler - A simple, clean CSS framework */
 
-/* Google Fonts - comment out to use only system fonts */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+/* Self-hosted webfonts - comment out to use only system fonts */
+@import url('fonts.css');
 
 @import url('reset.css');
 @import url('colors.css');
